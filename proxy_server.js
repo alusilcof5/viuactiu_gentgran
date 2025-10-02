@@ -1,4 +1,4 @@
-// proxy_server.js
+/* // proxy_server.js
 // Servidor proxy para evitar problemas CORS con APIs públicas
 // Ejecutar: node proxy_server.js
 // El servidor escuchará en http://localhost:5001
@@ -202,9 +202,8 @@ app.listen(PORT, "0.0.0.0", () => {
   console.log("    mentre utilitzes l'aplicació web");
   console.log("=".repeat(60));
   console.log("\n🔄 Esperant peticions...\n");
-});
+}); */
 
-/* OPCIÓ SEGURA AMB MÉS CAPES DE SEGURETAT
 import express from "express";
 import cors from "cors";
 import axios from "axios";
@@ -337,4 +336,3 @@ app.get("/health", (req, res) => {
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`🚀 Servidor seguro en http://localhost:${PORT}`);
 });
- */
