@@ -3,8 +3,18 @@ import cors from "cors";
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 
+import express from "express";
+import cors from "cors";
+import helmet from "helmet";
+import rateLimit from "express-rate-limit";
+
 const app = express();
 const PORT = 5001;
+
+app.use(helmet());
+app.use(cors()); // permite cualquier origen
+app.use(rateLimit({ windowMs: 15*60*1000, max: 100, message: { error: "Too many requests" } }));
+
 
 // ==========================
 // CONFIGURACIÓN DE SEGURIDAD
@@ -12,7 +22,7 @@ const PORT = 5001;
 
 app.use(helmet());
 
-const allowedOrigins = ["http://localhost:3000", "https://tu-dominio.com"];
+const allowedOrigins = ["http://localhost:3000", "https://viuactiu-gentgran.vercel.app", "https://viuactiu-gentgran.vercel.api"];
 app.use(
   cors({
     origin: (origin, callback) => {
