@@ -1,4 +1,5 @@
-export default function handler(req, res) {
+// api/barcelona-espais.js
+export default async function handler(req, res) {
   res.status(200).json({
     success: true,
     result: {
@@ -9,3 +10,4 @@ export default function handler(req, res) {
     },
   });
 }
+
