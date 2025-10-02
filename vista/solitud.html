@@ -11,49 +11,63 @@
 
 <body class="bg-gray-50 text-size-normal" data-page="soledad">
 
+    <!-- Botones de idioma -->
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="ca" onclick="changeLanguage('ca')" aria-label="Canviar a català">
+            🏴 CAT
+        </button>
+        <button class="lang-btn" data-lang="es" onclick="changeLanguage('es')" aria-label="Cambiar a español">
+            🇪🇸 ESP
+        </button>
+        <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')" aria-label="Change to English">
+            🇬🇧 ENG
+        </button>
+    </div>
+
     <div id="navbar"></div>
 
     <header class="header-solitud">
-    <div class="header-overlay"></div>
-    <div class="header-text">
-            <h2 class="text-6xl font-bold mb-4">La Solitud en Persones Grans</h2>
-            <h3>Informació i recursos per comprendre i afrontar la solitud</h3>
-            <p>Dades basades en l'estudi oficial del CIS sobre persones majors de 65 anys</p>
+        <div class="header-overlay"></div>
+        <div class="header-text">
+            <h2 class="text-6xl font-bold mb-4" data-i18n="sol_header_title">La Solitud en Persones Grans</h2>
+            <h3 data-i18n="sol_header_subtitle">Informació i recursos per comprendre i afrontar la solitud</h3>
+            <p data-i18n="sol_header_desc">Dades basades en l'estudi oficial del CIS sobre persones majors de 65 anys</p>
         </div>
     </header>
 
     <!-- Què és la solitud -->
     <main class="container mx-auto px-4 py-8" aria-label="Contingut principal">
         <div class="bg-white rounded-lg shadow-md p-6 mb-6">
-            <h2 class="text-4xl font-bold text-gray-800">Què és la Solitud?</h2>
-            <p class="text-2xl text-gray-700">La solitud és un sentiment de desconnexió o mancança de companyia. És
+            <h2 class="text-4xl font-bold text-gray-800" data-i18n="sol_que_es_title">Què és la Solitud?</h2>
+            <p class="text-2xl text-gray-700" data-i18n="sol_que_es_desc">La solitud és un sentiment de desconnexió o mancança de companyia. És
                 important saber que hi ha dos tipus:</p>
 
             <div class="grid md:grid-cols-2 gap-6 mt-6">
                 <div class="bg-blue-50 p-6 rounded-lg border-2 border-blue-200">
-                    <h3 class="text-3xl font-bold text-blue-900 mb-3">Solitud Triada (Positiva)</h3>
-                    <p class="text-xl text-gray-700">Quan decidim estar sols per descansar, reflexionar o gaudir del
+                    <h3 class="text-3xl font-bold text-blue-900 mb-3" data-i18n="sol_positiva_title">Solitud Triada (Positiva)</h3>
+                    <p class="text-xl text-gray-700" data-i18n="sol_positiva_desc">Quan decidim estar sols per descansar, reflexionar o gaudir del
                         nostre propi temps. Això és sa i necessari.</p>
                 </div>
 
                 <div class="bg-red-50 p-6 rounded-lg border-2 border-red-200">
-                    <h3 class="text-3xl font-bold text-red-900 mb-3">Solitud No Desitjada (Negativa)</h3>
-                    <p class="text-xl text-gray-700">Quan ens sentim sols sense voler-ho, aïllats o desconnectats dels
+                    <h3 class="text-3xl font-bold text-red-900 mb-3" data-i18n="sol_negativa_title">Solitud No Desitjada (Negativa)</h3>
+                    <p class="text-xl text-gray-700" data-i18n="sol_negativa_desc">Quan ens sentim sols sense voler-ho, aïllats o desconnectats dels
                         altres. Aquest tipus de solitud pot afectar la nostra salut.</p>
                 </div>
             </div>
         </div>
+
         <!-- Recursos -->
         <div class="bg-white rounded-2xl shadow-lg p-8 space-y-6">
-            <h2 class="text-4xl font-bold text-gray-800">On Puc Trobar Ajuda?</h2>
+            <h2 class="text-4xl font-bold text-gray-800" data-i18n="sol_recursos_title">On Puc Trobar Ajuda?</h2>
 
             <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 <!-- Creu Roja -->
                 <article tabindex="0"
                     class="bg-blue-50 p-6 rounded-lg border-2 border-blue-300 focus:outline-none focus:ring-4 focus:ring-blue-400">
-                    <h3 class="text-2xl font-bold text-blue-900 mb-3">Telèfon contra la Solitud - Creu Roja</h3>
-                    <p class="text-xl text-gray-800 mb-2"><strong>Telèfon: 900 107 917</strong></p>
-                    <p class="text-lg text-gray-700">Servei gratuït per parlar amb algú si et sents sol/a. De dilluns a
+                    <h3 class="text-2xl font-bold text-blue-900 mb-3" data-i18n="sol_rec_cruz_title">Telèfon contra la Solitud - Creu Roja</h3>
+                    <p class="text-xl text-gray-800 mb-2"><strong data-i18n="sol_rec_telefono">Telèfon</strong>: 900 107 917</p>
+                    <p class="text-lg text-gray-700" data-i18n="sol_rec_cruz_desc">Servei gratuït per parlar amb algú si et sents sol/a. De dilluns a
                         divendres de 8h a 23h.</p>
                     <p class="text-lg text-gray-700 mt-2"><strong>Web:</strong> <a href="https://www.creuroja.org"
                             target="_blank" class="text-blue-600 hover:underline">creuroja.org</a></p>
@@ -62,9 +76,9 @@
                 <!-- Telèfon de l'Esperança -->
                 <article tabindex="0"
                     class="bg-blue-50 p-6 rounded-lg border-2 border-blue-300 focus:outline-none focus:ring-4 focus:ring-blue-400">
-                    <h3 class="text-2xl font-bold text-blue-900 mb-3">Telèfon de l'Esperança</h3>
-                    <p class="text-xl text-gray-800 mb-2"><strong>Telèfon: 93 414 48 48 (Barcelona)</strong></p>
-                    <p class="text-lg text-gray-700">Atenció emocional gratuïta les 24 hores del dia, tots els dies de
+                    <h3 class="text-2xl font-bold text-blue-900 mb-3" data-i18n="sol_rec_esperanza_title">Telèfon de l'Esperança</h3>
+                    <p class="text-xl text-gray-800 mb-2"><strong data-i18n="sol_rec_telefono">Telèfon</strong>: 93 414 48 48 (Barcelona)</p>
+                    <p class="text-lg text-gray-700" data-i18n="sol_rec_esperanza_desc">Atenció emocional gratuïta les 24 hores del dia, tots els dies de
                         l'any.</p>
                     <p class="text-lg text-gray-700 mt-2"><strong>Web:</strong> <a
                             href="https://telefonodelaesperanza.org" target="_blank"
@@ -74,184 +88,181 @@
                 <!-- Serveis Socials -->
                 <article tabindex="0"
                     class="bg-blue-50 p-6 rounded-lg border-2 border-blue-300 focus:outline-none focus:ring-4 focus:ring-blue-400">
-                    <h3 class="text-2xl font-bold text-blue-900 mb-3">Serveis Socials del teu Ajuntament</h3>
-                    <p class="text-lg text-gray-700 mb-2">Els serveis socials municipals ofereixen:</p>
+                    <h3 class="text-2xl font-bold text-blue-900 mb-3" data-i18n="sol_rec_ss_title">Serveis Socials del teu Ajuntament</h3>
+                    <p class="text-lg text-gray-700 mb-2" data-i18n="sol_rec_ss_intro">Els serveis socials municipals ofereixen:</p>
                     <ul class="list-disc list-inside text-lg text-gray-700 space-y-1 ml-4">
-                        <li>Informació sobre centres de dia</li>
-                        <li>Serveis d'atenció a domicili</li>
-                        <li>Ajuts econòmics</li>
-                        <li>Activitats i tallers per a gent gran</li>
+                        <li data-i18n="sol_rec_ss_1">Informació sobre centres de dia</li>
+                        <li data-i18n="sol_rec_ss_2">Serveis d'atenció a domicili</li>
+                        <li data-i18n="sol_rec_ss_3">Ajuts econòmics</li>
+                        <li data-i18n="sol_rec_ss_4">Activitats i tallers per a gent gran</li>
                     </ul>
-                    <p class="text-lg text-gray-700 mt-3"><strong>Com contactar:</strong> Truca al 010 o acudeix al teu
-                        centre cívic.</p>
+                    <p class="text-lg text-gray-700 mt-3"><strong data-i18n="sol_rec_contacto">Com contactar</strong>: <span data-i18n="sol_rec_ss_contacto">Truca al 010 o acudeix al teu
+                        centre cívic.</span></p>
                 </article>
 
                 <!-- Casals i Centres Cívics -->
                 <article tabindex="0"
                     class="bg-blue-50 p-6 rounded-lg border-2 border-blue-300 focus:outline-none focus:ring-4 focus:ring-blue-400">
-                    <h3 class="text-2xl font-bold text-blue-900 mb-3">Casals i Centres Cívics</h3>
-                    <p class="text-lg text-gray-700">Espais públics gratuïts amb activitats per a gent gran: gimnàstica,
+                    <h3 class="text-2xl font-bold text-blue-900 mb-3" data-i18n="sol_rec_casals_title">Casals i Centres Cívics</h3>
+                    <p class="text-lg text-gray-700" data-i18n="sol_rec_casals_desc">Espais públics gratuïts amb activitats per a gent gran: gimnàstica,
                         balls, tallers de memòria, excursions, jocs de taula.</p>
-                    <p class="text-lg text-gray-700 mt-2"><strong>Com trobar-los:</strong> Pregunta al teu ajuntament.
-                    </p>
+                    <p class="text-lg text-gray-700 mt-2"><strong data-i18n="sol_rec_como_encontrar">Com trobar-los</strong>: <span data-i18n="sol_rec_casals_contacto">Pregunta al teu ajuntament.</span></p>
                 </article>
 
                 <!-- Aules de la Gent Gran -->
                 <article tabindex="0"
                     class="bg-blue-50 p-6 rounded-lg border-2 border-blue-300 focus:outline-none focus:ring-4 focus:ring-blue-400">
-                    <h3 class="text-2xl font-bold text-blue-900 mb-3">Aules de la Gent Gran - Generalitat</h3>
-                    <p class="text-lg text-gray-700">Programes educatius i culturals gratuïts per a majors de 55 anys.
-                    </p>
+                    <h3 class="text-2xl font-bold text-blue-900 mb-3" data-i18n="sol_rec_aulas_title">Aules de la Gent Gran - Generalitat</h3>
+                    <p class="text-lg text-gray-700" data-i18n="sol_rec_aulas_desc">Programes educatius i culturals gratuïts per a majors de 55 anys.</p>
                     <p class="text-lg text-gray-700 mt-2"><strong>Web:</strong> <a
                             href="https://www.gencat.cat/ca/temes/educacio/ensenyament-adults/aulesgentgran/"
                             target="_blank" class="text-blue-600 hover:underline">gencat.cat</a></p>
-                    <p class="text-lg text-gray-700"><strong>Telèfon:</strong> 012</p>
+                    <p class="text-lg text-gray-700"><strong data-i18n="sol_rec_telefono">Telèfon</strong>: 012</p>
                 </article>
 
                 <!-- Caminades Saludables -->
                 <article tabindex="0"
                     class="bg-blue-50 p-6 rounded-lg border-2 border-blue-300 focus:outline-none focus:ring-4 focus:ring-blue-400">
-                    <h3 class="text-2xl font-bold text-blue-900 mb-3">Caminades Saludables</h3>
-                    <p class="text-lg text-gray-700">Grups organitzats per fer caminades en companyia.</p>
-                    <p class="text-lg text-gray-700 mt-2"><strong>On informar-se:</strong> CAP, centres cívics o
-                        ajuntament.</p>
+                    <h3 class="text-2xl font-bold text-blue-900 mb-3" data-i18n="sol_rec_caminatas_title">Caminades Saludables</h3>
+                    <p class="text-lg text-gray-700" data-i18n="sol_rec_caminatas_desc">Grups organitzats per fer caminades en companyia.</p>
+                    <p class="text-lg text-gray-700 mt-2"><strong data-i18n="sol_rec_donde_info">On informar-se</strong>: <span data-i18n="sol_rec_caminatas_contacto">CAP, centres cívics o
+                        ajuntament.</span></p>
                 </article>
 
                 <!-- Obra Social "la Caixa" -->
                 <article tabindex="0"
                     class="bg-blue-50 p-6 rounded-lg border-2 border-blue-300 focus:outline-none focus:ring-4 focus:ring-blue-400">
-                    <h3 class="text-2xl font-bold text-blue-900 mb-3">Obra Social "la Caixa"</h3>
-                    <p class="text-lg text-gray-700">Tallers gratuïts: art, música, tecnologia i activitats
+                    <h3 class="text-2xl font-bold text-blue-900 mb-3" data-i18n="sol_rec_caixa_title">Obra Social "la Caixa"</h3>
+                    <p class="text-lg text-gray-700" data-i18n="sol_rec_caixa_desc">Tallers gratuïts: art, música, tecnologia i activitats
                         intergeneracionals.</p>
                     <p class="text-lg text-gray-700 mt-2"><strong>Web:</strong> <a href="https://fundacionlacaixa.org"
                             target="_blank" class="text-blue-600 hover:underline">fundacionlacaixa.org</a></p>
-                    <p class="text-lg text-gray-700"><strong>Telèfon:</strong> 900 22 30 40</p>
+                    <p class="text-lg text-gray-700"><strong data-i18n="sol_rec_telefono">Telèfon</strong>: 900 22 30 40</p>
                 </article>
 
                 <!-- Biblioteques i Punts TIC -->
                 <article tabindex="0"
                     class="bg-blue-50 p-6 rounded-lg border-2 border-blue-300 focus:outline-none focus:ring-4 focus:ring-blue-400">
-                    <h3 class="text-2xl font-bold text-blue-900 mb-3">Biblioteques i Punts TIC</h3>
-                    <p class="text-lg text-gray-700">Cursos gratuïts d'ordinador, tauletes i mòbils. També clubs de
+                    <h3 class="text-2xl font-bold text-blue-900 mb-3" data-i18n="sol_rec_biblio_title">Biblioteques i Punts TIC</h3>
+                    <p class="text-lg text-gray-700" data-i18n="sol_rec_biblio_desc">Cursos gratuïts d'ordinador, tauletes i mòbils. També clubs de
                         lectura.</p>
                 </article>
 
                 <!-- Amics de la Gent Gran -->
                 <article tabindex="0"
                     class="bg-blue-50 p-6 rounded-lg border-2 border-blue-300 focus:outline-none focus:ring-4 focus:ring-blue-400">
-                    <h3 class="text-2xl font-bold text-blue-900 mb-3">Amics de la Gent Gran</h3>
-                    <p class="text-lg text-gray-700">Voluntaris que fan companyia i acompanyen. Servei gratuït.</p>
+                    <h3 class="text-2xl font-bold text-blue-900 mb-3" data-i18n="sol_rec_amics_title">Amics de la Gent Gran</h3>
+                    <p class="text-lg text-gray-700" data-i18n="sol_rec_amics_desc">Voluntaris que fan companyia i acompanyen. Servei gratuït.</p>
                     <p class="text-lg text-gray-700 mt-2"><strong>Web:</strong> <a href="https://amicsdelagentgran.org"
                             target="_blank" class="text-blue-600 hover:underline">amicsdelagentgran.org</a></p>
-                    <p class="text-lg text-gray-700"><strong>Telèfon Barcelona:</strong> 93 456 00 09</p>
+                    <p class="text-lg text-gray-700"><strong data-i18n="sol_rec_tel_bcn">Telèfon Barcelona</strong>: 93 456 00 09</p>
                 </article>
 
                 <!-- Atenció Primària -->
                 <article tabindex="0"
                     class="bg-blue-50 p-6 rounded-lg border-2 border-blue-300 focus:outline-none focus:ring-4 focus:ring-blue-400">
-                    <h3 class="text-2xl font-bold text-blue-900 mb-3">Atenció Primària - CAP</h3>
-                    <p class="text-lg text-gray-700">El teu metge pot informar-te sobre recursos d'atenció social i
+                    <h3 class="text-2xl font-bold text-blue-900 mb-3" data-i18n="sol_rec_cap_title">Atenció Primària - CAP</h3>
+                    <p class="text-lg text-gray-700" data-i18n="sol_rec_cap_desc">El teu metge pot informar-te sobre recursos d'atenció social i
                         salut mental.</p>
                 </article>
             </div>
 
         </div>
+
         <!-- Consells -->
         <div class="bg-white rounded-2xl shadow-lg p-8 space-y-6">
-            <h2 class="text-4xl font-bold text-gray-800">Consells per Afrontar la Solitud</h2>
+            <h2 class="text-4xl font-bold text-gray-800" data-i18n="sol_consejos_title">Consells per Afrontar la Solitud</h2>
 
             <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 <article tabindex="0"
                     class="bg-purple-50 p-6 rounded-lg border-l-4 border-purple-600 focus:outline-none focus:ring-4 focus:ring-purple-400">
-                    <h3 class="text-2xl font-bold text-purple-900 mb-2">1. Mantingues el Contacte</h3>
-                    <p class="text-xl text-gray-700">Truca per telèfon als teus fills, néts o amics cada setmana. Una
+                    <h3 class="text-2xl font-bold text-purple-900 mb-2" data-i18n="sol_consejo_1_title">1. Mantingues el Contacte</h3>
+                    <p class="text-xl text-gray-700" data-i18n="sol_consejo_1_desc">Truca per telèfon als teus fills, néts o amics cada setmana. Una
                         conversa breu fa molta companyia.</p>
                 </article>
 
                 <article tabindex="0"
                     class="bg-purple-50 p-6 rounded-lg border-l-4 border-purple-600 focus:outline-none focus:ring-4 focus:ring-purple-400">
-                    <h3 class="text-2xl font-bold text-purple-900 mb-2">2. Surt de Casa</h3>
-                    <p class="text-xl text-gray-700">Passeja cada dia, encara que sigui 15 minuts. Saluda els veïns.
+                    <h3 class="text-2xl font-bold text-purple-900 mb-2" data-i18n="sol_consejo_2_title">2. Surt de Casa</h3>
+                    <p class="text-xl text-gray-700" data-i18n="sol_consejo_2_desc">Passeja cada dia, encara que sigui 15 minuts. Saluda els veïns.
                         L'activitat física millora l'ànim.</p>
                 </article>
 
                 <article tabindex="0"
                     class="bg-purple-50 p-6 rounded-lg border-l-4 border-purple-600 focus:outline-none focus:ring-4 focus:ring-purple-400">
-                    <h3 class="text-2xl font-bold text-purple-900 mb-2">3. Apunta't a Activitats</h3>
-                    <p class="text-xl text-gray-700">Centres cívics, clubs de jubilats o associacions de veïns
+                    <h3 class="text-2xl font-bold text-purple-900 mb-2" data-i18n="sol_consejo_3_title">3. Apunta't a Activitats</h3>
+                    <p class="text-xl text-gray-700" data-i18n="sol_consejo_3_desc">Centres cívics, clubs de jubilats o associacions de veïns
                         organitzen activitats. És una bona manera de fer amistats.</p>
                 </article>
 
                 <article tabindex="0"
                     class="bg-purple-50 p-6 rounded-lg border-l-4 border-purple-600 focus:outline-none focus:ring-4 focus:ring-purple-400">
-                    <h3 class="text-2xl font-bold text-purple-900 mb-2">4. Mantén Hobbies</h3>
-                    <p class="text-xl text-gray-700">Llegir, fer manualitats, jardineria o escoltar música. Fer el que
+                    <h3 class="text-2xl font-bold text-purple-900 mb-2" data-i18n="sol_consejo_4_title">4. Mantén Hobbies</h3>
+                    <p class="text-xl text-gray-700" data-i18n="sol_consejo_4_desc">Llegir, fer manualitats, jardineria o escoltar música. Fer el que
                         t'agrada et fa sentir millor.</p>
                 </article>
 
                 <article tabindex="0"
                     class="bg-purple-50 p-6 rounded-lg border-l-4 border-purple-600 focus:outline-none focus:ring-4 focus:ring-purple-400">
-                    <h3 class="text-2xl font-bold text-purple-900 mb-2">5. Considera una Mascota</h3>
-                    <p class="text-xl text-gray-700">Un gos o un gat pot fer molta companyia i et dona una raó per
+                    <h3 class="text-2xl font-bold text-purple-900 mb-2" data-i18n="sol_consejo_5_title">5. Considera una Mascota</h3>
+                    <p class="text-xl text-gray-700" data-i18n="sol_consejo_5_desc">Un gos o un gat pot fer molta companyia i et dona una raó per
                         mantenir-te actiu.</p>
                 </article>
 
                 <article tabindex="0"
                     class="bg-purple-50 p-6 rounded-lg border-l-4 border-purple-600 focus:outline-none focus:ring-4 focus:ring-purple-400">
-                    <h3 class="text-2xl font-bold text-purple-900 mb-2">6. Demana Ajuda si Ho Necessites</h3>
-                    <p class="text-xl text-gray-700">Parlar amb un professional (metge, psicòleg o treballador social)
+                    <h3 class="text-2xl font-bold text-purple-900 mb-2" data-i18n="sol_consejo_6_title">6. Demana Ajuda si Ho Necessites</h3>
+                    <p class="text-xl text-gray-700" data-i18n="sol_consejo_6_desc">Parlar amb un professional (metge, psicòleg o treballador social)
                         no és cap vergonya. Estan per ajudar-te.</p>
                 </article>
             </div>
+
             <div class="bg-green-50 p-6 rounded-lg border-l-4 border-green-600 mt-6">
-                <h3 class="text-2xl font-bold text-green-900 mb-2">Consell Important</h3>
-                <p class="text-xl text-gray-800">No tinguis vergonya de demanar ajuda. Tots aquests serveis estan creats
+                <h3 class="text-2xl font-bold text-green-900 mb-2" data-i18n="sol_consejo_importante">Consell Important</h3>
+                <p class="text-xl text-gray-800" data-i18n="sol_consejo_importante_desc">No tinguis vergonya de demanar ajuda. Tots aquests serveis estan creats
                     per tu. Fer el primer pas és el més difícil, però després veuràs que val la pena.</p>
             </div>
         </div>
 
-
-
         <!-- Dades de l'estudi -->
         <div class="bg-white rounded-2xl shadow-lg p-8 space-y-6">
-            <h2 class="text-4xl font-bold text-gray-800">Sobre Aquest Estudi</h2>
+            <h2 class="text-4xl font-bold text-gray-800" data-i18n="sol_estudio_title">Sobre Aquest Estudi</h2>
 
-            <p class="text-2xl text-gray-700">La informació d'aquesta pàgina prové d'un estudi oficial del Centro de
+            <p class="text-2xl text-gray-700" data-i18n="sol_estudio_desc">La informació d'aquesta pàgina prové d'un estudi oficial del Centro de
                 Investigaciones Sociológicas (CIS) sobre la solitud en persones grans.</p>
 
             <div class="grid md:grid-cols-1 gap-6">
                 <div
                     class="bg-gradient-to-br from-purple-500 to-blue-600 text-white rounded-2xl shadow-lg p-8 text-center">
                     <div class="text-6xl font-bold mb-2" id="total-mostra">2.460</div>
-                    <div class="text-2xl">Persones majors de 65 anys van participar en l'estudi</div>
+                    <div class="text-2xl" data-i18n="sol_estudio_participantes">Persones majors de 65 anys van participar en l'estudi</div>
                 </div>
             </div>
 
             <div>
-                <h3 class="text-3xl font-bold text-gray-800 mb-3">Què es va estudiar?</h3>
+                <h3 class="text-3xl font-bold text-gray-800 mb-3" data-i18n="sol_estudio_que">Què es va estudiar?</h3>
                 <ul class="list-disc list-inside text-2xl text-gray-700 space-y-2" id="study-topics">
-                    <li>Com viuen les persones grans (soles o acompanyades)</li>
-                    <li>Amb quina freqüència veuen família i amics</li>
-                    <li>Com es senten respecte a la solitud</li>
-                    <li>Quines activitats fan cada dia</li>
-                    <li>Quina ajuda necessiten i de qui la reben</li>
-                    <li>Ús de serveis socials i centres per a gent gran</li>
+                    <li data-i18n="sol_estudio_1">Com viuen les persones grans (soles o acompanyades)</li>
+                    <li data-i18n="sol_estudio_2">Amb quina freqüència veuen família i amics</li>
+                    <li data-i18n="sol_estudio_3">Com es senten respecte a la solitud</li>
+                    <li data-i18n="sol_estudio_4">Quines activitats fan cada dia</li>
+                    <li data-i18n="sol_estudio_5">Quina ajuda necessiten i de qui la reben</li>
+                    <li data-i18n="sol_estudio_6">Ús de serveis socials i centres per a gent gran</li>
                 </ul>
             </div>
 
             <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6">
-                <p class="text-xl text-gray-800" id="study-note"><strong>Nota:</strong> Aquest estudi es va fer l'any
-                    1998. Tot i que algunes coses han canviat, els consells i recursos continuen sent vàlids avui dia.
-                </p>
+                <p class="text-xl text-gray-800" id="study-note"><strong data-i18n="sol_nota">Nota</strong>: <span data-i18n="sol_nota_desc">Aquest estudi es va fer l'any
+                    1998. Tot i que algunes coses han canviat, els consells i recursos continuen sent vàlids avui dia.</span></p>
             </div>
         </div>
 
         <!-- Missatge final -->
         <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl shadow-xl p-8 text-white text-center">
-            <h2 class="text-4xl font-bold mb-4">No Estàs Sol/a</h2>
-            <p class="text-2xl mb-6">Si tu o algú que coneixes pateix solitud, busca ajuda. Hi ha molts recursos
+            <h2 class="text-4xl font-bold mb-4" data-i18n="sol_final_title">No Estàs Sol/a</h2>
+            <p class="text-2xl mb-6" data-i18n="sol_final_desc">Si tu o algú que coneixes pateix solitud, busca ajuda. Hi ha molts recursos
                 disponibles.</p>
-            <p class="text-xl">Contacta amb els Serveis Socials del teu ajuntament trucant al 010</p>
+            <p class="text-xl" data-i18n="sol_final_contacto">Contacta amb els Serveis Socials del teu ajuntament trucant al 010</p>
         </div>
 
     </main>
@@ -259,9 +270,11 @@
     <!-- Footer -->
     <div id="footer"></div>
 
+    <script src="../controller/traduccions/solitud.js"></script>
     <script src="../controller/accessibility.js"></script>
     <script src="../model/solitud.js"></script>
     <script src="../controller/layout.js"></script>
+
 </body>
 
 </html>

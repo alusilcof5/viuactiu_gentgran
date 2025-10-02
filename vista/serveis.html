@@ -19,55 +19,54 @@
     <div class="header-overlay"></div>
     <div class="header-text">
       <h2 class="text-6xl font-bold mb-4">Mapa Viu</h2>
-      <h3>Serveis per a persones amb dependència</h3>
-      <p>Centres de dia i residències per comarca</p>
+      <h3 data-i18n="header_title">Serveis per a persones amb dependència</h3>
+      <p data-i18n="header_subtitle">Centres de dia i residències per comarca</p>
     </div>
   </header>
 
-
   <main class="container mx-auto px-4 py-8" aria-label="Contingut principal">
     <div class="bg-white rounded-lg shadow-md p-6 mb-6">
-      <h2 class="text-2xl font-bold text-gray-800 mb-4">Cerca recursos</h2>
+      <h2 class="text-2xl font-bold text-gray-800 mb-4" data-i18n="cerca_recursos_title">Cerca recursos</h2>
       <div class="grid md:grid-cols-4 gap-4">
         <div>
-          <label class="block text-lg font-medium mb-2" for="any">Any</label>
+          <label class="block text-lg font-medium mb-2" for="any" data-i18n="label_any">Any</label>
           <select id="any"
             class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg text-lg focus:border-blue-500 focus:outline-none"
             aria-label="Seleccionar any">
-            <option value="2024">2024</option>
+            <option value="2024" data-i18n="select_any">2024</option>
           </select>
         </div>
         <div>
-          <label class="block text-lg font-medium mb-2" for="comarca">Comarca</label>
+          <label class="block text-lg font-medium mb-2" for="comarca" data-i18n="label_comarca">Comarca</label>
           <select id="comarca"
             class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg text-lg focus:border-blue-500 focus:outline-none"
             aria-label="Seleccionar comarca">
-            <option value="">Totes les comarques</option>
+            <option value="" data-i18n="select_comarca">Totes les comarques</option>
           </select>
         </div>
         <div>
-          <label class="block text-lg font-medium mb-2" for="tipusServei">Tipus de servei</label>
+          <label class="block text-lg font-medium mb-2" for="tipusServei" data-i18n="label_tipusServei">Tipus de servei</label>
           <select id="tipusServei"
             class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg text-lg focus:border-blue-500 focus:outline-none"
             aria-label="Seleccionar tipus de servei">
-            <option value="total">Total (ambdós)</option>
-            <option value="centre_dia">Centre de dia</option>
-            <option value="residencia">Residència</option>
+            <option value="total" data-i18n="select_tipus_total">Total (ambdós)</option>
+            <option value="centre_dia" data-i18n="select_tipus_centre_dia">Centre de dia</option>
+            <option value="residencia" data-i18n="select_tipus_residencia">Residència</option>
           </select>
         </div>
         <div class="flex items-end">
           <button onclick="aplicarFiltres()"
             class="w-full px-6 py-3 bg-blue-600 text-white text-lg font-semibold rounded-lg hover:bg-blue-700 focus:ring-4 focus:ring-blue-300"
-            aria-label="Aplicar filtres">Filtrar</button>
+            aria-label="Aplicar filtres" data-i18n="button_filtrar">Filtrar</button>
         </div>
       </div>
     </div>
 
     <div class="bg-white rounded-lg shadow-md p-6 mb-6">
-      <h2 class="text-2xl font-bold text-gray-800 mb-4">Mapa interactiu</h2>
+      <h2 class="text-2xl font-bold text-gray-800 mb-4" data-i18n="mapa_interactiu_title">Mapa interactiu</h2>
       <div id="loading" class="flex flex-col justify-center items-center py-12">
         <div class="loading" aria-hidden="true"></div>
-        <p class="text-lg text-gray-600 mt-4">Carregant dades...</p>
+        <p class="text-lg text-gray-600 mt-4" data-i18n="loading_dades">Carregant dades...</p>
       </div>
       <div id="map" class="rounded-lg border-2 border-gray-200 hidden" role="region"
         aria-label="Mapa interactiu de serveis de dependència"></div>
@@ -75,43 +74,43 @@
 
     <div class="grid md:grid-cols-3 gap-6 mb-6" aria-label="Estadístiques">
       <div class="bg-white rounded-lg shadow-md p-6">
-        <h3 class="text-xl font-bold text-gray-800 mb-2">Total persones ateses</h3>
+        <h3 class="text-xl font-bold text-gray-800 mb-2" data-i18n="estadistiques_total_persones">Total persones ateses</h3>
         <p class="text-4xl font-bold text-blue-600" id="total-persones">--</p>
       </div>
       <div class="bg-white rounded-lg shadow-md p-6">
-        <h3 class="text-xl font-bold text-gray-800 mb-2">Distribució per gènere</h3>
+        <h3 class="text-xl font-bold text-gray-800 mb-2" data-i18n="estadistiques_distribucio_genere">Distribució per gènere</h3>
         <div class="space-y-2 mt-2">
-          <div class="flex justify-between"><span>Dones:</span><span class="font-bold text-pink-600"
+          <div class="flex justify-between"><span data-i18n="dones">Dones:</span><span class="font-bold text-pink-600"
               id="pct-dones">--%</span></div>
-          <div class="flex justify-between"><span>Homes:</span><span class="font-bold text-blue-600"
+          <div class="flex justify-between"><span data-i18n="homes">Homes:</span><span class="font-bold text-blue-600"
               id="pct-homes">--%</span></div>
         </div>
       </div>
       <div class="bg-white rounded-lg shadow-md p-6">
-        <h3 class="text-xl font-bold text-gray-800 mb-2">Top 5 comarques</h3>
+        <h3 class="text-xl font-bold text-gray-800 mb-2" data-i18n="estadistiques_top_comarques">Top 5 comarques</h3>
         <div id="top-comarques" class="space-y-1 text-sm">
-          <p class="text-gray-600">Calculant...</p>
+          <p class="text-gray-600" data-i18n="calculant">Calculant...</p>
         </div>
       </div>
     </div>
 
     <div class="bg-white rounded-lg shadow-md p-6">
-      <h2 class="text-2xl font-bold text-gray-800 mb-4">Dades per comarca</h2>
+      <h2 class="text-2xl font-bold text-gray-800 mb-4" data-i18n="dades_per_comarca_title">Dades per comarca</h2>
       <div class="overflow-x-auto">
         <table class="w-full text-left border-collapse" aria-label="Taula de dades per comarca">
           <thead>
             <tr class="bg-gray-100">
-              <th class="p-3 border-b-2 font-bold">Comarca</th>
-              <th class="p-3 border-b-2 font-bold text-center">Centre de dia</th>
-              <th class="p-3 border-b-2 font-bold text-center">Residència</th>
-              <th class="p-3 border-b-2 font-bold text-center">Dones</th>
-              <th class="p-3 border-b-2 font-bold text-center">Homes</th>
-              <th class="p-3 border-b-2 font-bold text-center">Total</th>
+              <th class="p-3 border-b-2 font-bold" data-i18n="taula_comarca">Comarca</th>
+              <th class="p-3 border-b-2 font-bold text-center" data-i18n="taula_centre_dia">Centre de dia</th>
+              <th class="p-3 border-b-2 font-bold text-center" data-i18n="taula_residencia">Residència</th>
+              <th class="p-3 border-b-2 font-bold text-center" data-i18n="taula_dones">Dones</th>
+              <th class="p-3 border-b-2 font-bold text-center" data-i18n="taula_homes">Homes</th>
+              <th class="p-3 border-b-2 font-bold text-center" data-i18n="taula_total">Total</th>
             </tr>
           </thead>
           <tbody id="tabla-dades">
             <tr>
-              <td colspan="6" class="p-3 text-center">Carregant...</td>
+              <td colspan="6" class="p-3 text-center" data-i18n="carregant">Carregant...</td>
             </tr>
           </tbody>
         </table>
@@ -122,6 +121,7 @@
   <div id="footer"></div>
 
   <script src="../controller/accessibility.js"></script>
+  <script src="../controller/traduccions/serveis.js"></script>
   <script src="../controller/layout.js"></script>
   <script src="../model/serveis.js"></script>
 </body>

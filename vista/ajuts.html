@@ -4,12 +4,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mapa Viu - Ajuts públics per a gent gran</title>
+  <title>Ajuts Viu - Ajuts públics per a gent gran</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../vista/css/style.css">
+
 </head>
 
 <body class="bg-gray-50 text-size-normal">
+
+  <!-- Botones de idioma -->
+  <div class="language-switcher">
+    <button class="lang-btn active" data-lang="ca" onclick="changeLanguage('ca')" aria-label="Canviar a català">
+      🏴 CAT
+    </button>
+    <button class="lang-btn" data-lang="es" onclick="changeLanguage('es')" aria-label="Cambiar a español">
+      🇪🇸 ESP
+    </button>
+    <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')" aria-label="Change to English">
+      🇬🇧 ENG
+    </button>
+  </div>
 
   <div id="navbar"></div>
 
@@ -18,26 +32,26 @@
     <div class="header-overlay"></div>
     <div class="container mx-auto px-4 relative z-10 text-center text-white">
       <h2 class="text-6xl font-bold mb-4">Ajuts Viu</h2>
-      <h3 class="text-3xl md:text-4xl font-bold">Ajuts públics per a gent gran</h3>
-      <p class="text-xl mt-2">Subvencions i ajuts socials de la Diputació de Barcelona</p>
+      <h3 class="text-3xl md:text-4xl font-bold" data-i18n="ajuts_header_title">Ajuts públics per a gent gran</h3>
+      <p class="text-xl mt-2" data-i18n="ajuts_header_subtitle">Subvencions i ajuts socials de la Diputació de Barcelona</p>
     </div>
   </header>
 
   <!-- Controls de cerca i filtres -->
   <section class="container mx-auto px-4 py-6 bg-white shadow rounded-xl mt-6" aria-label="Controls de cerca i filtres">
     <div class="flex flex-col md:flex-row gap-4 items-center">
-      <input id="searchBar" type="text" placeholder="🔍 Buscar ajut per títol..."
+      <input id="searchBar" type="text" data-i18n-placeholder="ajuts_buscar_placeholder"
         class="w-full md:flex-1 px-4 py-3 border-2 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none text-lg"
         aria-label="Cercar ajuts per títol">
       <select id="filterOrganisme" class="px-4 py-3 border-2 rounded-lg text-lg" aria-label="Filtrar per organisme">
-        <option value="">Tots els organismes</option>
+        <option value="" data-i18n="ajuts_filtro_todos_organismos">Tots els organismes</option>
       </select>
       <select id="filterTipus" class="px-4 py-3 border-2 rounded-lg text-lg"
         aria-label="Filtrar per tipus de subvenció">
-        <option value="">Tots els tipus</option>
+        <option value="" data-i18n="ajuts_filtro_todos_tipos">Tots els tipus</option>
       </select>
       <select id="filterEstat" class="px-4 py-3 border-2 rounded-lg text-lg" aria-label="Filtrar per estat">
-        <option value="">Tots els estats</option>
+        <option value="" data-i18n="ajuts_filtro_todos_estados">Tots els estats</option>
       </select>
     </div>
   </section>
@@ -45,7 +59,7 @@
   <!-- Main -->
   <main class="container mx-auto px-4 py-8" aria-label="Llista d'ajuts">
     <div id="ajuts" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <p class="text-gray-600 text-xl col-span-full">Carregant ajuts...</p>
+      <p class="text-gray-600 text-xl col-span-full" data-i18n="ajuts_cargando">Carregant ajuts...</p>
     </div>
   </main>
 
@@ -58,13 +72,15 @@
         aria-label="Tancar modal">
         &times;
       </button>
-      <h2 id="modalTitle" class="sr-only">Detalls de l'ajut</h2>
+      <h2 id="modalTitle" class="sr-only" data-i18n="ajuts_modal_titulo">Detalls de l'ajut</h2>
       <div id="modalContent" class="space-y-4"></div>
     </div>
   </div>
 
   <!-- Footer -->
   <div id="footer"></div>
+  
+  <script src="../controller/traduccions/index_traduction.js"></script>
   <script src="../controller/accessibility.js"></script>
   <script src="../controller/layout.js"></script>
   <script src="../model/ajuts.js"></script>
