@@ -12,53 +12,33 @@ const app = express();
 const PORT = 5001;
 
 app.use(helmet());
-app.use(cors()); // permite cualquier origen
-app.use(rateLimit({ windowMs: 15*60*1000, max: 100, message: { error: "Too many requests" } }));
-
+app.use(cors()); 
 
 // ==========================
 // CONFIGURACIÓN DE SEGURIDAD
 // ==========================
-
 app.use(helmet());
-
-const allowedOrigins = ["http://localhost:3000", "https://viuactiu-gentgran.vercel.app", "https://viuactiu-gentgran.vercel.api"];
+app.use(cors()); // permite cualquier origen para desarrollo
 app.use(
-  cors({
-    origin: (origin, callback) => {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("No autorizado por CORS"));
-      }
-    },
+  rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 100,
+    message: { error: "Too many requests, try again later." },
   })
 );
-
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 100,
-  message: { error: "Too many requests, try again later." },
-});
-app.use(limiter);
 
 // ==========================
 // ENDPOINTS
 // ==========================
 
-// Función helper para fetch con timeout
-async function fetchWithTimeout(url, options = {}, timeoutMs = 10000) {
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), timeoutMs);
-  try {
-    const response = await fetch(url, { ...options, signal: controller.signal });
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    return await response.json();
-  } finally {
-    clearTimeout(timeout);
-  }
+// Función helper para fetch sin timeout
+async function fetchData(url, options = {}) {
+  const response = await fetch(url, options);
+  if (!response.ok) throw new Error(`HTTP ${response.status}`);
+  return await response.json();
 }
 
+// Endpoint: /api/ajuts
 app.get("/api/ajuts", async (req, res) => {
   try {
     const baseUrl = "https://api.diba.cat/dadesobertes/cido/v1/subvencions";
@@ -86,7 +66,7 @@ app.get("/api/ajuts", async (req, res) => {
       const url = `${baseUrl}?${query}`;
 
       try {
-        const data = await fetchWithTimeout(url, {}, 10000);
+        const data = await fetchData(url);
         if (data?.data) {
           data.data.forEach((ajut) => {
             if (!seenIds.has(ajut.id)) {
@@ -110,7 +90,7 @@ app.get("/api/ajuts", async (req, res) => {
   }
 });
 
-// Barcelona - ejemplo
+// Endpoint: /api/barcelona-espais
 app.get("/api/barcelona-espais", (req, res) => {
   res.json({
     success: true,
@@ -123,21 +103,21 @@ app.get("/api/barcelona-espais", (req, res) => {
   });
 });
 
-// Generalitat - passthrough
+// Endpoint: /api/generalitat-dependencia
 app.get("/api/generalitat-dependencia", async (req, res) => {
   try {
     const url = "https://analisi.transparenciacatalunya.cat/resource/yavr-pn8q.json";
     const params = new URLSearchParams({ $limit: req.query.limit || 5000 }).toString();
     const fullUrl = `${url}?${params}`;
 
-    const data = await fetchWithTimeout(fullUrl, {}, 15000);
+    const data = await fetchData(fullUrl);
     res.json(data);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
 });
 
-// Healthcheck
+// Endpoint: /health
 app.get("/health", (req, res) => {
   res.json({ status: "ok", message: "Proxy server is running" });
 });
