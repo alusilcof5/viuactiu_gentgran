@@ -1,0 +1,415 @@
+/* ============================
+   BASE TIPOGRAFÍA Y ESCALADO
+   ============================ */
+body {
+  font-family: system-ui, -apple-system, Arial, sans-serif; 
+  font-size: 1.5rem; 
+  line-height: 1.5;
+  color: #242222; 
+  background-color: #f7fafc; 
+}
+
+.text-size-normal {
+  font-size: 1.25rem; 
+  line-height: 1.5;
+}
+
+.text-size-large {
+  font-size: 1.75rem;
+  line-height: 1.6;
+}
+
+.text-size-xlarge {
+  font-size: 2rem; 
+  line-height: 1.7;
+}
+
+body.text-size-normal *,
+body.text-size-large *,
+body.text-size-xlarge * {
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+
+body.text-size-normal h1,
+body.text-size-normal h2,
+body.text-size-normal h3,
+body.text-size-normal h4,
+body.text-size-normal h5,
+body.text-size-normal h6,
+body.text-size-normal p,
+body.text-size-normal li,
+body.text-size-normal button,
+body.text-size-normal a,
+body.text-size-normal input,
+body.text-size-normal select,
+body.text-size-normal td,
+body.text-size-normal th {
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+
+/* ============================
+   HERO SECTIONS Y HEADERS
+   ============================ */
+.hero-section,
+.header-banner,
+.header-ajuts,
+.header-solitud {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 600px;
+}
+
+.hero-section {
+  background-image: url('../images/banners.png');
+}
+
+.header-banner {
+  background-image: url('../images/banner_serv.png');
+}
+
+.header-ajuts {
+  background-image: url('../images/banner_ajuts.png');
+}
+
+.header-solitud {
+  background-image: url('../images/banner_solitud.png');
+}
+
+/* Overlay oscuro sobre la imagen */
+.hero-overlay,
+.header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+/* Contenedor de texto sobre el overlay */
+.hero-text,
+.header-text {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 10;
+}
+
+.hero-text h1,
+.hero-text h2,
+.hero-text h3,
+.hero-text p,
+.header-text h1,
+.header-text h2,
+.header-text h3,
+.header-text p {
+  color: #fff;
+}
+
+/* ============================
+   ALTO CONTRASTE
+   ============================ */
+.high-contrast {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+.high-contrast *,
+.high-contrast h1,
+.high-contrast h2,
+.high-contrast h3,
+.high-contrast h4,
+.high-contrast h5,
+.high-contrast h6,
+.high-contrast p,
+.high-contrast li,
+.high-contrast span,
+.high-contrast div,
+.high-contrast article,
+.high-contrast section {
+  color: #fff !important;
+}
+
+.high-contrast .bg-white,
+.high-contrast .bg-gray-50,
+.high-contrast .bg-gray-100,
+.high-contrast .bg-blue-50,
+.high-contrast .bg-red-50,
+.high-contrast .bg-purple-50,
+.high-contrast .bg-green-50,
+.high-contrast .bg-yellow-50,
+.high-contrast .bg-blue-600,
+.high-contrast .bg-green-600,
+.high-contrast .bg-purple-600,
+.high-contrast .bg-pink-600,
+.high-contrast .bg-red-600,
+.high-contrast .bg-blue-700,
+.high-contrast .bg-blue-900 {
+  background-color: #000 !important;
+}
+
+.high-contrast .text-gray-600,
+.high-contrast .text-gray-700,
+.high-contrast .text-gray-800,
+.high-contrast .text-blue-900,
+.high-contrast .text-green-700,
+.high-contrast .text-red-800,
+.high-contrast .text-blue-600,
+.high-contrast .text-pink-600,
+.high-contrast .text-white {
+  color: #fff !important;
+}
+
+.high-contrast a,
+.high-contrast button {
+  background-color: #ffff00 !important;
+  color: #000 !important;
+  border: 2px solid #fff !important;
+}
+
+.high-contrast .accessibility-bar button {
+  background-color: #ffff00 !important;
+  color: #000 !important;
+  border: 2px solid #fff !important;
+}
+
+/* Headers en modo alto contraste */
+.high-contrast .hero-section,
+.high-contrast .header-banner,
+.high-contrast .header-ajuts,
+.high-contrast .header-solitud {
+  background-color: #000 !important;
+  background-image: none !important;
+}
+
+.high-contrast .hero-overlay,
+.high-contrast .header-overlay {
+  background-color: transparent !important;
+}
+
+/* Mapas en alto contraste */
+.high-contrast #map .leaflet-popup-content-wrapper,
+.high-contrast #map .leaflet-popup-content {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+.high-contrast #map .leaflet-popup-content a {
+  color: #ffff00 !important;
+}
+
+/* Focus en alto contraste */
+.high-contrast button:focus,
+.high-contrast a:focus,
+.high-contrast input:focus,
+.high-contrast select:focus {
+  outline: 3px solid #ffff00 !important;
+  outline-offset: 2px;
+}
+
+/* ============================
+   EFECTOS INTERACTIVOS
+   ============================ */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover,
+.card-hover:focus {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-hover,
+  .hover\:shadow-xl,
+  .transition,
+  .loading {
+    transition: none;
+    animation: none;
+  }
+}
+
+/* ============================
+   MAPA Y OTROS
+   ============================ */
+#map {
+  height: 600px;
+  z-index: 1;
+}
+
+.loading {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================
+   WCAG AAA - ACCESIBILIDAD
+   ============================ */
+button,
+a,
+input,
+select {
+  transition: outline 0.2s ease;
+}
+
+button:focus,
+a:focus,
+input:focus,
+select:focus {
+  outline: 3px solid #1e90ff;
+  outline-offset: 2px;
+}
+
+[tabindex="0"]:focus {
+  outline: 3px solid #1e90ff;
+  outline-offset: 2px;
+}
+
+button:not(:focus-visible),
+a:not(:focus-visible),
+input:not(:focus-visible),
+select:not(:focus-visible),
+[tabindex="0"]:not(:focus-visible) {
+  outline: none;
+}
+
+.border-transparent {
+  border-color: transparent;
+}
+
+/* ============================
+   MEDIA QUERIES RESPONSIVAS
+   ============================ */
+@media (max-width: 640px) {
+  .hero-section,
+  .header-banner,
+  .header-ajuts,
+  .header-solitud {
+    min-height: 300px;
+    padding: 1rem;
+  }
+  
+  .hero-text h1,
+  .header-text h1,
+  .header-text h2 {
+    font-size: 1.5rem;
+  }
+  
+  .hero-text p,
+  .header-text p,
+  .header-text h3 {
+    font-size: 1rem;
+  }
+  
+  .text-size-normal {
+    font-size: 1rem;
+  }
+  
+  .text-size-large {
+    font-size: 1.125rem;
+  }
+  
+  .text-size-xlarge {
+    font-size: 1.25rem;
+  }
+  
+  .cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .cards-container .card-hover {
+    width: 100%;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .hero-section,
+  .header-banner,
+  .header-ajuts,
+  .header-solitud {
+    min-height: 350px;
+  }
+  
+  .hero-text h1,
+  .header-text h1,
+  .header-text h2 {
+    font-size: 2rem;
+  }
+  
+  .hero-text p,
+  .header-text p,
+  .header-text h3 {
+    font-size: 1.2rem;
+  }
+  
+  .text-size-normal {
+    font-size: 1rem;
+  }
+  
+  .text-size-large {
+    font-size: 1.1875rem;
+  }
+  
+  .text-size-xlarge {
+    font-size: 1.375rem;
+  }
+  
+  .cards-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .hero-section,
+  .header-banner,
+  .header-ajuts,
+  .header-solitud {
+    min-height: 600px;
+  }
+  
+  .hero-text h1,
+  .header-text h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-text p,
+  .header-text p {
+    font-size: 1.5rem;
+  }
+  
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+}

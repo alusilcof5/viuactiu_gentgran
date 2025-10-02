@@ -1,0 +1,233 @@
+{
+  "@context": {
+    "adms": "http://www.w3.org/ns/adms#",
+    "brick": "https://brickschema.org/schema/Brick#",
+    "csvw": "http://www.w3.org/ns/csvw#",
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "dcam": "http://purl.org/dc/dcam/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dcatap": "http://data.europa.eu/r5r/",
+    "dcmitype": "http://purl.org/dc/dcmitype/",
+    "dct": "http://purl.org/dc/terms/",
+    "doap": "http://usefulinc.com/ns/doap#",
+    "eli": "http://data.europa.eu/eli/ontology#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "geo": "http://www.opengis.net/ont/geosparql#",
+    "locn": "http://www.w3.org/ns/locn#",
+    "odrl": "http://www.w3.org/ns/odrl/2/",
+    "org": "http://www.w3.org/ns/org#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "prof": "http://www.w3.org/ns/dx/prof/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "qb": "http://purl.org/linked-data/cube#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "https://schema.org/",
+    "schema1": "http://schema.org/",
+    "sh": "http://www.w3.org/ns/shacl#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "sosa": "http://www.w3.org/ns/sosa/",
+    "spdx": "http://spdx.org/rdf/terms#",
+    "ssn": "http://www.w3.org/ns/ssn/",
+    "time": "http://www.w3.org/2006/time#",
+    "vann": "http://purl.org/vocab/vann/",
+    "vcard": "http://www.w3.org/2006/vcard/ns#",
+    "voaf": "http://purl.org/vocommons/voaf#",
+    "void": "http://rdfs.org/ns/void#",
+    "wgs": "https://www.w3.org/2003/01/geo/wgs84_pos#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://datos.gob.es/catalogo/ea0022266-1719situacion-social-y-politica-de-cataluna-iv-preelectoral-ii/resource/910c447a-6d9c-4852-be16-a49bb635ebf2/format",
+      "@type": "dct:IMT",
+      "rdf:value": "text/ascii",
+      "rdfs:label": "ASCII"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/ea0022266-1719situacion-social-y-politica-de-cataluna-iv-preelectoral-ii/resource/2eab01b8-e4b0-49c4-a4c6-40bff8133f24/format",
+      "@type": "dct:IMT",
+      "rdf:value": "text/ascii",
+      "rdfs:label": "ASCII"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/ea0022266-1719situacion-social-y-politica-de-cataluna-iv-preelectoral-ii/resource/486a0b6d-572a-488e-a712-c70be2e8ef49/format",
+      "@type": "dct:IMT",
+      "rdf:value": "text/ascii",
+      "rdfs:label": "ASCII"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/ea0022266-1719situacion-social-y-politica-de-cataluna-iv-preelectoral-ii/record",
+      "@type": "dcat:CatalogRecord",
+      "dct:issued": {
+        "@type": "xsd:dateTime",
+        "@value": "2020-09-28T15:13:09.102623+02:00"
+      },
+      "dct:modified": {
+        "@type": "xsd:dateTime",
+        "@value": "2024-01-15T22:21:58.456226+01:00"
+      },
+      "foaf:primaryTopic": {
+        "@id": "https://datos.gob.es/catalogo/ea0022266-1719situacion-social-y-politica-de-cataluna-iv-preelectoral-ii"
+      }
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/ea0022266-1719situacion-social-y-politica-de-cataluna-iv-preelectoral-ii/resource/910c447a-6d9c-4852-be16-a49bb635ebf2",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": {
+        "@id": "http://www.cis.es/cis/opencm/ES/1_encuestas/estudios/ver.jsp?estudio=1268&amp;cuestionario=1439&amp;muestra=4542"
+      },
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/ea0022266-1719situacion-social-y-politica-de-cataluna-iv-preelectoral-ii/resource/910c447a-6d9c-4852-be16-a49bb635ebf2/format"
+      },
+      "dct:identifier": {
+        "@type": "xsd:anyURI",
+        "@value": "http://www.cis.es/cis/opencm/ES/1_encuestas/estudios/ver.jsp?estudio=1268&cuestionario=1439&muestra=4542"
+      },
+      "dct:license": {
+        "@id": "http://www.cis.es/cis/opencms/ES/Avisolegal.html"
+      },
+      "dct:title": {
+        "@language": "es",
+        "@value": "2279/0-2|LA SOLEDAD EN LAS PERSONAS MAYORES|0/Nacional/Personas que no viven solas/ambos sexos/65 y más años/entrevista personal"
+      }
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/ea0022266-1719situacion-social-y-politica-de-cataluna-iv-preelectoral-ii/resource/486a0b6d-572a-488e-a712-c70be2e8ef49",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": {
+        "@id": "http://www.cis.es/cis/opencm/ES/1_encuestas/estudios/ver.jsp?estudio=1268&amp;cuestionario=1439&amp;muestra=4541"
+      },
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/ea0022266-1719situacion-social-y-politica-de-cataluna-iv-preelectoral-ii/resource/486a0b6d-572a-488e-a712-c70be2e8ef49/format"
+      },
+      "dct:identifier": {
+        "@type": "xsd:anyURI",
+        "@value": "http://www.cis.es/cis/opencm/ES/1_encuestas/estudios/ver.jsp?estudio=1268&cuestionario=1439&muestra=4541"
+      },
+      "dct:license": {
+        "@id": "http://www.cis.es/cis/opencms/ES/Avisolegal.html"
+      },
+      "dct:title": {
+        "@language": "es",
+        "@value": "2279/0-1|LA SOLEDAD EN LAS PERSONAS MAYORES|0/Nacional/Personas que viven solas/ambos sexos/65 y más años/entrevista personal"
+      }
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/ea0022266-1719situacion-social-y-politica-de-cataluna-iv-preelectoral-ii/PeriodOfTime-1",
+      "@type": "dct:PeriodOfTime",
+      "dcat:endDate": {
+        "@type": "xsd:dateTime",
+        "@value": "1998-04-16T00:00:00+02:00"
+      },
+      "dcat:startDate": {
+        "@type": "xsd:dateTime",
+        "@value": "1998-02-04T00:00:00+01:00"
+      }
+    },
+    {
+      "@id": "http://datos.gob.es/recurso/sector-publico/org/Organismo/EA0022266",
+      "@type": "foaf:Agent",
+      "dct:identifier": "EA0022266",
+      "foaf:name": {
+        "@language": "es",
+        "@value": "Centro de Investigaciones Sociológicas"
+      }
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/ea0022266-1719situacion-social-y-politica-de-cataluna-iv-preelectoral-ii",
+      "@type": "dcat:Dataset",
+      "dcat:distribution": [
+        {
+          "@id": "https://datos.gob.es/catalogo/ea0022266-1719situacion-social-y-politica-de-cataluna-iv-preelectoral-ii/resource/910c447a-6d9c-4852-be16-a49bb635ebf2"
+        },
+        {
+          "@id": "https://datos.gob.es/catalogo/ea0022266-1719situacion-social-y-politica-de-cataluna-iv-preelectoral-ii/resource/2eab01b8-e4b0-49c4-a4c6-40bff8133f24"
+        },
+        {
+          "@id": "https://datos.gob.es/catalogo/ea0022266-1719situacion-social-y-politica-de-cataluna-iv-preelectoral-ii/resource/486a0b6d-572a-488e-a712-c70be2e8ef49"
+        }
+      ],
+      "dcat:keyword": [
+        {
+          "@language": "es",
+          "@value": "Vejez"
+        },
+        {
+          "@language": "es",
+          "@value": "VIDA COTIDIANA"
+        },
+        {
+          "@language": "es",
+          "@value": "Salud"
+        },
+        {
+          "@language": "es",
+          "@value": "Estudio Cuantitativo"
+        },
+        {
+          "@language": "es",
+          "@value": "VALORES Y ACTITUDES"
+        }
+      ],
+      "dcat:theme": [
+        {
+          "@id": "http://datos.gob.es/kos/sector-publico/sector/sociedad-bienestar"
+        },
+        {
+          "@id": "http://datos.gob.es/kos/sector-publico/sector/cultura-ocio"
+        },
+        {
+          "@id": "http://datos.gob.es/kos/sector-publico/sector/salud"
+        },
+        {
+          "@id": "http://datos.gob.es/kos/sector-publico/sector/demografia"
+        }
+      ],
+      "dct:description": {
+        "@language": "es",
+        "@value": "- Estado civil y situación de convivencia del entrevistado. Si está viudo: años que lleva en esta situación.\n- Si vive solo: motivo, años que lleva viviendo solo y grado de satisfacción por vivir solo.\n- Número de hijos del entrevistado, sexo y situación de convivencia/proximidad con ellos.\n- Estado de salud. Tenencia de enfermedades que requieren atención médica. Administración reciente de medicamentos.\n- Frecuencia con la que ha acudido al médico en el último año.\n- Aparatos (gafas, audífonos, prótesis dentales, bastón, andadores y silla de ruedas) que utiliza habitualmente.\n- Obesidad/delgadez del entrevistado.\n- Consumo de bebidas alcohólicas en la última semana. Hábito del consumo de vino. Percepción de su consumo actual de bebidas alcohólicas en comparación con su consumo cuando era joven.\n- Hábito de fumar, número de cigarrillos que fuma al día.\n- Grado de satisfacción con sus relaciones sociales.\n- Percepción de su grado de soledad. Ideas con las que define la 'soledad'. Definición de 'soledad conyugal'.\n- Preparación y lugar donde suele comer a mediodía. Personas con las que come.\n- Autosuficiencia para realizar diversas actividades de la vida cotidiana.\n- Personas o entidades que más ayuda le prestan para realizar las actividades con las que tiene dificultades. Si se trata de servicios sociales: institución que le suele ayudar y cobertura con respecto a sus necesidades. Si no es a través de servicios sociales: grado de sacrificio o esfuerzo para la persona que realiza esa ayuda.\n- Opinión sobre qué recurso se vería obligado a utilizar en el supuesto de necesitar ayuda en un futuro para realizar sus actividades cotidianas. Recurso que le gustaría más disponer en el futuro.\n- Frecuencia con la que ha estado, durante la última semana, con personas distintas a las personas con las que convive.\n- Frecuencia con la que, durante el último año, ha visto y ha hablado por teléfono con: hijos que viven en distinta localidad, hijos que viven en su localidad pero no con el entrevistado, nietos, vecinos, amigos, otros familiares y compañeros de club o asociación. Grado de satisfacción con estas relaciones.\n- Situación o momento del día en el que se encuentra más solo. Actividad que realiza cuando se siente solo.\n- Persona o entidad que cree, le prestaría ayuda, en el supuesto de que tuviera problemas de salud. Frecuencia de esa ayuda.\n- Tipos de asociaciones de las que es miembro el entrevistado.\n- Actividades que realizó durante la última semana.\n- Conocimiento y utilización de los distintos servicios públicos y prestaciones sociales para la Tercera Edad.\n- Nacimiento en el municipio en que se hace la entrevista. Si ha nacido en otro municipio: años que lleva residiendo y motivo de venir a su actual municipio.\n- Años que lleva residiendo en el barrio.\n- Frecuencia en que se siente inseguro (inseguridad ciudadana) en diversas situaciones.\n- Percepción de la distancia a la que se encuentran los servicios sanitarios públicos más cercanos.\n- Tipo de edificio donde reside el entrevistado: vivienda unifamiliar, edificio con ascensor o edificio\n- Opinión sobre la influencia que puede tener el tipo de casa en la que reside sobre el grado de contacto que tiene con otras personas.\n- Tipo de residencia, permanente o temporal, en la casa en la que está actualmente. Si es una estancia temporal: personas con las que reside.\n- Percepción de su situación actual en comparación con la que tenían sus padres a su edad.\n- Grado de satisfacción con su situación general actual.\n- Opinión sobre si las personas mayores ocupan en la sociedad el puesto que les corresponde.\n- Opinión sobre el trato que da la sociedad en general y los jóvenes en particular a las personas de su edad.\n- Opinión sobre si debería haber más personas de su edad, como representantes de las personas mayores, en diferentes órganos directivos y legislativos y en los medios de comunicación.\n- Programas de radio o televisión dedicados a las personas mayores que sigue.\n- Opinión sobre la percepción que tiene la sociedad sobre las personas mayores. Rasgos por los que caracterizaría el entrevistado a las personas mayores. Autopercepción personal.\n- Lo más importante para el entrevistado: salud, dinero, amor o no sentirse solo.\n- Situaciones que más teme que le sucedan.\n- Frecuencia de asistencia a oficios religiosos."
+      },
+      "dct:language": {
+        "@id": "http://publications.europa.eu/resource/authority/language/SPA"
+      },
+      "dct:publisher": {
+        "@id": "http://datos.gob.es/recurso/sector-publico/org/Organismo/EA0022266"
+      },
+      "dct:references": {
+        "@id": "http://analisis.cis.es/cisdb.jsp?ESTUDIO=2279"
+      },
+      "dct:spatial": {
+        "@id": "http://datos.gob.es/recurso/sector-publico/territorio/Pais/España"
+      },
+      "dct:temporal": {
+        "@id": "https://datos.gob.es/catalogo/ea0022266-1719situacion-social-y-politica-de-cataluna-iv-preelectoral-ii/PeriodOfTime-1"
+      },
+      "dct:title": {
+        "@language": "es",
+        "@value": "2279|LA SOLEDAD EN LAS PERSONAS MAYORES"
+      }
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/ea0022266-1719situacion-social-y-politica-de-cataluna-iv-preelectoral-ii/resource/2eab01b8-e4b0-49c4-a4c6-40bff8133f24",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": {
+        "@id": "http://www.cis.es/cis/opencm/ES/1_encuestas/estudios/ver.jsp?estudio=1268&amp;cuestionario=1439&amp;muestra=4540"
+      },
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/ea0022266-1719situacion-social-y-politica-de-cataluna-iv-preelectoral-ii/resource/2eab01b8-e4b0-49c4-a4c6-40bff8133f24/format"
+      },
+      "dct:identifier": {
+        "@type": "xsd:anyURI",
+        "@value": "http://www.cis.es/cis/opencm/ES/1_encuestas/estudios/ver.jsp?estudio=1268&cuestionario=1439&muestra=4540"
+      },
+      "dct:license": {
+        "@id": "http://www.cis.es/cis/opencms/ES/Avisolegal.html"
+      },
+      "dct:title": {
+        "@language": "es",
+        "@value": "2279/0-0|LA SOLEDAD EN LAS PERSONAS MAYORES|2460/Nacional/Población española/ambos sexos/65 y más años/entrevista personal"
+      }
+    }
+  ]
+}

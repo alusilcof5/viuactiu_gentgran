@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serveis de dependència - Mapa Viu</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="../vista/css/style.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+
+<body class="bg-gray-50 text-size-normal">
+
+  <div id="navbar"></div>
+  
+  <header class="header-banner" aria-label="Capçalera de la pàgina">
+    <div class="header-overlay"></div>
+    <div class="header-text">
+      <h2 class="text-6xl font-bold mb-4">Mapa Viu</h2>
+      <h3>Serveis per a persones amb dependència</h3>
+      <p>Centres de dia i residències per comarca</p>
+    </div>
+  </header>
+
+
+  <main class="container mx-auto px-4 py-8" aria-label="Contingut principal">
+    <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+      <h2 class="text-2xl font-bold text-gray-800 mb-4">Cerca recursos</h2>
+      <div class="grid md:grid-cols-4 gap-4">
+        <div>
+          <label class="block text-lg font-medium mb-2" for="any">Any</label>
+          <select id="any"
+            class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg text-lg focus:border-blue-500 focus:outline-none"
+            aria-label="Seleccionar any">
+            <option value="2024">2024</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-lg font-medium mb-2" for="comarca">Comarca</label>
+          <select id="comarca"
+            class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg text-lg focus:border-blue-500 focus:outline-none"
+            aria-label="Seleccionar comarca">
+            <option value="">Totes les comarques</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-lg font-medium mb-2" for="tipusServei">Tipus de servei</label>
+          <select id="tipusServei"
+            class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg text-lg focus:border-blue-500 focus:outline-none"
+            aria-label="Seleccionar tipus de servei">
+            <option value="total">Total (ambdós)</option>
+            <option value="centre_dia">Centre de dia</option>
+            <option value="residencia">Residència</option>
+          </select>
+        </div>
+        <div class="flex items-end">
+          <button onclick="aplicarFiltres()"
+            class="w-full px-6 py-3 bg-blue-600 text-white text-lg font-semibold rounded-lg hover:bg-blue-700 focus:ring-4 focus:ring-blue-300"
+            aria-label="Aplicar filtres">Filtrar</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+      <h2 class="text-2xl font-bold text-gray-800 mb-4">Mapa interactiu</h2>
+      <div id="loading" class="flex flex-col justify-center items-center py-12">
+        <div class="loading" aria-hidden="true"></div>
+        <p class="text-lg text-gray-600 mt-4">Carregant dades...</p>
+      </div>
+      <div id="map" class="rounded-lg border-2 border-gray-200 hidden" role="region"
+        aria-label="Mapa interactiu de serveis de dependència"></div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 mb-6" aria-label="Estadístiques">
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Total persones ateses</h3>
+        <p class="text-4xl font-bold text-blue-600" id="total-persones">--</p>
+      </div>
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Distribució per gènere</h3>
+        <div class="space-y-2 mt-2">
+          <div class="flex justify-between"><span>Dones:</span><span class="font-bold text-pink-600"
+              id="pct-dones">--%</span></div>
+          <div class="flex justify-between"><span>Homes:</span><span class="font-bold text-blue-600"
+              id="pct-homes">--%</span></div>
+        </div>
+      </div>
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Top 5 comarques</h3>
+        <div id="top-comarques" class="space-y-1 text-sm">
+          <p class="text-gray-600">Calculant...</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-md p-6">
+      <h2 class="text-2xl font-bold text-gray-800 mb-4">Dades per comarca</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse" aria-label="Taula de dades per comarca">
+          <thead>
+            <tr class="bg-gray-100">
+              <th class="p-3 border-b-2 font-bold">Comarca</th>
+              <th class="p-3 border-b-2 font-bold text-center">Centre de dia</th>
+              <th class="p-3 border-b-2 font-bold text-center">Residència</th>
+              <th class="p-3 border-b-2 font-bold text-center">Dones</th>
+              <th class="p-3 border-b-2 font-bold text-center">Homes</th>
+              <th class="p-3 border-b-2 font-bold text-center">Total</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-dades">
+            <tr>
+              <td colspan="6" class="p-3 text-center">Carregant...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="../controller/accessibility.js"></script>
+  <script src="../controller/layout.js"></script>
+  <script src="../model/serveis.js"></script>
+</body>
+
+</html>
