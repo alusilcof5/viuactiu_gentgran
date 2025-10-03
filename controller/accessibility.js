@@ -117,7 +117,6 @@ document.addEventListener('DOMContentLoaded', function() {
         <button onclick="changeTextSize('large')" class="px-3 py-1 bg-blue-700 hover:bg-blue-600 focus:ring-4 focus:ring-blue-300 rounded text-2xl" aria-label="Canvia a mida de text gran">A</button>
         <button onclick="changeTextSize('xlarge')" class="px-3 py-1 bg-blue-700 hover:bg-blue-600 focus:ring-4 focus:ring-blue-300 rounded text-4xl" aria-label="Canvia a mida de text extra gran">A</button>
       </div>
-      <button onclick="toggleContrast()" class="px-4 py-1 bg-blue-700 hover:bg-blue-600 focus:ring-4 focus:ring-blue-300 rounded text-xl" aria-label="Activa o desactiva l'alt contrast">Alt Contrast</button>
     `;
     document.body.prepend(bar);
 

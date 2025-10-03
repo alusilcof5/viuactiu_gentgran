@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estadístiques | ViuActiu - Dades Obertes</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="./css/">
+</head>
+<body class="bg-gray-50 text-size-normal">
+
+  <div id="navbar"></div>
+  
+  <header class="header-banner" aria-label="Capçalera de la pàgina">
+    <div class="header-overlay"></div>
+    <div class="header-text">
+      <h2 class="text-6xl font-bold mb-4">Estadístiques i Dades Obertes</h2>
+      <h3 data-i18n="header_title">Serveis per a persones amb dependència</h3>
+      <p data-i18n="header_subtitle">Visualització de recursos per a l'envelliment saludable a Catalunya</p>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-8" aria-label="Contingut principal">
+    <section class="bg-white rounded-2xl shadow-lg p-8 mb-6">
+      <h2 class="text-size-xlarge font-bold text-gray-800 mb-6" data-i18n="est_xifres_title">Xifres clau de Catalunya</h2>
+      <div class="cards-container">
+        <article tabindex="0" class="stat-card bg-blue-50 p-6 rounded-lg border-2 border-blue-300 card-hover focus:outline-none focus:ring-4 focus:ring-blue-400">
+          <div class="flex items-center justify-between mb-4">
+            <div class="text-size-large font-bold">Centres</div>
+            <span class="text-sm bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Total</span>
+          </div>
+          <h3 class="text-size-xlarge font-bold text-gray-800 mb-2">1.847</h3>
+          <p class="text-size-normal text-gray-700">Centres de serveis</p>
+          <p class="text-sm text-gray-600 mt-2">Residències, centres de dia, habitatges</p>
+        </article>
+        <article tabindex="0" class="stat-card bg-blue-50 p-6 rounded-lg border-2 border-blue-300 card-hover focus:outline-none focus:ring-4 focus:ring-blue-400">
+          <div class="flex items-center justify-between mb-4">
+            <div class="text-size-large font-bold">Places</div>
+            <span class="text-sm bg-green-100 text-green-800 px-3 py-1 rounded-full">Residències</span>
+          </div>
+          <h3 class="text-size-xlarge font-bold text-gray-800 mb-2">68.542</h3>
+          <p class="text-size-normal text-gray-700">Places en residències</p>
+          <p class="text-sm text-gray-600 mt-2">Per a persones amb dependència</p>
+        </article>
+        <article tabindex="0" class="stat-card bg-blue-50 p-6 rounded-lg border-2 border-blue-300 card-hover focus:outline-none focus:ring-4 focus:ring-blue-400">
+          <div class="flex items-center justify-between mb-4">
+            <div class="text-size-large font-bold">Ajuts</div>
+            <span class="text-sm bg-purple-100 text-purple-800 px-3 py-1 rounded-full">Ajuts</span>
+          </div>
+          <h3 class="text-size-xlarge font-bold text-gray-800 mb-2">2.847</h3>
+          <p class="text-size-normal text-gray-700">Ajuts publicats</p>
+          <p class="text-sm text-gray-600 mt-2">Subvencions socials actives</p>
+        </article>
+        <article tabindex="0" class="stat-card bg-blue-50 p-6 rounded-lg border-2 border-blue-300 card-hover focus:outline-none focus:ring-4 focus:ring-blue-400">
+          <div class="flex items-center justify-between mb-4">
+            <div class="text-size-large font-bold">Usuaris</div>
+            <span class="text-sm bg-orange-100 text-orange-800 px-3 py-1 rounded-full">Usuaris</span>
+          </div>
+          <h3 class="text-size-xlarge font-bold text-gray-800 mb-2">145.280</h3>
+          <p class="text-size-normal text-gray-700">Persones ateses</p>
+          <p class="text-sm text-gray-600 mt-2">Serveis socials bàsics 2024</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="bg-white rounded-2xl shadow-lg p-8 mb-6">
+      <h2 class="text-size-xlarge font-bold text-gray-800 mb-4" data-i18n="est_genero_title">Perspectiva de gènere</h2>
+      <p class="text-size-normal text-gray-700 mb-6" data-i18n="est_genero_desc">Distribució per sexe de persones usuàries de serveis socials</p>
+      <div class="cards-container">
+        <div class="chart-container">
+          <h3 class="text-size-large font-bold text-gray-800 mb-4" data-i18n="est_genero_usuarios">Persones usuàries per sexe (2024)</h3>
+          <canvas id="genderChart" width="400" height="300"></canvas>
+          <div class="mt-4 text-sm text-gray-600">
+            <p><strong data-i18n="est_nota">Nota:</strong> <span data-i18n="est_genero_nota">Les dones representen el 64,2% dels usuaris de serveis socials per a gent gran, reflectint la major esperança de vida femenina.</span></p>
+          </div>
+        </div>
+        <div class="chart-container">
+          <h3 class="text-size-large font-bold text-gray-800 mb-4" data-i18n="est_genero_residencias">Places en residències per sexe</h3>
+          <canvas id="genderResidencesChart" width="400" height="300"></canvas>
+          <div class="mt-4 text-sm text-gray-600">
+            <p><strong data-i18n="est_fuente">Font:</strong> Generalitat de Catalunya - Dades Obertes 2024</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white rounded-2xl shadow-lg p-8 mb-6">
+      <div class="cards-container">
+        <div class="chart-container">
+          <h3 class="text-size-large font-bold text-gray-800 mb-4" data-i18n="est_centros_title">Tipus de centres</h3>
+          <canvas id="servicesChart" width="400" height="300"></canvas>
+          <div class="mt-4 text-sm text-gray-600">
+            <p><strong data-i18n="est_fuente">Font:</strong> Portal Transparència Catalunya</p>
+            <a href="https://analisi.transparenciacatalunya.cat/Societat-benestar/Serveis-per-a-persones-amb-depend-ncia-Centre-de-d/yavr-pn8q" 
+               target="_blank" 
+               class="text-blue-600 hover:underline" data-i18n="est_dataset_link">Veure dataset complet</a>
+          </div>
+        </div>
+        <div class="chart-container">
+          <h3 class="text-size-large font-bold text-gray-800 mb-4" data-i18n="est_comarca_title">Distribució per comarca (Top 10)</h3>
+          <canvas id="comarcaChart" width="400" height="300"></canvas>
+          <div class="mt-4 text-sm text-gray-600">
+            <p data-i18n="est_actualizado">Actualitzat: Octubre 2024</p>
+          </div>
+        </div>
+        <div class="chart-container">
+          <h3 class="text-size-large font-bold text-gray-800 mb-4" data-i18n="est_evolucion_title">Evolució de places 2018-2024</h3>
+          <canvas id="timelineChart" width="400" height="300"></canvas>
+          <div class="mt-4 text-sm text-gray-600">
+            <p data-i18n="est_crecimiento">Creixement anual mitjà: +3,2%</p>
+          </div>
+        </div>
+        <div class="chart-container">
+          <h3 class="text-size-large font-bold text-gray-800 mb-4" data-i18n="est_titularidad_title">Titularitat dels centres</h3>
+          <canvas id="ownershipChart" width="400" height="300"></canvas>
+          <div class="mt-4 text-sm text-gray-600">
+            <p data-i18n="est_titularidad_desc">Inclou centres públics, concertats i privats</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl shadow-lg p-8 mb-6 text-white">
+      <div class="header-text">
+        <h2 class="text-size-xlarge font-bold mb-4" data-i18n="est_cobertura_title">Cobertura territorial</h2>
+        <div class="cards-container">
+          <article tabindex="0" class="bg-white bg-opacity-20 rounded-lg p-6 card-hover focus:outline-none focus:ring-4 focus:ring-blue-400">
+            <h4 class="text-size-large font-bold mb-2">Barcelona</h4>
+            <p class="text-size-xlarge font-bold mb-2">847</p>
+            <p class="text-size-normal">centres (45,9%)</p>
+          </article>
+          <article tabindex="0" class="bg-white bg-opacity-20 rounded-lg p-6 card-hover focus:outline-none focus:ring-4 focus:ring-blue-400">
+            <h4 class="text-size-large font-bold mb-2">Tarragona</h4>
+            <p class="text-size-xlarge font-bold mb-2">312</p>
+            <p class="text-size-normal">centres (16,9%)</p>
+          </article>
+          <article tabindex="0" class="bg-white bg-opacity-20 rounded-lg p-6 card-hover focus:outline-none focus:ring-4 focus:ring-blue-400">
+            <h4 class="text-size-large font-bold mb-2">Girona</h4>
+            <p class="text-size-xlarge font-bold mb-2">287</p>
+            <p class="text-size-normal">centres (15,5%)</p>
+          </article>
+        </div>
+        <p class="mt-6 text-sm" data-i18n="est_cobertura_nota">
+          <strong>Nota:</strong> Aquest mapa conceptual representa la distribució provincial. Per veure el mapa interactiu amb tots els centres, 
+          <a href="./serveis.html" class="underline hover:text-white" data-i18n="est_cobertura_link">visita la secció de Serveis</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="bg-white rounded-2xl shadow-lg p-8 mb-6">
+      <h2 class="text-size-xlarge font-bold text-gray-800 mb-6" data-i18n="est_datasets_title">Datasets Open Data utilitzats</h2>
+      <div class="cards-container">
+        <article tabindex="0" class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-600 card-hover focus:outline-none focus:ring-4 focus:ring-blue-400">
+          <div class="flex items-start justify-between mb-4">
+            <div>
+              <h3 class="text-size-large font-bold text-gray-800" data-i18n="est_dataset_centros_title">Centres de dia i residències</h3>
+              <p class="text-sm text-gray-600 mt-1">Generalitat de Catalunya</p>
+            </div>
+            <span class="text-sm bg-blue-100 text-blue-800 px-2 py-1 rounded">Actualitzat mensual</span>
+          </div>
+          <p class="text-size-normal text-gray-700 mb-4" data-i18n="est_dataset_centros_desc">Llistat complet de serveis per a persones amb dependència a Catalunya, incloent residències, centres de dia i habitatges tutelats.</p>
+          <div class="flex gap-3">
+            <a href="https://analisi.transparenciacatalunya.cat/Societat-benestar/Serveis-per-a-persones-amb-depend-ncia-Centre-de-d/yavr-pn8q"
+               target="_blank"
+               class="text-blue-600 hover:underline text-sm font-semibold" data-i18n="est_dataset_link">Veure dataset</a>
+            <a href="https://analisi.transparenciacatalunya.cat/api/views/yavr-pn8q/rows.json"
+               target="_blank"
+               class="text-blue-600 hover:underline text-sm font-semibold" data-i18n="est_api_json">API JSON</a>
+            <a href="https://analisi.transparenciacatalunya.cat/api/views/yavr-pn8q"
+               target="_blank"
+               class="text-blue-600 hover:underline text-sm font-semibold" data-i18n="est_doc_tecnica">Documentació tècnica</a>
+          </div>
+          <div class="mt-4 pt-4 border-t border-gray-200">
+            <p class="text-sm text-gray-600">
+              <strong data-i18n="est_campos">Camps utilitzats:</strong> Nom centre, Tipus servei, Comarca, Places, Coordenades<br>
+              <strong data-i18n="est_formato">Format:</strong> JSON, CSV<br>
+              <strong data-i18n="est_actualizacion">Actualització:</strong> Mensual via API Socrata
+            </p>
+          </div>
+        </article>
+        <article tabindex="0" class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-600 card-hover focus:outline-none focus:ring-4 focus:ring-blue-400">
+          <div class="flex items-start justify-between mb-4">
+            <div>
+              <h3 class="text-size-large font-bold text-gray-800" data-i18n="est_dataset_ajuts_title">Ajuts i subvencions socials</h3>
+              <p class="text-sm text-gray-600 mt-1">Diputació de Barcelona (CIDO)</p>
+            </div>
+            <span class="text-sm bg-blue-100 text-blue-800 px-2 py-1 rounded">Actualitzat trimestral</span>
+          </div>
+          <p class="text-size-normal text-gray-700 mb-4" data-i18n="est_dataset_ajuts_desc">Base de dades d'ajuts públics disponibles per a persones grans, amb informació sobre subvencions actives.</p>
+          <div class="flex gap-3">
+            <a href="https://www.diba.cat/web/opendata/conjunt/-/dataset/detall/162"
+               target="_blank"
+               class="text-blue-600 hover:underline text-sm font-semibold" data-i18n="est_dataset_link">Veure dataset</a>
+            <a href="https://www.diba.cat/documents/20151/0/Manual+Open+Data+Diba.pdf"
+               target="_blank"
+               class="text-blue-600 hover:underline text-sm font-semibold" data-i18n="est_doc_tecnica">Documentació tècnica</a>
+          </div>
+          <div class="mt-4 pt-4 border-t border-gray-200">
+            <p class="text-sm text-gray-600">
+              <strong data-i18n="est_campos">Camps utilitzats:</strong> Títol ajut, Import, Àmbit, Termini, Beneficiaris<br>
+              <strong data-i18n="est_formato">Format:</strong> CSV, XML<br>
+              <strong data-i18n="est_actualizacion">Actualització:</strong> Trimestral
+            </p>
+          </div>
+        </article>
+        <article tabindex="0" class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-600 card-hover focus:outline-none focus:ring-4 focus:ring-blue-400">
+          <div class="flex items-start justify-between mb-4">
+            <div>
+              <h3 class="text-size-large font-bold text-gray-800" data-i18n="est_dataset_solitud_title">Enquesta sobre solitud</h3>
+              <p class="text-sm text-gray-600 mt-1">Centro de Investigaciones Sociológicas (CIS)</p>
+            </div>
+            <span class="text-sm bg-blue-100 text-blue-800 px-2 py-1 rounded">Actualitzat anual</span>
+          </div>
+          <p class="text-size-normal text-gray-700 mb-4" data-i18n="est_dataset_solitud_desc">Dades sobre percepció de solitud en persones grans a Espanya, desagregades per edat, sexe i àmbit geogràfic.</p>
+          <div class="flex gap-3">
+            <a href="https://www.cis.es/cis/opencms/ES/1_encuestas/estudios/ver.jsp?estudio=14480"
+               target="_blank"
+               class="text-blue-600 hover:underline text-sm font-semibold" data-i18n="est_dataset_link">Veure dataset</a>
+            <a href="https://www.cis.es/cis/opencms/ES/11_noticias_info/InfoDatos.jsp"
+               target="_blank"
+               class="text-blue-600 hover:underline text-sm font-semibold" data-i18n="est_doc_tecnica">Documentació tècnica</a>
+          </div>
+          <div class="mt-4 pt-4 border-t border-gray-200">
+            <p class="text-sm text-gray-600">
+              <strong data-i18n="est_desagregacion">Desagregació:</strong> Per edat, sexe, nivell educatiu i àmbit geogràfic<br>
+              <strong data-i18n="est_formato">Format:</strong> SPSS, CSV<br>
+              <strong data-i18n="est_actualizacion">Actualització:</strong> Anual
+            </p>
+          </div>
+        </article>
+        <article tabindex="0" class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-600 card-hover focus:outline-none focus:ring-4 focus:ring-blue-400">
+          <div class="flex items-start justify-between mb-4">
+            <div>
+              <h3 class="text-size-large font-bold text-gray-800" data-i18n="est_dataset_ssbs_title">Persones ateses SSBS</h3>
+              <p class="text-sm text-gray-600 mt-1">Generalitat de Catalunya</p>
+            </div>
+            <span class="text-sm bg-blue-100 text-blue-800 px-2 py-1 rounded">Actualitzat anual</span>
+          </div>
+          <p class="text-size-normal text-gray-700 mb-4" data-i18n="est_dataset_ssbs_desc">Nombre de persones ateses pels Serveis Socials Bàsics, amb desagregació per sexe i edat.</p>
+          <div class="flex gap-3">
+            <a href="https://analisi.transparenciacatalunya.cat/Societat-benestar/Usuaris-at-sos-Serveis-Socials-B-sics-per-edat-i-/h9gr-972j"
+               target="_blank"
+               class="text-blue-600 hover:underline text-sm font-semibold" data-i18n="est_dataset_link">Veure dataset</a>
+            <a href="https://analisi.transparenciacatalunya.cat/api/views/h9gr-972j"
+               target="_blank"
+               class="text-blue-600 hover:underline text-sm font-semibold" data-i18n="est_doc_tecnica">Documentació tècnica</a>
+          </div>
+          <div class="mt-4 pt-4 border-t border-gray-200">
+            <p class="text-sm text-gray-600">
+              <strong data-i18n="est_perspectiva_genero">Perspectiva de gènere:</strong> Totes les dades desagregades per sexe<br>
+              <strong data-i18n="est_formato">Format:</strong> JSON, CSV<br>
+              <strong data-i18n="est_actualizacion">Actualització:</strong> Anual via API Socrata
+            </p>
+          </div>
+        </article>
+      </div>
+      <div class="mt-6 bg-blue-50 p-6 rounded-lg border-l-4 border-blue-600">
+        <h3 class="text-size-large font-bold text-gray-800 mb-2" data-i18n="est_licencia_title">Llicència de les dades</h3>
+        <p class="text-size-normal text-gray-700 mb-2" data-i18n="est_licencia_desc">
+          Totes les dades utilitzades en aquesta plataforma estan publicades sota llicència
+          <strong>Creative Commons Reconeixement 4.0 Internacional (CC BY 4.0)</strong>.
+        </p>
+        <p class="text-sm text-gray-600">
+          <span data-i18n="est_licencia_info">Això significa que pots copiar, distribuir i reutilitzar aquestes dades sempre que facis l'atribució corresponent a les fonts originals.</span>
+          <a href="https://creativecommons.org/licenses/by/4.0/deed.ca" target="_blank" class="text-blue-600 hover:underline" data-i18n="est_licencia_link">Més informació sobre la llicència</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="bg-white rounded-2xl shadow-lg p-8 mb-6">
+      <h2 class="text-size-xlarge font-bold text-gray-800 mb-4" data-i18n="est_metodologia_title">Metodologia i transparència</h2>
+      <div class="cards-container">
+        <div>
+          <h3 class="text-size-large font-bold text-gray-800 mb-3" data-i18n="est_procesamiento_title">Processament de dades</h3>
+          <ul class="list-disc list-inside text-size-normal text-gray-700 space-y-2">
+            <li data-i18n="est_procesamiento_1">Neteja i normalització de datasets</li>
+            <li data-i18n="est_procesamiento_2">Geocodificació d'adreces</li>
+            <li data-i18n="est_procesamiento_3">Actualització automàtica via APIs</li>
+            <li data-i18n="est_procesamiento_4">Validació de coherència</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-size-large font-bold text-gray-800 mb-3" data-i18n="est_criterios_title">Criteris d'inclusió</h3>
+          <ul class="list-disc list-inside text-size-normal text-gray-700 space-y-2">
+            <li data-i18n="est_criterios_1">Només centres acreditats oficialment</li>
+            <li data-i18n="est_criterios_2">Dades verificades per la Generalitat</li>
+            <li data-i18n="est_criterios_3">Actualització trimestral mínima</li>
+            <li data-i18n="est_criterios_4">Coherència amb fonts oficials</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-6 pt-6 border-t border-blue-600">
+        <p class="text-sm text-gray-600">
+          <strong data-i18n="est_ultima_actualizacion">Última actualització de dades:</strong> Octubre 2024<br>
+          <strong data-i18n="est_proxima_actualizacion">Pròxima actualització prevista:</strong> Gener 2025
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="../controller/traduccions/estadistiques.js"></script>
+  <script src="../controller/accessibility.js"></script>
+  <script src="../model/estadistiques.js"></script>
+  <script src="../controller/layout.js"></script>
+  <script>
+    // Configuración común de Chart.js
+    Chart.defaults.font.family = 'system-ui, -apple-system, sans-serif';
+    Chart.defaults.color = '#1f2937';
+
+    // 1. Gráfico de género - Usuarios
+    const genderCtx = document.getElementById('genderChart').getContext('2d');
+    new Chart(genderCtx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Dones', 'Homes'],
+        datasets: [{
+          data: [93280, 52000],
+          backgroundColor: ['#EC4899', '#3B82F6'],
+          borderWidth: 3,
+          borderColor: '#fff'
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: { padding: 20, font: { size: 14 } }
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                const percentage = ((context.parsed / total) * 100).toFixed(1);
+                return context.label + ': ' + context.parsed.toLocaleString() + ' usuaris (' + percentage + '%)';
+              }
+            }
+          }
+        }
+      }
+    });
+
+    // 2. Gráfico de género - Residencias
+    const genderResCtx = document.getElementById('genderResidencesChart').getContext('2d');
+    new Chart(genderResCtx, {
+      type: 'bar',
+      data: {
+        labels: ['Residències', 'Centres de dia', 'Habitatges tutelats'],
+        datasets: [
+          {
+            label: 'Dones',
+            data: [45820, 8340, 1240],
+            backgroundColor: '#EC4899'
+          },
+          {
+            label: 'Homes',
+            data: [22722, 3920, 780],
+            backgroundColor: '#3B82F6'
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'bottom' }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: {
+              callback: value => value.toLocaleString()
+            }
+          }
+        }
+      }
+    });
+
+    // 3. Distribución por tipo de servicio
+    const servicesCtx = document.getElementById('servicesChart').getContext('2d');
+    new Chart(servicesCtx, {
+      type: 'pie',
+      data: {
+        labels: ['Residències', 'Centres de dia', 'Habitatges tutelats', 'SAIAR', 'Altres'],
+        datasets: [{
+          data: [1124, 476, 183, 42, 22],
+          backgroundColor: ['#3B82F6', '#10B981', '#F59E0B', '#8B5CF6', '#6B7280'],
+          borderWidth: 2,
+          borderColor: '#fff'
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'right',
+            labels: { padding: 15 }
+          }
+        }
+      }
+    });
+
+    // 4. Distribución por comarca
+    const comarcaCtx = document.getElementById('comarcaChart').getContext('2d');
+    new Chart(comarcaCtx, {
+      type: 'bar',
+      data: {
+        labels: ['Barcelonès', 'Vallès Occ.', 'Maresme', 'Baix Llobregat', 'Vallès Or.', 'Gironès', 'Tarragonès', 'Baix Camp', 'Segrià', 'Osona'],
+        datasets: [{
+          label: 'Nombre de centres',
+          data: [412, 187, 156, 143, 128, 98, 87, 76, 68, 62],
+          backgroundColor: '#8B5CF6',
+          borderRadius: 6
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        plugins: {
+          legend: { display: false }
+        },
+        scales: {
+          x: {
+            beginAtZero: true,
+            grid: { display: false }
+          }
+        }
+      }
+    });
+
+    // 5. Evolución temporal
+    const timelineCtx = document.getElementById('timelineChart').getContext('2d');
+    new Chart(timelineCtx, {
+      type: 'line',
+      data: {
+        labels: ['2018', '2019', '2020', '2021', '2022', '2023', '2024'],
+        datasets: [
+          {
+            label: 'Residències',
+            data: [58200, 60100, 61800, 63500, 65200, 66900, 68542],
+            borderColor: '#3B82F6',
+            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+            tension: 0.4,
+            fill: true
+          },
+          {
+            label: 'Centres de dia',
+            data: [10800, 11200, 11500, 11900, 12200, 12450, 12680],
+            borderColor: '#10B981',
+            backgroundColor: 'rgba(16, 185, 129, 0.1)',
+            tension: 0.4,
+            fill: true
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'bottom' }
+        },
+        scales: {
+          y: {
+            beginAtZero: false,
+            ticks: {
+              callback: value => value.toLocaleString()
+            }
+          }
+        }
+      }
+    });
+
+    // 6. Titularidad
+    const ownershipCtx = document.getElementById('ownershipChart').getContext('2d');
+    new Chart(ownershipCtx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Privats', 'Concertats', 'Públics'],
+        datasets: [{
+          data: [892, 687, 268],
+          backgroundColor: ['#F59E0B', '#8B5CF6', '#10B981'],
+          borderWidth: 3,
+          borderColor: '#fff'
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: { padding: 20, font: { size: 14 } }
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                const percentage = ((context.parsed / total) * 100).toFixed(1);
+                return context.label + ': ' + context.parsed.toLocaleString() + ' (' + percentage + '%)';
+              }
+            }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estadístiques | ViuActiu - Dades Obertes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    .stat-card {
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .stat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+
+
+  <header class="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-8 shadow-lg">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-between">
+        <div>
+          <h1 class="text-4xl font-bold mb-2">📊 Estadístiques i Dades Obertes</h1>
+          <p class="text-blue-100">Visualització de recursos per a l'envelliment saludable a Catalunya</p>
+        </div>
+        <a href="../index.html" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition">
+          ← Tornar a l'inici
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-8">
+
+    
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6">📈 Xifres clau de Catalunya</h2>
+      <div class="grid md:grid-cols-4 gap-6">
+        
+        <div class="stat-card bg-white rounded-xl shadow-lg p-6 border-t-4 border-blue-500">
+          <div class="flex items-center justify-between mb-4">
+            <div class="text-5xl">🏥</div>
+            <span class="text-sm bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Total</span>
+          </div>
+          <h3 class="text-3xl font-bold text-gray-800 mb-2">1.847</h3>
+          <p class="text-gray-600">Centres de serveis</p>
+          <p class="text-xs text-gray-500 mt-2">Residències, centres de dia, habitatges</p>
+        </div>
+
+        <div class="stat-card bg-white rounded-xl shadow-lg p-6 border-t-4 border-green-500">
+          <div class="flex items-center justify-between mb-4">
+            <div class="text-5xl">🛏️</div>
+            <span class="text-sm bg-green-100 text-green-800 px-3 py-1 rounded-full">Residències</span>
+          </div>
+          <h3 class="text-3xl font-bold text-gray-800 mb-2">68.542</h3>
+          <p class="text-gray-600">Places en residències</p>
+          <p class="text-xs text-gray-500 mt-2">Per a persones amb dependència</p>
+        </div>
+
+        <div class="stat-card bg-white rounded-xl shadow-lg p-6 border-t-4 border-purple-500">
+          <div class="flex items-center justify-between mb-4">
+            <div class="text-5xl">💰</div>
+            <span class="text-sm bg-purple-100 text-purple-800 px-3 py-1 rounded-full">Ajuts</span>
+          </div>
+          <h3 class="text-3xl font-bold text-gray-800 mb-2">2.847</h3>
+          <p class="text-gray-600">Ajuts publicats</p>
+          <p class="text-xs text-gray-500 mt-2">Subvencions socials actives</p>
+        </div>
+
+        <div class="stat-card bg-white rounded-xl shadow-lg p-6 border-t-4 border-orange-500">
+          <div class="flex items-center justify-between mb-4">
+            <div class="text-5xl">👥</div>
+            <span class="text-sm bg-orange-100 text-orange-800 px-3 py-1 rounded-full">Usuaris</span>
+          </div>
+          <h3 class="text-3xl font-bold text-gray-800 mb-2">145.280</h3>
+          <p class="text-gray-600">Persones ateses</p>
+          <p class="text-xs text-gray-500 mt-2">Serveis socials bàsics 2024</p>
+        </div>
+
+      </div>
+    </section>
+
+ 
+    <section class="mb-12 bg-pink-50 rounded-xl p-8 border-2 border-pink-200">
+      <h2 class="text-3xl font-bold text-gray-800 mb-2">♀️ ♂️ Perspectiva de gènere</h2>
+      <p class="text-gray-600 mb-6">Distribució per sexe de persones usuàries de serveis socials</p>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <h3 class="text-xl font-bold text-gray-800 mb-4">Persones usuàries per sexe (2024)</h3>
+          <canvas id="genderChart"></canvas>
+          <div class="mt-4 text-sm text-gray-600">
+            <p><strong>Nota:</strong> Les dones representen el 64,2% dels usuaris de serveis socials per a gent gran, reflectint la major esperança de vida femenina.</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <h3 class="text-xl font-bold text-gray-800 mb-4">Places en residències per sexe</h3>
+          <canvas id="genderResidencesChart"></canvas>
+          <div class="mt-4 text-sm text-gray-600">
+            <p><strong>Font:</strong> Generalitat de Catalunya - Dades Obertes 2024</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+ 
+    <section class="grid md:grid-cols-2 gap-8 mb-12">
+      
+    
+      <div class="bg-white rounded-xl shadow-lg p-6">
+        <h3 class="text-2xl font-bold text-gray-800 mb-4">🏢 Tipus de centres</h3>
+        <canvas id="servicesChart"></canvas>
+        <div class="mt-4 text-sm text-gray-600">
+          <p><strong>Font:</strong> Portal Transparència Catalunya</p>
+          <a href="https://analisi.transparenciacatalunya.cat/Societat-benestar/Serveis-per-a-persones-amb-depend-ncia-Centre-de-d/yavr-pn8q" 
+             target="_blank" 
+             class="text-blue-600 hover:underline">
+            → Veure dataset complet
+          </a>
+        </div>
+      </div>
+
+      
+      <div class="bg-white rounded-xl shadow-lg p-6">
+        <h3 class="text-2xl font-bold text-gray-800 mb-4">📍 Distribució per comarca (Top 10)</h3>
+        <canvas id="comarcaChart"></canvas>
+        <div class="mt-4 text-sm text-gray-600">
+          <p>Actualitzat: Octubre 2024</p>
+        </div>
+      </div>
+
+      
+      <div class="bg-white rounded-xl shadow-lg p-6">
+        <h3 class="text-2xl font-bold text-gray-800 mb-4">📅 Evolució de places 2018-2024</h3>
+        <canvas id="timelineChart"></canvas>
+        <div class="mt-4 text-sm text-gray-600">
+          <p>Creixement anual mitjà: +3,2%</p>
+        </div>
+      </div>
+
+      
+      <div class="bg-white rounded-xl shadow-lg p-6">
+        <h3 class="text-2xl font-bold text-gray-800 mb-4">🏛️ Titularitat dels centres</h3>
+        <canvas id="ownershipChart"></canvas>
+        <div class="mt-4 text-sm text-gray-600">
+          <p>Inclou centres públics, concertats i privats</p>
+        </div>
+      </div>
+
+    </section>
+
+   
+    <section class="mb-12">
+      <div class="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl shadow-lg p-8 text-white">
+        <h2 class="text-3xl font-bold mb-4">🗺️ Cobertura territorial</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white bg-opacity-20 rounded-lg p-6 backdrop-blur">
+            <h4 class="text-2xl font-bold mb-2">Barcelona</h4>
+            <p class="text-4xl font-bold mb-2">847</p>
+            <p>centres (45,9%)</p>
+          </div>
+          <div class="bg-white bg-opacity-20 rounded-lg p-6 backdrop-blur">
+            <h4 class="text-2xl font-bold mb-2">Tarragona</h4>
+            <p class="text-4xl font-bold mb-2">312</p>
+            <p>centres (16,9%)</p>
+          </div>
+          <div class="bg-white bg-opacity-20 rounded-lg p-6 backdrop-blur">
+            <h4 class="text-2xl font-bold mb-2">Girona</h4>
+            <p class="text-4xl font-bold mb-2">287</p>
+            <p>centres (15,5%)</p>
+          </div>
+        </div>
+        <p class="mt-6 text-sm text-blue-100">
+          💡 <strong>Nota:</strong> Aquest mapa conceptual representa la distribució provincial. Per veure el mapa interactiu amb tots els centres, 
+          <a href="./serveis.html" class="underline hover:text-white">visita la secció de Serveis</a>.
+        </p>
+      </div>
+    </section>
+
+    
+<section class="mb-12">
+  <h2 class="text-3xl font-bold text-gray-800 mb-6">📂 Datasets Open Data utilitzats</h2>
+  <div class="grid md:grid-cols-2 gap-6">
+   
+    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-blue-500">
+      <div class="flex items-start justify-between mb-4">
+        <div>
+          <h3 class="text-xl font-bold text-gray-800">Centres de dia i residències</h3>
+          <p class="text-sm text-gray-600 mt-1">Generalitat de Catalunya</p>
+        </div>
+        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Actualitzat mensual</span>
+      </div>
+      <p class="text-gray-700 mb-4">Llistat complet de serveis per a persones amb dependència a Catalunya, incloent residències, centres de dia i habitatges tutelats.</p>
+      <div class="flex gap-3">
+        <a href="https://analisi.transparenciacatalunya.cat/Societat-benestar/Serveis-per-a-persones-amb-depend-ncia-Centre-de-d/yavr-pn8q"
+           target="_blank"
+           class="text-blue-600 hover:underline text-sm font-semibold">
+          📊 Veure dataset →
+        </a>
+        <a href="https://analisi.transparenciacatalunya.cat/api/views/yavr-pn8q/rows.json"
+           target="_blank"
+           class="text-purple-600 hover:underline text-sm font-semibold">
+          🔌 API JSON →
+        </a>
+        <a href="https://analisi.transparenciacatalunya.cat/api/views/yavr-pn8q"
+           target="_blank"
+           class="text-indigo-600 hover:underline text-sm font-semibold">
+          📜 Documentació tècnica →
+        </a>
+      </div>
+      <div class="mt-4 pt-4 border-t border-gray-200">
+        <p class="text-xs text-gray-500">
+          <strong>Camps utilitzats:</strong> Nom centre, Tipus servei, Comarca, Places, Coordenades<br>
+          <strong>Format:</strong> JSON, CSV<br>
+          <strong>Actualització:</strong> Mensual via API Socrata
+        </p>
+      </div>
+    </div>
+   
+    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-purple-500">
+      <div class="flex items-start justify-between mb-4">
+        <div>
+          <h3 class="text-xl font-bold text-gray-800">Ajuts i subvencions socials</h3>
+          <p class="text-sm text-gray-600 mt-1">Diputació de Barcelona (CIDO)</p>
+        </div>
+        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Actualitzat trimestral</span>
+      </div>
+      <p class="text-gray-700 mb-4">Base de dades d'ajuts públics disponibles per a persones grans, amb informació sobre subvencions actives.</p>
+      <div class="flex gap-3">
+        <a href="https://www.diba.cat/web/opendata/conjunt/-/dataset/detall/162"
+           target="_blank"
+           class="text-blue-600 hover:underline text-sm font-semibold">
+          📊 Veure dataset →
+        </a>
+        <a href="https://www.diba.cat/documents/20151/0/Manual+Open+Data+Diba.pdf"
+           target="_blank"
+           class="text-indigo-600 hover:underline text-sm font-semibold">
+          📜 Documentació tècnica →
+        </a>
+      </div>
+      <div class="mt-4 pt-4 border-t border-gray-200">
+        <p class="text-xs text-gray-500">
+          <strong>Camps utilitzats:</strong> Títol ajut, Import, Àmbit, Termini, Beneficiaris<br>
+          <strong>Format:</strong> CSV, XML<br>
+          <strong>Actualització:</strong> Trimestral
+        </p>
+      </div>
+    </div>
+    
+    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-orange-500">
+      <div class="flex items-start justify-between mb-4">
+        <div>
+          <h3 class="text-xl font-bold text-gray-800">Enquesta sobre solitud</h3>
+          <p class="text-sm text-gray-600 mt-1">Centro de Investigaciones Sociológicas (CIS)</p>
+        </div>
+        <span class="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded">Actualitzat anual</span>
+      </div>
+      <p class="text-gray-700 mb-4">Dades sobre percepció de solitud en persones grans a Espanya, desagregades per edat, sexe i àmbit geogràfic.</p>
+      <div class="flex gap-3">
+        <a href="https://www.cis.es/cis/opencms/ES/1_encuestas/estudios/ver.jsp?estudio=14480"
+           target="_blank"
+           class="text-blue-600 hover:underline text-sm font-semibold">
+          📊 Veure dataset →
+        </a>
+        <a href="https://www.cis.es/cis/opencms/ES/11_noticias_info/InfoDatos.jsp"
+           target="_blank"
+           class="text-indigo-600 hover:underline text-sm font-semibold">
+          📜 Documentació tècnica →
+        </a>
+      </div>
+      <div class="mt-4 pt-4 border-t border-gray-200">
+        <p class="text-xs text-gray-500">
+          <strong>Desagregació:</strong> Per edat, sexe, nivell educatiu i àmbit geogràfic<br>
+          <strong>Format:</strong> SPSS, CSV<br>
+          <strong>Actualització:</strong> Anual
+        </p>
+      </div>
+    </div>
+    
+    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-green-500">
+      <div class="flex items-start justify-between mb-4">
+        <div>
+          <h3 class="text-xl font-bold text-gray-800">Persones ateses SSBS</h3>
+          <p class="text-sm text-gray-600 mt-1">Generalitat de Catalunya</p>
+        </div>
+        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Actualitzat anual</span>
+      </div>
+      <p class="text-gray-700 mb-4">Nombre de persones ateses pels Serveis Socials Bàsics, amb desagregació per sexe i edat.</p>
+      <div class="flex gap-3">
+        <a href="https://analisi.transparenciacatalunya.cat/Societat-benestar/Usuaris-at-sos-Serveis-Socials-B-sics-per-edat-i-/h9gr-972j"
+           target="_blank"
+           class="text-blue-600 hover:underline text-sm font-semibold">
+          📊 Veure dataset →
+        </a>
+        <a href="https://analisi.transparenciacatalunya.cat/api/views/h9gr-972j"
+           target="_blank"
+           class="text-indigo-600 hover:underline text-sm font-semibold">
+          📜 Documentació tècnica →
+        </a>
+      </div>
+      <div class="mt-4 pt-4 border-t border-gray-200">
+        <p class="text-xs text-gray-500">
+          <strong>Perspectiva de gènere:</strong> Totes les dades desagregades per sexe<br>
+          <strong>Format:</strong> JSON, CSV<br>
+          <strong>Actualització:</strong> Anual via API Socrata
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="mt-6 bg-gray-100 rounded-lg p-6">
+    <h3 class="text-lg font-bold text-gray-800 mb-2">📜 Llicència de les dades</h3>
+    <p class="text-gray-700 mb-2">
+      Totes les dades utilitzades en aquesta plataforma estan publicades sota llicència
+      <strong>Creative Commons Reconeixement 4.0 Internacional (CC BY 4.0)</strong>.
+    </p>
+    <p class="text-sm text-gray-600">
+      Això significa que pots copiar, distribuir i reutilitzar aquestes dades sempre que facis l'atribució corresponent a les fonts originals.
+      <a href="https://creativecommons.org/licenses/by/4.0/deed.ca" target="_blank" class="text-blue-600 hover:underline">Més informació sobre la llicència →</a>
+    </p>
+  </div>
+</section>
+
+   
+
+    
+    <section class="bg-blue-50 rounded-xl p-8 border-2 border-blue-200">
+      <h2 class="text-3xl font-bold text-gray-800 mb-4">🔬 Metodologia i transparència</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="text-xl font-bold text-gray-700 mb-3">Processament de dades</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>✅ Neteja i normalització de datasets</li>
+            <li>✅ Geocodificació d'adreces</li>
+            <li>✅ Actualització automàtica via APIs</li>
+            <li>✅ Validació de coherència</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-gray-700 mb-3">Criteris d'inclusió</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>📋 Només centres acreditats oficialment</li>
+            <li>📋 Dades verificades per la Generalitat</li>
+            <li>📋 Actualització trimestral mínima</li>
+            <li>📋 Coherència amb fonts oficials</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-6 pt-6 border-t border-blue-300">
+        <p class="text-sm text-gray-600">
+          <strong>Última actualització de dades:</strong> Octubre 2024<br>
+          <strong>Pròxima actualització prevista:</strong> Gener 2025
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+ 
+  <footer class="bg-gray-800 text-white py-8 mt-12">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-gray-400">© 2025 ViuActiu - Dades obertes oficials de Catalunya</p>
+      <p class="text-sm text-gray-500 mt-2">
+        Font: Generalitat de Catalunya, Diputació de Barcelona, CIS, OpenData
+      </p>
+      <div class="mt-4">
+        <a href="../index.html" class="text-blue-300 hover:text-blue-200 mx-3">Inici</a>
+        <a href="./serveis.html" class="text-blue-300 hover:text-blue-200 mx-3">Serveis</a>
+        <a href="./ajuts.html" class="text-blue-300 hover:text-blue-200 mx-3">Ajuts</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  // Configuración común de Chart.js
+  Chart.defaults.font.family = 'system-ui, -apple-system, sans-serif';
+  Chart.defaults.color = '#4B5563';
+
+  // 1. Gráfico de género - Usuarios
+  const genderCtx = document.getElementById('genderChart').getContext('2d');
+  new Chart(genderCtx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Dones', 'Homes'],
+      datasets: [{
+        data: [93280, 52000],
+        backgroundColor: ['#EC4899', '#3B82F6'],
+        borderWidth: 3,
+        borderColor: '#fff'
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: { padding: 20, font: { size: 14 } }
+        },
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              const total = context.dataset.data.reduce((a, b) => a + b, 0);
+              const percentage = ((context.parsed / total) * 100).toFixed(1);
+              return context.label + ': ' + context.parsed.toLocaleString() + ' usuaris (' + percentage + '%)';
+            }
+          }
+        }
+      }
+    }
+  });
+
+  
+  const genderResCtx = document.getElementById('genderResidencesChart').getContext('2d');
+  new Chart(genderResCtx, {
+    type: 'bar',
+    data: {
+      labels: ['Residències', 'Centres de dia', 'Habitatges tutelats'],
+      datasets: [
+        {
+          label: 'Dones',
+          data: [45820, 8340, 1240],
+          backgroundColor: '#EC4899'
+        },
+        {
+          label: 'Homes',
+          data: [22722, 3920, 780],
+          backgroundColor: '#3B82F6'
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: 'bottom' }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: {
+            callback: value => value.toLocaleString()
+          }
+        }
+      }
+    }
+  });
+
+  // 3. Distribución por tipo de servicio
+  const servicesCtx = document.getElementById('servicesChart').getContext('2d');
+  new Chart(servicesCtx, {
+    type: 'pie',
+    data: {
+      labels: ['Residències', 'Centres de dia', 'Habitatges tutelats', 'SAIAR', 'Altres'],
+      datasets: [{
+        data: [1124, 476, 183, 42, 22],
+        backgroundColor: ['#3B82F6', '#10B981', '#F59E0B', '#8B5CF6', '#6B7280'],
+        borderWidth: 2,
+        borderColor: '#fff'
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'right',
+          labels: { padding: 15 }
+        }
+      }
+    }
+  });
+
+  // 4. Distribución por comarca
+  const comarcaCtx = document.getElementById('comarcaChart').getContext('2d');
+  new Chart(comarcaCtx, {
+    type: 'bar',
+    data: {
+      labels: ['Barcelonès', 'Vallès Occ.', 'Maresme', 'Baix Llobregat', 'Vallès Or.', 'Gironès', 'Tarragonès', 'Baix Camp', 'Segrià', 'Osona'],
+      datasets: [{
+        label: 'Nombre de centres',
+        data: [412, 187, 156, 143, 128, 98, 87, 76, 68, 62],
+        backgroundColor: '#8B5CF6',
+        borderRadius: 6
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      plugins: {
+        legend: { display: false }
+      },
+      scales: {
+        x: {
+          beginAtZero: true,
+          grid: { display: false }
+        }
+      }
+    }
+  });
+
+  // 5. Evolución temporal
+  const timelineCtx = document.getElementById('timelineChart').getContext('2d');
+  new Chart(timelineCtx, {
+    type: 'line',
+    data: {
+      labels: ['2018', '2019', '2020', '2021', '2022', '2023', '2024'],
+      datasets: [
+        {
+          label: 'Residències',
+          data: [58200, 60100, 61800, 63500, 65200, 66900, 68542],
+          borderColor: '#3B82F6',
+          backgroundColor: 'rgba(59, 130, 246, 0.1)',
+          tension: 0.4,
+          fill: true
+        },
+        {
+          label: 'Centres de dia',
+          data: [10800, 11200, 11500, 11900, 12200, 12450, 12680],
+          borderColor: '#10B981',
+          backgroundColor: 'rgba(16, 185, 129, 0.1)',
+          tension: 0.4,
+          fill: true
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: 'bottom' }
+      },
+      scales: {
+        y: {
+          beginAtZero: false,
+          ticks: {
+            callback: value => value.toLocaleString()
+          }
+        }
+      }
+    }
+  });
+
+  // 6. Titularidad
+  const ownershipCtx = document.getElementById('ownershipChart').getContext('2d');
+  new Chart(ownershipCtx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Privats', 'Concertats', 'Públics'],
+      datasets: [{
+        data: [892, 687, 268],
+        backgroundColor: ['#F59E0B', '#8B5CF6', '#10B981'],
+        borderWidth: 3,
+        borderColor: '#fff'
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: { padding: 20, font: { size: 14 } }
+        },
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              const total = context.dataset.data.reduce((a, b) => a + b, 0);
+              const percentage = ((context.parsed / total) * 100).toFixed(1);
+              return context.label + ': ' + context.parsed.toLocaleString() + ' (' + percentage + '%)';
+            }
+          }
+        }
+      }
+    }
+  });
+</script>
+</body>
+</html>  -->

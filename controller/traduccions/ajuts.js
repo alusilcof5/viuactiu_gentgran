@@ -112,9 +112,9 @@ function createLanguageButtons() {
   const switcher = document.createElement('div');
   switcher.className = 'language-switcher';
   switcher.innerHTML = `
-    <button class="lang-btn" data-lang="ca" onclick="changeLanguage('ca')" aria-label="Canviar a català">🏴 CAT</button>
-    <button class="lang-btn" data-lang="es" onclick="changeLanguage('es')" aria-label="Cambiar a español">🇪🇸 ESP</button>
-    <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')" aria-label="Change to English">🇬🇧 ENG</button>
+    <button class="lang-btn" data-lang="ca" onclick="changeLanguage('ca')" aria-label="Canviar a català">CAT</button>
+    <button class="lang-btn" data-lang="es" onclick="changeLanguage('es')" aria-label="Cambiar a español">ESP</button>
+    <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')" aria-label="Change to English">ENG</button>
   `;
   document.body.insertBefore(switcher, document.body.firstChild);
 }

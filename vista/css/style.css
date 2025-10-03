@@ -2,6 +2,453 @@
    BASE TIPOGRAFÍA Y ESCALADO
    ============================ */
 body {
+  font-family: system-ui, -apple-system, Arial, sans-serif;
+  font-size: 1.25rem; /* Equivalente a text-xl en Tailwind */
+  line-height: 1.5;
+  color: #1f2937; /* Gris oscuro suave, similar a text-gray-800 */
+  background-color: #f9fafb; /* Similar a bg-gray-50 */
+}
+
+.text-size-normal {
+  font-size: 1.25rem; /* Equivalente a text-xl */
+  line-height: 1.5;
+}
+
+.text-size-large {
+  font-size: 1.875rem; /* Equivalente a text-3xl */
+  line-height: 1.6;
+}
+
+.text-size-xlarge {
+  font-size: 2.25rem; /* Equivalente a text-4xl */
+  line-height: 1.7;
+}
+
+.text-size-xxlarge {
+  font-size: 3rem; /* Equivalente a text-6xl */
+  line-height: 1.4;
+}
+
+body.text-size-normal *,
+body.text-size-large *,
+body.text-size-xlarge *,
+body.text-size-xxlarge * {
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+
+body.text-size-normal h1,
+body.text-size-normal h2,
+body.text-size-normal h3,
+body.text-size-normal h4,
+body.text-size-normal h5,
+body.text-size-normal h6,
+body.text-size-normal p,
+body.text-size-normal li,
+body.text-size-normal button,
+body.text-size-normal a,
+body.text-size-normal input,
+body.text-size-normal select,
+body.text-size-normal td,
+body.text-size-normal th {
+  font-size: 1.25rem !important;
+  line-height: inherit !important;
+}
+
+/* ============================
+   HERO SECTIONS Y HEADERS
+   ============================ */
+.hero-section,
+.header-banner,
+.header-ajuts,
+.header-solitud {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px; /* Reducido de 600px para mejor proporción */
+  padding: 2rem;
+}
+
+.hero-section {
+  background-image: url('../images/banners.png');
+}
+
+.header-banner {
+  background-image: url('../images/banner_serv.png');
+}
+
+.header-ajuts {
+  background-image: url('../images/banner_ajuts.png');
+}
+
+.header-solitud {
+  background-image: url('../images/banner_solitud.png');
+}
+
+/* Overlay oscuro sobre la imagen */
+.hero-overlay,
+.header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Opacidad reducida para mejor contraste */
+  pointer-events: none;
+}
+
+/* Contenedor de texto sobre el overlay */
+.hero-text,
+.header-text {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 10;
+}
+
+.hero-text h1,
+.hero-text h2,
+.hero-text h3,
+.hero-text p,
+.header-text h1,
+.header-text h2,
+.header-text h3,
+.header-text p {
+  color: #fff;
+}
+
+/* ============================
+   ALTO CONTRASTE
+   ============================ */
+.high-contrast {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+.high-contrast *,
+.high-contrast h1,
+.high-contrast h2,
+.high-contrast h3,
+.high-contrast h4,
+.high-contrast h5,
+.high-contrast h6,
+.high-contrast p,
+.high-contrast li,
+.high-contrast span,
+.high-contrast div,
+.high-contrast article,
+.high-contrast section {
+  color: #fff !important;
+}
+
+.high-contrast .bg-white,
+.high-contrast .bg-gray-50,
+.high-contrast .bg-gray-100,
+.high-contrast .bg-blue-50,
+.high-contrast .bg-red-50,
+.high-contrast .bg-purple-50,
+.high-contrast .bg-green-50,
+.high-contrast .bg-yellow-50,
+.high-contrast .bg-blue-600,
+.high-contrast .bg-green-600,
+.high-contrast .bg-purple-600,
+.high-contrast .bg-pink-600,
+.high-contrast .bg-red-600,
+.high-contrast .bg-blue-700,
+.high-contrast .bg-blue-900 {
+  background-color: #000 !important;
+}
+
+.high-contrast .text-gray-600,
+.high-contrast .text-gray-700,
+.high-contrast .text-gray-800,
+.high-contrast .text-blue-900,
+.high-contrast .text-green-700,
+.high-contrast .text-red-800,
+.high-contrast .text-blue-600,
+.high-contrast .text-pink-600,
+.high-contrast .text-white {
+  color: #fff !important;
+}
+
+.high-contrast a,
+.high-contrast button {
+  background-color: #ffff00 !important;
+  color: #000 !important;
+  border: 2px solid #fff !important;
+}
+
+.high-contrast .accessibility-bar button {
+  background-color: #ffff00 !important;
+  color: #000 !important;
+  border: 2px solid #fff !important;
+}
+
+/* Headers en modo alto contraste */
+.high-contrast .hero-section,
+.high-contrast .header-banner,
+.high-contrast .header-ajuts,
+.high-contrast .header-solitud {
+  background-color: #000 !important;
+  background-image: none !important;
+}
+
+.high-contrast .hero-overlay,
+.high-contrast .header-overlay {
+  background-color: transparent !important;
+}
+
+/* Mapas en alto contraste */
+.high-contrast #map .leaflet-popup-content-wrapper,
+.high-contrast #map .leaflet-popup-content {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+.high-contrast #map .leaflet-popup-content a {
+  color: #ffff00 !important;
+}
+
+/* Focus en alto contraste */
+.high-contrast button:focus,
+.high-contrast a:focus,
+.high-contrast input:focus,
+.high-contrast select:focus {
+  outline: 3px solid #ffff00 !important;
+  outline-offset: 2px;
+}
+
+/* Estilos para los botones de idioma */
+.language-switcher {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 100;
+}
+
+.lang-btn {
+  background: #fff;
+  border: 2px solid #e5e7eb; /* Similar a border-gray-200 */
+  padding: 10px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  min-width: 80px;
+  text-align: center;
+}
+
+.lang-btn:hover {
+  transform: translateX(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border-color: #3b82f6;
+}
+
+.lang-btn.active {
+  background: #3b82f6;
+  color: #fff;
+  border-color: #3b82f6;
+}
+
+/* ============================
+   EFECTOS INTERACTIVOS
+   ============================ */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover,
+.card-hover:focus {
+  transform: translateY(-6px); /* Ajustado para un hover más suave */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Sombra más suave que Tailwind shadow-xl */
+}
+
+/* Estilo para tarjetas de estadísticas */
+.stat-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Sombra más suave */
+}
+
+/* Estilo para contenedores de gráficos */
+.chart-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px; /* Tamaño máximo para gráficos */
+  margin: 0 auto;
+}
+
+/* ============================
+   WCAG AAA - ACCESIBILIDAD
+   ============================ */
+button,
+a,
+input,
+select,
+article[tabindex="0"] {
+  transition: outline 0.2s ease, ring 0.2s ease;
+}
+
+button:focus,
+a:focus,
+input:focus,
+select:focus,
+article[tabindex="0"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.5); /* Similar a focus:ring-4 focus:ring-blue-400 */
+}
+
+button:not(:focus-visible),
+a:not(:focus-visible),
+input:not(:focus-visible),
+select:not(:focus-visible),
+[tabindex="0"]:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+/* ============================
+   MEDIA QUERIES RESPONSIVAS
+   ============================ */
+@media (max-width: 640px) {
+  .hero-section,
+  .header-banner,
+  .header-ajuts,
+  .header-solitud {
+    min-height: 300px;
+    padding: 1rem;
+  }
+
+  .hero-text h1,
+  .header-text h1,
+  .header-text h2 {
+    font-size: 1.875rem; /* Equivalente a text-3xl */
+  }
+
+  .hero-text p,
+  .header-text p,
+  .header-text h3 {
+    font-size: 1rem; /* Equivalente a text-base */
+  }
+
+  .text-size-normal {
+    font-size: 1rem;
+  }
+
+  .text-size-large {
+    font-size: 1.5rem;
+  }
+
+  .text-size-xlarge {
+    font-size: 1.875rem;
+  }
+
+  .text-size-xxlarge {
+    font-size: 2rem;
+  }
+
+  .cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .cards-container .card-hover,
+  .cards-container .stat-card {
+    width: 100%;
+  }
+
+  .chart-container {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .hero-section,
+  .header-banner,
+  .header-ajuts,
+  .header-solitud {
+    min-height: 350px;
+  }
+
+  .hero-text h1,
+  .header-text h1,
+  .header-text h2 {
+    font-size: 2.25rem; /* Equivalente a text-4xl */
+  }
+
+  .hero-text p,
+  .header-text p,
+  .header-text h3 {
+    font-size: 1.25rem; /* Equivalente a text-xl */
+  }
+
+  .text-size-normal {
+    font-size: 1.125rem;
+  }
+
+  .text-size-large {
+    font-size: 1.5rem;
+  }
+
+  .text-size-xlarge {
+    font-size: 1.875rem;
+  }
+
+  .text-size-xxlarge {
+    font-size: 2.5rem;
+  }
+
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .hero-section,
+  .header-banner,
+  .header-ajuts,
+  .header-solitud {
+    min-height: 400px;
+  }
+
+  .hero-text h1,
+  .header-text h1 {
+    font-size: 3rem; /* Equivalente a text-6xl */
+  }
+
+  .hero-text p,
+  .header-text p {
+    font-size: 1.25rem; /* Equivalente a text-xl */
+  }
+
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Más espacio por tarjeta */
+    gap: 2rem;
+  }
+}
+/* ============================
+   BASE TIPOGRAFÍA Y ESCALADO
+   ============================ */
+body {
   font-family: system-ui, -apple-system, Arial, sans-serif; 
   font-size: 1.5rem; 
   line-height: 1.5;

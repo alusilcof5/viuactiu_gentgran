@@ -162,13 +162,13 @@ function createLanguageButtons() {
   switcher.className = 'language-switcher';
   switcher.innerHTML = `
     <button class="lang-btn" data-lang="ca" onclick="changeLanguage('ca')">
-      🏴 CAT
+      CAT
     </button>
     <button class="lang-btn" data-lang="es" onclick="changeLanguage('es')">
-      🇪🇸 ESP
+      ESP
     </button>
     <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')">
-      🇬🇧 ENG
+      ENG
     </button>
   `;
   
