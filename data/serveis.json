@@ -1,0 +1,2317 @@
+{
+    "label": [
+        "Equipaments per a la gent gran. Residències. Places. Per titularitat. Comarques i Aran, àmbits i províncies",
+        "2024"
+    ],
+    "ref": "",
+    "rows": [
+        "Alt Camp",
+        "Alt Empordà",
+        "Alt Penedès",
+        "Alt Urgell",
+        "Alta Ribagorça",
+        "Anoia",
+        "Aran",
+        "Bages",
+        "Baix Camp",
+        "Baix Ebre",
+        "Baix Empordà",
+        "Baix Llobregat",
+        "Baix Penedès",
+        "Barcelonès",
+        "Berguedà",
+        "Cerdanya",
+        "Conca de Barberà",
+        "Garraf",
+        "Garrigues",
+        "Garrotxa",
+        "Gironès",
+        "Lluçanès",
+        "Maresme",
+        "Moianès",
+        "Montsià",
+        "Noguera",
+        "Osona",
+        "Pallars Jussà",
+        "Pallars Sobirà",
+        "Pla d'Urgell",
+        "Pla de l'Estany",
+        "Priorat",
+        "Ribera d'Ebre",
+        "Ripollès",
+        "Segarra",
+        "Segrià",
+        "Selva",
+        "Solsonès",
+        "Tarragonès",
+        "Terra Alta",
+        "Urgell",
+        "Vallès Occidental",
+        "Vallès Oriental",
+        "Catalunya",
+        "Metropolità",
+        "Comarques Gironines",
+        "Camp de Tarragona",
+        "Terres de l'Ebre",
+        "Ponent",
+        "Comarques Centrals",
+        "Alt Pirineu i Aran",
+        "Penedès",
+        "Barcelona",
+        "Girona",
+        "Lleida",
+        "Tarragona"
+    ],
+    "cols": [
+        "Places \/ Iniciativa pública",
+        "Places \/ Iniciativa social",
+        "Places \/ Iniciativa mercantil",
+        "Total"
+    ],
+    "notes": [
+        "Font: Departament de Drets Socials i Inclusió."
+    ],
+    "url": "https:\/\/www.idescat.cat\/indicadors\/?id=aec&n=15827",
+    "data": [
+        {
+            "value": 0,
+            "status": "",
+            "row": "Alt Camp",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                1,
+                1
+            ]
+        },
+        {
+            "value": 243,
+            "status": "",
+            "row": "Alt Camp",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                1,
+                2
+            ]
+        },
+        {
+            "value": 147,
+            "status": "",
+            "row": "Alt Camp",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                1,
+                3
+            ]
+        },
+        {
+            "value": 390,
+            "status": "",
+            "row": "Alt Camp",
+            "col": "Total",
+            "rc": [
+                1,
+                4
+            ]
+        },
+        {
+            "value": 84,
+            "status": "",
+            "row": "Alt Empordà",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                2,
+                1
+            ]
+        },
+        {
+            "value": 364,
+            "status": "",
+            "row": "Alt Empordà",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                2,
+                2
+            ]
+        },
+        {
+            "value": 339,
+            "status": "",
+            "row": "Alt Empordà",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                2,
+                3
+            ]
+        },
+        {
+            "value": 787,
+            "status": "",
+            "row": "Alt Empordà",
+            "col": "Total",
+            "rc": [
+                2,
+                4
+            ]
+        },
+        {
+            "value": 188,
+            "status": "",
+            "row": "Alt Penedès",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                3,
+                1
+            ]
+        },
+        {
+            "value": 193,
+            "status": "",
+            "row": "Alt Penedès",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                3,
+                2
+            ]
+        },
+        {
+            "value": 418,
+            "status": "",
+            "row": "Alt Penedès",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                3,
+                3
+            ]
+        },
+        {
+            "value": 799,
+            "status": "",
+            "row": "Alt Penedès",
+            "col": "Total",
+            "rc": [
+                3,
+                4
+            ]
+        },
+        {
+            "value": 0,
+            "status": "",
+            "row": "Alt Urgell",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                4,
+                1
+            ]
+        },
+        {
+            "value": 113,
+            "status": "",
+            "row": "Alt Urgell",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                4,
+                2
+            ]
+        },
+        {
+            "value": 93,
+            "status": "",
+            "row": "Alt Urgell",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                4,
+                3
+            ]
+        },
+        {
+            "value": 206,
+            "status": "",
+            "row": "Alt Urgell",
+            "col": "Total",
+            "rc": [
+                4,
+                4
+            ]
+        },
+        {
+            "value": 38,
+            "status": "",
+            "row": "Alta Ribagorça",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                5,
+                1
+            ]
+        },
+        {
+            "value": 0,
+            "status": "",
+            "row": "Alta Ribagorça",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                5,
+                2
+            ]
+        },
+        {
+            "value": 0,
+            "status": "",
+            "row": "Alta Ribagorça",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                5,
+                3
+            ]
+        },
+        {
+            "value": 38,
+            "status": "",
+            "row": "Alta Ribagorça",
+            "col": "Total",
+            "rc": [
+                5,
+                4
+            ]
+        },
+        {
+            "value": 159,
+            "status": "",
+            "row": "Anoia",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                6,
+                1
+            ]
+        },
+        {
+            "value": 240,
+            "status": "",
+            "row": "Anoia",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                6,
+                2
+            ]
+        },
+        {
+            "value": 505,
+            "status": "",
+            "row": "Anoia",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                6,
+                3
+            ]
+        },
+        {
+            "value": 904,
+            "status": "",
+            "row": "Anoia",
+            "col": "Total",
+            "rc": [
+                6,
+                4
+            ]
+        },
+        {
+            "value": 44,
+            "status": "",
+            "row": "Aran",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                7,
+                1
+            ]
+        },
+        {
+            "value": 0,
+            "status": "",
+            "row": "Aran",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                7,
+                2
+            ]
+        },
+        {
+            "value": 0,
+            "status": "",
+            "row": "Aran",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                7,
+                3
+            ]
+        },
+        {
+            "value": 44,
+            "status": "",
+            "row": "Aran",
+            "col": "Total",
+            "rc": [
+                7,
+                4
+            ]
+        },
+        {
+            "value": 585,
+            "status": "",
+            "row": "Bages",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                8,
+                1
+            ]
+        },
+        {
+            "value": 783,
+            "status": "",
+            "row": "Bages",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                8,
+                2
+            ]
+        },
+        {
+            "value": 531,
+            "status": "",
+            "row": "Bages",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                8,
+                3
+            ]
+        },
+        {
+            "value": 1899,
+            "status": "",
+            "row": "Bages",
+            "col": "Total",
+            "rc": [
+                8,
+                4
+            ]
+        },
+        {
+            "value": 490,
+            "status": "",
+            "row": "Baix Camp",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                9,
+                1
+            ]
+        },
+        {
+            "value": 174,
+            "status": "",
+            "row": "Baix Camp",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                9,
+                2
+            ]
+        },
+        {
+            "value": 1036,
+            "status": "",
+            "row": "Baix Camp",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                9,
+                3
+            ]
+        },
+        {
+            "value": 1700,
+            "status": "",
+            "row": "Baix Camp",
+            "col": "Total",
+            "rc": [
+                9,
+                4
+            ]
+        },
+        {
+            "value": 0,
+            "status": "",
+            "row": "Baix Ebre",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                10,
+                1
+            ]
+        },
+        {
+            "value": 221,
+            "status": "",
+            "row": "Baix Ebre",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                10,
+                2
+            ]
+        },
+        {
+            "value": 415,
+            "status": "",
+            "row": "Baix Ebre",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                10,
+                3
+            ]
+        },
+        {
+            "value": 636,
+            "status": "",
+            "row": "Baix Ebre",
+            "col": "Total",
+            "rc": [
+                10,
+                4
+            ]
+        },
+        {
+            "value": 302,
+            "status": "",
+            "row": "Baix Empordà",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                11,
+                1
+            ]
+        },
+        {
+            "value": 215,
+            "status": "",
+            "row": "Baix Empordà",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                11,
+                2
+            ]
+        },
+        {
+            "value": 419,
+            "status": "",
+            "row": "Baix Empordà",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                11,
+                3
+            ]
+        },
+        {
+            "value": 936,
+            "status": "",
+            "row": "Baix Empordà",
+            "col": "Total",
+            "rc": [
+                11,
+                4
+            ]
+        },
+        {
+            "value": 626,
+            "status": "",
+            "row": "Baix Llobregat",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                12,
+                1
+            ]
+        },
+        {
+            "value": 1429,
+            "status": "",
+            "row": "Baix Llobregat",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                12,
+                2
+            ]
+        },
+        {
+            "value": 4498,
+            "status": "",
+            "row": "Baix Llobregat",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                12,
+                3
+            ]
+        },
+        {
+            "value": 6553,
+            "status": "",
+            "row": "Baix Llobregat",
+            "col": "Total",
+            "rc": [
+                12,
+                4
+            ]
+        },
+        {
+            "value": 140,
+            "status": "",
+            "row": "Baix Penedès",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                13,
+                1
+            ]
+        },
+        {
+            "value": 32,
+            "status": "",
+            "row": "Baix Penedès",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                13,
+                2
+            ]
+        },
+        {
+            "value": 542,
+            "status": "",
+            "row": "Baix Penedès",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                13,
+                3
+            ]
+        },
+        {
+            "value": 714,
+            "status": "",
+            "row": "Baix Penedès",
+            "col": "Total",
+            "rc": [
+                13,
+                4
+            ]
+        },
+        {
+            "value": 2840,
+            "status": "",
+            "row": "Barcelonès",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                14,
+                1
+            ]
+        },
+        {
+            "value": 2584,
+            "status": "",
+            "row": "Barcelonès",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                14,
+                2
+            ]
+        },
+        {
+            "value": 11901,
+            "status": "",
+            "row": "Barcelonès",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                14,
+                3
+            ]
+        },
+        {
+            "value": 17325,
+            "status": "",
+            "row": "Barcelonès",
+            "col": "Total",
+            "rc": [
+                14,
+                4
+            ]
+        },
+        {
+            "value": 197,
+            "status": "",
+            "row": "Berguedà",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                15,
+                1
+            ]
+        },
+        {
+            "value": 285,
+            "status": "",
+            "row": "Berguedà",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                15,
+                2
+            ]
+        },
+        {
+            "value": 271,
+            "status": "",
+            "row": "Berguedà",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                15,
+                3
+            ]
+        },
+        {
+            "value": 753,
+            "status": "",
+            "row": "Berguedà",
+            "col": "Total",
+            "rc": [
+                15,
+                4
+            ]
+        },
+        {
+            "value": 30,
+            "status": "",
+            "row": "Cerdanya",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                16,
+                1
+            ]
+        },
+        {
+            "value": 88,
+            "status": "",
+            "row": "Cerdanya",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                16,
+                2
+            ]
+        },
+        {
+            "value": 0,
+            "status": "",
+            "row": "Cerdanya",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                16,
+                3
+            ]
+        },
+        {
+            "value": 118,
+            "status": "",
+            "row": "Cerdanya",
+            "col": "Total",
+            "rc": [
+                16,
+                4
+            ]
+        },
+        {
+            "value": 220,
+            "status": "",
+            "row": "Conca de Barberà",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                17,
+                1
+            ]
+        },
+        {
+            "value": 0,
+            "status": "",
+            "row": "Conca de Barberà",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                17,
+                2
+            ]
+        },
+        {
+            "value": 60,
+            "status": "",
+            "row": "Conca de Barberà",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                17,
+                3
+            ]
+        },
+        {
+            "value": 280,
+            "status": "",
+            "row": "Conca de Barberà",
+            "col": "Total",
+            "rc": [
+                17,
+                4
+            ]
+        },
+        {
+            "value": 203,
+            "status": "",
+            "row": "Garraf",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                18,
+                1
+            ]
+        },
+        {
+            "value": 300,
+            "status": "",
+            "row": "Garraf",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                18,
+                2
+            ]
+        },
+        {
+            "value": 640,
+            "status": "",
+            "row": "Garraf",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                18,
+                3
+            ]
+        },
+        {
+            "value": 1143,
+            "status": "",
+            "row": "Garraf",
+            "col": "Total",
+            "rc": [
+                18,
+                4
+            ]
+        },
+        {
+            "value": 144,
+            "status": "",
+            "row": "Garrigues",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                19,
+                1
+            ]
+        },
+        {
+            "value": 22,
+            "status": "",
+            "row": "Garrigues",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                19,
+                2
+            ]
+        },
+        {
+            "value": 66,
+            "status": "",
+            "row": "Garrigues",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                19,
+                3
+            ]
+        },
+        {
+            "value": 232,
+            "status": "",
+            "row": "Garrigues",
+            "col": "Total",
+            "rc": [
+                19,
+                4
+            ]
+        },
+        {
+            "value": 163,
+            "status": "",
+            "row": "Garrotxa",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                20,
+                1
+            ]
+        },
+        {
+            "value": 264,
+            "status": "",
+            "row": "Garrotxa",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                20,
+                2
+            ]
+        },
+        {
+            "value": 213,
+            "status": "",
+            "row": "Garrotxa",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                20,
+                3
+            ]
+        },
+        {
+            "value": 640,
+            "status": "",
+            "row": "Garrotxa",
+            "col": "Total",
+            "rc": [
+                20,
+                4
+            ]
+        },
+        {
+            "value": 519,
+            "status": "",
+            "row": "Gironès",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                21,
+                1
+            ]
+        },
+        {
+            "value": 201,
+            "status": "",
+            "row": "Gironès",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                21,
+                2
+            ]
+        },
+        {
+            "value": 718,
+            "status": "",
+            "row": "Gironès",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                21,
+                3
+            ]
+        },
+        {
+            "value": 1438,
+            "status": "",
+            "row": "Gironès",
+            "col": "Total",
+            "rc": [
+                21,
+                4
+            ]
+        },
+        {
+            "value": 0,
+            "status": "",
+            "row": "Lluçanès",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                22,
+                1
+            ]
+        },
+        {
+            "value": 70,
+            "status": "",
+            "row": "Lluçanès",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                22,
+                2
+            ]
+        },
+        {
+            "value": 0,
+            "status": "",
+            "row": "Lluçanès",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                22,
+                3
+            ]
+        },
+        {
+            "value": 70,
+            "status": "",
+            "row": "Lluçanès",
+            "col": "Total",
+            "rc": [
+                22,
+                4
+            ]
+        },
+        {
+            "value": 426,
+            "status": "",
+            "row": "Maresme",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                23,
+                1
+            ]
+        },
+        {
+            "value": 1006,
+            "status": "",
+            "row": "Maresme",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                23,
+                2
+            ]
+        },
+        {
+            "value": 3809,
+            "status": "",
+            "row": "Maresme",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                23,
+                3
+            ]
+        },
+        {
+            "value": 5241,
+            "status": "",
+            "row": "Maresme",
+            "col": "Total",
+            "rc": [
+                23,
+                4
+            ]
+        },
+        {
+            "value": 74,
+            "status": "",
+            "row": "Moianès",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                24,
+                1
+            ]
+        },
+        {
+            "value": 127,
+            "status": "",
+            "row": "Moianès",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                24,
+                2
+            ]
+        },
+        {
+            "value": 156,
+            "status": "",
+            "row": "Moianès",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                24,
+                3
+            ]
+        },
+        {
+            "value": 357,
+            "status": "",
+            "row": "Moianès",
+            "col": "Total",
+            "rc": [
+                24,
+                4
+            ]
+        },
+        {
+            "value": 70,
+            "status": "",
+            "row": "Montsià",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                25,
+                1
+            ]
+        },
+        {
+            "value": 160,
+            "status": "",
+            "row": "Montsià",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                25,
+                2
+            ]
+        },
+        {
+            "value": 390,
+            "status": "",
+            "row": "Montsià",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                25,
+                3
+            ]
+        },
+        {
+            "value": 620,
+            "status": "",
+            "row": "Montsià",
+            "col": "Total",
+            "rc": [
+                25,
+                4
+            ]
+        },
+        {
+            "value": 205,
+            "status": "",
+            "row": "Noguera",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                26,
+                1
+            ]
+        },
+        {
+            "value": 147,
+            "status": "",
+            "row": "Noguera",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                26,
+                2
+            ]
+        },
+        {
+            "value": 138,
+            "status": "",
+            "row": "Noguera",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                26,
+                3
+            ]
+        },
+        {
+            "value": 490,
+            "status": "",
+            "row": "Noguera",
+            "col": "Total",
+            "rc": [
+                26,
+                4
+            ]
+        },
+        {
+            "value": 371,
+            "status": "",
+            "row": "Osona",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                27,
+                1
+            ]
+        },
+        {
+            "value": 673,
+            "status": "",
+            "row": "Osona",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                27,
+                2
+            ]
+        },
+        {
+            "value": 295,
+            "status": "",
+            "row": "Osona",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                27,
+                3
+            ]
+        },
+        {
+            "value": 1339,
+            "status": "",
+            "row": "Osona",
+            "col": "Total",
+            "rc": [
+                27,
+                4
+            ]
+        },
+        {
+            "value": 73,
+            "status": "",
+            "row": "Pallars Jussà",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                28,
+                1
+            ]
+        },
+        {
+            "value": 150,
+            "status": "",
+            "row": "Pallars Jussà",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                28,
+                2
+            ]
+        },
+        {
+            "value": 77,
+            "status": "",
+            "row": "Pallars Jussà",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                28,
+                3
+            ]
+        },
+        {
+            "value": 300,
+            "status": "",
+            "row": "Pallars Jussà",
+            "col": "Total",
+            "rc": [
+                28,
+                4
+            ]
+        },
+        {
+            "value": 74,
+            "status": "",
+            "row": "Pallars Sobirà",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                29,
+                1
+            ]
+        },
+        {
+            "value": 0,
+            "status": "",
+            "row": "Pallars Sobirà",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                29,
+                2
+            ]
+        },
+        {
+            "value": 0,
+            "status": "",
+            "row": "Pallars Sobirà",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                29,
+                3
+            ]
+        },
+        {
+            "value": 74,
+            "status": "",
+            "row": "Pallars Sobirà",
+            "col": "Total",
+            "rc": [
+                29,
+                4
+            ]
+        },
+        {
+            "value": 98,
+            "status": "",
+            "row": "Pla d'Urgell",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                30,
+                1
+            ]
+        },
+        {
+            "value": 33,
+            "status": "",
+            "row": "Pla d'Urgell",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                30,
+                2
+            ]
+        },
+        {
+            "value": 240,
+            "status": "",
+            "row": "Pla d'Urgell",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                30,
+                3
+            ]
+        },
+        {
+            "value": 371,
+            "status": "",
+            "row": "Pla d'Urgell",
+            "col": "Total",
+            "rc": [
+                30,
+                4
+            ]
+        },
+        {
+            "value": 0,
+            "status": "",
+            "row": "Pla de l'Estany",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                31,
+                1
+            ]
+        },
+        {
+            "value": 38,
+            "status": "",
+            "row": "Pla de l'Estany",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                31,
+                2
+            ]
+        },
+        {
+            "value": 628,
+            "status": "",
+            "row": "Pla de l'Estany",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                31,
+                3
+            ]
+        },
+        {
+            "value": 666,
+            "status": "",
+            "row": "Pla de l'Estany",
+            "col": "Total",
+            "rc": [
+                31,
+                4
+            ]
+        },
+        {
+            "value": 0,
+            "status": "",
+            "row": "Priorat",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                32,
+                1
+            ]
+        },
+        {
+            "value": 0,
+            "status": "",
+            "row": "Priorat",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                32,
+                2
+            ]
+        },
+        {
+            "value": 166,
+            "status": "",
+            "row": "Priorat",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                32,
+                3
+            ]
+        },
+        {
+            "value": 166,
+            "status": "",
+            "row": "Priorat",
+            "col": "Total",
+            "rc": [
+                32,
+                4
+            ]
+        },
+        {
+            "value": 238,
+            "status": "",
+            "row": "Ribera d'Ebre",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                33,
+                1
+            ]
+        },
+        {
+            "value": 0,
+            "status": "",
+            "row": "Ribera d'Ebre",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                33,
+                2
+            ]
+        },
+        {
+            "value": 0,
+            "status": "",
+            "row": "Ribera d'Ebre",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                33,
+                3
+            ]
+        },
+        {
+            "value": 238,
+            "status": "",
+            "row": "Ribera d'Ebre",
+            "col": "Total",
+            "rc": [
+                33,
+                4
+            ]
+        },
+        {
+            "value": 238,
+            "status": "",
+            "row": "Ripollès",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                34,
+                1
+            ]
+        },
+        {
+            "value": 59,
+            "status": "",
+            "row": "Ripollès",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                34,
+                2
+            ]
+        },
+        {
+            "value": 0,
+            "status": "",
+            "row": "Ripollès",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                34,
+                3
+            ]
+        },
+        {
+            "value": 297,
+            "status": "",
+            "row": "Ripollès",
+            "col": "Total",
+            "rc": [
+                34,
+                4
+            ]
+        },
+        {
+            "value": 0,
+            "status": "",
+            "row": "Segarra",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                35,
+                1
+            ]
+        },
+        {
+            "value": 554,
+            "status": "",
+            "row": "Segarra",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                35,
+                2
+            ]
+        },
+        {
+            "value": 0,
+            "status": "",
+            "row": "Segarra",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                35,
+                3
+            ]
+        },
+        {
+            "value": 554,
+            "status": "",
+            "row": "Segarra",
+            "col": "Total",
+            "rc": [
+                35,
+                4
+            ]
+        },
+        {
+            "value": 289,
+            "status": "",
+            "row": "Segrià",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                36,
+                1
+            ]
+        },
+        {
+            "value": 274,
+            "status": "",
+            "row": "Segrià",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                36,
+                2
+            ]
+        },
+        {
+            "value": 1922,
+            "status": "",
+            "row": "Segrià",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                36,
+                3
+            ]
+        },
+        {
+            "value": 2485,
+            "status": "",
+            "row": "Segrià",
+            "col": "Total",
+            "rc": [
+                36,
+                4
+            ]
+        },
+        {
+            "value": 252,
+            "status": "",
+            "row": "Selva",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                37,
+                1
+            ]
+        },
+        {
+            "value": 127,
+            "status": "",
+            "row": "Selva",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                37,
+                2
+            ]
+        },
+        {
+            "value": 460,
+            "status": "",
+            "row": "Selva",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                37,
+                3
+            ]
+        },
+        {
+            "value": 839,
+            "status": "",
+            "row": "Selva",
+            "col": "Total",
+            "rc": [
+                37,
+                4
+            ]
+        },
+        {
+            "value": 22,
+            "status": "",
+            "row": "Solsonès",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                38,
+                1
+            ]
+        },
+        {
+            "value": 150,
+            "status": "",
+            "row": "Solsonès",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                38,
+                2
+            ]
+        },
+        {
+            "value": 0,
+            "status": "",
+            "row": "Solsonès",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                38,
+                3
+            ]
+        },
+        {
+            "value": 172,
+            "status": "",
+            "row": "Solsonès",
+            "col": "Total",
+            "rc": [
+                38,
+                4
+            ]
+        },
+        {
+            "value": 180,
+            "status": "",
+            "row": "Tarragonès",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                39,
+                1
+            ]
+        },
+        {
+            "value": 278,
+            "status": "",
+            "row": "Tarragonès",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                39,
+                2
+            ]
+        },
+        {
+            "value": 1144,
+            "status": "",
+            "row": "Tarragonès",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                39,
+                3
+            ]
+        },
+        {
+            "value": 1602,
+            "status": "",
+            "row": "Tarragonès",
+            "col": "Total",
+            "rc": [
+                39,
+                4
+            ]
+        },
+        {
+            "value": 114,
+            "status": "",
+            "row": "Terra Alta",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                40,
+                1
+            ]
+        },
+        {
+            "value": 0,
+            "status": "",
+            "row": "Terra Alta",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                40,
+                2
+            ]
+        },
+        {
+            "value": 0,
+            "status": "",
+            "row": "Terra Alta",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                40,
+                3
+            ]
+        },
+        {
+            "value": 114,
+            "status": "",
+            "row": "Terra Alta",
+            "col": "Total",
+            "rc": [
+                40,
+                4
+            ]
+        },
+        {
+            "value": 155,
+            "status": "",
+            "row": "Urgell",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                41,
+                1
+            ]
+        },
+        {
+            "value": 132,
+            "status": "",
+            "row": "Urgell",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                41,
+                2
+            ]
+        },
+        {
+            "value": 313,
+            "status": "",
+            "row": "Urgell",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                41,
+                3
+            ]
+        },
+        {
+            "value": 600,
+            "status": "",
+            "row": "Urgell",
+            "col": "Total",
+            "rc": [
+                41,
+                4
+            ]
+        },
+        {
+            "value": 520,
+            "status": "",
+            "row": "Vallès Occidental",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                42,
+                1
+            ]
+        },
+        {
+            "value": 941,
+            "status": "",
+            "row": "Vallès Occidental",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                42,
+                2
+            ]
+        },
+        {
+            "value": 4732,
+            "status": "",
+            "row": "Vallès Occidental",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                42,
+                3
+            ]
+        },
+        {
+            "value": 6193,
+            "status": "",
+            "row": "Vallès Occidental",
+            "col": "Total",
+            "rc": [
+                42,
+                4
+            ]
+        },
+        {
+            "value": 148,
+            "status": "",
+            "row": "Vallès Oriental",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                43,
+                1
+            ]
+        },
+        {
+            "value": 783,
+            "status": "",
+            "row": "Vallès Oriental",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                43,
+                2
+            ]
+        },
+        {
+            "value": 1959,
+            "status": "",
+            "row": "Vallès Oriental",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                43,
+                3
+            ]
+        },
+        {
+            "value": 2890,
+            "status": "",
+            "row": "Vallès Oriental",
+            "col": "Total",
+            "rc": [
+                43,
+                4
+            ]
+        },
+        {
+            "value": 10519,
+            "status": "",
+            "row": "Catalunya",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                44,
+                1
+            ]
+        },
+        {
+            "value": 13453,
+            "status": "",
+            "row": "Catalunya",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                44,
+                2
+            ]
+        },
+        {
+            "value": 39241,
+            "status": "",
+            "row": "Catalunya",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                44,
+                3
+            ]
+        },
+        {
+            "value": 63213,
+            "status": "",
+            "row": "Catalunya",
+            "col": "Total",
+            "rc": [
+                44,
+                4
+            ]
+        },
+        {
+            "value": 4634,
+            "status": "",
+            "row": "Metropolità",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                45,
+                1
+            ]
+        },
+        {
+            "value": 6797,
+            "status": "",
+            "row": "Metropolità",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                45,
+                2
+            ]
+        },
+        {
+            "value": 26951,
+            "status": "",
+            "row": "Metropolità",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                45,
+                3
+            ]
+        },
+        {
+            "value": 38382,
+            "status": "",
+            "row": "Metropolità",
+            "col": "Total",
+            "rc": [
+                45,
+                4
+            ]
+        },
+        {
+            "value": 1558,
+            "status": "",
+            "row": "Comarques Gironines",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                46,
+                1
+            ]
+        },
+        {
+            "value": 1268,
+            "status": "",
+            "row": "Comarques Gironines",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                46,
+                2
+            ]
+        },
+        {
+            "value": 2777,
+            "status": "",
+            "row": "Comarques Gironines",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                46,
+                3
+            ]
+        },
+        {
+            "value": 5603,
+            "status": "",
+            "row": "Comarques Gironines",
+            "col": "Total",
+            "rc": [
+                46,
+                4
+            ]
+        },
+        {
+            "value": 890,
+            "status": "",
+            "row": "Camp de Tarragona",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                47,
+                1
+            ]
+        },
+        {
+            "value": 695,
+            "status": "",
+            "row": "Camp de Tarragona",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                47,
+                2
+            ]
+        },
+        {
+            "value": 2553,
+            "status": "",
+            "row": "Camp de Tarragona",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                47,
+                3
+            ]
+        },
+        {
+            "value": 4138,
+            "status": "",
+            "row": "Camp de Tarragona",
+            "col": "Total",
+            "rc": [
+                47,
+                4
+            ]
+        },
+        {
+            "value": 422,
+            "status": "",
+            "row": "Terres de l'Ebre",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                48,
+                1
+            ]
+        },
+        {
+            "value": 381,
+            "status": "",
+            "row": "Terres de l'Ebre",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                48,
+                2
+            ]
+        },
+        {
+            "value": 805,
+            "status": "",
+            "row": "Terres de l'Ebre",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                48,
+                3
+            ]
+        },
+        {
+            "value": 1608,
+            "status": "",
+            "row": "Terres de l'Ebre",
+            "col": "Total",
+            "rc": [
+                48,
+                4
+            ]
+        },
+        {
+            "value": 891,
+            "status": "",
+            "row": "Ponent",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                49,
+                1
+            ]
+        },
+        {
+            "value": 1162,
+            "status": "",
+            "row": "Ponent",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                49,
+                2
+            ]
+        },
+        {
+            "value": 2679,
+            "status": "",
+            "row": "Ponent",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                49,
+                3
+            ]
+        },
+        {
+            "value": 4732,
+            "status": "",
+            "row": "Ponent",
+            "col": "Total",
+            "rc": [
+                49,
+                4
+            ]
+        },
+        {
+            "value": 1175,
+            "status": "",
+            "row": "Comarques Centrals",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                50,
+                1
+            ]
+        },
+        {
+            "value": 2034,
+            "status": "",
+            "row": "Comarques Centrals",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                50,
+                2
+            ]
+        },
+        {
+            "value": 1201,
+            "status": "",
+            "row": "Comarques Centrals",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                50,
+                3
+            ]
+        },
+        {
+            "value": 4410,
+            "status": "",
+            "row": "Comarques Centrals",
+            "col": "Total",
+            "rc": [
+                50,
+                4
+            ]
+        },
+        {
+            "value": 259,
+            "status": "",
+            "row": "Alt Pirineu i Aran",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                51,
+                1
+            ]
+        },
+        {
+            "value": 351,
+            "status": "",
+            "row": "Alt Pirineu i Aran",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                51,
+                2
+            ]
+        },
+        {
+            "value": 170,
+            "status": "",
+            "row": "Alt Pirineu i Aran",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                51,
+                3
+            ]
+        },
+        {
+            "value": 780,
+            "status": "",
+            "row": "Alt Pirineu i Aran",
+            "col": "Total",
+            "rc": [
+                51,
+                4
+            ]
+        },
+        {
+            "value": 690,
+            "status": "",
+            "row": "Penedès",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                52,
+                1
+            ]
+        },
+        {
+            "value": 765,
+            "status": "",
+            "row": "Penedès",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                52,
+                2
+            ]
+        },
+        {
+            "value": 2105,
+            "status": "",
+            "row": "Penedès",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                52,
+                3
+            ]
+        },
+        {
+            "value": 3560,
+            "status": "",
+            "row": "Penedès",
+            "col": "Total",
+            "rc": [
+                52,
+                4
+            ]
+        },
+        {
+            "value": 6337,
+            "status": "",
+            "row": "Barcelona",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                53,
+                1
+            ]
+        },
+        {
+            "value": 9414,
+            "status": "",
+            "row": "Barcelona",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                53,
+                2
+            ]
+        },
+        {
+            "value": 29715,
+            "status": "",
+            "row": "Barcelona",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                53,
+                3
+            ]
+        },
+        {
+            "value": 45466,
+            "status": "",
+            "row": "Barcelona",
+            "col": "Total",
+            "rc": [
+                53,
+                4
+            ]
+        },
+        {
+            "value": 1558,
+            "status": "",
+            "row": "Girona",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                54,
+                1
+            ]
+        },
+        {
+            "value": 1356,
+            "status": "",
+            "row": "Girona",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                54,
+                2
+            ]
+        },
+        {
+            "value": 2777,
+            "status": "",
+            "row": "Girona",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                54,
+                3
+            ]
+        },
+        {
+            "value": 5691,
+            "status": "",
+            "row": "Girona",
+            "col": "Total",
+            "rc": [
+                54,
+                4
+            ]
+        },
+        {
+            "value": 1172,
+            "status": "",
+            "row": "Lleida",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                55,
+                1
+            ]
+        },
+        {
+            "value": 1575,
+            "status": "",
+            "row": "Lleida",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                55,
+                2
+            ]
+        },
+        {
+            "value": 2849,
+            "status": "",
+            "row": "Lleida",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                55,
+                3
+            ]
+        },
+        {
+            "value": 5596,
+            "status": "",
+            "row": "Lleida",
+            "col": "Total",
+            "rc": [
+                55,
+                4
+            ]
+        },
+        {
+            "value": 1452,
+            "status": "",
+            "row": "Tarragona",
+            "col": "Places \/ Iniciativa pública",
+            "rc": [
+                56,
+                1
+            ]
+        },
+        {
+            "value": 1108,
+            "status": "",
+            "row": "Tarragona",
+            "col": "Places \/ Iniciativa social",
+            "rc": [
+                56,
+                2
+            ]
+        },
+        {
+            "value": 3900,
+            "status": "",
+            "row": "Tarragona",
+            "col": "Places \/ Iniciativa mercantil",
+            "rc": [
+                56,
+                3
+            ]
+        },
+        {
+            "value": 6460,
+            "status": "",
+            "row": "Tarragona",
+            "col": "Total",
+            "rc": [
+                56,
+                4
+            ]
+        }
+    ]
+}

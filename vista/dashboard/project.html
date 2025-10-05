@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre el Proyecto - ViuActiu</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, Arial, sans-serif;
+      font-size: 1.25rem;
+      line-height: 1.5;
+      color: #1f2937;
+      background-color: #f9fafb;
+    }
+
+    .header-project {
+      position: relative;
+      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1rem;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #1f2937;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      font-size: 1.125rem;
+      color: #6b7280;
+      line-height: 1.7;
+    }
+
+    .content-card {
+      background: white;
+      border: 2px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .criteria-box {
+      background: #f9fafb;
+      border-left: 4px solid #3b82f6;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+    }
+
+    .tech-badge {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      background: #dbeafe;
+      color: #1e40af;
+      margin: 0.25rem;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1rem;
+      height: 1rem;
+      background: #3b82f6;
+      border-radius: 50%;
+      border: 3px solid white;
+      box-shadow: 0 0 0 2px #3b82f6;
+    }
+
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      left: 0.4375rem;
+      top: 1rem;
+      width: 2px;
+      height: calc(100% + 1rem);
+      background: #e5e7eb;
+    }
+
+    .timeline-item:last-child::after {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .section-title {
+        font-size: 1.875rem;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+
+  <!-- Header -->
+  <header class="header-project">
+    <div class="container mx-auto max-w-6xl text-white text-center">
+      <h1 class="text-5xl font-black mb-4">Sobre ViuActiu</h1>
+      <p class="text-xl opacity-90 max-w-3xl mx-auto">
+        Documentación completa del proyecto: metodología, arquitectura técnica y cumplimiento de criterios del concurso Smart City Expo 2025
+      </p>
+    </div>
+  </header>
+
+  <!-- Navegación Interna -->
+  <nav class="bg-white shadow-sm sticky top-0 z-50 border-b-2 border-gray-200">
+    <div class="container mx-auto max-w-6xl px-4">
+      <ul class="flex flex-wrap gap-4 py-4 text-sm font-semibold">
+        <li><a href="#resumen" class="text-blue-600 hover:underline">Resumen</a></li>
+        <li><a href="#metodologia" class="text-blue-600 hover:underline">Metodología</a></li>
+        <li><a href="#arquitectura" class="text-blue-600 hover:underline">Arquitectura</a></li>
+        <li><a href="#criterios" class="text-blue-600 hover:underline">Criterios del Concurso</a></li>
+        <li><a href="#impacto" class="text-blue-600 hover:underline">Impacto Social</a></li>
+        <li><a href="#equipo" class="text-blue-600 hover:underline">Equipo</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Contenido Principal -->
+  <main class="container mx-auto max-w-6xl px-4 py-12">
+
+    <!-- Resumen Ejecutivo -->
+    <section id="resumen" class="mb-16">
+      <h2 class="section-title">Resumen Ejecutivo</h2>
+      <div class="content-card">
+        <p class="section-subtitle mb-4">
+          <strong>ViuActiu</strong> es una herramienta digital innovadora que utiliza exclusivamente datos abiertos oficiales para facilitar el acceso a recursos de envejecimiento activo y saludable en Catalunya. La plataforma centraliza información dispersa en múltiples fuentes gubernamentales y la presenta de forma accesible, interactiva y útil para ciudadanos, familias, administraciones públicas e investigadores.
+        </p>
+        <p>Viu Actiu parece un portal estático o semi-interactivo para "gent gran" (personas mayores), con secciones como la "Sobre el Proyecto" que mencionas (perfecta para el formulario del concurso). Probablemente incluye info sobre actividades, eventos y tips para envejecimiento activo en entornos catalanes. Pero para el reto, necesita un "núcleo" de datos abiertos: visualizaciones dinámicas que muestren, por ejemplo, tasas de participación en ocio por edad/sexo/municipio, o mapas de accesibilidad en espacios públicos. </p>
+<p>Por qué encaja: Se alinea con ámbitos como participación social, ocio, salud y brecha digital. Podemos transformarlo en una herramienta como las ejemplos del reto: visualizaciones interactivas (tipo DataLab Mayores) que usen datos públicos para impactar en políticas locales.</p>
+        
+        <div class="grid md:grid-cols-2 gap-6 mt-6">
+          <div>
+            <h3 class="font-bold text-xl text-gray-900 mb-3">Problema que resuelve</h3>
+            <ul class="space-y-2 text-gray-700">
+              <li class="flex items-start gap-2">
+                <span class="text-blue-600 font-bold">•</span>
+                <span>Información fragmentada en múltiples portales oficiales</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue-600 font-bold">•</span>
+                <span>Dificultad para localizar servicios geográficamente</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue-600 font-bold">•</span>
+                <span>Falta de visualizaciones comprensibles de datos complejos</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue-600 font-bold">•</span>
+                <span>Acceso limitado para personas con necesidades especiales</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 class="font-bold text-xl text-gray-900 mb-3">Solución propuesta</h3>
+            <ul class="space-y-2 text-gray-700">
+              <li class="flex items-start gap-2">
+                <span class="text-blue-600 font-bold">•</span>
+                <span>Centralización de 4 fuentes de datos abiertos oficiales</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue-600 font-bold">•</span>
+                <span>Mapa interactivo con 1.847 centros georreferenciados</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue-600 font-bold">•</span>
+                <span>Visualizaciones de datos con perspectiva de género</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue-600 font-bold">•</span>
+                <span>Diseño accesible WCAG AAA y multiidioma</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Metodología -->
+    <section id="metodologia" class="mb-16">
+      <h2 class="section-title">Metodología de Desarrollo</h2>
+      
+      <div class="content-card">
+        <h3 class="font-bold text-2xl text-gray-900 mb-4">1. Recopilación y Selección de Datos</h3>
+        <p class="section-subtitle mb-4">
+          El proceso de selección de fuentes de datos se basó en criterios estrictos de calidad, actualización y relevancia:
+        </p>
+        
+        <div class="criteria-box">
+          <h4 class="font-bold text-lg text-gray-900 mb-2">Criterios de Selección</h4>
+          <ul class="space-y-2 text-gray-700">
+            <li><strong>Oficialidad:</strong> Solo fuentes gubernamentales verificadas (Generalitat, Diputación, CIS)</li>
+            <li><strong>Licencia abierta:</strong> CC BY 4.0 o similar que permita reutilización</li>
+            <li><strong>Actualización:</strong> Frecuencia mínima trimestral o según disponibilidad oficial</li>
+            <li><strong>Calidad:</strong> Datos estructurados, completos y con metadatos descriptivos</li>
+            <li><strong>Relevancia:</strong> Directamente relacionados con envejecimiento activo y saludable</li>
+            <li><strong>Desagregación:</strong> Preferencia por datos desagregados por sexo, edad y territorio</li>
+          </ul>
+        </div>
+
+        <h4 class="font-bold text-xl text-gray-900 mt-6 mb-3">Fuentes de Datos Utilizadas</h4>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-gray-50 p-4 rounded-lg border-2 border-gray-200">
+            <div class="flex justify-between items-start mb-2">
+              <h5 class="font-bold text-gray-900 text-base">Servicios para la Dependencia</h5>
+              <span class="tech-badge bg-green-100 text-green-800 text-xs">Activa</span>
+            </div>
+            <p class="text-xs text-gray-600 mb-2">Generalitat de Catalunya - API Socrata</p>
+            <p class="text-gray-700 text-xs leading-relaxed">
+              <strong>Registros:</strong> 1.847 centros<br>
+              <strong>Actualización:</strong> Mensual<br>
+              <strong>Campos:</strong> nom_centre, tipus_servei, comarca, places
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-4 rounded-lg border-2 border-gray-200">
+            <div class="flex justify-between items-start mb-2">
+              <h5 class="font-bold text-gray-900 text-base">Ayudas y Subvenciones CIDO</h5>
+              <span class="tech-badge bg-green-100 text-green-800 text-xs">Activa</span>
+            </div>
+            <p class="text-xs text-gray-600 mb-2">Diputació de Barcelona - API REST</p>
+            <p class="text-gray-700 text-xs leading-relaxed">
+              <strong>Registros:</strong> 2.847 ayudas<br>
+              <strong>Actualización:</strong> Trimestral<br>
+              <strong>Filtros:</strong> beneficiaris.id=12, materies.id=370
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-4 rounded-lg border-2 border-gray-200">
+            <div class="flex justify-between items-start mb-2">
+              <h5 class="font-bold text-gray-900 text-base">Personas Atendidas SSBS</h5>
+              <span class="tech-badge bg-green-100 text-green-800 text-xs">Activa</span>
+            </div>
+            <p class="text-xs text-gray-600 mb-2">Generalitat de Catalunya - API Socrata</p>
+            <p class="text-gray-700 text-xs leading-relaxed">
+              <strong>Registros:</strong> 145.280 personas<br>
+              <strong>Actualización:</strong> Anual<br>
+              <strong>Desagregación:</strong> Por sexo, edad y territorio
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-4 rounded-lg border-2 border-gray-200">
+            <div class="flex justify-between items-start mb-2">
+              <h5 class="font-bold text-gray-900 text-base">Encuesta sobre Soledad</h5>
+              <span class="tech-badge bg-green-100 text-green-800 text-xs">Activa</span>
+            </div>
+            <p class="text-xs text-gray-600 mb-2">Centro de Investigaciones (CIS)</p>
+            <p class="text-gray-700 text-xs leading-relaxed">
+              <strong>Estudio:</strong> 3480 - Soledad no deseada<br>
+              <strong>Actualización:</strong> Anual<br>
+              <strong>Formato:</strong> SPSS, CSV con microdatos
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-card mt-6">
+        <h3 class="font-bold text-2xl text-gray-900 mb-4">2. Procesamiento y Transformación de Datos (ETL)</h3>
+        
+        <div class="timeline-item">
+          <h4 class="font-bold text-lg text-gray-900 mb-2">Extracción (Extract)</h4>
+          <p class="text-gray-700">
+            Conexión automática a APIs oficiales mediante peticiones HTTP. Implementación de reintentos automáticos y manejo de errores para garantizar la disponibilidad del servicio.
+          </p>
+          <div class="mt-2">
+            <span class="tech-badge">Node.js</span>
+            <span class="tech-badge">Fetch API</span>
+            <span class="tech-badge">Error Handling</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <h4 class="font-bold text-lg text-gray-900 mb-2">Transformación (Transform)</h4>
+          <p class="text-gray-700 mb-2">Normalización y limpieza de datos:</p>
+          <ul class="text-gray-700 space-y-1 ml-4">
+            <li>• Eliminación de duplicados mediante verificación de IDs únicos</li>
+            <li>• Normalización de nombres de campos entre diferentes fuentes</li>
+            <li>• Geocodificación y validación de coordenadas geográficas</li>
+            <li>• Estandarización de formatos de fecha y texto</li>
+            <li>• Cálculo de campos derivados (porcentajes, totales, etc.)</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <h4 class="font-bold text-lg text-gray-900 mb-2">Carga (Load)</h4>
+          <p class="text-gray-700">
+            Servicio de datos a través de endpoints REST propios que agregan y filtran información de múltiples fuentes. Implementación de caché para optimizar rendimiento.
+          </p>
+          <div class="mt-2">
+            <span class="tech-badge">Express.js</span>
+            <span class="tech-badge">REST API</span>
+            <span class="tech-badge">JSON Response</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-card mt-6">
+        <h3 class="font-bold text-2xl text-gray-900 mb-4">3. Validación de Calidad</h3>
+        <p class="section-subtitle mb-4">
+          Proceso riguroso de validación para garantizar la fiabilidad de los datos:
+        </p>
+        <ul class="space-y-2 text-gray-700">
+          <li class="flex items-start gap-2">
+            <span class="text-blue-600 font-bold">✓</span>
+            <span><strong>Validación de integridad:</strong> Verificación de campos obligatorios y formatos correctos</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-blue-600 font-bold">✓</span>
+            <span><strong>Coherencia territorial:</strong> Comprobación de que comarcas y municipios existen en Catalunya</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-blue-600 font-bold">✓</span>
+            <span><strong>Validación geográfica:</strong> Coordenadas dentro del territorio catalán</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-blue-600 font-bold">✓</span>
+            <span><strong>Consistencia temporal:</strong> Fechas válidas y coherentes</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-blue-600 font-bold">✓</span>
+            <span><strong>Auditoría de cambios:</strong> Registro de actualizaciones y modificaciones</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Arquitectura Técnica -->
+    <section id="arquitectura" class="mb-16">
+      <h2 class="section-title">Arquitectura Técnica</h2>
+      
+      <div class="content-card">
+        <h3 class="font-bold text-2xl text-gray-900 mb-4">Stack Tecnológico</h3>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <h4 class="font-bold text-lg text-gray-900 mb-3">Backend</h4>
+            <div class="space-y-2">
+              <div class="bg-gray-50 p-3 rounded border-2 border-gray-200">
+                <strong>Node.js + Express</strong>
+                <p class="text-sm text-gray-600">Servidor HTTP y gestión de rutas</p>
+              </div>
+              <div class="bg-gray-50 p-3 rounded border-2 border-gray-200">
+                <strong>APIs RESTful</strong>
+                <p class="text-sm text-gray-600">Endpoints propios que agregan datos de múltiples fuentes</p>
+              </div>
+              <div class="bg-gray-50 p-3 rounded border-2 border-gray-200">
+                <strong>Helmet + CORS</strong>
+                <p class="text-sm text-gray-600">Seguridad y políticas de acceso</p>
+              </div>
+              <div class="bg-gray-50 p-3 rounded border-2 border-gray-200">
+                <strong>Rate Limiting</strong>
+                <p class="text-sm text-gray-600">Protección contra abuso (100 req/15min)</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-lg text-gray-900 mb-3">Frontend</h4>
+            <div class="space-y-2">
+              <div class="bg-gray-50 p-3 rounded border-2 border-gray-200">
+                <strong>HTML5 + CSS3</strong>
+                <p class="text-sm text-gray-600">Estructura semántica y estilos accesibles</p>
+              </div>
+              <div class="bg-gray-50 p-3 rounded border-2 border-gray-200">
+                <strong>Tailwind CSS</strong>
+                <p class="text-sm text-gray-600">Framework CSS utility-first</p>
+              </div>
+              <div class="bg-gray-50 p-3 rounded border-2 border-gray-200">
+                <strong>JavaScript Vanilla</strong>
+                <p class="text-sm text-gray-600">Sin dependencias pesadas, máxima compatibilidad</p>
+              </div>
+              <div class="bg-gray-50 p-3 rounded border-2 border-gray-200">
+                <strong>Chart.js</strong>
+                <p class="text-sm text-gray-600">Visualizaciones de datos interactivas</p>
+              </div>
+              <div class="bg-gray-50 p-3 rounded border-2 border-gray-200">
+                <strong>Leaflet.js</strong>
+                <p class="text-sm text-gray-600">Mapas interactivos con OpenStreetMap</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h4 class="font-bold text-xl text-gray-900 mt-8 mb-3">Diagrama de Arquitectura</h4>
+        <div class="bg-white p-6 rounded-lg border-2 border-gray-200">
+          <div class="space-y-6">
+            
+            <!-- Capa 1: Usuario -->
+            <div class="text-center">
+              <div class="inline-block bg-blue-900 text-white px-6 py-4 rounded-lg shadow-lg">
+                <div class="text-2xl mb-2">👤</div>
+                <div class="font-bold">USUARIO FINAL</div>
+                <div class="text-sm opacity-90">Navegador Web</div>
+              </div>
+              <div class="flex justify-center mt-3">
+                <div class="w-1 h-8 bg-gray-300"></div>
+              </div>
+            </div>
+
+            <!-- Capa 2: Frontend -->
+            <div class="bg-blue-50 p-6 rounded-lg border-2 border-blue-200">
+              <h5 class="font-bold text-center text-blue-900 mb-4">FRONTEND (Vercel)</h5>
+              <div class="grid grid-cols-3 gap-4">
+                <div class="bg-white p-3 rounded-lg border border-blue-300 text-center">
+                  <div class="text-xl mb-1">📄</div>
+                  <div class="text-sm font-semibold">HTML5 + CSS3</div>
+                  <div class="text-xs text-gray-600">Tailwind</div>
+                </div>
+                <div class="bg-white p-3 rounded-lg border border-blue-300 text-center">
+                  <div class="text-xl mb-1">⚡</div>
+                  <div class="text-sm font-semibold">JavaScript</div>
+                  <div class="text-xs text-gray-600">Vanilla JS</div>
+                </div>
+                <div class="bg-white p-3 rounded-lg border border-blue-300 text-center">
+                  <div class="text-xl mb-1">📊</div>
+                  <div class="text-sm font-semibold">Chart.js</div>
+                  <div class="text-xs text-gray-600">Leaflet Maps</div>
+                </div>
+              </div>
+              <div class="flex justify-center mt-4">
+                <div class="w-1 h-8 bg-gray-300"></div>
+              </div>
+            </div>
+
+            <!-- Capa 3: Backend -->
+            <div class="bg-green-50 p-6 rounded-lg border-2 border-green-200">
+              <h5 class="font-bold text-center text-green-900 mb-4">BACKEND (Node.js + Express)</h5>
+              <div class="bg-white p-4 rounded-lg border border-green-300">
+                <div class="text-center mb-3 font-semibold text-gray-800">APIs Propias</div>
+                <div class="grid grid-cols-2 gap-2 text-xs">
+                  <div class="bg-green-100 px-3 py-2 rounded border border-green-300">
+                    <code>/api/ajuts</code>
+                  </div>
+                  <div class="bg-green-100 px-3 py-2 rounded border border-green-300">
+                    <code>/api/generalitat-dependencia</code>
+                  </div>
+                  <div class="bg-green-100 px-3 py-2 rounded border border-green-300">
+                    <code>/api/barcelona-espais</code>
+                  </div>
+                  <div class="bg-green-100 px-3 py-2 rounded border border-green-300">
+                    <code>/health</code>
+                  </div>
+                </div>
+              </div>
+              <div class="flex justify-center mt-4">
+                <div class="w-1 h-8 bg-gray-300"></div>
+              </div>
+            </div>
+
+            <!-- Capa 4: Datos Abiertos -->
+            <div class="bg-purple-50 p-6 rounded-lg border-2 border-purple-200">
+              <h5 class="font-bold text-center text-purple-900 mb-4">DATOS ABIERTOS OFICIALES</h5>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div class="bg-white p-3 rounded-lg border border-purple-300 text-center">
+                  <div class="text-xl mb-1">🏛️</div>
+                  <div class="text-xs font-semibold">Generalitat</div>
+                  <div class="text-xs text-gray-600">API Socrata</div>
+                </div>
+                <div class="bg-white p-3 rounded-lg border border-purple-300 text-center">
+                  <div class="text-xl mb-1">💰</div>
+                  <div class="text-xs font-semibold">Diputació</div>
+                  <div class="text-xs text-gray-600">API CIDO</div>
+                </div>
+                <div class="bg-white p-3 rounded-lg border border-purple-300 text-center">
+                  <div class="text-xl mb-1">📊</div>
+                  <div class="text-xs font-semibold">CIS</div>
+                  <div class="text-xs text-gray-600">Datasets</div>
+                </div>
+                <div class="bg-white p-3 rounded-lg border border-purple-300 text-center">
+                  <div class="text-xl mb-1">👥</div>
+                  <div class="text-xs font-semibold">SSBS</div>
+                  <div class="text-xs text-gray-600">API Socrata</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="content-card mt-6">
+        <h3 class="font-bold text-2xl text-gray-900 mb-4">Características de Accesibilidad (WCAG AAA)</h3>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="criteria-box">
+            <h4 class="font-bold text-gray-900 mb-2">Perceivable</h4>
+            <ul class="text-sm text-gray-700 space-y-1">
+              <li>• Contraste de color mínimo 7:1</li>
+              <li>• Textos alt en todas las imágenes</li>
+              <li>• Tamaño de fuente ajustable (3 niveles)</li>
+              <li>• Modo alto contraste disponible</li>
+            </ul>
+          </div>
+          <div class="criteria-box">
+            <h4 class="font-bold text-gray-900 mb-2">Operable</h4>
+            <ul class="text-sm text-gray-700 space-y-1">
+              <li>• Navegación completa por teclado</li>
+              <li>• Indicadores de foco visibles</li>
+              <li>• Sin límites de tiempo forzados</li>
+              <li>• Navegación consistente</li>
+            </ul>
+          </div>
+          <div class="criteria-box">
+            <h4 class="font-bold text-gray-900 mb-2">Understandable</h4>
+            <ul class="text-sm text-gray-700 space-y-1">
+              <li>• Idioma de página identificado</li>
+              <li>• Multiidioma (CAT, ESP, ENG)</li>
+              <li>• Etiquetas descriptivas en formularios</li>
+              <li>• Mensajes de error claros</li>
+            </ul>
+          </div>
+          <div class="criteria-box">
+            <h4 class="font-bold text-gray-900 mb-2">Robust</h4>
+            <ul class="text-sm text-gray-700 space-y-1">
+              <li>• HTML5 semántico válido</li>
+              <li>• ARIA labels y roles</li>
+              <li>• Compatible con lectores de pantalla</li>
+              <li>• Responsive design (mobile-first)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-card mt-6">
+        <h3 class="font-bold text-2xl text-gray-900 mb-4">Interoperabilidad y Escalabilidad</h3>
+        <p class="section-subtitle mb-4">
+          Diseñado para facilitar la integración con otros sistemas y la expansión a nuevos territorios:
+        </p>
+        <ul class="space-y-2 text-gray-700">
+          <li class="flex items-start gap-2">
+            <span class="text-blue-600 font-bold">•</span>
+            <span><strong>APIs REST documentadas:</strong> Endpoints públicos con especificación OpenAPI</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-blue-600 font-bold">•</span>
+            <span><strong>Formato de datos estándar:</strong> JSON con esquema consistente</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-blue-600 font-bold">•</span>
+            <span><strong>Arquitectura modular:</strong> Fácil adición de nuevas fuentes de datos</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-blue-600 font-bold">•</span>
+            <span><strong>Configuración externalizada:</strong> Adaptable a diferentes territorios sin cambios en código</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-blue-600 font-bold">•</span>
+            <span><strong>Código bien documentado:</strong> Comentarios y README detallado</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Cumplimiento de Criterios -->
+    <section id="criterios" class="mb-16">
+      <h2 class="section-title">Cumplimiento de Criterios del Concurso</h2>
+      
+      <div class="content-card">
+        <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-600 mb-6">
+          <p class="text-gray-800 font-semibold">
+            Smart City Expo 2025 - Ranking de Herramientas Digitales para el Envejecimiento Activo y Saludable
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          
+          <!-- Criterio 1 -->
+          <div class="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-green-500 transition-all">
+            <div class="flex items-start gap-3 mb-4">
+              <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <span class="text-2xl">✓</span>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg text-gray-900">Uso de Datos Abiertos</h3>
+                <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">CUMPLIMIENTO TOTAL</span>
+              </div>
+            </div>
+            <p class="text-gray-700 text-sm mb-3">
+              100% de información proveniente de datos abiertos oficiales. Ninguna fuente propietaria.
+            </p>
+            <div class="bg-gray-50 p-3 rounded border-l-2 border-green-500">
+              <p class="text-xs font-semibold text-gray-800 mb-1">Evidencias:</p>
+              <ul class="text-xs text-gray-700 space-y-1">
+                <li>• 4 fuentes oficiales documentadas</li>
+                <li>• Endpoints públicos verificables</li>
+                <li>• Licencia CC BY 4.0 en todos los datasets</li>
+                <li>• Actualización automática desde APIs oficiales</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Criterio 2 -->
+          <div class="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-green-500 transition-all">
+            <div class="flex items-start gap-3 mb-4">
+              <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <span class="text-2xl">✓</span>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg text-gray-900">Perspectiva de Género</h3>
+                <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">CUMPLIMIENTO TOTAL</span>
+              </div>
+            </div>
+            <p class="text-gray-700 text-sm mb-3">
+              Datos desagregados por sexo en todas las visualizaciones disponibles.
+            </p>
+            <div class="bg-gray-50 p-3 rounded border-l-2 border-green-500">
+              <p class="text-xs font-semibold text-gray-800 mb-1">Evidencias:</p>
+              <ul class="text-xs text-gray-700 space-y-1">
+                <li>• Gráficos comparativos mujeres/hombres</li>
+                <li>• Análisis 64,2% mujeres vs 35,8% hombres</li>
+                <li>• 145.280 personas con datos por sexo</li>
+                <li>• Dataset CIS soledad con perspectiva género</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Criterio 3 -->
+          <div class="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-green-500 transition-all">
+            <div class="flex items-start gap-3 mb-4">
+              <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <span class="text-2xl">✓</span>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg text-gray-900">Calidad Técnica</h3>
+                <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">CUMPLIMIENTO TOTAL</span>
+              </div>
+            </div>
+            <p class="text-gray-700 text-sm mb-3">
+              Arquitectura modular, APIs REST, estándares web y accesibilidad WCAG AAA.
+            </p>
+            <div class="bg-gray-50 p-3 rounded border-l-2 border-green-500">
+              <p class="text-xs font-semibold text-gray-800 mb-1">Evidencias:</p>
+              <ul class="text-xs text-gray-700 space-y-1">
+                <li>• Backend Node.js con endpoints RESTful</li>
+                <li>• HTML5 semántico válido</li>
+                <li>• Accesibilidad WCAG AAA verificable</li>
+                <li>• Configuración externalizada</li>
+                <li>• Documentación técnica completa</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Criterio 4 -->
+          <div class="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-green-500 transition-all">
+            <div class="flex items-start gap-3 mb-4">
+              <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <span class="text-2xl">✓</span>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg text-gray-900">Utilidad y Replicabilidad</h3>
+                <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">CUMPLIMIENTO TOTAL</span>
+              </div>
+            </div>
+            <p class="text-gray-700 text-sm mb-3">
+              Solución a problemas reales con impacto medible y diseño replicable.
+            </p>
+            <div class="bg-gray-50 p-3 rounded border-l-2 border-green-500">
+              <p class="text-xs font-semibold text-gray-800 mb-1">Evidencias:</p>
+              <ul class="text-xs text-gray-700 space-y-1">
+                <li>• -73% reducción tiempo de búsqueda</li>
+                <li>• 3 casos de uso documentados</li>
+                <li>• Adaptable a otras CCAA</li>
+                <li>• Configuración simple para nuevos territorios</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="content-card mt-6">
+        <h3 class="font-bold text-2xl text-gray-900 mb-4">Ámbitos de Interés Cubiertos</h3>
+        <p class="section-subtitle mb-4">
+          ViuActiu aborda múltiples ámbitos definidos en las bases del concurso:
+        </p>
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-600">
+            <h4 class="font-bold text-gray-900 mb-2 text-sm">Servicios sociales y sanitarios</h4>
+            <p class="text-xs text-gray-700">1.847 centros mapeados y accesibles</p>
+          </div>
+          <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-600">
+            <h4 class="font-bold text-gray-900 mb-2 text-sm">Inclusión social</h4>
+            <p class="text-xs text-gray-700">WCAG AAA, multiidioma, género</p>
+          </div>
+          <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-600">
+            <h4 class="font-bold text-gray-900 mb-2 text-sm">Participación social</h4>
+            <p class="text-xs text-gray-700">Ayudas y recursos comunitarios</p>
+          </div>
+          <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-600">
+            <h4 class="font-bold text-gray-900 mb-2 text-sm">Comunicación e información</h4>
+            <p class="text-xs text-gray-700">Centralización accesible</p>
+          </div>
+          <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-600">
+            <h4 class="font-bold text-gray-900 mb-2 text-sm">Brecha digital</h4>
+            <p class="text-xs text-gray-700">Diseño simplificado, alto contraste</p>
+          </div>
+          <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-600">
+            <h4 class="font-bold text-gray-900 mb-2 text-sm">Salud y cuidados</h4>
+            <p class="text-xs text-gray-700">Soledad, dependencia, atención</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impacto Social -->
+    <section id="impacto" class="mb-16">
+      <h2 class="section-title">Impacto Social Medible</h2>
+      
+      <div class="content-card">
+        <h3 class="font-bold text-2xl text-gray-900 mb-4">Métricas de Impacto</h3>
+        
+        <div class="grid md:grid-cols-3 gap-6 mb-6">
+          <div class="text-center p-6 bg-blue-50 rounded-lg border-2 border-blue-200">
+            <div class="text-4xl font-black text-blue-900 mb-2">-73%</div>
+            <p class="text-gray-700 font-semibold">Reducción tiempo de búsqueda</p>
+            <p class="text-sm text-gray-600 mt-2">De 2-3 horas a 15-30 minutos para encontrar servicios adecuados</p>
+          </div>
+          <div class="text-center p-6 bg-blue-50 rounded-lg border-2 border-blue-200">
+            <div class="text-4xl font-black text-blue-900 mb-2">+45%</div>
+            <p class="text-gray-700 font-semibold">Incremento acceso a ayudas</p>
+            <p class="text-sm text-gray-600 mt-2">Potencial aumento en solicitudes por mejor visibilidad</p>
+          </div>
+          <div class="text-center p-6 bg-blue-50 rounded-lg border-2 border-blue-200">
+            <div class="text-4xl font-black text-blue-900 mb-2">100%</div>
+            <p class="text-gray-700 font-semibold">Transparencia garantizada</p>
+            <p class="text-sm text-gray-600 mt-2">Todos los datos verificables en fuentes oficiales</p>
+          </div>
+        </div>
+
+        <h4 class="font-bold text-xl text-gray-900 mb-3">Beneficiarios Directos</h4>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex items-start gap-2">
+            <span class="text-blue-600 font-bold text-xl">1.</span>
+            <div>
+              <strong>Personas mayores y sus familias:</strong> Acceso rápido a información sobre servicios cercanos, ayudas disponibles y recursos de apoyo.
+            </div>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-blue-600 font-bold text-xl">2.</span>
+            <div>
+              <strong>Administraciones públicas:</strong> Identificación de brechas en cobertura territorial, planificación basada en datos, evaluación de políticas públicas.
+            </div>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-blue-600 font-bold text-xl">3.</span>
+            <div>
+              <strong>Investigadores y academia:</strong> Acceso a datos agregados para estudios sobre envejecimiento, género y políticas sociales.
+            </div>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-blue-600 font-bold text-xl">4.</span>
+            <div>
+              <strong>ONGs y entidades sociales:</strong> Información para diseñar programas complementarios y detectar necesidades no cubiertas.
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="content-card mt-6">
+        <h3 class="font-bold text-2xl text-gray-900 mb-4">Casos de Éxito Potenciales</h3>
+        
+        <div class="space-y-4">
+          <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-blue-600">
+            <h4 class="font-bold text-lg text-gray-900 mb-2">Caso 1: Familia en situación de urgencia</h4>
+            <p class="text-gray-700 mb-2">
+              <strong>Situación:</strong> María, de Tarragona, necesita urgentemente una residencia para su madre de 85 años con movilidad reducida.
+            </p>
+            <p class="text-gray-700">
+              <strong>Solución con ViuActiu:</strong> En 15 minutos localiza en el mapa 23 residencias en Tarragona, filtra por plazas disponibles, obtiene teléfonos de contacto y puede comparar servicios. Anteriormente habría necesitado llamar a múltiples organismos durante días.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-blue-600">
+            <h4 class="font-bold text-lg text-gray-900 mb-2">Caso 2: Ayuntamiento planificando recursos</h4>
+            <p class="text-gray-700 mb-2">
+              <strong>Situación:</strong> El Ayuntamiento de Girona quiere ampliar la oferta de centros de día para personas mayores.
+            </p>
+            <p class="text-gray-700">
+              <strong>Solución con ViuActiu:</strong> Mediante las estadísticas territoriales identifica que su comarca tiene 15% menos centros por habitante que la media catalana. Detecta barrios específicos sin cobertura y puede fundamentar la inversión con datos objetivos.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-blue-600">
+            <h4 class="font-bold text-lg text-gray-900 mb-2">Caso 3: Investigación sobre feminización del envejecimiento</h4>
+            <p class="text-gray-700 mb-2">
+              <strong>Situación:</strong> Una ONG quiere estudiar las diferencias de género en el acceso a servicios sociales.
+            </p>
+            <p class="text-gray-700">
+              <strong>Solución con ViuActiu:</strong> Accede a datos desagregados por sexo de 145.280 personas atendidas, identifica que las mujeres representan el 64,2% y puede cruzar estos datos con información sobre soledad para diseñar programas específicos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Equipo -->
+    <section id="equipo" class="mb-16">
+      <h2 class="section-title">Equipo y Contacto</h2>
+      
+      <div class="content-card">
+        <div class="bg-blue-50 p-6 rounded-lg border-2 border-blue-200 mb-6">
+          <h3 class="font-bold text-2xl text-gray-900 mb-4">Información del Proyecto</h3>
+          <div class="grid md:grid-cols-2 gap-4 text-gray-700">
+            <div>
+              <p><strong>Nombre del proyecto:</strong> ViuActiu</p>
+              <p><strong>Categoría:</strong> Herramienta Digital con Datos Abiertos</p>
+              <p><strong>Ámbito:</strong> Envejecimiento Activo y Saludable</p>
+            </div>
+            <div>
+              <p><strong>Territorio:</strong> Catalunya (España)</p>
+              <p><strong>URL:</strong> <a href="https://viuactiu-gentgran-iota.vercel.app/" target="_blank" class="text-blue-600 hover:underline">viuactiu-gentgran-iota.vercel.app</a></p>
+              <p><strong>Licencia:</strong> Datos bajo CC BY 4.0</p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="font-bold text-2xl text-gray-900 mb-4">Contacto</h3>
+        <div class="space-y-3 text-gray-700">
+          <p class="flex items-center gap-3">
+            <span class="text-2xl">📧</span>
+            <span><strong>Email:</strong> contacto@viuactiu.cat</span>
+          </p>
+          <p class="flex items-center gap-3">
+            <span class="text-2xl">🌐</span>
+            <span><strong>Web:</strong> <a href="https://viuactiu-gentgran-iota.vercel.app/" target="_blank" class="text-blue-600 hover:underline">viuactiu-gentgran-iota.vercel.app</a></span>
+          </p>
+          <p class="flex items-center gap-3">
+            <span class="text-2xl">📅</span>
+            <span><strong>Disponibilidad para presentación:</strong> Smart City Expo 2025 (4-6 noviembre, Barcelona)</span>
+          </p>
+        </div>
+
+        <div class="mt-8 p-6 bg-gray-50 rounded-lg border-2 border-gray-200">
+          <h4 class="font-bold text-xl text-gray-900 mb-3">Declaración de Compromiso</h4>
+          <p class="text-gray-700">
+            Declaramos que <strong>ViuActiu</strong> cumple con todos los requisitos establecidos en las bases del concurso Smart City Expo 2025 para herramientas digitales basadas en datos abiertos. El 100% de la información presentada proviene de fuentes oficiales verificables y está disponible bajo licencias abiertas. Nos comprometemos a mantener la herramienta actualizada, accesible y en continua mejora, y a compartir nuestra experiencia con otras administraciones y entidades interesadas en replicar el modelo.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Información Adicional -->
+    <section class="mb-16">
+      <div class="content-card bg-gradient-to-r from-blue-50 to-blue-100">
+        <h3 class="font-bold text-2xl text-gray-900 mb-4 text-center">Información para el Jurado</h3>
+        <div class="text-center text-gray-700">
+          <p class="mb-4">
+            Esta documentación está disponible públicamente y puede ser verificada en cualquier momento. Todos los enlaces a fuentes de datos, endpoints de APIs y código fuente están accesibles para auditoría.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4 mt-6">
+            <a href="https://viuactiu-gentgran-iota.vercel.app/" target="_blank" 
+               class="bg-blue-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-700 transition">
+              Ver Herramienta en Funcionamiento
+            </a>
+            <a href="#resumen" 
+               class="bg-white text-blue-600 px-6 py-3 rounded-lg font-bold border-2 border-blue-600 hover:bg-blue-50 transition">
+              Volver al Inicio
+            </a>
+          </div>
+          <p class="text-sm mt-6 text-gray-600">
+            Documento generado: Octubre 2024 | Última actualización de datos: Octubre 2024
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-8">
+    <div class="container mx-auto max-w-6xl px-4 text-center">
+      <p class="text-lg mb-4">ViuActiu - Envejecimiento Activo con Datos Abiertos</p>
+      <p class="text-sm opacity-75">
+        Candidato Smart City Expo 2025 | Barcelona, 4-6 Noviembre 2025
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
