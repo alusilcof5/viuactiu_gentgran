@@ -58,14 +58,13 @@ function applySavedSettings() {
     document.body.classList.add('high-contrast');
   }
 }
-
+/* 
 document.addEventListener('DOMContentLoaded', () => {
   insertAccessibilityBar();
   applySavedSettings();
-}); */
-// controller/accessibility.js
+}); 
 
-// Funciones globales para accesibilidad
+
 window.changeTextSize = function(size) {
   const validSizes = ['normal', 'large', 'xlarge'];
   if (!validSizes.includes(size)) {
@@ -75,7 +74,7 @@ window.changeTextSize = function(size) {
   document.body.classList.remove('text-size-normal', 'text-size-large', 'text-size-xlarge');
   document.body.classList.add(`text-size-${size}`);
   localStorage.setItem('textSize', size);
-  document.body.offsetHeight; // Força reflow
+  document.body.offsetHeight; 
 };
 
 window.toggleContrast = function() {
@@ -150,4 +149,4 @@ document.addEventListener('DOMContentLoaded', function() {
   insertAccessibilityBar();
   applySavedSettings();
   console.log('Accessibilitat inicialitzada per:', currentPage);
-});
+}); */

@@ -11,6 +11,7 @@
 
 <body class="bg-gray-50 text-size-normal">
 
+  <div id="navbar" role="banner"></div>
   <!-- Botones de idioma -->
   <div class="language-switcher">
     <button class="lang-btn active" data-lang="ca" onclick="changeLanguage('ca')" aria-label="Canviar a català">
@@ -23,71 +24,6 @@
        ENG
     </button>
   </div>
-
-<nav class="bg-white shadow-md sticky top-0 z-50" aria-label="Menú principal de navegació">
-    <div class="container mx-auto px-4">
-      <div class="flex items-center justify-between py-4">
-
-        <!-- Logo -->
-        <a href="index.html" class="flex items-center gap-3">
-          <img src="../vista/images/logo_trans.png" alt="Logo ViuActiu" class="h-auto w-28 object-contain">
-        </a>
-
-        <!-- Botón Hamburguesa (solo móviles) -->
-        <button id="menu-toggle" class="md:hidden text-gray-600 focus:outline-none" aria-label="Menú de navegación">
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-
-        <!-- Links (desktop) -->
-        <div class="hidden md:flex gap-6 items-center">
-          <a href="../index.html" class="text-2xl font-bold text-blue-600 border-b-2 border-blue-600 pb-2"
-            aria-current="page" data-i18n="nav_inicio">Inici</a>
-          <a href="vista/serveis.html" class="text-2xl font-semibold text-gray-600 hover:text-blue-600 pb-2"
-            data-i18n="nav_servicios">
-            Serveis de dependència</a>
-          <a href="vista/ajuts.html" class="text-2xl font-semibold text-gray-600 hover:text-blue-600 pb-2"
-            data-i18n="nav_ayudas">
-            Ajuts públics</a>
-          <a href="vista/solitud.html" class="text-2xl font-semibold text-gray-600 hover:text-blue-600 pb-2"
-            data-page="soledad" data-i18n="nav_soledad">Solitud</a>
-          
-          <!-- Dropdown per Taulells -->
-          <div class="relative group">
-            <button id="dashboard-toggle" class="text-2xl font-semibold text-gray-600 hover:text-blue-600 pb-2 flex items-center gap-1 focus:outline-none" aria-haspopup="true" aria-expanded="false" aria-controls="dashboard-menu" data-i18n="nav_taulells">
-              Taulells
-              <svg class="w-5 h-5 transition-transform" id="dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-              </svg>
-            </button>
-            <div id="dashboard-menu" class="absolute left-0 top-full mt-2 w-56 bg-white shadow-xl rounded-lg border border-gray-200 hidden" role="menu" aria-label="Menú de taulells" style="z-index: 9999;">
-              <a href="./vista/dashboard/presentation.html" class="block px-4 py-3 text-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 first:rounded-t-lg" role="menuitem" data-i18n="nav_presentacio">Presentació</a>
-              <a href="./vista/dashboard/demografic.html" class="block px-4 py-3 text-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600" role="menuitem" data-i18n="nav_demografia">Demografia</a>
-              <a href="./vista/dashboard/centre.html" class="block px-4 py-3 text-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600" role="menuitem" data-i18n="nav_centres_dia">Centres de Dia</a>
-              <a href="./vista/dashboard/residencies.html" class="block px-4 py-3 text-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600" role="menuitem" data-i18n="nav_residencies">Residències</a>
-              <a href="./vista/dashboard/transparency.html" class="block px-4 py-3 text-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 last:rounded-b-lg" role="menuitem" data-i18n="nav_transparencia">Transparència</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Links (mobile) -->
-      <div id="mobile-menu" class="hidden flex-col gap-4 pb-4 px-4 md:hidden">
-        <a href="index.html" class="block text-lg font-bold text-blue-600" data-i18n="nav_inicio">Inici</a>
-        <a href="vista/serveis.html" class="block text-lg font-semibold text-gray-600 hover:text-blue-600"
-          data-i18n="nav_servicios">
-          Serveis de dependència</a>
-        <a href="vista/ajuts.html" class="block text-lg font-semibold text-gray-600 hover:text-blue-600"
-          data-i18n="nav_ayudas">
-          Ajuts públics</a>
-        <a href="vista/soledad.html" class="block text-lg font-semibold text-gray-600 hover:text-blue-600"
-          data-i18n="nav_soledad">Solitud</a>
-        <a href="vista/dashboard.html" class="block text-lg font-semibold text-gray-600 hover:text-blue-600"
-          data-i18n="nav_dashboard">Taulells</a>
-      </div>
-    </div>
-  </nav>
 
   <!-- Hero Section -->
   <section class="hero-section text-white flex items-center justify-center" aria-label="Secció principal de Mapa Viu">

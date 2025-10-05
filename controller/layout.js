@@ -1,67 +1,92 @@
 const Layout = {
+  // Detectar si estamos en dashboard
+  getBasePath() {
+    const path = window.location.pathname;
+    const isDashboard = path.includes('/dashboard/');
+    return isDashboard ? '../../' : '../' , './';
+  },
+
   navbar: `
-    <nav class="bg-white shadow-md sticky top-0 z-50" aria-label="Menú principal de navegació">
-      <div class="container mx-auto px-4">
-        <div class="flex items-center justify-between py-4">
-          <!-- Logo -->
-          <a href="index.html" class="flex items-center gap-3" aria-label="Tornar a la pàgina principal de ViuActiu">
-            <img src="../vista/images/logo_trans.png" alt="Logo ViuActiu" class="h-auto w-28 object-contain">
-          </a>
-          <!-- Botó Hamburguesa (només mòbils) -->
-          <button id="menu-toggle" class="md:hidden text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-600" aria-label="Obrir o tancar el menú de navegació" aria-expanded="false">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-            </svg>
-          </button>
-          <!-- Enllaços (escriptori) -->
-          <div class="hidden md:flex gap-6 items-center" role="navigation">
-            <a href="../index.html" class="text-2xl font-bold text-blue-600 border-b-2 border-blue-600 pb-2" aria-current="page" data-i18n="nav_inici">Inici</a>
-            <!-- Dropdown per Taulells -->
-            <div class="relative">
-              <button id="dashboard-toggle" class="text-2xl font-semibold text-gray-600 hover:text-blue-600 pb-2 flex items-center gap-1 focus:outline-none focus:ring-2 focus:ring-blue-600" aria-haspopup="true" aria-expanded="false" aria-controls="dashboard-menu" data-i18n="nav_taulells">
-                Taulells
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                </svg>
-              </button>
-              <div id="dashboard-menu" class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md hidden z-50" role="menu" aria-label="Menú de taulells">
-                <a href="./dashboard/presentation.html" class="block px-4 py-2 text-base text-gray-600 hover:bg-blue-50 hover:text-blue-600 focus:bg-blue-50 focus:text-blue-600" role="menuitem" data-i18n="nav_presentacio">Presentació</a>
-                <a href="./dashboard/demografic.html" class="block px-4 py-2 text-base text-gray-600 hover:bg-blue-50 hover:text-blue-600 focus:bg-blue-50 focus:text-blue-600" role="menuitem" data-i18n="nav_demografia">Demografia</a>
-                <a href="./dashboard/centre.html" class="block px-4 py-2 text-base text-gray-600 hover:bg-blue-50 hover:text-blue-600 focus:bg-blue-50 focus:text-blue-600" role="menuitem" data-i18n="nav_centres_dia">Centres de Dia</a>
-                <a href="./dashboard/residencies.html" class="block px-4 py-2 text-base text-gray-600 hover:bg-blue-50 hover:text-blue-600 focus:bg-blue-50 focus:text-blue-600" role="menuitem" data-i18n="nav_residencies">Residències</a>
-                <a href="./dashboard/transparency.html" class="block px-4 py-2 text-base text-gray-600 hover:bg-blue-50 hover:text-blue-600 focus:bg-blue-50 focus:text-blue-600" role="menuitem" data-i18n="nav_transparencia">Transparència</a>
-              </div>
-            </div>
-            <a href="serveis.html" class="text-2xl font-semibold text-gray-600 hover:text-blue-600 pb-2" data-i18n="nav_serveis">Serveis de dependència</a>
-            <a href="ajuts.html" class="text-2xl font-semibold text-gray-600 hover:text-blue-600 pb-2" data-i18n="nav_ajuts">Ajuts públics</a>
-            <a href="solitud.html" class="text-2xl font-semibold text-gray-600 hover:text-blue-600 pb-2" data-page="solitud" data-i18n="nav_solitud">Solitud</a>
-          </div>
-        </div>
-        <!-- Enllaços (mòbil) -->
-        <div id="mobile-menu" class="hidden flex-col gap-4 pb-4 md:hidden" role="navigation">
-          <a href="index.html" class="block text-lg font-bold text-blue-600" data-i18n="nav_inici">Inici</a>
-          <!-- Dropdown per Taulells (mòbil) -->
-          <div class="relative">
-            <button id="mobile-dashboard-toggle" class="block text-lg font-semibold text-gray-600 hover:text-blue-600 flex items-center gap-1 w-full text-left focus:outline-none focus:ring-2 focus:ring-blue-600" aria-haspopup="true" aria-expanded="false" aria-controls="mobile-dashboard-menu" data-i18n="nav_taulells">
+ <nav class="bg-white shadow-md sticky top-0 z-50" aria-label="Menú principal de navegació">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-between py-4">
+
+        <!-- Logo -->
+        <a href="#" id="logo-link" class="flex items-center gap-3">
+          <img src="" id="logo-img" alt="Logo ViuActiu" class="h-auto w-28 object-contain">
+        </a>
+
+        <!-- Botón Hamburguesa (solo móviles) -->
+        <button id="menu-toggle" class="md:hidden text-gray-600 focus:outline-none" aria-label="Menú de navegación">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+
+        <!-- Links (desktop) -->
+        <div class="hidden md:flex gap-6 items-center">
+          <a href="../index.html" class="text-2xl font-bold text-blue-600 border-b-2 border-blue-600 pb-2"
+            aria-current="page" data-i18n="nav_inicio">Inici</a>
+          <a href="serveis.html" class="text-2xl font-semibold text-gray-600 hover:text-blue-600 pb-2"
+            data-i18n="nav_servicios">
+            Serveis de dependència</a>
+          <a href="ajuts.html" class="text-2xl font-semibold text-gray-600 hover:text-blue-600 pb-2"
+            data-i18n="nav_ayudas">
+            Ajuts públics</a>
+          <a href="solitud.html" class="text-2xl font-semibold text-gray-600 hover:text-blue-600 pb-2"
+            data-page="soledad" data-i18n="nav_soledad">Solitud</a>
+          
+          <!-- Dropdown per Taulells -->
+          <div class="relative group">
+            <button id="dashboard-toggle" class="text-2xl font-semibold text-gray-600 hover:text-blue-600 pb-2 flex items-center gap-1 focus:outline-none" aria-haspopup="true" aria-expanded="false" aria-controls="dashboard-menu" data-i18n="nav_taulells">
               Taulells
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <svg class="w-5 h-5 transition-transform" id="dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
               </svg>
             </button>
-            <div id="mobile-dashboard-menu" class="hidden flex-col mt-2 pl-4" role="menu" aria-label="Menú de taulells mòbil">
-              <a href="./dashboard/presentacio.html" class="block text-base text-gray-600 hover:text-blue-600 py-1 focus:text-blue-600 focus:bg-blue-50" role="menuitem" data-i18n="nav_presentacio">Presentació</a>
-              <a href="./dashboard/demografic.html" class="block text-base text-gray-600 hover:text-blue-600 py-1 focus:text-blue-600 focus:bg-blue-50" role="menuitem" data-i18n="nav_demografia">Demografia</a>
-              <a href="./dashboard/centre.html" class="block text-base text-gray-600 hover:text-blue-600 py-1 focus:text-blue-600 focus:bg-blue-50" role="menuitem" data-i18n="nav_centres_dia">Centres de Dia</a>
-              <a href="./dashboard/residencies.html" class="block text-base text-gray-600 hover:text-blue-600 py-1 focus:text-blue-600 focus:bg-blue-50" role="menuitem" data-i18n="nav_residencies">Residències</a>
-              <a href="./dashboard/transparency.html" class="block text-base text-gray-600 hover:text-blue-600 py-1 focus:text-blue-600 focus:bg-blue-50" role="menuitem" data-i18n="nav_transparencia">Transparència</a>
+            <div id="dashboard-menu" class="absolute left-0 top-full mt-2 w-56 bg-white shadow-xl rounded-lg border border-gray-200 hidden" role="menu" aria-label="Menú de taulells" style="z-index: 9999;">
+              <a href="presentation.html" class="block px-4 py-3 text-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 first:rounded-t-lg" role="menuitem" data-i18n="nav_presentacio">Presentació</a>
+              <a href="demografic.html" class="block px-4 py-3 text-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600" role="menuitem" data-i18n="nav_demografia">Demografia</a>
+              <a href="centre.html" class="block px-4 py-3 text-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600" role="menuitem" data-i18n="nav_centres_dia">Centres de Dia</a>
+              <a href="residencies.html" class="block px-4 py-3 text-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600" role="menuitem" data-i18n="nav_residencies">Residències</a>
+              <a href="transparency.html" class="block px-4 py-3 text-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 last:rounded-b-lg" role="menuitem" data-i18n="nav_transparencia">Transparència</a>
             </div>
           </div>
-          <a href="serveis.html" class="block text-lg font-semibold text-gray-600 hover:text-blue-600" data-i18n="nav_serveis">Serveis de dependència</a>
-          <a href="ajuts.html" class="block text-lg font-semibold text-gray-600 hover:text-blue-600" data-i18n="nav_ajuts">Ajuts públics</a>
-          <a href="solitud.html" class="block text-lg font-semibold text-gray-600 hover:text-blue-600" data-i18n="nav_solitud">Solitud</a>
         </div>
       </div>
-    </nav>
+
+      <!-- Links (mobile) -->
+      <div id="mobile-menu" class="hidden flex-col gap-4 pb-4 px-4 md:hidden">
+        <a href="index.html" class="block text-lg font-bold text-blue-600" data-i18n="nav_inicio">Inici</a>
+        <a href="vista/serveis.html" class="block text-lg font-semibold text-gray-600 hover:text-blue-600"
+          data-i18n="nav_servicios">
+          Serveis de dependència</a>
+        <a href="vista/ajuts.html" class="block text-lg font-semibold text-gray-600 hover:text-blue-600"
+          data-i18n="nav_ayudas">
+          Ajuts públics</a>
+        <a href="vista/soledad.html" class="block text-lg font-semibold text-gray-600 hover:text-blue-600"
+          data-i18n="nav_soledad">Solitud</a>
+        
+        <!-- Dropdown móvil per Taulells -->
+        <div class="relative">
+          <button id="mobile-dashboard-toggle" class="block text-lg font-semibold text-gray-600 hover:text-blue-600 flex items-center gap-1 w-full text-left focus:outline-none" aria-haspopup="true" aria-expanded="false" aria-controls="mobile-dashboard-menu" data-i18n="nav_taulells">
+            Taulells
+            <svg class="w-5 h-5 transition-transform" id="mobile-dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div id="mobile-dashboard-menu" class="hidden flex-col mt-2 pl-4" role="menu">
+            <a href="./vista/dashboard/presentation.html" class="block text-base text-gray-600 hover:text-blue-600 py-2" role="menuitem" data-i18n="nav_presentacio">Presentació</a>
+            <a href="./vista/dashboard/demografic.html" class="block text-base text-gray-600 hover:text-blue-600 py-2" role="menuitem" data-i18n="nav_demografia">Demografia</a>
+            <a href="./vista/dashboard/centre.html" class="block text-base text-gray-600 hover:text-blue-600 py-2" role="menuitem" data-i18n="nav_centres_dia">Centres de Dia</a>
+            <a href="./vista/dashboard/residencies.html" class="block text-base text-gray-600 hover:text-blue-600 py-2" role="menuitem" data-i18n="nav_residencies">Residències</a>
+            <a href="./vista/dashboard/transparency.html" class="block text-base text-gray-600 hover:text-blue-600 py-2" role="menuitem" data-i18n="nav_transparencia">Transparència</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+        
   `,
 
   footer: `
@@ -70,17 +95,17 @@ const Layout = {
         <div class="grid md:grid-cols-4 gap-6 text-center md:text-left">
           <!-- Sobre ViuActiu -->
           <div>
-            <h3 class="text-xl font-bold mb-3"><a href="../index.html" class="hover:text-white" aria-label="Tornar a la pàgina principal de ViuActiu">ViuActiu</a></h3>
+            <h3 class="text-xl font-bold mb-3"><a href="#" id="footer-home-link" class="hover:text-white" aria-label="Tornar a la pàgina principal de ViuActiu">ViuActiu</a></h3>
             <p class="text-base text-gray-300" data-i18n="footer_desc">Recursos i ajuts per a l'envelliment saludable a Catalunya</p>
           </div>
           <!-- Enllaços -->
           <div>
             <h3 class="text-xl font-bold mb-3" data-i18n="footer_mapa_web">Mapa de la web</h3>
             <ul class="space-y-2 text-base text-gray-300">
-              <li><a href="../index.html" class="hover:text-white" data-i18n="nav_inici">Inici</a></li>
-              <li><a href="vista/serveis.html" class="hover:text-white" data-i18n="nav_serveis">Serveis de dependència</a></li>
-              <li><a href="vista/ajuts.html" class="hover:text-white" data-i18n="nav_ajuts">Ajuts públics</a></li>
-              <li><a href="vista/solitud.html" class="hover:text-white" data-i18n="nav_solitud">Solitud</a></li>
+              <li><a href="#" class="nav-link hover:text-white" data-page="index" data-i18n="nav_inici">Inici</a></li>
+              <li><a href="#" class="nav-link hover:text-white" data-page="serveis" data-i18n="nav_serveis">Serveis de dependència</a></li>
+              <li><a href="#" class="nav-link hover:text-white" data-page="ajuts" data-i18n="nav_ajuts">Ajuts públics</a></li>
+              <li><a href="#" class="nav-link hover:text-white" data-page="solitud" data-i18n="nav_solitud">Solitud</a></li>
             </ul>
           </div>
           <!-- Recursos útils -->
@@ -88,7 +113,7 @@ const Layout = {
             <h3 class="text-xl font-bold mb-3" data-i18n="footer_recursos">Recursos útils</h3>
             <ul class="space-y-2 text-base text-gray-300">
               <li><a href="https://creuroja.org" class="hover:text-white" target="_blank" rel="noopener" data-i18n="footer_creu_roja">Creu Roja</a></li>
-              <li><a href="https://telefonodelaesperanza.org" class="hover:text-white" target="_blank" rel="noopener" data-i18n="footer_telefon">Telèfon de l’Esperança</a></li>
+              <li><a href="https://telefonodelaesperanza.org" class="hover:text-white" target="_blank" rel="noopener" data-i18n="footer_telefon">Telèfon de l'Esperança</a></li>
               <li><a href="https://gencat.cat/ca/temes/salut" class="hover:text-white" target="_blank" rel="noopener" data-i18n="footer_aules">Aules de la Gent Gran - Generalitat</a></li>
               <li><a href="https://fundacionlacaixa.org" class="hover:text-white" target="_blank" rel="noopener" data-i18n="footer_caixa">Obra Social "la Caixa"</a></li>
               <li><a href="https://amicsdelagentgran.org" class="hover:text-white" target="_blank" rel="noopener" data-i18n="footer_amics">Amics de la Gent Gran</a></li>
@@ -100,7 +125,7 @@ const Layout = {
             <ul class="space-y-2 text-sm text-gray-300">
               <li><a href="https://web.gencat.cat/ca/inici" target="_blank" rel="noopener" class="hover:text-white">Generalitat de Catalunya</a></li>
               <li><a href="https://www.diba.cat/" target="_blank" rel="noopener" class="hover:text-white">Diputació de Barcelona</a></li>
-              <li><a href="https://www.cis.es/cis/opencms/ES/index.html" target="_blank" rel="noopener" class="hover:text-white">Centre d’Investigacions Sociològiques</a></li>
+              <li><a href="https://www.cis.es/cis/opencms/ES/index.html" target="_blank" rel="noopener" class="hover:text-white">Centre d'Investigacions Sociològiques</a></li>
               <li><a href="https://opendata.gencat.cat" target="_blank" rel="noopener" class="hover:text-white">OpenData Catalunya</a></li>
             </ul>
           </div>
@@ -180,12 +205,12 @@ const Layout = {
       }
     </style>
 
-    <button id="accessibility-toggle-btn" aria-label="Obrir eines d’accessibilitat" aria-expanded="false" aria-controls="accessibility-toolbar" title="Accessibilitat">
+    <button id="accessibility-toggle-btn" aria-label="Obrir eines d'accessibilitat" aria-expanded="false" aria-controls="accessibility-toolbar" title="Accessibilitat">
       <span aria-hidden="true">♿</span>
     </button>
 
-    <div id="accessibility-toolbar" role="region" aria-label="Eines d’accessibilitat">
-      <p>Eines d’accessibilitat</p>
+    <div id="accessibility-toolbar" role="region" aria-label="Eines d'accessibilitat">
+      <p>Eines d'accessibilitat</p>
       <button id="increase-font" aria-label="Augmentar la mida del text">A+</button>
       <button id="decrease-font" aria-label="Disminuir la mida del text">A-</button>
       <br />
@@ -201,11 +226,55 @@ const Layout = {
     </div>
   `,
 
+  updateLinks() {
+    const basePath = this.getBasePath();
+    const isDashboard = basePath === '../../';
+    
+    // Actualizar logo
+    const logoLink = document.getElementById('logo-link');
+    const logoImg = document.getElementById('logo-img');
+    if (logoLink && logoImg) {
+      logoLink.href = isDashboard ? '../../index.html' : '../index.html';
+      logoImg.src = isDashboard ? '../../vista/images/logo_trans.png' : '../vista/images/logo_trans.png';
+    }
+
+    // Actualizar enlace del footer
+    const footerHomeLink = document.getElementById('footer-home-link');
+    if (footerHomeLink) {
+      footerHomeLink.href = isDashboard ? '../../index.html' : '../index.html';
+    }
+
+    // Actualizar enlaces de navegación normales
+    document.querySelectorAll('.nav-link').forEach(link => {
+      const page = link.getAttribute('data-page');
+      if (page === 'index') {
+        link.href = isDashboard ? '../../index.html' : '../index.html';
+      } else {
+        link.href = isDashboard ? `../../vista/${page}.html` : `${page}.html`;
+      }
+    });
+
+    // Actualizar enlaces del dropdown de dashboard
+    document.querySelectorAll('.dashboard-link').forEach(link => {
+      const page = link.getAttribute('data-page');
+      if (isDashboard) {
+        // Si ya estamos en dashboard, usar rutas relativas simples
+        link.href = `./${page}.html`;
+      } else {
+        // Si estamos en vista, ir a vista/dashboard
+        link.href = `./dashboard/${page}.html`;
+      }
+    });
+  },
+
   init() {
     // Insertar navbar
     const navbarContainer = document.getElementById('navbar');
     if (navbarContainer) {
       navbarContainer.innerHTML = this.navbar;
+
+      // Actualizar todas las rutas
+      this.updateLinks();
 
       // Inicialitzar menú hamburguesa
       const toggleBtn = document.getElementById('menu-toggle');
@@ -221,11 +290,20 @@ const Layout = {
       // Inicialitzar menú desplegable escriptori
       const dashboardToggle = document.getElementById('dashboard-toggle');
       const dashboardMenu = document.getElementById('dashboard-menu');
+      const dropdownArrow = document.getElementById('dropdown-arrow');
+      
       if (dashboardToggle && dashboardMenu) {
-        dashboardToggle.addEventListener('click', () => {
+        dashboardToggle.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
           const isHidden = dashboardMenu.classList.contains('hidden');
-          dashboardMenu.classList.toggle('hidden', !isHidden);
+          dashboardMenu.classList.toggle('hidden');
           dashboardToggle.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+          
+          // Rotar flecha
+          if (dropdownArrow) {
+            dropdownArrow.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
+          }
         });
 
         // Tancar el menú quan es fa clic fora
@@ -233,6 +311,9 @@ const Layout = {
           if (!dashboardToggle.contains(event.target) && !dashboardMenu.contains(event.target)) {
             dashboardMenu.classList.add('hidden');
             dashboardToggle.setAttribute('aria-expanded', 'false');
+            if (dropdownArrow) {
+              dropdownArrow.style.transform = 'rotate(0deg)';
+            }
           }
         });
 
@@ -243,6 +324,9 @@ const Layout = {
               dashboardMenu.classList.add('hidden');
               dashboardToggle.setAttribute('aria-expanded', 'false');
               dashboardToggle.focus();
+              if (dropdownArrow) {
+                dropdownArrow.style.transform = 'rotate(0deg)';
+              }
             }
           });
         });
@@ -254,7 +338,7 @@ const Layout = {
       if (mobileDashboardToggle && mobileDashboardMenu) {
         mobileDashboardToggle.addEventListener('click', () => {
           const isHidden = mobileDashboardMenu.classList.contains('hidden');
-          mobileDashboardMenu.classList.toggle('hidden', !isHidden);
+          mobileDashboardMenu.classList.toggle('hidden');
           mobileDashboardToggle.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
         });
       }
@@ -264,12 +348,14 @@ const Layout = {
     const footerContainer = document.getElementById('footer');
     if (footerContainer) {
       footerContainer.innerHTML = this.footer;
+      // Actualizar enlaces del footer también
+      this.updateLinks();
     }
 
-    // Insertar barra d’accessibilitat i botó toggle al final del body
+    // Insertar barra d'accessibilitat i botó toggle al final del body
     document.body.insertAdjacentHTML('beforeend', this.accessibilityToolbar);
 
-    // Inicialitzar funcionalitat d’accessibilitat
+    // Inicialitzar funcionalitat d'accessibilitat
     this.initAccessibilityToolbar();
 
     // Traduccions si aplica
@@ -394,11 +480,11 @@ const Layout = {
       if (isVisible) {
         toolbar.style.display = 'none';
         toggleBtn.setAttribute('aria-expanded', 'false');
-        toggleBtn.setAttribute('aria-label', 'Obrir eines d’accessibilitat');
+        toggleBtn.setAttribute('aria-label', 'Obrir eines d\'accessibilitat');
       } else {
         toolbar.style.display = 'block';
         toggleBtn.setAttribute('aria-expanded', 'true');
-        toggleBtn.setAttribute('aria-label', 'Tancar eines d’accessibilitat');
+        toggleBtn.setAttribute('aria-label', 'Tancar eines d\'accessibilitat');
       }
     });
 
