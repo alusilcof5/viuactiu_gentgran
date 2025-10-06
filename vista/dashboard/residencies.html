@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Residències per a Gent Gran - Barcelona Open Data</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .slide-in { animation: slideIn 0.6s ease-out forwards; }
+        body {
+            background: linear-gradient(135deg, #fff5eb 0%, #fed7aa 100%);
+        }
+        .district-path {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .district-path:hover {
+            filter: brightness(1.1);
+            stroke-width: 4;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen p-6">
+    <div id="navbar" role="banner"></div>
+
+    <div class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <header class="bg-white/90 backdrop-blur rounded-2xl shadow-lg p-6 mb-6 border border-orange-200">
+            <div class="flex items-center justify-between flex-wrap gap-4">
+                <div class="flex-1">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="flex gap-2">
+                            <div class="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></div>
+                            <div class="w-2 h-2 bg-amber-500 rounded-full animate-pulse" style="animation-delay: 0.2s"></div>
+                            <div class="w-2 h-2 bg-yellow-600 rounded-full animate-pulse" style="animation-delay: 0.4s"></div>
+                        </div>
+                        <span class="text-sm font-bold text-orange-600 uppercase tracking-widest">Barcelona Open Data 2025</span>
+                    </div>
+                    <h1 class="text-4xl font-black text-orange-900">Residències per a Gent Gran</h1>
+                    <p class="text-orange-700 mt-2">Infraestructura residencial a Barcelona - #50opendata</p>
+                </div>
+                <div class="bg-gradient-to-br from-orange-500 to-amber-600 text-white px-8 py-5 rounded-2xl shadow-xl">
+                    <div class="text-sm font-semibold opacity-90 mb-1">Total Residències</div>
+                    <div class="text-4xl font-black" id="totalResidences">0</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            <div class="bg-gradient-to-br from-orange-500 to-orange-700 rounded-2xl p-6 shadow-xl text-white slide-in">
+                <div class="flex items-center justify-between">
+                    <div class="flex-1">
+                        <p class="text-orange-100 text-sm font-semibold mb-2">TOTAL PLACES</p>
+                        <p class="text-5xl font-black mb-2" id="totalPlaces">0</p>
+                        <p class="text-orange-100 text-sm">Capacitat total</p>
+                    </div>
+                    <svg class="w-14 h-14 opacity-80" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-amber-500 to-amber-700 rounded-2xl p-6 shadow-xl text-white slide-in" style="animation-delay: 0.1s">
+                <div class="flex items-center justify-between">
+                    <div class="flex-1">
+                        <p class="text-amber-100 text-sm font-semibold mb-2">PLACES MITJANES</p>
+                        <p class="text-5xl font-black mb-2" id="avgPlaces">0</p>
+                        <p class="text-amber-100 text-sm">Per residència</p>
+                    </div>
+                    <svg class="w-14 h-14 opacity-80" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-yellow-600 to-yellow-800 rounded-2xl p-6 shadow-xl text-white slide-in" style="animation-delay: 0.2s">
+                <div class="flex items-center justify-between">
+                    <div class="flex-1">
+                        <p class="text-yellow-100 text-sm font-semibold mb-2">DISTRICTES</p>
+                        <p class="text-5xl font-black mb-2" id="totalDistricts">0</p>
+                        <p class="text-yellow-100 text-sm">Amb cobertura</p>
+                    </div>
+                    <svg class="w-14 h-14 opacity-80" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mapa de Barcelona -->
+        <div class="bg-white/90 backdrop-blur rounded-2xl shadow-xl p-6 mb-6 border border-orange-200 slide-in" style="animation-delay: 0.3s">
+            <h3 class="text-xl font-black text-orange-900 mb-6 flex items-center gap-3">
+                <span class="w-1 h-8 bg-gradient-to-b from-orange-500 to-amber-600 rounded-full"></span>
+                Mapa de Densitat de Residències per Districte
+            </h3>
+            <div class="bg-gradient-to-br from-orange-50 to-amber-50 p-6 rounded-xl">
+                <svg id="barcelonaMap" viewBox="0 0 800 600" class="w-full h-[600px] md:h-[700px]">
+                    <!-- Els paths es generaran dinàmicament -->
+                </svg>
+                <div class="mt-6 flex flex-wrap gap-4 justify-center text-sm">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded border-2" style="background: #dc2626; border-color: #991b1b;"></div>
+                        <span class="text-gray-700 font-medium">> 3000 places</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded border-2" style="background: #fb923c; border-color: #ea580c;"></div>
+                        <span class="text-gray-700 font-medium">2000-3000 places</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded border-2" style="background: #fcd34d; border-color: #f59e0b;"></div>
+                        <span class="text-gray-700 font-medium">1000-2000 places</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded border-2" style="background: #e2cf82; border-color: #fbbf24;"></div>
+                        <span class="text-gray-700 font-medium">< 1000 places</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 bg-gray-200 rounded border-2 border-gray-400"></div>
+                        <span class="text-gray-700 font-medium">Sense places</span>
+                    </div>
+                </div>
+            </div>
+            <div id="districtInfo" class="mt-4 p-4 bg-orange-50 rounded-lg hidden">
+                <h4 class="font-bold text-orange-900 mb-2 text-lg" id="infoDistrictName">Selecciona un districte</h4>
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="bg-white p-3 rounded-lg">
+                        <span class="text-gray-600 text-sm">Residències:</span>
+                        <span class="font-bold text-orange-700 ml-2 text-xl" id="infoResidences"></span>
+                    </div>
+                    <div class="bg-white p-3 rounded-lg">
+                        <span class="text-gray-600 text-sm">Places:</span>
+                        <span class="font-bold text-orange-700 ml-2 text-xl" id="infoPlaces"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+            <div class="bg-white/90 backdrop-blur rounded-xl shadow-lg p-6 border border-orange-200 slide-in" style="animation-delay: 0.4s">
+                <h3 class="text-lg font-semibold text-orange-900 mb-4">Distribució per Districte</h3>
+                <canvas id="districtChart"></canvas>
+            </div>
+
+            <div class="bg-white/90 backdrop-blur rounded-xl shadow-lg p-6 border border-orange-200 slide-in" style="animation-delay: 0.5s">
+                <h3 class="text-lg font-semibold text-orange-900 mb-4">Places per Districte</h3>
+                <canvas id="placesChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Residences List -->
+        <div class="bg-white/90 backdrop-blur rounded-xl shadow-lg p-6 border border-orange-200 slide-in" style="animation-delay: 0.6s">
+            <h3 class="text-lg font-semibold text-orange-900 mb-4">Llista de Residències</h3>
+            <div class="mb-4">
+                <input type="text" id="searchInput" placeholder="Cercar per nom, districte o barri..." 
+                    class="w-full px-4 py-2 border border-orange-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+            </div>
+            <div id="residencesList" class="space-y-3 max-h-96 overflow-y-auto"></div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-8 bg-white/70 backdrop-blur-sm rounded-2xl p-6 text-center border border-orange-100">
+            <p class="text-gray-600 text-sm mb-2">
+                <strong>Font:</strong> Barcelona Open Data - Ajuntament de Barcelona
+            </p>
+            <p class="text-gray-500 text-xs">
+                Dashboard #50opendata 2025 - Envejecimiento Saludable y Longevidad
+            </p>
+        </footer>
+    </div>
+
+    <div id="footer"></div>
+
+    <script>
+        // Configuració i estat
+        const STATE = {
+            residenciesData: [],
+            filteredData: []
+        };
+
+        const CONFIG = {
+            districtPaths: {
+                'Ciutat Vella': 'M380,320 L440,280 L480,300 L500,340 L460,380 L400,360 Z',
+                'Eixample': 'M300,260 L380,320 L400,360 L340,400 L280,340 Z',
+                'Sants-Montjuïc': 'M200,360 L280,340 L340,400 L320,480 L240,460 Z',
+                'Les Corts': 'M180,280 L260,260 L300,260 L280,340 L200,360 Z',
+                'Sarrià-Sant Gervasi': 'M180,180 L260,160 L300,200 L280,280 L200,260 Z',
+                'Gràcia': 'M260,160 L340,140 L380,200 L340,260 L260,260 Z',
+                'Horta-Guinardó': 'M340,140 L440,100 L480,180 L420,240 L360,200 Z',
+                'Nou Barris': 'M280,80 L380,60 L440,100 L380,140 L300,120 Z',
+                'Sant Andreu': 'M440,100 L540,80 L580,160 L520,200 L460,180 Z',
+                'Sant Martí': 'M480,200 L580,180 L620,280 L560,340 L500,300 Z'
+            },
+            colorScale: [
+                { min: 0, max: 0, fill: '#e5e7eb', stroke: '#9ca3af', label: 'Sense places' },
+                { min: 1, max: 999, fill: '#e2cf82', stroke: '#fbbf24', label: '< 1000 places' },
+                { min: 1000, max: 1999, fill: '#fcd34d', stroke: '#f59e0b', label: '1000-2000 places' },
+                { min: 2000, max: 2999, fill: '#fb923c', stroke: '#ea580c', label: '2000-3000 places' },
+                { min: 3000, max: Infinity, fill: '#dc2626', stroke: '#991b1b', label: '> 3000 places' }
+            ]
+        };
+
+        // Utilitats
+        const getPlacesFromResidence = (residence) => {
+            const placesAttr = residence.attribute_categories
+                ?.flatMap(cat => cat.attributes || [])
+                .find(attr => attr.name === "Nombre de  places");
+            return placesAttr?.values?.[0]?.integer_value || 0;
+        };
+
+        const getColorForCount = (count) => {
+            const colorConfig = CONFIG.colorScale.find(c => count >= c.min && count <= c.max);
+            return colorConfig || CONFIG.colorScale[0];
+        };
+
+        // Càrrega de dades
+        async function loadData() {
+            try {
+                let data;
+                if (window.fs?.readFile) {
+                    const response = await window.fs.readFile('./data/residencies.json', { encoding: 'utf8' });
+                    data = JSON.parse(response);
+                } else {
+                    const response = await fetch('./data/residencies.json');
+                    data = await response.json();
+                }
+                
+                STATE.residenciesData = Array.isArray(data) ? data : [data];
+                STATE.filteredData = STATE.residenciesData;
+                processData();
+            } catch (error) {
+                console.error('Error carregant dades:', error);
+                showError('Error carregant les dades. Assegura\'t que el fitxer ./data/residencies.json existeix.');
+            }
+        }
+
+        function showError(message) {
+            document.getElementById('residencesList').innerHTML = 
+                `<div class="text-center text-orange-700 py-8">${message}</div>`;
+        }
+
+        // Processament de dades
+        function processData() {
+            const stats = calculateStats(STATE.residenciesData);
+            updateStatsDisplay(stats);
+            updateBarcelonaMap(stats.districtCounts, stats.districtPlaces);
+            createCharts(stats.districtCounts, stats.districtPlaces);
+            renderResidencesList(STATE.residenciesData);
+        }
+
+        function calculateStats(data) {
+            const stats = {
+                totalResidences: data.length,
+                totalPlaces: 0,
+                districtCounts: {},
+                districtPlaces: {}
+            };
+
+            data.forEach(res => {
+                const places = getPlacesFromResidence(res);
+                stats.totalPlaces += places;
+
+                const district = res.addresses?.[0]?.district_name || 'Desconegut';
+                stats.districtCounts[district] = (stats.districtCounts[district] || 0) + 1;
+                stats.districtPlaces[district] = (stats.districtPlaces[district] || 0) + places;
+            });
+
+            stats.avgPlaces = stats.totalResidences > 0 
+                ? Math.round(stats.totalPlaces / stats.totalResidences) 
+                : 0;
+            stats.totalDistricts = Object.keys(stats.districtCounts).length;
+
+            return stats;
+        }
+
+        function updateStatsDisplay(stats) {
+            document.getElementById('totalResidences').textContent = stats.totalResidences;
+            document.getElementById('totalPlaces').textContent = stats.totalPlaces;
+            document.getElementById('avgPlaces').textContent = stats.avgPlaces;
+            document.getElementById('totalDistricts').textContent = stats.totalDistricts;
+        }
+
+        // Mapa
+        function updateBarcelonaMap(districtCounts, districtPlaces) {
+            const svg = document.getElementById('barcelonaMap');
+            svg.innerHTML = '';
+
+            Object.entries(CONFIG.districtPaths).forEach(([district, path]) => {
+                const count = districtCounts[district] || 0;
+                const places = districtPlaces[district] || 0;
+                const colors = getColorForCount(places); // Usar places en lloc de count
+
+                const pathElement = createDistrictPath(path, colors, district, count, places);
+                svg.appendChild(pathElement);
+
+                addDistrictLabels(svg, pathElement, district, places, colors); // Passar places
+            });
+
+            addMapInstruction(svg);
+        }
+
+        function createDistrictPath(path, colors, district, count, places) {
+            const pathElement = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            pathElement.setAttribute('d', path);
+            pathElement.setAttribute('fill', colors.fill);
+            pathElement.setAttribute('stroke', colors.stroke);
+            pathElement.setAttribute('stroke-width', '2');
+            pathElement.classList.add('district-path');
+
+            const title = document.createElementNS('http://www.w3.org/2000/svg', 'title');
+            title.textContent = `${district}: ${count} residència${count !== 1 ? 's' : ''}, ${places} places`;
+            pathElement.appendChild(title);
+
+            pathElement.addEventListener('click', () => showDistrictInfo(district, count, places));
+
+            return pathElement;
+        }
+
+        function addDistrictLabels(svg, pathElement, district, places, colors) {
+            const pathBox = pathElement.getBBox();
+            const centerX = pathBox.x + pathBox.width / 2;
+            const centerY = pathBox.y + pathBox.height / 2;
+
+            const textColor = places >= 20 ? '#ffffff' : '#374151';
+            const countColor = places >= 20 ? '#ffffff' : '#6b7280';
+
+            const nameText = createSVGText(centerX, centerY - 8, district.split('-')[0], textColor, 'text-xs font-bold');
+            svg.appendChild(nameText);
+
+            const countText = createSVGText(centerX, centerY + 10, `${places} places`, countColor, 'text-sm font-black');
+            svg.appendChild(countText);
+        }
+
+        function createSVGText(x, y, content, fill, className) {
+            const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            text.setAttribute('x', x);
+            text.setAttribute('y', y);
+            text.setAttribute('text-anchor', 'middle');
+            text.setAttribute('dominant-baseline', 'middle');
+            text.setAttribute('class', `${className} pointer-events-none`);
+            text.setAttribute('fill', fill);
+            text.textContent = content;
+            return text;
+        }
+
+        function addMapInstruction(svg) {
+            const instruction = createSVGText(400, 560, 'Fes clic en cada districte per veure\'n els detalls', '#6b7280', 'text-base font-medium');
+            svg.appendChild(instruction);
+        }
+
+        function showDistrictInfo(district, count, places) {
+            const infoDiv = document.getElementById('districtInfo');
+            document.getElementById('infoDistrictName').textContent = district;
+            document.getElementById('infoResidences').textContent = count;
+            document.getElementById('infoPlaces').textContent = places;
+            infoDiv.classList.remove('hidden');
+            infoDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // Gràfics
+        function createCharts(districtCounts, districtPlaces) {
+            const districts = Object.keys(districtCounts).sort();
+            const counts = districts.map(d => districtCounts[d]);
+            const places = districts.map(d => districtPlaces[d]);
+
+            const chartConfig = {
+                type: 'bar',
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        y: { 
+                            beginAtZero: true, 
+                            grid: { color: 'rgba(251, 146, 60, 0.1)' },
+                            ticks: { font: { size: 12 } }
+                        },
+                        x: { 
+                            grid: { display: false },
+                            ticks: { font: { size: 11 } }
+                        }
+                    }
+                }
+            };
+
+            new Chart(document.getElementById('districtChart'), {
+                ...chartConfig,
+                data: {
+                    labels: districts,
+                    datasets: [{
+                        label: 'Nombre de Residències',
+                        data: counts,
+                        backgroundColor: districts.map(d => getColorForCount(districtPlaces[d]).fill),
+                        borderColor: districts.map(d => getColorForCount(districtPlaces[d]).stroke),
+                        borderWidth: 2
+                    }]
+                }
+            });
+
+            new Chart(document.getElementById('placesChart'), {
+                ...chartConfig,
+                data: {
+                    labels: districts,
+                    datasets: [{
+                        label: 'Total de Places',
+                        data: places,
+                        backgroundColor: 'rgba(234, 88, 12, 0.6)',
+                        borderColor: 'rgba(234, 88, 12, 1)',
+                        borderWidth: 2
+                    }]
+                }
+            });
+        }
+
+        // Llistat de residències
+        function renderResidencesList(data) {
+            const container = document.getElementById('residencesList');
+            
+            if (data.length === 0) {
+                container.innerHTML = '<div class="text-center text-gray-600 py-8">No s\'han trobat resultats</div>';
+                return;
+            }
+
+            container.innerHTML = data.map(res => createResidenceCard(res)).join('');
+        }
+
+        function createResidenceCard(res) {
+            const places = getPlacesFromResidence(res);
+            const address = res.addresses?.[0] || {};
+            const phone = res.values?.find(v => v.attribute_name === "Tel.")?.char_value || '';
+            const email = res.values?.find(v => v.attribute_type === "email")?.email_value || '';
+
+            return `
+                <div class="border border-orange-200 rounded-lg p-4 hover:bg-orange-50 transition-all hover:shadow-md">
+                    <div class="flex justify-between items-start gap-4">
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-semibold text-orange-900 mb-2">${res.name}</h4>
+                            <p class="text-sm text-orange-700 mb-1">
+                                ${address.address_name || ''} ${address.street_number_1 || ''}, ${address.neighborhood_name || ''}
+                            </p>
+                            <p class="text-sm text-orange-600 mb-2">
+                                <strong>Districte:</strong> ${address.district_name || 'N/D'}
+                            </p>
+                            ${phone || email ? `
+                                <div class="flex flex-wrap gap-3 text-xs text-orange-600">
+                                    ${phone ? `<span class="flex items-center gap-1">📞 ${phone}</span>` : ''}
+                                    ${email ? `<span class="flex items-center gap-1">✉️ ${email}</span>` : ''}
+                                </div>
+                            ` : ''}
+                        </div>
+                        <div class="flex-shrink-0">
+                            <div class="bg-gradient-to-br from-orange-500 to-orange-600 text-white px-4 py-2 rounded-full shadow-md">
+                                <div class="text-xs font-semibold opacity-90">Places</div>
+                                <div class="text-xl font-black">${places || 'N/D'}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Cerca
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase().trim();
+            
+            if (!searchTerm) {
+                STATE.filteredData = STATE.residenciesData;
+            } else {
+                STATE.filteredData = STATE.residenciesData.filter(res => {
+                    const name = (res.name || '').toLowerCase();
+                    const district = (res.addresses?.[0]?.district_name || '').toLowerCase();
+                    const neighborhood = (res.addresses?.[0]?.neighborhood_name || '').toLowerCase();
+                    return name.includes(searchTerm) || district.includes(searchTerm) || neighborhood.includes(searchTerm);
+                });
+            }
+            
+            renderResidencesList(STATE.filteredData);
+        });
+
+        // Inicialització
+        loadData();
+    </script>
+    <script src="../../controller/layout.js"></script>
+</body>
+</html>
