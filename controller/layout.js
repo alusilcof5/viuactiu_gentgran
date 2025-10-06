@@ -58,13 +58,13 @@ const Layout = {
       <!-- Links (mobile) -->
       <div id="mobile-menu" class="hidden flex-col gap-4 pb-4 px-4 md:hidden">
         <a href="index.html" class="block text-lg font-bold text-blue-600" data-i18n="nav_inicio">Inici</a>
-        <a href="vista/serveis.html" class="block text-lg font-semibold text-gray-600 hover:text-blue-600"
+        <a href="./vista/serveis.html" class="block text-lg font-semibold text-gray-600 hover:text-blue-600"
           data-i18n="nav_servicios">
           Serveis de dependència</a>
-        <a href="vista/ajuts.html" class="block text-lg font-semibold text-gray-600 hover:text-blue-600"
+        <a href="./vista/ajuts.html" class="block text-lg font-semibold text-gray-600 hover:text-blue-600"
           data-i18n="nav_ayudas">
           Ajuts públics</a>
-        <a href="vista/soledad.html" class="block text-lg font-semibold text-gray-600 hover:text-blue-600"
+        <a href="./vista/soledad.html" class="block text-lg font-semibold text-gray-600 hover:text-blue-600"
           data-i18n="nav_soledad">Solitud</a>
         
         <!-- Dropdown móvil per Taulells -->
@@ -76,11 +76,11 @@ const Layout = {
             </svg>
           </button>
           <div id="mobile-dashboard-menu" class="hidden flex-col mt-2 pl-4" role="menu">
-            <a href="./vista/dashboard/presentation.html" class="block text-base text-gray-600 hover:text-blue-600 py-2" role="menuitem" data-i18n="nav_presentacio">Presentació</a>
-            <a href="./vista/dashboard/demografic.html" class="block text-base text-gray-600 hover:text-blue-600 py-2" role="menuitem" data-i18n="nav_demografia">Demografia</a>
-            <a href="./vista/dashboard/centre.html" class="block text-base text-gray-600 hover:text-blue-600 py-2" role="menuitem" data-i18n="nav_centres_dia">Centres de Dia</a>
-            <a href="./vista/dashboard/residencies.html" class="block text-base text-gray-600 hover:text-blue-600 py-2" role="menuitem" data-i18n="nav_residencies">Residències</a>
-            <a href="./vista/dashboard/transparency.html" class="block text-base text-gray-600 hover:text-blue-600 py-2" role="menuitem" data-i18n="nav_transparencia">Transparència</a>
+            <a href="./vista/presentation.html" class="block text-base text-gray-600 hover:text-blue-600 py-2" role="menuitem" data-i18n="nav_presentacio">Presentació</a>
+            <a href="./vista/demografic.html" class="block text-base text-gray-600 hover:text-blue-600 py-2" role="menuitem" data-i18n="nav_demografia">Demografia</a>
+            <a href="./vista/centre.html" class="block text-base text-gray-600 hover:text-blue-600 py-2" role="menuitem" data-i18n="nav_centres_dia">Centres de Dia</a>
+            <a href="./vista/residencies.html" class="block text-base text-gray-600 hover:text-blue-600 py-2" role="menuitem" data-i18n="nav_residencies">Residències</a>
+            <a href="./vista/transparency.html" class="block text-base text-gray-600 hover:text-blue-600 py-2" role="menuitem" data-i18n="nav_transparencia">Transparència</a>
           </div>
         </div>
       </div>
