@@ -1,70 +1,73 @@
 <!DOCTYPE html>
 <html lang="ca">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centres de Dia - Gent Gran Barcelona</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .slide-in { animation: slideIn 0.6s ease-out forwards; }
-        .gradient-purple { background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%); }
-    </style>
+        
 </head>
-
 
 <body class="bg-gradient-to-br from-purple-50 via-violet-50 to-indigo-50 min-h-screen p-0">
     <div id="navbar" role="banner"></div>
 
-    <div class="mx-auto px-4 py-8" aria-label="Contingut principal">
-        
-        <!-- Header -->
-        <header class="bg-white/90 backdrop-blur-xl  shadow-2xl p-8 mb-8 border-2 border-purple-100">
-            <div class="flex items-center justify-between flex-wrap gap-6">
-                <div class="flex-1">
-                    <div class="flex items-center gap-3 mb-3">
-                        <div class="flex gap-2">
-                            <div class="w-2 h-2 bg-purple-500"></div>
-                            <div class="w-2 h-2 bg-violet-500" ></div>
-                            <div class="w-2 h-2 bg-indigo-500"></div>
-                        </div>
-                        <span class="text-sm font-bold text-purple-600 uppercase tracking-widest">Barcelona Open Data 2025</span>
+    
+    <section class="relative py-24 overflow-hidden bg-cover bg-center bg-no-repeat"
+        style="background-image: url('../images/centre.png');">
+
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-indigo-600/10"></div>
+
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="text-center mb-12 fade-in-up">
+
+
+                <div
+                    class="inline-flex items-center gap-2 bg-white/80 backdrop-blur px-4 py-2 rounded-full shadow-lg mb-6">
+                    <div class="flex gap-1">
+                        <div class="w-2 h-2 bg-[#1D8BC6] rounded-full animate-pulse"></div>
+                        <div class="w-2 h-2 bg-[#1D8BC6] rounded-full animate-pulse [animation-delay:0.2s]"></div>
+                        <div class="w-2 h-2 bg-[#1D8BC6] rounded-full animate-pulse [animation-delay:0.4s]"></div>
                     </div>
-                    <h1 class="text-5xl font-black mb-3">
-                        <span class="bg-gradient-to-r from-purple-700 via-violet-600 to-indigo-600 bg-clip-text text-transparent">
-                            Centres de Dia per a Gent Gran
-                        </span>
-                    </h1>
-                    <p class="text-gray-600 text-lg">Infraestructura d'atenció diürna a Barcelona</p>
+                    <span class="text-sm font-bold text-gray-700 uppercase tracking-wider">#50opendata 2025</span>
                 </div>
-                <div class="gradient-purple text-white px-8 py-5  shadow-xl">
-                    <div class="text-sm font-semibold opacity-90 mb-1">Total Centres</div>
-                    <div class="text-4xl font-black" id="totalCentres">--</div>
-                </div>
+
+
+                <h2 class="text-6xl md:text-7xl font-black mb-6">
+                    <span
+                        class="bg-gradient-to-r from-blue-600 via-[#1C8ECA] to-violet-600 bg-clip-text text-transparent">
+                        Centres de Dia per a Gent Gran
+                    </span>
+                </h2>
+
+                <p class="text-2xl text-black-700 mb-4 font-medium">
+                    Dades obertes sobre serveis per a persones grans a Barcelona (2015–2024)
+                </p>
             </div>
-        </header>
+        </div>
+    </section>
+
+
+    <div class="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 py-6">
 
         <!-- Loading -->
-        <div id="loading" class="text-center py-20 bg-white/70 backdrop-blur-sm  shadow-xl">
-            <div class="inline-block w-16 h-16 border-4 border-purple-200 border-t-purple-600 "></div>
-            <p class="text-gray-600 font-semibold">Carregant centres de dia...</p>
+        <div id="loading" class="text-center py-20 bg-white/70 backdrop-blur-sm shadow-xl">
+            <div class="inline-block w-16 h-16 border-4 border-purple-200 border-t-purple-600"></div>
+            <p class="text-gray-600 font-semibold mt-4">Carregant centres de dia...</p>
         </div>
 
         <!-- Dashboard -->
         <div id="dashboard" class="hidden space-y-8">
             <!-- Filtro de búsqueda -->
-            <div class="bg-white/90 backdrop-blur-xl  shadow-xl p-6 border border-purple-100">
+            <div class="bg-white/90 backdrop-blur-xl shadow-xl p-6 border border-purple-100">
                 <label class="block text-sm font-bold text-gray-700 mb-2">Cercar per districte o barri</label>
-                <input type="text" id="searchInput" placeholder="Escriu per filtrar..." 
+                <input type="text" id="searchInput" placeholder="Escriu per filtrar..."
                     class="w-full px-4 py-3 border-2 border-purple-200 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all">
             </div>
 
             <!-- KPIs -->
             <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-gradient-to-br from-purple-500 to-purple-700  p-6 shadow-xl text-white slide-in">
+                <div class="bg-gradient-to-br from-purple-500 to-purple-700 p-6 shadow-xl text-white slide-in">
                     <div class="flex items-start justify-between">
                         <div class="flex-1">
                             <p class="text-purple-100 text-sm font-semibold mb-2">TOTAL PLACES</p>
@@ -72,12 +75,14 @@
                             <p class="text-purple-100 text-sm">Capacitat total</p>
                         </div>
                         <svg class="w-14 h-14 opacity-80" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+                            <path
+                                d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
                         </svg>
                     </div>
                 </div>
 
-                <div class="bg-gradient-to-br from-violet-500 to-violet-700  p-6 shadow-xl text-white slide-in" style="animation-delay: 0.1s">
+                <div class="bg-gradient-to-br from-violet-500 to-violet-700 p-6 shadow-xl text-white slide-in"
+                    style="animation-delay: 0.1s">
                     <div class="flex items-start justify-between">
                         <div class="flex-1">
                             <p class="text-violet-100 text-sm font-semibold mb-2">PLACES MITJANES</p>
@@ -85,55 +90,66 @@
                             <p class="text-violet-100 text-sm">Per centre</p>
                         </div>
                         <svg class="w-14 h-14 opacity-80" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
+                            <path
+                                d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
                         </svg>
                     </div>
                 </div>
 
-                <div class="bg-gradient-to-br from-indigo-500 to-indigo-700  p-6 shadow-xl text-white slide-in" style="animation-delay: 0.2s">
+                <div class="bg-gradient-to-br from-indigo-500 to-indigo-700 p-6 shadow-xl text-white slide-in"
+                    style="animation-delay: 0.2s">
                     <div class="flex items-start justify-between">
                         <div class="flex-1">
-                            <p class="text-indigo-100 text-sm font-semibold mb-2">DISTRICTES</p>
-                            <p class="text-5xl font-black mb-2" id="totalDistricts">--</p>
-                            <p class="text-indigo-100 text-sm">Amb cobertura</p>
+                            <p class="text-indigo-100 text-sm font-semibold mb-2">TOTAL CENTRES</p>
+                            <p class="text-5xl font-black mb-2" id="totalCentres">--</p>
+                            <p class="text-indigo-100 text-sm">A Barcelona</p>
                         </div>
                         <svg class="w-14 h-14 opacity-80" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd"
+                                d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                                clip-rule="evenodd" />
                         </svg>
                     </div>
                 </div>
             </div>
 
             <!-- Mapa de Barcelona -->
-            <div class="bg-white/90 backdrop-blur-xl shadow-xl p-6 border border-purple-100 slide-in" style="animation-delay: 0.3s">
+            <div class="bg-white/90 backdrop-blur-xl shadow-xl p-6 border border-purple-100 slide-in"
+                style="animation-delay: 0.3s">
                 <h3 class="text-xl font-black text-gray-800 mb-6 flex items-center gap-3">
-                    <span class="w-1 h-8 gradient-purple "></span>
+                    <span class="w-1 h-8 gradient-purple"></span>
                     Mapa de Cobertura per Districtes
                 </h3>
-                <div class="bg-gradient-to-br from-purple-50 to-violet-50 p-6 ">
+                <div class="bg-gradient-to-br from-purple-50 to-violet-50 p-6">
                     <svg id="barcelonaMap" viewBox="0 0 800 600" class="w-full h-[600px] md:h-[700px]">
                         <!-- Los paths se generarán dinámicamente -->
                     </svg>
                     <div class="mt-6 flex flex-wrap gap-4 justify-center text-sm">
                         <div class="flex items-center gap-2">
-                            <div class="w-8 h-8 bg-gradient-to-br from-purple-600 to-purple-700  border-2 border-purple-800"></div>
+                            <div
+                                class="w-8 h-8 bg-gradient-to-br from-purple-600 to-purple-700 border-2 border-purple-800">
+                            </div>
                             <span class="text-gray-700 font-medium">Alta cobertura (5+ centres)</span>
                         </div>
                         <div class="flex items-center gap-2">
-                            <div class="w-8 h-8 bg-gradient-to-br from-violet-400 to-violet-500  border-2 border-violet-700"></div>
+                            <div
+                                class="w-8 h-8 bg-gradient-to-br from-violet-400 to-violet-500 border-2 border-violet-700">
+                            </div>
                             <span class="text-gray-700 font-medium">Mitjana (3-4 centres)</span>
                         </div>
                         <div class="flex items-center gap-2">
-                            <div class="w-8 h-8 bg-gradient-to-br from-indigo-300 to-indigo-400  border-2 border-indigo-600"></div>
+                            <div
+                                class="w-8 h-8 bg-gradient-to-br from-indigo-300 to-indigo-400 border-2 border-indigo-600">
+                            </div>
                             <span class="text-gray-700 font-medium">Baixa (1-2 centres)</span>
                         </div>
                         <div class="flex items-center gap-2">
-                            <div class="w-8 h-8 bg-gray-200  border-2 border-gray-400"></div>
+                            <div class="w-8 h-8 bg-gray-200 border-2 border-gray-400"></div>
                             <span class="text-gray-700 font-medium">Sense dades</span>
                         </div>
                     </div>
                 </div>
-                <div id="districtInfo" class="mt-4 p-4 bg-purple-50 -lg hidden">
+                <div id="districtInfo" class="mt-4 p-4 bg-purple-50 hidden">
                     <h4 class="font-bold text-purple-900 mb-2" id="infoDistrictName">
                         <span class="sr-only">Nom del districte</span>
                     </h4>
@@ -151,18 +167,20 @@
             </div>
 
             <!-- Gráfico Principal -->
-            <div class="bg-white/90 backdrop-blur-xl  shadow-xl p-6 border border-purple-100 slide-in" style="animation-delay: 0.4s">
+            <div class="bg-white/90 backdrop-blur-xl shadow-xl p-6 border border-purple-100 slide-in"
+                style="animation-delay: 0.4s">
                 <h3 class="text-xl font-black text-gray-800 mb-6 flex items-center gap-3">
-                    <span class="w-1 h-8 gradient-purple "></span>
+                    <span class="w-1 h-8 gradient-purple"></span>
                     Places per Districte (<span id="countDistricts">0</span> districtes)
                 </h3>
                 <div id="districtChart" class="space-y-3"></div>
             </div>
 
             <!-- Lista de Centros -->
-            <div class="bg-white/90 backdrop-blur-xl shadow-xl p-6 border border-purple-100 slide-in" style="animation-delay: 0.4s">
+            <div class="bg-white/90 backdrop-blur-xl shadow-xl p-6 border border-purple-100 slide-in"
+                style="animation-delay: 0.4s">
                 <h3 class="text-xl font-black text-gray-800 mb-6 flex items-center gap-3">
-                    <span class="w-1 h-8 gradient-purple "></span>
+                    <span class="w-1 h-8 gradient-purple"></span>
                     Llistat de Centres de Dia
                 </h3>
                 <div id="centresList" class="space-y-3 max-h-96 overflow-y-auto"></div>
@@ -170,7 +188,7 @@
         </div>
 
         <!-- Footer -->
-        <footer class="mt-8 bg-white/70 backdrop-blur-sm  p-6 text-center border border-purple-100">
+        <footer class="mt-8 bg-white/70 backdrop-blur-sm p-6 text-center border border-purple-100">
             <p class="text-gray-600 text-sm mb-2">
                 <strong>Font:</strong> Barcelona Open Data - Ajuntament de Barcelona
             </p>
@@ -182,9 +200,8 @@
 
     <div id="footer"></div>
 
-  <script src="../controller/traduccions/estadistiques.js"></script>
-  <script src="../controller/accessibility.js"></script>
-
+    <script src="../controller/traduccions/estadistiques.js"></script>
+    <script src="../controller/accessibility.js"></script>
 
     <script>
         let rawData = [];
@@ -250,15 +267,15 @@
             const districtData = {};
 
             data.forEach(centre => {
-                // Extraer places
+
                 const placesAttr = centre.attribute_categories
                     ?.flatMap(cat => cat.attributes || [])
                     .find(attr => attr.name === "Nombre de  places");
-                
+
                 const places = placesAttr?.values?.[0]?.integer_value || 0;
                 totalPlaces += places;
 
-                // Agrupar por distrito
+
                 const district = centre.addresses?.[0]?.district_name || 'Desconegut';
                 if (!districtData[district]) {
                     districtData[district] = { centres: 0, places: 0 };
@@ -268,93 +285,86 @@
             });
 
             const avgPlaces = totalCentres > 0 ? Math.round(totalPlaces / totalCentres) : 0;
-            const totalDistricts = Object.keys(districtData).length;
 
-            // Actualizar KPIs
+
             document.getElementById('totalCentres').textContent = totalCentres;
             document.getElementById('totalPlaces').textContent = totalPlaces;
             document.getElementById('avgPlaces').textContent = avgPlaces;
-            document.getElementById('totalDistricts').textContent = totalDistricts;
 
-            // Actualizar mapa
+
             updateBarcelonaMap(districtData);
 
-            // Actualizar gráfico
+
             updateDistrictChart(districtData);
 
-            // Actualizar lista
+
             updateCentresList(data);
         }
 
         function updateBarcelonaMap(districtData) {
-            // Mapa ampliado de los 10 distritos de Barcelona con paths más grandes
+
             const districtPaths = {
-                'Ciutat Vella': 'M380,320 L440,280 L480,300 L500,340 L460,380 L400,360 Z',
-                'Eixample': 'M300,260 L380,320 L400,360 L340,400 L280,340 Z',
-                'Sants-Montjuïc': 'M200,360 L280,340 L340,400 L320,480 L240,460 Z',
-                'Les Corts': 'M180,280 L260,260 L300,260 L280,340 L200,360 Z',
-                'Sarrià-Sant Gervasi': 'M180,180 L260,160 L300,200 L280,280 L200,260 Z',
-                'Gràcia': 'M260,160 L340,140 L380,200 L340,260 L260,260 Z',
-                'Horta-Guinardó': 'M340,140 L440,100 L480,180 L420,240 L360,200 Z',
-                'Nou Barris': 'M280,80 L380,60 L440,100 L380,140 L300,120 Z',
-                'Sant Andreu': 'M440,100 L540,80 L580,160 L520,200 L460,180 Z',
-                'Sant Martí': 'M480,200 L580,180 L620,280 L560,340 L500,300 Z'
+                'Ciutat Vella': 'M430,400 L490,360 L530,380 L550,420 L510,460 L450,440 Z',
+                'Eixample': 'M350,330 L430,400 L450,440 L390,480 L330,420 Z',
+                'Sants-Montjuïc': 'M250,440 L330,420 L390,480 L370,580 L280,560 Z',
+                'Les Corts': 'M220,340 L300,320 L350,330 L330,420 L250,440 Z',
+                'Sarrià-Sant Gervasi': 'M220,230 L300,210 L340,250 L320,320 L240,320 Z',
+                'Gràcia': 'M300,210 L380,190 L420,240 L370,310 L300,320 Z',
+                'Horta-Guinardó': 'M370,150 L470,120 L510,200 L440,260 L380,200 Z',
+                'Nou Barris': 'M310,100 L410,80 L470,120 L410,160 L330,140 Z',
+                'Sant Andreu': 'M470,120 L580,100 L620,180 L540,220 L480,200 Z',
+                'Sant Martí': 'M510,220 L620,200 L660,310 L580,370 L530,330 Z'
             };
 
             const svg = document.getElementById('barcelonaMap');
+            svg.setAttribute('viewBox', '0 0 900 700');
             svg.innerHTML = '';
+
+
+            const values = Object.values(districtData).map(d => d.centres);
+            const min = Math.min(...values);
+            const max = Math.max(...values);
+
+            function getColor(value) {
+                if (max === min) return '#c4b5fd';
+                const t = (value - min) / (max - min);
+                const start = [196, 181, 253];
+                const end = [124, 58, 237];
+                const rgb = start.map((s, i) => Math.round(s + (end[i] - s) * t));
+                return `rgb(${rgb.join(',')})`;
+            }
 
             Object.entries(districtPaths).forEach(([district, path]) => {
                 const data = districtData[district] || { centres: 0, places: 0 };
-                let fillColor, strokeColor;
-
-                if (data.centres >= 5) {
-                    fillColor = '#7c3aed';
-                    strokeColor = '#5b21b6';
-                } else if (data.centres >= 3) {
-                    fillColor = '#a855f7';
-                    strokeColor = '#7e22ce';
-                } else if (data.centres >= 1) {
-                    fillColor = '#c4b5fd';
-                    strokeColor = '#8b5cf6';
-                } else {
-                    fillColor = '#e5e7eb';
-                    strokeColor = '#9ca3af';
-                }
+                const fillColor = getColor(data.centres);
+                const strokeColor = '#5b21b6';
 
                 const pathElement = document.createElementNS('http://www.w3.org/2000/svg', 'path');
                 pathElement.setAttribute('d', path);
                 pathElement.setAttribute('fill', fillColor);
                 pathElement.setAttribute('stroke', strokeColor);
-                pathElement.setAttribute('stroke-width', '3');
-                pathElement.setAttribute('opacity', '0.8');
+                pathElement.setAttribute('stroke-width', '4');
+                pathElement.setAttribute('opacity', '0.9');
                 pathElement.classList.add('cursor-pointer', 'transition-all', 'duration-300');
-                pathElement.setAttribute('data-district', district);
-                pathElement.setAttribute('data-centres', data.centres);
-                pathElement.setAttribute('data-places', data.places);
 
-                pathElement.addEventListener('mouseenter', function() {
+                pathElement.addEventListener('mouseenter', function () {
                     this.setAttribute('opacity', '1');
-                    this.setAttribute('stroke-width', '5');
+                    this.setAttribute('stroke-width', '6');
                 });
-
-                pathElement.addEventListener('mouseleave', function() {
-                    this.setAttribute('opacity', '0.8');
-                    this.setAttribute('stroke-width', '3');
+                pathElement.addEventListener('mouseleave', function () {
+                    this.setAttribute('opacity', '0.9');
+                    this.setAttribute('stroke-width', '4');
                 });
-
-                pathElement.addEventListener('click', function() {
+                pathElement.addEventListener('click', function () {
                     showDistrictInfo(district, data.centres, data.places);
                 });
 
-                // Tooltip en SVG
                 const title = document.createElementNS('http://www.w3.org/2000/svg', 'title');
                 title.textContent = `${district}: ${data.centres} centre${data.centres !== 1 ? 's' : ''}, ${data.places} places`;
                 pathElement.appendChild(title);
 
                 svg.appendChild(pathElement);
 
-                // Añadir etiquetas de texto para cada distrito
                 const pathBox = pathElement.getBBox();
                 const centerX = pathBox.x + pathBox.width / 2;
                 const centerY = pathBox.y + pathBox.height / 2;
@@ -364,32 +374,74 @@
                 textElement.setAttribute('y', centerY);
                 textElement.setAttribute('text-anchor', 'middle');
                 textElement.setAttribute('dominant-baseline', 'middle');
-                textElement.setAttribute('class', 'text-xs font-bold pointer-events-none');
-                textElement.setAttribute('fill', data.centres >= 3 ? '#ffffff' : '#374151');
-                textElement.textContent = district.split('-')[0]; // Primera parte del nombre
+                textElement.setAttribute('class', 'text-sm md:text-base font-bold pointer-events-none');
+                textElement.setAttribute('fill', data.centres >= (max * 0.6) ? '#ffffff' : '#333333');
+                textElement.textContent = district.split('-')[0];
                 svg.appendChild(textElement);
 
-                // Añadir número de centros debajo del nombre
                 const countElement = document.createElementNS('http://www.w3.org/2000/svg', 'text');
                 countElement.setAttribute('x', centerX);
-                countElement.setAttribute('y', centerY + 15);
+                countElement.setAttribute('y', centerY + 20);
                 countElement.setAttribute('text-anchor', 'middle');
                 countElement.setAttribute('dominant-baseline', 'middle');
-                countElement.setAttribute('class', 'text-xs font-bold pointer-events-none');
-                countElement.setAttribute('fill', data.centres >= 3 ? '#ffffff' : '#6b7280');
+                countElement.setAttribute('class', 'text-xs md:text-sm font-medium pointer-events-none');
+                countElement.setAttribute('fill', data.centres >= (max * 0.6) ? '#ffffff' : '#555555');
                 countElement.textContent = `${data.centres} centre${data.centres !== 1 ? 's' : ''}`;
                 svg.appendChild(countElement);
             });
 
-            // Texto informativo
-            const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-            text.setAttribute('x', '400');
-            text.setAttribute('y', '560');
-            text.setAttribute('text-anchor', 'middle');
-            text.setAttribute('class', 'text-base font-medium fill-gray-600');
-            text.textContent = 'Fes clic en cada districte per veure\'n els detalls';
-            svg.appendChild(text);
+            // ---- Leyenda de color ----
+            const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+            const gradient = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient');
+            gradient.id = 'heatScale';
+            gradient.setAttribute('x1', '0%');
+            gradient.setAttribute('x2', '100%');
+            gradient.setAttribute('y1', '0%');
+            gradient.setAttribute('y2', '0%');
+            ['#c4b5fd', '#7c3aed'].forEach((color, i) => {
+                const stop = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
+                stop.setAttribute('offset', i * 100 + '%');
+                stop.setAttribute('stop-color', color);
+                gradient.appendChild(stop);
+            });
+            defs.appendChild(gradient);
+            svg.appendChild(defs);
+
+            const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+            rect.setAttribute('x', '280');
+            rect.setAttribute('y', '600');
+            rect.setAttribute('width', '340');
+            rect.setAttribute('height', '20');
+            rect.setAttribute('fill', 'url(#heatScale)');
+            rect.setAttribute('rx', '3');
+            svg.appendChild(rect);
+
+            const minText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            minText.setAttribute('x', '270');
+            minText.setAttribute('y', '615');
+            minText.setAttribute('text-anchor', 'end');
+            minText.setAttribute('class', 'text-sm fill-gray-600');
+            minText.textContent = `${min} centres`;
+            svg.appendChild(minText);
+
+            const maxText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            maxText.setAttribute('x', '630');
+            maxText.setAttribute('y', '615');
+            maxText.setAttribute('text-anchor', 'start');
+            maxText.setAttribute('class', 'text-sm fill-gray-600');
+            maxText.textContent = `${max} centres`;
+            svg.appendChild(maxText);
+
+            // ---- Texto guía ----
+            const guideText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            guideText.setAttribute('x', '450');
+            guideText.setAttribute('y', '650');
+            guideText.setAttribute('text-anchor', 'middle');
+            guideText.setAttribute('class', 'text-base font-medium fill-gray-600');
+            guideText.textContent = "Fes clic en un districte per veure'n els detalls";
+            svg.appendChild(guideText);
         }
+
 
         function showDistrictInfo(district, centres, places) {
             const infoDiv = document.getElementById('districtInfo');
@@ -397,8 +449,6 @@
             document.getElementById('infoCentres').textContent = centres;
             document.getElementById('infoPlaces').textContent = places;
             infoDiv.classList.remove('hidden');
-
-            // Scroll suave al info
             infoDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
 
@@ -427,7 +477,7 @@
                             <p class="text-sm font-bold text-gray-800 truncate" title="${d.district}">${d.district}</p>
                             <p class="text-xs text-gray-500">${d.centres} centre${d.centres !== 1 ? 's' : ''}</p>
                         </div>
-                        <div class="flex-1 h-12 ${color.bg}  overflow-hidden relative">
+                        <div class="flex-1 h-12 ${color.bg} overflow-hidden relative">
                             <div class="h-full bg-gradient-to-r ${color.from} ${color.to} transition-all duration-700 flex items-center justify-between px-4" style="width: ${percentage}%">
                                 <span class="text-white font-bold text-sm">${d.places} places</span>
                             </div>
@@ -439,7 +489,7 @@
 
         function updateCentresList(data) {
             const container = document.getElementById('centresList');
-            
+
             if (data.length === 0) {
                 container.innerHTML = '<p class="text-center text-gray-500 py-8">No s\'han trobat centres amb els criteris de cerca</p>';
                 return;
@@ -449,14 +499,14 @@
                 const placesAttr = centre.attribute_categories
                     ?.flatMap(cat => cat.attributes || [])
                     .find(attr => attr.name === "Nombre de  places");
-                
+
                 const places = placesAttr?.values?.[0]?.integer_value || 'N/D';
                 const address = centre.addresses?.[0] || {};
                 const phone = centre.values?.find(v => v.attribute_name === "Tel.")?.char_value || '';
                 const email = centre.values?.find(v => v.attribute_type === "email")?.email_value || '';
 
                 return `
-                    <div class="border border-purple-200  p-4 hover:bg-purple-50 transition-colors">
+                    <div class="border border-purple-200 p-4 hover:bg-purple-50 transition-colors">
                         <div class="flex justify-between items-start gap-4">
                             <div class="flex-1">
                                 <h4 class="font-bold text-purple-900 mb-2">${centre.name}</h4>
@@ -467,7 +517,7 @@
                                     ${email ? `<p><strong>Email:</strong> ${email}</p>` : ''}
                                 </div>
                             </div>
-                            <div class="bg-gradient-to-br from-purple-100 to-violet-100 px-4 py-2  text-center flex-shrink-0">
+                            <div class="bg-gradient-to-br from-purple-100 to-violet-100 px-4 py-2 text-center flex-shrink-0">
                                 <p class="text-2xl font-black text-purple-700">${places}</p>
                                 <p class="text-xs text-purple-600">places</p>
                             </div>
@@ -481,4 +531,5 @@
     </script>
     <script src="../../controller/layout.js"></script>
 </body>
+
 </html>

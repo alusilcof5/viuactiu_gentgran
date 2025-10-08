@@ -44,22 +44,22 @@ const Layout = {
               data-page="ajuts" data-i18n="nav_ayudas">Ajuts públics</a>
             <a href="#" class="nav-link text-2xl font-semibold text-gray-600 hover:text-blue-600 pb-2"
               data-page="solitud" data-i18n="nav_soledad">Solitud</a>
-            
-            <!-- Dropdown per Taulells -->
+           
             <div class="relative group">
               <button id="dashboard-toggle" class="text-2xl font-semibold text-gray-600 hover:text-blue-600 pb-2 flex items-center gap-1 focus:outline-none" aria-haspopup="true" aria-expanded="false" aria-controls="dashboard-menu" data-i18n="nav_taulells">
-                Taulells
+                Projecte
                 <svg class="w-5 h-5 transition-transform" id="dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                 </svg>
               </button>
               <div id="dashboard-menu" class="absolute left-0 top-full mt-2 w-56 bg-white shadow-xl rounded-lg border border-gray-200 hidden" role="menu" aria-label="Menú de taulells" style="z-index: 9999;">
-               <a href="#" class="dashboard-link block px-4 py-3 text-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 first:rounded-t-lg" role="menuitem" data-page="project" data-i18n="nav_presentacio">Projecte</a>
-                <a href="#" class="dashboard-link block px-4 py-3 text-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 first:rounded-t-lg" role="menuitem" data-page="presentation" data-i18n="nav_presentacio">Presentació</a>
+               <a href="#" class="dashboard-link block px-4 py-3 text-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 first:rounded-t-lg" role="menuitem" data-page="project" data-i18n="nav_presentacio">Presentació</a>
+                <a href="#" class="dashboard-link block px-4 py-3 text-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 first:rounded-t-lg" role="menuitem" data-page="presentation" data-i18n="nav_presentacio">Vivir +65 BCN</a>
+                <a href="#" class="dashboard-link block px-4 py-3 text-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 last:rounded-b-lg" role="menuitem" data-page="transparency" data-i18n="nav_transparencia">Transparència</a>
                 <a href="#" class="dashboard-link block px-4 py-3 text-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600" role="menuitem" data-page="demografic" data-i18n="nav_demografia">Demografia</a>
                 <a href="#" class="dashboard-link block px-4 py-3 text-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600" role="menuitem" data-page="centre" data-i18n="nav_centres_dia">Centres de Dia</a>
                 <a href="#" class="dashboard-link block px-4 py-3 text-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600" role="menuitem" data-page="residencies" data-i18n="nav_residencies">Residències</a>
-                <a href="#" class="dashboard-link block px-4 py-3 text-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 last:rounded-b-lg" role="menuitem" data-page="transparency" data-i18n="nav_transparencia">Transparència</a>
+                
               </div>
             </div>
           </div>
@@ -78,18 +78,19 @@ const Layout = {
           <!-- Dropdown móvil per Taulells -->
           <div class="relative">
             <button id="mobile-dashboard-toggle" class="block text-lg font-semibold text-gray-600 hover:text-blue-600 flex items-center gap-1 w-full text-left focus:outline-none" aria-haspopup="true" aria-expanded="false" aria-controls="mobile-dashboard-menu" data-i18n="nav_taulells">
-              Taulells
+              Projecte
               <svg class="w-5 h-5 transition-transform" id="mobile-dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
               </svg>
             </button>
             <div id="mobile-dashboard-menu" class="hidden flex-col mt-2 pl-4" role="menu">
-             <a href="#" class="dashboard-link block px-4 py-3 text-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 first:rounded-t-lg" role="menuitem" data-page="project" data-i18n="nav_presentacio">Projecte</a>
-              <a href="#" class="dashboard-link block text-base text-gray-600 hover:text-blue-600 py-2" role="menuitem" data-page="presentation" data-i18n="nav_presentacio">Presentació</a>
+             <a href="#" class="dashboard-link block px-4 py-3 text-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 first:rounded-t-lg" role="menuitem" data-page="project" data-i18n="nav_presentacio">Presentació</a>
+              <a href="#" class="dashboard-link block text-base text-gray-600 hover:text-blue-600 py-2" role="menuitem" data-page="presentation" data-i18n="nav_presentacio">Vivir +65 BCN</a>
+              <a href="#" class="dashboard-link block text-base text-gray-600 hover:text-blue-600 py-2" role="menuitem" data-page="transparency" data-i18n="nav_transparencia">Transparència</a>
               <a href="#" class="dashboard-link block text-base text-gray-600 hover:text-blue-600 py-2" role="menuitem" data-page="demografic" data-i18n="nav_demografia">Demografia</a>
               <a href="#" class="dashboard-link block text-base text-gray-600 hover:text-blue-600 py-2" role="menuitem" data-page="centre" data-i18n="nav_centres_dia">Centres de Dia</a>
               <a href="#" class="dashboard-link block text-base text-gray-600 hover:text-blue-600 py-2" role="menuitem" data-page="residencies" data-i18n="nav_residencies">Residències</a>
-              <a href="#" class="dashboard-link block text-base text-gray-600 hover:text-blue-600 py-2" role="menuitem" data-page="transparency" data-i18n="nav_transparencia">Transparència</a>
+              
             </div>
           </div>
         </div>
@@ -145,7 +146,7 @@ const Layout = {
             <span data-i18n="footer_font">Font</span>: Generalitat de Catalunya, Diputació de Barcelona, CIS, OpenData
           </p>
           <p class="text-sm opacity-35">
-        Candidato Smart City Expo 2025 | Barcelona, 4-6 Noviembre 2025
+        Smart City Expo 2025 | Barcelona, 4-6 Noviembre 2025
       </p>
         </div>
       </div>

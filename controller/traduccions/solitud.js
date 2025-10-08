@@ -1,20 +1,16 @@
-// === ARCHIVO: controller/translator.js ===
-
-// Traducciones embebidas (también puedes cargarlas desde JSON)
 const translations = {
   ca: {
-    // Navegación
+  
     nav_inicio: "Inici",
     nav_servicios: "Serveis de dependència",
     nav_ayudas: "Ajuts públics",
     nav_soledad: "Solitud",
     
-    // Hero
+
     hero_title: "Benvinguts a ViuActiu",
     hero_subtitle: "Recursos i ajuts per a l'envelliment saludable a Catalunya",
     hero_description: "Troba serveis de dependència, ajuts públics i espais de participació ciutadana amb tota la informació centralitzada.",
-    
-    // Cards
+
     card_servicios_title: "Serveis de dependència",
     card_servicios_desc: "Mapa de centres de dia i residències a Catalunya.",
     card_servicios_btn: "Veure mapa",
@@ -22,7 +18,7 @@ const translations = {
     card_ayudas_desc: "Explora totes les subvencions disponibles per a persones grans.",
     card_ayudas_btn: "Veure ajuts",
     
-    // Sobre Mapa Viu
+    
     sobre_title: "Sobre Mapa Viu",
     sobre_desc: "Centralitza informació sobre recursos per a l'envelliment saludable a Catalunya, utilitzant dades obertes oficials.",
     sobre_fuentes: "Fonts de dades:",
@@ -30,14 +26,14 @@ const translations = {
     fuente_2: "Diputació de Barcelona (CIDO): Ajuts i subvencions socials",
     fuente_3: "Ajuntament de Barcelona: Espais de participació ciutadana",
     
-    // Estadísticas
+   
     stat_1_label: "Comarques cobertes",
     stat_2_label: "Ajuts disponibles",
     stat_3_label: "Dades actualitzades"
   },
   
   es: {
-    // Navegación
+  
     nav_inicio: "Inicio",
     nav_servicios: "Servicios de dependencia",
     nav_ayudas: "Ayudas públicas",
@@ -48,7 +44,7 @@ const translations = {
     hero_subtitle: "Recursos y ayudas para el envejecimiento saludable en Cataluña",
     hero_description: "Encuentra servicios de dependencia, ayudas públicas y espacios de participación ciudadana con toda la información centralizada.",
     
-    // Cards
+   
     card_servicios_title: "Servicios de dependencia",
     card_servicios_desc: "Mapa de centros de día y residencias en Cataluña.",
     card_servicios_btn: "Ver mapa",
@@ -56,7 +52,7 @@ const translations = {
     card_ayudas_desc: "Explora todas las subvenciones disponibles para personas mayores.",
     card_ayudas_btn: "Ver ayudas",
     
-    // Sobre Mapa Viu
+    
     sobre_title: "Sobre Mapa Viu",
     sobre_desc: "Centraliza información sobre recursos para el envejecimiento saludable en Cataluña, utilizando datos abiertos oficiales.",
     sobre_fuentes: "Fuentes de datos:",
@@ -64,7 +60,7 @@ const translations = {
     fuente_2: "Diputación de Barcelona (CIDO): Ayudas y subvenciones sociales",
     fuente_3: "Ayuntamiento de Barcelona: Espacios de participación ciudadana",
     
-    // Estadísticas
+   
     stat_1_label: "Comarcas cubiertas",
     stat_2_label: "Ayudas disponibles",
     stat_3_label: "Datos actualizados"

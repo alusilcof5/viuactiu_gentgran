@@ -11,33 +11,19 @@
 </head>
 
 <body class="bg-gray-50 text-size-normal">
-
-  <!-- Botones de idioma -->
-  <div class="language-switcher">
-    <button class="lang-btn active" data-lang="ca" onclick="changeLanguage('ca')" aria-label="Canviar a català">
-      CAT
-    </button>
-    <button class="lang-btn" data-lang="es" onclick="changeLanguage('es')" aria-label="Cambiar a español">
-      ESP
-    </button>
-    <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')" aria-label="Change to English">
-      ENG
-    </button>
-  </div>
-
   <div id="navbar"></div>
 
-  <!-- Header -->
+
   <header class="header-ajuts" aria-label="Capçalera de la pàgina">
     <div class="header-overlay"></div>
     <div class="container mx-auto px-4 relative z-10 text-center text-white">
       <h2 class="text-6xl font-bold mb-4">Ajuts Viu</h2>
       <h3 class="text-3xl md:text-4xl font-bold" data-i18n="ajuts_header_title">Ajuts públics per a gent gran</h3>
-      <p class="text-xl mt-2" data-i18n="ajuts_header_subtitle">Subvencions i ajuts socials de la Diputació de Barcelona</p>
+      <p class="text-xl mt-2" data-i18n="ajuts_header_subtitle">Subvencions i ajuts socials de la Diputació de Barcelona
+      </p>
     </div>
   </header>
 
-  <!-- Controls de cerca i filtres -->
   <section class="container mx-auto px-4 py-6 bg-white shadow rounded-xl mt-6" aria-label="Controls de cerca i filtres">
     <div class="flex flex-col md:flex-row gap-4 items-center">
       <input id="searchBar" type="text" data-i18n-placeholder="ajuts_buscar_placeholder"
@@ -56,14 +42,14 @@
     </div>
   </section>
 
-  <!-- Main -->
+
   <main class="container mx-auto px-4 py-8" aria-label="Llista d'ajuts">
     <div id="ajuts" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <p class="text-gray-600 text-xl col-span-full" data-i18n="ajuts_cargando">Carregant ajuts...</p>
     </div>
   </main>
 
-  <!-- Modal -->
+
   <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50"
     aria-modal="true" role="dialog" aria-labelledby="modalTitle">
     <div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full p-6 relative">
@@ -77,10 +63,9 @@
     </div>
   </div>
 
-  <!-- Footer -->
+
   <div id="footer"></div>
-  
-  <script src="../controller/accessibility.js"></script>
+
   <script src="../controller/layout.js"></script>
   <script src="../model/ajuts.js"></script>
 

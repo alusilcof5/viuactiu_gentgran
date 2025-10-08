@@ -12,24 +12,11 @@
 <body class="bg-gray-50 text-size-normal">
 
   <div id="navbar" role="banner"></div>
-  <!-- Botones de idioma -->
-  <div class="language-switcher">
-    <button class="lang-btn active" data-lang="ca" onclick="changeLanguage('ca')" aria-label="Canviar a català">
-     CAT
-    </button>
-    <button class="lang-btn" data-lang="es" onclick="changeLanguage('es')" aria-label="Cambiar a español">
-       ESP
-    </button>
-    <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')" aria-label="Change to English">
-       ENG
-    </button>
-  </div>
 
-  <!-- Hero Section -->
   <section class="hero-section text-white flex items-center justify-center" aria-label="Secció principal de Mapa Viu">
     <div class="hero-overlay"></div>
     <div class="hero-text text-center px-4">
-      <h1 class="text-5xl md:text-6xl font-bold mb-4" data-i18n="hero_title">Benvinguts a ViuActiu</h1>
+      <h2 class="md:text-6xl font-bold mb-4" data-i18n="hero_title">Benvinguts a ViuActiu</h2>
       <p class="text-3xl mb-6" data-i18n="hero_subtitle">Recursos i ajuts per a l'envelliment saludable a Catalunya</p>
       <p class="text-2xl max-w-3xl mx-auto" data-i18n="hero_description">Troba serveis de dependència, ajuts públics i
         espais de participació
@@ -38,7 +25,7 @@
   </section>
 
   <main class="container mx-auto px-4 py-12 space-y-12" aria-label="Contingut principal">
-    <!-- Cards de navegació -->
+  
     <div class="grid md:grid-cols-3 gap-8">
       <a href="./vista/serveis.html"
         class="card-hover bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center hover:border-green-500 border-2 border-transparent"
@@ -113,11 +100,9 @@
 
   <div id="footer"></div>
 
-  <!-- Scripts -->
   
   <script src="./controller/accessibility.js"></script>
   <script src="./controller/layout.js"></script>
-  <script src="./controller/traduccions/document_traduction.js"></script>
   <script src="./controller/load_ajuts.js"></script>
 
 
