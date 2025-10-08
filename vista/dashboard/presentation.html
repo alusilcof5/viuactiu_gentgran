@@ -1,260 +1,334 @@
 <!DOCTYPE html>
 <html lang="ca">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Envejecimiento Saludable - Barcelona Open Data #50opendata 2025</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
- @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px); /* menos desplazamiento */
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+                /* menos desplazamiento */
+            }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); } /* menos movimiento vertical */
-}
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-.fade-in-up {
-    animation: fadeInUp 1.2s ease-in-out forwards; /* más lenta y más suave */
-}
+        @keyframes float {
 
-.float {
-    animation: float 4s ease-in-out infinite; /* más lenta */
-}
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
 
-.dashboard-card {
-    transition: all 0.5s ease; /* transición más suave */
-}
+            50% {
+                transform: translateY(-10px);
+            }
 
-.dashboard-card:hover {
-    transform: translateY(-6px); /* menos salto */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12); /* sombra más sutil */
-}
-</style>
+            /* menos movimiento vertical */
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 1.2s ease-in-out forwards;
+            /* más lenta y más suave */
+        }
+
+        .float {
+            animation: float 4s ease-in-out infinite;
+            /* más lenta */
+        }
+
+        .dashboard-card {
+            transition: all 0.5s ease;
+            /* transición más suave */
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-6px);
+            /* menos salto */
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+            /* sombra más sutil */
+        }
+    </style>
 </head>
-<body class="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 min-h-screen"> 
-    
+
+
+<body class="bg-gradient-to-br from-slate-50 via-[#1D8BC6]-50 to-indigo-50 min-h-screen">
+
     <div id="navbar" role="banner"></div>
 
     <!-- Hero Section -->
-    <section class="relative overflow-hidden py-20 px-6">
-        <div class="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-indigo-600/10"></div>
-        <div class="max-w-6xl mx-auto relative z-10">
-            <div class="text-center mb-12 fade-in-up">
-                <div class="inline-flex items-center gap-2 bg-white/80 backdrop-blur px-4 py-2 rounded-full shadow-lg mb-6">
-                    <div class="flex gap-1">
-                        <div class="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-                        <div class="w-2 h-2 bg-indigo-500 rounded-full animate-pulse" style="animation-delay: 0.2s"></div>
-                        <div class="w-2 h-2 bg-violet-500 rounded-full animate-pulse" style="animation-delay: 0.4s"></div>
+    <section class="relative overflow-hidden py-20 px-0">
+
+        <!-- Header -->
+        <header class="relative bg-cover bg-center bg-no-repeat shadow-lg rounded-lg p-32 mb-6"
+            style="background-image: url('../images/saludable.png');">
+
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-indigo-600/10"></div>
+            <div class="max-w-6xl mx-auto relative z-10">
+                <div class="text-center mb-12 fade-in-up">
+                    <div
+                        class="inline-flex items-center gap-2 bg-white/80 backdrop-blur px-4 py-2 rounded-full shadow-lg mb-6">
+                        <div class="flex gap-1">
+                            <div class="flex gap-1">
+                                <div class="w-2 h-2 bg-[#1D8BC6] rounded-full animate-pulse"></div>
+                                <div class="w-2 h-2 bg-[#1D8BC6] rounded-full animate-pulse [animation-delay:0.2s]">
+                                </div>
+                                <div class="w-2 h-2 bg-[#1D8BC6] rounded-full animate-pulse [animation-delay:0.4s]">
+                                </div>
+                            </div>
+
+                        </div>
+                        <span class="text-sm font-bold text-gray-700 uppercase tracking-wider">#50opendata 2025</span>
                     </div>
-                    <span class="text-sm font-bold text-gray-700 uppercase tracking-wider">#50opendata 2025</span>
+
+                    <h1 class="text-6xl md:text-7xl font-black mb-6">
+                        <span
+                            class="bg-gradient-to-r from-blue-600 via-[#1C8ECA] to-violet-600 bg-clip-text text-transparent">
+                            Envejecimiento Saludable
+                        </span>
+                    </h1>
+                    <p class="text-2xl text-gray-700 mb-4 font-light">
+                        Plataforma interactiva para la promoción del envejecimiento activo y la longevidad en Barcelona,
+                        desarrollada con datos abiertos de la Iniciativa Barcelona Open Data
+                    </p>
                 </div>
-                
-                <h1 class="text-6xl md:text-7xl font-black mb-6">
-                    <span class="bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">
-                        Envejecimiento Saludable
-                    </span>
-                </h1>
-                
-                <p class="text-2xl text-gray-700 mb-4 font-light">
-                    Herramientas digitales basadas en datos abiertos
-                </p>
-                
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                    Plataforma interactiva para la promoción del envejecimiento activo y la longevidad en Barcelona, 
-                    desarrollada con datos abiertos de la Iniciativa Barcelona Open Data
-                </p>
             </div>
-        </div>
     </section>
 
-    <!-- Dashboards Grid -->
     <section class="max-w-7xl mx-auto px-6 pb-20 pt-12">
         <div class="grid md:grid-cols-2 gap-8">
             <!-- Dashboard 1: Demográfico -->
-            <div class="dashboard-card bg-white rounded-3xl shadow-xl p-8 border-2 border-blue-100 fade-in-up" style="animation-delay: 0.1s">
+            <div class="dashboard-card bg-white rounded-3xl shadow-xl p-8 border-2 border-blue-100 fade-in-up"
+                style="animation-delay: 0.1s">
                 <div class="flex items-start gap-4 mb-6">
-                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
                         <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
+                            <path
+                                d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
                         </svg>
                     </div>
                     <div>
-                        <span class="inline-block px-3 py-1 bg-blue-100 text-blue-700 text-xs font-bold rounded-full mb-2">01 - BASE</span>
+                        <span
+                            class="inline-block px-3 py-1 bg-blue-100 text-blue-700 text-xs font-bold rounded-full mb-2">01
+                            - BASE</span>
                         <h2 class="text-2xl font-black text-gray-900">Análisis Demográfico</h2>
                     </div>
                 </div>
-                
+
                 <p class="text-gray-600 mb-6 leading-relaxed">
-                    Visualización completa de la estructura poblacional de personas mayores en Barcelona, 
+                    Visualización completa de la estructura poblacional de personas mayores en Barcelona,
                     con datos desagregados por distrito, edad y género.
                 </p>
-                
+
                 <ul class="space-y-2 mb-8 text-sm text-gray-600">
                     <li class="flex items-center gap-2">
                         <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd" />
                         </svg>
                         Pirámide poblacional interactiva
                     </li>
                     <li class="flex items-center gap-2">
                         <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd" />
                         </svg>
                         Distribución por districtes
                     </li>
                     <li class="flex items-center gap-2">
                         <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd" />
                         </svg>
                         Perspectiva de género
                     </li>
                 </ul>
-                
-                <a href="./demografic.html" class="block w-full bg-gradient-to-r from-blue-500 to-blue-700 text-white text-center py-4 rounded-xl font-bold hover:from-blue-600 hover:to-blue-800 transition-all shadow-lg hover:shadow-xl">
+
+                <a href="./demografic.html"
+                    class="block w-full bg-gradient-to-r from-blue-500 to-blue-700 text-white text-center py-4 rounded-xl font-bold hover:from-blue-600 hover:to-blue-800 transition-all shadow-lg hover:shadow-xl">
                     Explorar Dashboard →
                 </a>
             </div>
 
             <!-- Dashboard 2: Transparencia -->
-            <div class="dashboard-card bg-white rounded-3xl shadow-xl p-8 border-2 border-green-100 fade-in-up" style="animation-delay: 0.2s">
+            <div class="dashboard-card bg-white rounded-3xl shadow-xl p-8 border-2 border-green-100 fade-in-up"
+                style="animation-delay: 0.2s">
                 <div class="flex items-start gap-4 mb-6">
-                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-700 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-700 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
                         <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd"
+                                d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd" />
                         </svg>
                     </div>
                     <div>
-                        <span class="inline-block px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full mb-2">02 - GOVERNANCE</span>
+                        <span
+                            class="inline-block px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full mb-2">02
+                            - GOVERNANCE</span>
                         <h2 class="text-2xl font-black text-gray-900">Transparencia y Acceso</h2>
                     </div>
                 </div>
-                
+
                 <p class="text-gray-600 mb-6 leading-relaxed">
-                    Monitor de calidad y accesibilidad de datos abiertos relacionados con el envejecimiento, 
+                    Monitor de calidad y accesibilidad de datos abiertos relacionados con el envejecimiento,
                     promoviendo la transparencia institucional.
                 </p>
-                
+
                 <ul class="space-y-2 mb-8 text-sm text-gray-600">
                     <li class="flex items-center gap-2">
                         <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd" />
                         </svg>
                         Catálogo de datasets disponibles
                     </li>
                     <li class="flex items-center gap-2">
                         <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd" />
                         </svg>
                         Indicadores de calidad
                     </li>
                     <li class="flex items-center gap-2">
                         <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd" />
                         </svg>
                         Frecuencia de actualización
                     </li>
                 </ul>
-                
-                <a href="./transparency.html" class="block w-full bg-gradient-to-r from-green-500 to-green-700 text-white text-center py-4 rounded-xl font-bold hover:from-green-600 hover:to-green-800 transition-all shadow-lg hover:shadow-xl">
+
+                <a href="./transparency.html"
+                    class="block w-full bg-gradient-to-r from-green-500 to-green-700 text-white text-center py-4 rounded-xl font-bold hover:from-green-600 hover:to-green-800 transition-all shadow-lg hover:shadow-xl">
                     Explorar Dashboard →
                 </a>
             </div>
 
             <!-- Dashboard 3: Centres de Dia -->
-            <div class="dashboard-card bg-white rounded-3xl shadow-xl p-8 border-2 border-violet-100 fade-in-up" style="animation-delay: 0.3s">
+            <div class="dashboard-card bg-white rounded-3xl shadow-xl p-8 border-2 border-violet-100 fade-in-up"
+                style="animation-delay: 0.3s">
                 <div class="flex items-start gap-4 mb-6">
-                    <div class="w-16 h-16 bg-gradient-to-br from-violet-500 to-violet-700 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-violet-500 to-violet-700 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
                         <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+                            <path
+                                d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
                         </svg>
                     </div>
                     <div>
-                        <span class="inline-block px-3 py-1 bg-violet-100 text-violet-700 text-xs font-bold rounded-full mb-2">03 - SERVICIOS</span>
+                        <span
+                            class="inline-block px-3 py-1 bg-violet-100 text-violet-700 text-xs font-bold rounded-full mb-2">03
+                            - SERVICIOS</span>
                         <h2 class="text-2xl font-black text-gray-900">Centres de Dia</h2>
                     </div>
                 </div>
-                
+
                 <p class="text-gray-600 mb-6 leading-relaxed">
-                    Mapa interactivo de centros de día para personas mayores en Barcelona, 
+                    Mapa interactivo de centros de día para personas mayores en Barcelona,
                     con información detallada de ubicación, capacidad y servicios.
                 </p>
-                
+
                 <ul class="space-y-2 mb-8 text-sm text-gray-600">
                     <li class="flex items-center gap-2">
                         <svg class="w-5 h-5 text-violet-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd" />
                         </svg>
                         Mapa geográfico per districtes
                     </li>
                     <li class="flex items-center gap-2">
                         <svg class="w-5 h-5 text-violet-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd" />
                         </svg>
                         Capacitat i places disponibles
                     </li>
                     <li class="flex items-center gap-2">
                         <svg class="w-5 h-5 text-violet-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd" />
                         </svg>
                         Dades de contacte i ubicació
                     </li>
                 </ul>
-                
-                <a href="./centre.html" class="block w-full bg-gradient-to-r from-violet-500 to-violet-700 text-white text-center py-4 rounded-xl font-bold hover:from-violet-600 hover:to-violet-800 transition-all shadow-lg hover:shadow-xl">
+
+                <a href="./centre.html"
+                    class="block w-full bg-gradient-to-r from-violet-500 to-violet-700 text-white text-center py-4 rounded-xl font-bold hover:from-violet-600 hover:to-violet-800 transition-all shadow-lg hover:shadow-xl">
                     Explorar Dashboard →
                 </a>
             </div>
 
             <!-- Dashboard 4: Residències -->
-            <div class="dashboard-card bg-white rounded-3xl shadow-xl p-8 border-2 border-orange-100 fade-in-up" style="animation-delay: 0.4s">
+            <div class="dashboard-card bg-white rounded-3xl shadow-xl p-8 border-2 border-orange-100 fade-in-up"
+                style="animation-delay: 0.4s">
                 <div class="flex items-start gap-4 mb-6">
-                    <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-700 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-700 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
                         <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+                            <path
+                                d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
                         </svg>
                     </div>
                     <div>
-                        <span class="inline-block px-3 py-1 bg-orange-100 text-orange-700 text-xs font-bold rounded-full mb-2">04 - INFRAESTRUCTURA</span>
+                        <span
+                            class="inline-block px-3 py-1 bg-orange-100 text-orange-700 text-xs font-bold rounded-full mb-2">04
+                            - INFRAESTRUCTURA</span>
                         <h2 class="text-2xl font-black text-gray-900">Residències Gent Gran</h2>
                     </div>
                 </div>
-                
+
                 <p class="text-gray-600 mb-6 leading-relaxed">
-                    Visualización completa de residencias para personas mayores, 
+                    Visualización completa de residencias para personas mayores,
                     incluyendo capacidad, distribución territorial y datos de contacto.
                 </p>
-                
+
                 <ul class="space-y-2 mb-8 text-sm text-gray-600">
                     <li class="flex items-center gap-2">
                         <svg class="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd" />
                         </svg>
                         Mapa territorial de Barcelona
                     </li>
                     <li class="flex items-center gap-2">
                         <svg class="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd" />
                         </svg>
                         Anàlisi de places residencials
                     </li>
                     <li class="flex items-center gap-2">
                         <svg class="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd" />
                         </svg>
                         Buscador i filtres avançats
                     </li>
                 </ul>
-                
-                <a href="./residencies.html" class="block w-full bg-gradient-to-r from-orange-500 to-orange-700 text-white text-center py-4 rounded-xl font-bold hover:from-orange-600 hover:to-orange-800 transition-all shadow-lg hover:shadow-xl">
+
+                <a href="./residencies.html"
+                    class="block w-full bg-gradient-to-r from-orange-500 to-orange-700 text-white text-center py-4 rounded-xl font-bold hover:from-orange-600 hover:to-orange-800 transition-all shadow-lg hover:shadow-xl">
                     Explorar Dashboard →
                 </a>
             </div>
@@ -265,52 +339,65 @@
     <section class="max-w-6xl mx-auto px-6 pb-20">
         <div class="bg-white/80 backdrop-blur rounded-3xl shadow-2xl p-12 border border-gray-200">
             <h2 class="text-3xl font-black text-gray-900 mb-6 text-center">Sobre el Projecte</h2>
-            
+
             <div class="prose prose-lg max-w-none text-gray-600">
                 <p class="text-center mb-8">
-                    Aquest projecte forma part de la iniciativa <strong>#50opendata 2025</strong> promoguda per 
-                    Barcelona Open Data i la Diputació de Barcelona, centrada en el ranking d'aplicacions i 
-                    eines digitals basades en dades obertes per a la promoció de l'envelliment saludable i la longevitat.
+                    Aquest projecte forma part de la iniciativa <strong>#50opendata 2025</strong> promoguda per
+                    Barcelona Open Data i la Diputació de Barcelona, centrada en el ranking d'aplicacions i
+                    eines digitals basades en dades obertes per a la promoció de l'envelliment saludable i la
+                    longevitat.
                 </p>
-                
+
                 <div class="grid md:grid-cols-3 gap-8 mt-8">
                     <div class="text-center">
                         <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                             <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
-                                <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/>
+                                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+                                <path fill-rule="evenodd"
+                                    d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z"
+                                    clip-rule="evenodd" />
                             </svg>
                         </div>
                         <h3 class="font-bold text-gray-900 mb-2">Dades Obertes</h3>
-                        <p class="text-sm">Totes les visualitzacions es basen en datasets públics de Barcelona Open Data</p>
+                        <p class="text-sm">Totes les visualitzacions es basen en datasets públics de Barcelona Open Data
+                        </p>
                     </div>
-                    
+
                     <div class="text-center">
                         <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                             <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"/>
-                                <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"/>
+                                <path fill-rule="evenodd"
+                                    d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z"
+                                    clip-rule="evenodd" />
+                                <path
+                                    d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z" />
                             </svg>
                         </div>
                         <h3 class="font-bold text-gray-900 mb-2">Accessibilitat</h3>
-                        <p class="text-sm">Informació clara i accessible per a tothom, especialment per a persones grans</p>
+                        <p class="text-sm">Informació clara i accessible per a tothom, especialment per a persones grans
+                        </p>
                     </div>
-                    
+
                     <div class="text-center">
                         <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
                             <svg class="w-8 h-8 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/>
+                                <path
+                                    d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
                             </svg>
                         </div>
                         <h3 class="font-bold text-gray-900 mb-2">Impacte Social</h3>
-                        <p class="text-sm">Promou l'envelliment actiu i millora la qualitat de vida de les persones grans</p>
+                        <p class="text-sm">Promou l'envelliment actiu i millora la qualitat de vida de les persones
+                            grans</p>
                     </div>
                 </div>
-                
+
                 <div class="text-center mt-10">
-                    <a href="./project.html" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-indigo-600 to-violet-600 text-white rounded-xl font-bold hover:from-indigo-700 hover:to-violet-700 transition-all shadow-lg hover:shadow-xl transform hover:scale-105">
+                    <a href="./project.html" target="_blank"
+                        class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-indigo-600 to-violet-600 text-white rounded-xl font-bold hover:from-indigo-700 hover:to-violet-700 transition-all shadow-lg hover:shadow-xl transform hover:scale-105">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                                clip-rule="evenodd" />
                         </svg>
                         Explora el Projecte
                     </a>
@@ -360,28 +447,30 @@
         </div>
     </section>-->
 
-    <!-- Footer -->
+    <!-- Footer 
     <footer class="bg-gray-900 text-white py-12">
         <div class="max-w-6xl mx-auto px-6">
             <div class="grid md:grid-cols-3 gap-8 mb-8">
                 <div>
                     <h3 class="font-bold text-lg mb-3">Sobre el Projecte</h3>
                     <p class="text-gray-400 text-sm">
-                        Plataforma desenvolupada per a la iniciativa #50opendata 2025 
+                        Plataforma desenvolupada per a la iniciativa #50opendata 2025
                         de Barcelona Open Data i la Diputació de Barcelona.
                     </p>
                 </div>
-                
+
                 <div>
                     <h3 class="font-bold text-lg mb-3">Recursos</h3>
                     <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="https://opendata-ajuntament.barcelona.cat" target="_blank" class="hover:text-white transition">Barcelona Open Data</a></li>
-                        <li><a href="https://www.diba.cat" target="_blank" class="hover:text-white transition">Diputació Barcelona</a></li>
+                        <li><a href="https://opendata-ajuntament.barcelona.cat" target="_blank"
+                                class="hover:text-white transition">Barcelona Open Data</a></li>
+                        <li><a href="https://www.diba.cat" target="_blank" class="hover:text-white transition">Diputació
+                                Barcelona</a></li>
                         <li><a href="#" class="hover:text-white transition">Documentació API</a></li>
                         <li><a href="#" class="hover:text-white transition">GitHub Repository</a></li>
                     </ul>
                 </div>
-                
+
                 <div>
                     <h3 class="font-bold text-lg mb-3">Contacte</h3>
                     <p class="text-gray-400 text-sm mb-2">
@@ -392,15 +481,18 @@
                     </a>
                 </div>
             </div>
-            
+
             <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-400">
                 <p>&copy; 2025 Barcelona Open Data - #50opendata | Tots els drets reservats</p>
                 <p class="mt-2">Envejecimiento Saludable y Longevidad</p>
             </div>
         </div>
-    </footer>
+    </footer>-->
 
-      <div id="footer"></div>
+    <div id="footer"></div>
+
+    <script src="../../controller/layout.js"></script>
 
 </body>
+
 </html>

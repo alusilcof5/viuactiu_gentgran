@@ -18,8 +18,8 @@ const Layout = {
   },
 
   navbar: `
-    <nav class="bg-white shadow-md sticky top-0 z-50" aria-label="Menú principal de navegació">
-      <div class="container mx-auto px-4">
+  <nav class="bg-white sticky top-0 z-50" aria-label="Menú principal de navegació">
+    <div class="mx-auto px-4">
         <div class="flex items-center justify-between py-4">
 
           <!-- Logo -->
@@ -35,7 +35,7 @@ const Layout = {
           </button>
 
           <!-- Links (desktop) -->
-          <div class="hidden md:flex gap-6 items-center">
+          <div class="hidden md:flex gap-6 items-center mr-32">
             <a href="#" class="nav-link text-2xl font-bold text-blue-600 border-b-2 border-blue-600 pb-2"
               aria-current="page" data-page="index" data-i18n="nav_inicio">Inici</a>
             <a href="#" class="nav-link text-2xl font-semibold text-gray-600 hover:text-blue-600 pb-2"
@@ -54,6 +54,7 @@ const Layout = {
                 </svg>
               </button>
               <div id="dashboard-menu" class="absolute left-0 top-full mt-2 w-56 bg-white shadow-xl rounded-lg border border-gray-200 hidden" role="menu" aria-label="Menú de taulells" style="z-index: 9999;">
+               <a href="#" class="dashboard-link block px-4 py-3 text-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 first:rounded-t-lg" role="menuitem" data-page="project" data-i18n="nav_presentacio">Projecte</a>
                 <a href="#" class="dashboard-link block px-4 py-3 text-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 first:rounded-t-lg" role="menuitem" data-page="presentation" data-i18n="nav_presentacio">Presentació</a>
                 <a href="#" class="dashboard-link block px-4 py-3 text-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600" role="menuitem" data-page="demografic" data-i18n="nav_demografia">Demografia</a>
                 <a href="#" class="dashboard-link block px-4 py-3 text-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600" role="menuitem" data-page="centre" data-i18n="nav_centres_dia">Centres de Dia</a>
@@ -83,6 +84,7 @@ const Layout = {
               </svg>
             </button>
             <div id="mobile-dashboard-menu" class="hidden flex-col mt-2 pl-4" role="menu">
+             <a href="#" class="dashboard-link block px-4 py-3 text-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 first:rounded-t-lg" role="menuitem" data-page="project" data-i18n="nav_presentacio">Projecte</a>
               <a href="#" class="dashboard-link block text-base text-gray-600 hover:text-blue-600 py-2" role="menuitem" data-page="presentation" data-i18n="nav_presentacio">Presentació</a>
               <a href="#" class="dashboard-link block text-base text-gray-600 hover:text-blue-600 py-2" role="menuitem" data-page="demografic" data-i18n="nav_demografia">Demografia</a>
               <a href="#" class="dashboard-link block text-base text-gray-600 hover:text-blue-600 py-2" role="menuitem" data-page="centre" data-i18n="nav_centres_dia">Centres de Dia</a>
@@ -97,7 +99,7 @@ const Layout = {
 
   footer: `
     <footer class="bg-gray-800 text-white py-8 mt-12" aria-label="Peu de pàgina">
-      <div class="container mx-auto px-4">
+      <div class="container mx-auto px-4 pr-8">
         <div class="grid md:grid-cols-4 gap-6 text-center md:text-left">
           <!-- Sobre ViuActiu -->
           <div>
@@ -178,7 +180,7 @@ const Layout = {
       }
       #accessibility-toolbar button:hover, #accessibility-toolbar button:focus {
         background: #e0e0e0;
-        outline: 2px solid #3b82f6;
+        outline: 2px solid #1950a7;
         outline-offset: 2px;
       }
       .underline-links a {
@@ -192,7 +194,7 @@ const Layout = {
         bottom: 1rem;
         left: 1rem;
         z-index: 10000;
-        background: #3b82f6;
+        background:rgb(53, 103, 184);
         color: white;
         border: none;
         border-radius: 50%;

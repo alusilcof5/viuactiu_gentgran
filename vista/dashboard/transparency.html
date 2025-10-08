@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,52 +12,76 @@
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-blue-50 to-slate-100 min-h-screen p-5">
 
-     <div id="navbar" role="banner"></div>
+<body class="bg-gradient-to-br from-slate-50 via-[#1D8BC6]-50 to-indigo-50 min-h-screen">
 
-    <div class="max-w-7xl mx-auto">
+    <div id="navbar" role="banner"></div>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden py-20 px-0">
+
         <!-- Header -->
-        <header class="bg-white rounded-xl shadow-lg p-8 mb-6">
-            <div class="flex items-center justify-between flex-wrap gap-4">
-                <div>
-                    <h1 class="text-4xl font-bold text-blue-900 mb-2">
-                        Envejecimiento Saludable en Catalunya
+        <header class="relative bg-cover bg-center bg-no-repeat shadow-lg rounded-lg p-32 mb-6"
+            style="background-image: url('../images/transparencia.png');">
+
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-indigo-600/10"></div>
+            <div class="max-w-6xl mx-auto relative z-10">
+                <div class="text-center mb-12 fade-in-up">
+                    <div
+                        class="inline-flex items-center gap-2 bg-white/80 backdrop-blur px-4 py-2 rounded-full shadow-lg mb-6">
+                        <div class="flex gap-1">
+                            <div class="flex gap-1">
+                                <div class="w-2 h-2 bg-[#1D8BC6] rounded-full animate-pulse"></div>
+                                <div class="w-2 h-2 bg-[#1D8BC6] rounded-full animate-pulse [animation-delay:0.2s]">
+                                </div>
+                                <div class="w-2 h-2 bg-[#1D8BC6] rounded-full animate-pulse [animation-delay:0.4s]">
+                                </div>
+                            </div>
+
+                        </div>
+                        <span class="text-sm font-bold text-gray-700 uppercase tracking-wider">#50opendata 2025</span>
+                    </div>
+
+                    <h1 class="text-6xl md:text-7xl font-black mb-6">
+                        <span
+                            class="bg-gradient-to-r from-blue-600 via-[#1C8ECA] to-violet-600 bg-clip-text text-transparent">
+                            Transparencia y Datos Abiertos
+                        </span>
                     </h1>
-                    <p class="text-gray-600">Datos abiertos sobre servicios para personas mayores (2015-2024)</p>
-                </div>
-                <div class="flex gap-3 items-center">
-                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                    </svg>
-                    <span class="text-sm font-medium text-gray-700">Actualizado 2024</span>
+                    <p class="text-2xl text-gray-700 mb-4 font-light">
+                        Datos abiertos sobre servicios para personas mayores (2015-2024)
+                    </p>
                 </div>
             </div>
-        </header>
+    </section>
+
+    <div class="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 py-6">
 
         <!-- Loading -->
-        <div id="loading" class="text-center p-10 bg-white rounded-xl shadow-md mb-6">
+        <div id="loading" class="text-center p-10 bg-white shadow-md mb-6 ">
             <p class="text-gray-500">Cargando datos...</p>
         </div>
 
         <!-- Dashboard -->
         <div id="dashboard" class="hidden">
             <!-- Filters -->
-            <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+            <div class="bg-white shadow-md p-6 mb-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="flex flex-col">
                         <label for="yearSelect" class="block text-sm font-semibold text-gray-700 mb-2">
                             Año
                         </label>
-                        <select id="yearSelect" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all cursor-pointer">
+                        <select id="yearSelect"
+                            class="w-full px-4 py-3 border-2 border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all cursor-pointer">
                         </select>
                     </div>
-                    
+
                     <div class="flex flex-col">
                         <label for="comarcaSelect" class="block text-sm font-semibold text-gray-700 mb-2">
                             Comarca
                         </label>
-                        <select id="comarcaSelect" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all cursor-pointer">
+                        <select id="comarcaSelect"
+                            class="w-full px-4 py-3 border-2 border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all cursor-pointer">
                             <option value="all">Todas las comarcas</option>
                         </select>
                     </div>
@@ -66,7 +91,8 @@
             <!-- KPIs -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-6">
                 <!-- Total Users -->
-                <div class="bg-white rounded-xl p-6 shadow-md border-l-4 border-blue-600 hover:-translate-y-1 transition-transform">
+                <div
+                    class="bg-white p-6 shadow-md border-l-4 border-blue-600 hover:-translate-y-1 transition-transform">
                     <div class="flex items-start justify-between">
                         <div class="flex-1">
                             <p class="text-sm font-medium text-gray-600 mb-2">Total Personas Usuarias</p>
@@ -74,13 +100,15 @@
                             <p class="text-xs text-gray-500">En servicios para mayores</p>
                         </div>
                         <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                         </svg>
                     </div>
                 </div>
 
                 <!-- Centros -->
-                <div class="bg-white rounded-xl p-6 shadow-md border-l-4 border-blue-500 hover:-translate-y-1 transition-transform">
+                <div
+                    class="bg-white p-6 shadow-md border-l-4 border-blue-500 hover:-translate-y-1 transition-transform">
                     <div class="flex items-start justify-between">
                         <div class="flex-1">
                             <p class="text-sm font-medium text-gray-600 mb-2">Centros de Día</p>
@@ -88,13 +116,15 @@
                             <p class="text-xs text-gray-500">Servicios diurnos</p>
                         </div>
                         <svg class="w-8 h-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                         </svg>
                     </div>
                 </div>
 
                 <!-- Residencias -->
-                <div class="bg-white rounded-xl p-6 shadow-md border-l-4 border-blue-400 hover:-translate-y-1 transition-transform">
+                <div
+                    class="bg-white p-6 shadow-md border-l-4 border-blue-400 hover:-translate-y-1 transition-transform">
                     <div class="flex items-start justify-between">
                         <div class="flex-1">
                             <p class="text-sm font-medium text-gray-600 mb-2">Residencias</p>
@@ -102,7 +132,8 @@
                             <p class="text-xs text-gray-500">Plazas residenciales</p>
                         </div>
                         <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                         </svg>
                     </div>
                 </div>
@@ -111,7 +142,7 @@
             <!-- Charts -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
                 <!-- Bar Chart -->
-                <div class="bg-white rounded-xl shadow-md p-6">
+                <div class="bg-white shadow-md p-6">
                     <h3 class="text-xl font-bold text-gray-800 mb-5 pb-3 border-b-2 border-blue-100">
                         Top 10 Comarcas por Usuarios
                     </h3>
@@ -119,12 +150,12 @@
                 </div>
 
                 <!-- Pie Chart -->
-                <div class="bg-white rounded-xl shadow-md p-6">
+                <div class="bg-white shadow-md p-6">
                     <h3 class="text-xl font-bold text-gray-800 mb-5 pb-3 border-b-2 border-blue-100">
                         Distribución por Género
                     </h3>
                     <div class="flex flex-col items-center gap-5">
-                        <div id="genderPie" class="w-48 h-48 rounded-full"></div>
+                        <div id="genderPie" class="w-48 h-48"></div>
                         <div id="genderLegend" class="w-full space-y-3"></div>
                     </div>
                 </div>
@@ -132,7 +163,7 @@
         </div>
 
         <!-- Footer -->
-        <footer class="bg-white rounded-xl shadow-md p-6 text-center">
+        <footer class="bg-white shadow-md p-6 text-center">
             <p class="text-gray-600 text-sm mb-2">
                 <strong>Datos abiertos</strong> proporcionados por la Diputación de Barcelona
             </p>
@@ -142,12 +173,13 @@
         </footer>
     </div>
 
-      <div id="footer"></div>
+    <div id="footer"></div>
 
- <script src="../../controller/layout.js"></script>
+    <script src="../../controller/layout.js"></script>
+    <script src="../../controller/accessibility.js"></script>
     <script>
         let allData = [];
-        
+
         async function loadData() {
             try {
                 if (window.fs) {
@@ -157,23 +189,23 @@
                     const response = await fetch('./data/transparencia.json');
                     allData = await response.json();
                 }
-                
+
                 allData = allData.map(d => ({
                     any: d.any,
                     comarca: d.comarca.replace(/Ã /g, 'à')
-                                      .replace(/Ã¨/g, 'è')
-                                      .replace(/Ã©/g, 'é')
-                                      .replace(/Ã­/g, 'í')
-                                      .replace(/Ã³/g, 'ó')
-                                      .replace(/Ãº/g, 'ú')
-                                      .replace(/Ã§/g, 'ç'),
+                        .replace(/Ã¨/g, 'è')
+                        .replace(/Ã©/g, 'é')
+                        .replace(/Ãí/g, 'í')
+                        .replace(/Ã³/g, 'ó')
+                        .replace(/Ãº/g, 'ú')
+                        .replace(/Ã§/g, 'ç'),
                     total: d.total || '0',
                     dones_total: d.dones_total || '0',
                     homes_total: d.homes_total || '0',
                     total_centre_de_dia_gent: d.total_centre_de_dia_gent || '0',
                     total_resid_ncia_gent_gran: d.total_resid_ncia_gent_gran || '0'
                 }));
-                
+
                 initDashboard();
             } catch (error) {
                 console.error('Error cargando datos:', error);
@@ -184,7 +216,7 @@
         function initDashboard() {
             document.getElementById('loading').classList.add('hidden');
             document.getElementById('dashboard').classList.remove('hidden');
-            
+
             initYears();
             initComarcas();
             updateDashboard();
@@ -193,7 +225,7 @@
         function initYears() {
             const years = [...new Set(allData.map(d => d.any))].sort().reverse();
             const yearSelect = document.getElementById('yearSelect');
-            
+
             years.forEach(year => {
                 const option = document.createElement('option');
                 option.value = year;
@@ -205,7 +237,7 @@
         function initComarcas() {
             const comarcas = [...new Set(allData.map(d => d.comarca))].sort();
             const comarcaSelect = document.getElementById('comarcaSelect');
-            
+
             comarcas.forEach(comarca => {
                 const option = document.createElement('option');
                 option.value = comarca;
@@ -217,7 +249,7 @@
         function filterData() {
             const year = document.getElementById('yearSelect').value;
             const comarca = document.getElementById('comarcaSelect').value;
-            
+
             return allData.filter(d => {
                 const yearMatch = d.any === year;
                 const comarcaMatch = comarca === 'all' || d.comarca === comarca;
@@ -227,11 +259,11 @@
 
         function updateStats() {
             const filtered = filterData();
-            
+
             const users = filtered.reduce((sum, d) => sum + parseInt(d.total || 0), 0);
             const centros = filtered.reduce((sum, d) => sum + parseInt(d.total_centre_de_dia_gent || 0), 0);
             const residencias = filtered.reduce((sum, d) => sum + parseInt(d.total_resid_ncia_gent_gran || 0), 0);
-            
+
             document.getElementById('totalUsers').textContent = users.toLocaleString();
             document.getElementById('totalCentros').textContent = centros.toLocaleString();
             document.getElementById('totalResidencias').textContent = residencias.toLocaleString();
@@ -241,20 +273,20 @@
             const filtered = filterData();
             const sorted = filtered.sort((a, b) => parseInt(b.total) - parseInt(a.total)).slice(0, 10);
             const maxValue = Math.max(...sorted.map(d => parseInt(d.total)));
-            
+
             const chart = document.getElementById('topComarcasChart');
             chart.innerHTML = '';
-            
+
             sorted.forEach(d => {
                 const percentage = (parseInt(d.total) / maxValue) * 100;
                 const value = parseInt(d.total).toLocaleString();
-                
+
                 const item = document.createElement('div');
                 item.className = 'flex items-center gap-3';
                 item.innerHTML = `
                     <div class="w-36 text-sm text-gray-700 font-medium truncate">${d.comarca}</div>
-                    <div class="flex-1 h-8 bg-slate-100 rounded-lg overflow-hidden">
-                        <div class="bar-fill h-full bg-gradient-to-r from-blue-600 to-blue-400 rounded-lg flex items-center justify-end pr-3" style="width: ${percentage}%">
+                    <div class="flex-1 h-8 bg-slate-100 overflow-hidden">
+                        <div class="bar-fill h-full bg-gradient-to-r from-blue-600 to-blue-400 flex items-center justify-end pr-3" style="width: ${percentage}%">
                             <span class="text-white font-semibold text-sm">${value}</span>
                         </div>
                     </div>
@@ -268,24 +300,24 @@
             const women = filtered.reduce((sum, d) => sum + parseInt(d.dones_total || 0), 0);
             const men = filtered.reduce((sum, d) => sum + parseInt(d.homes_total || 0), 0);
             const total = women + men;
-            
+
             const womenPercent = (women / total) * 100;
-            
+
             const pie = document.getElementById('genderPie');
             pie.style.background = `conic-gradient(
                 #3b82f6 0deg ${womenPercent * 3.6}deg,
                 #60a5fa ${womenPercent * 3.6}deg 360deg
             )`;
-            
+
             const legend = document.getElementById('genderLegend');
             legend.innerHTML = `
-                <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-lg">
-                    <div class="w-5 h-5 rounded bg-blue-600"></div>
+                <div class="flex items-center gap-3 p-3 bg-slate-50">
+                    <div class="w-5 h-5 bg-blue-600"></div>
                     <span class="flex-1 text-sm text-gray-700 font-medium">Mujeres</span>
                     <span class="font-bold text-blue-900">${women.toLocaleString()} (${womenPercent.toFixed(1)}%)</span>
                 </div>
-                <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-lg">
-                    <div class="w-5 h-5 rounded bg-blue-400"></div>
+                <div class="flex items-center gap-3 p-3 bg-slate-50">
+                    <div class="w-5 h-5 bg-blue-400"></div>
                     <span class="flex-1 text-sm text-gray-700 font-medium">Hombres</span>
                     <span class="font-bold text-blue-900">${men.toLocaleString()} (${(100 - womenPercent).toFixed(1)}%)</span>
                 </div>
@@ -300,11 +332,11 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             loadData();
-            
+
             document.getElementById('yearSelect').addEventListener('change', updateDashboard);
             document.getElementById('comarcaSelect').addEventListener('change', updateDashboard);
         });
     </script>
-   
 </body>
+
 </html>

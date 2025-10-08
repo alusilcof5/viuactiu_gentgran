@@ -86,7 +86,7 @@ body.text-size-normal th {
 }
 
 .header-solitud {
-  background-image: url('../images/banner_solitud.png');
+  background-image: url('../images/solitud.png'); 
 }
 
 /* Overlay oscuro sobre la imagen */
@@ -526,7 +526,7 @@ body.text-size-normal th {
 }
 
 .header-solitud {
-  background-image: url('../images/banner_solitud.png');
+  background-image: url('../images/solitud.png');
 }
 
 /* Overlay oscuro sobre la imagen */
