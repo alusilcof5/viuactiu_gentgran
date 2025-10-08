@@ -144,6 +144,9 @@ const Layout = {
           <p class="text-sm text-gray-500 mt-2" id="footer-study">
             <span data-i18n="footer_font">Font</span>: Generalitat de Catalunya, Diputació de Barcelona, CIS, OpenData
           </p>
+          <p class="text-sm opacity-35">
+        Candidato Smart City Expo 2025 | Barcelona, 4-6 Noviembre 2025
+      </p>
         </div>
       </div>
     </footer>

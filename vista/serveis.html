@@ -14,6 +14,31 @@
 <body class="bg-gray-50 text-size-normal">
 
   <div id="navbar"></div>
+<body class="bg-gray-50 text-size-normal" data-page="soledad">
+
+    <!-- Botones de idioma -->
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="ca" onclick="changeLanguage('ca')" aria-label="Canviar a català">
+        CAT
+        </button>
+        <button class="lang-btn" data-lang="es" onclick="changeLanguage('es')" aria-label="Cambiar a español">
+            ESP
+        </button>
+        <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')" aria-label="Change to English">
+            ENG
+        </button>
+    </div>
+
+    <div id="navbar"></div>
+
+    <header class="header-banner">
+        <div class="header-overlay"></div>
+        <div class="header-text">
+            <h2  data-i18n="sol_header_title">Serveis de Residències per a Persones Grans</h2>
+            <h3 data-i18n="sol_header_subtitle">Informació per trobar residencies a BBarcelona</h3>
+            <p data-i18n="sol_header_desc">Dades basades en l'estudi oficial del CIS sobre persones majors de 65 anys</p>
+        </div>
+    </header>
 
   <main class="container mx-auto px-4 py-8" aria-label="Contingut principal">
     <div class="bg-white rounded-lg shadow-md p-6 mb-6">

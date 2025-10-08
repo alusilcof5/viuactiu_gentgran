@@ -38,7 +38,6 @@ body.text-size-xxlarge * {
 }
 
 body.text-size-normal h1,
-body.text-size-normal h2,
 body.text-size-normal h3,
 body.text-size-normal h4,
 body.text-size-normal h5,
@@ -479,7 +478,6 @@ body.text-size-xlarge * {
 }
 
 body.text-size-normal h1,
-body.text-size-normal h2,
 body.text-size-normal h3,
 body.text-size-normal h4,
 body.text-size-normal h5,
@@ -496,6 +494,11 @@ body.text-size-normal th {
   line-height: inherit !important;
 }
 
+body.text-size-normal h2 {
+  font-size: 2.75rem !important;
+  font-weight: bold;
+  line-height: inherit; 
+}
 /* ============================
    HERO SECTIONS Y HEADERS
    ============================ */
