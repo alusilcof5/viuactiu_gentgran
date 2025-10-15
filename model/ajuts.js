@@ -153,3 +153,234 @@
       carregarAjuts();
     });
   
+
+
+      // Estado del formulario
+    const formData = {
+      edad: null,
+      dependencia: null,
+      municipio: null,
+      ingresos: null,
+      vivienda: null
+    };
+
+    // Manejadores de eventos para botones de opción
+    document.querySelectorAll('.option-button').forEach(button => {
+      button.addEventListener('click', function() {
+        const question = this.dataset.question;
+        const value = this.dataset.value;
+        
+        // Remover selección previa
+        document.querySelectorAll(`[data-question="${question}"]`).forEach(btn => {
+          btn.classList.remove('selected');
+        });
+        
+        // Marcar como seleccionado
+        this.classList.add('selected');
+        formData[question] = value;
+        
+        updateProgress();
+      });
+    });
+
+    // Manejadores para campos de entrada
+    document.getElementById('edad').addEventListener('input', function() {
+      const value = this.value ? parseInt(this.value) : null;
+      if (value >= 0 && value <= 120) {
+        formData.edad = value;
+      } else {
+        formData.edad = null;
+        this.value = '';
+        alert('Si us plau, introdueix una edat vàlida entre 0 i 120 anys.');
+      }
+      updateProgress();
+    });
+
+    document.getElementById('municipio').addEventListener('change', function() {
+      formData.municipio = this.value || null;
+      updateProgress();
+    });
+
+    // Actualizar barra de progreso
+    function updateProgress() {
+      const completed = Object.values(formData).filter(v => v !== null).length;
+      const total = Object.keys(formData).length;
+      const percentage = Math.round((completed / total) * 100);
+      
+      document.getElementById('progressBar').style.width = `${percentage}%`;
+      document.getElementById('progressText').textContent = `${percentage}%`;
+    }
+
+    // Calcular ajuts
+    document.getElementById('calcularBtn').addEventListener('click', function() {
+      // Validar que todos los campos estén completos
+      const incomplete = Object.entries(formData).filter(([key, value]) => value === null);
+      
+      if (incomplete.length > 0) {
+        alert('Si us plau, completa totes les preguntes abans de calcular els ajuts.');
+        return;
+      }
+
+      // Calcular ajuts elegibles
+      const ajutsElegibles = calcularAjutsElegibles(formData);
+      
+      // Mostrar resultados
+      mostrarResultados(ajutsElegibles);
+    });
+
+    function calcularAjutsElegibles(data) {
+      const ajuts = [];
+
+      // Ajuts per edat
+      if (data.edad >= 65) {
+        ajuts.push({
+          titulo: 'Ajut per a persones majors de 65 anys',
+          descripcion: 'Suport econòmic per a persones de la tercera edat',
+          organismo: 'Generalitat de Catalunya',
+          tipo: 'Econòmic',
+          compatibilidad: 'Alta'
+        });
+      }
+
+      // Ajuts per dependència
+      if (data.dependencia === 'grado1') {
+        ajuts.push({
+          titulo: 'Prestació per dependència Grau I',
+          descripcion: 'Ajuda econòmica per a persones amb dependència moderada',
+          organismo: 'Generalitat de Catalunya',
+          tipo: 'Dependència',
+          compatibilidad: 'Alta'
+        });
+      } else if (data.dependencia === 'grado2-3') {
+        ajuts.push({
+          titulo: 'Prestació per dependència Grau II/III',
+          descripcion: 'Ajuda reforçada per a dependència severa o gran dependència',
+          organismo: 'Generalitat de Catalunya',
+          tipo: 'Dependència',
+          compatibilidad: 'Molt Alta'
+        });
+        ajuts.push({
+          titulo: 'Servei d\'atenció domiciliària',
+          descripcion: 'Servei gratuït o subvencionat d\'atenció a domicili',
+          organismo: 'Diputació de Barcelona',
+          tipo: 'Serveis',
+          compatibilidad: 'Alta'
+        });
+      }
+
+      // Ajuts per ingressos
+      if (data.ingresos === 'bajos') {
+        ajuts.push({
+          titulo: 'Prestació no contributiva de jubilació',
+          descripcion: 'Per a persones sense recursos suficients',
+          organismo: 'Seguretat Social',
+          tipo: 'Econòmic',
+          compatibilidad: 'Alta'
+        });
+        ajuts.push({
+          titulo: 'Targeta rosa del transport',
+          descripcion: 'Transport públic gratuït per a persones amb baixos ingressos',
+          organismo: 'ATM Barcelona',
+          tipo: 'Transport',
+          compatibilidad: 'Alta'
+        });
+      }
+
+      // Ajuts per habitatge
+      if (data.vivienda === 'alquiler' && data.ingresos !== 'altos') {
+        ajuts.push({
+          titulo: 'Ajut al lloguer per a gent gran',
+          descripcion: 'Subvenció per cobrir part del cost del lloguer',
+          organismo: 'Generalitat de Catalunya',
+          tipo: 'Habitatge',
+          compatibilidad: 'Mitjana'
+        });
+      }
+
+      if (data.vivienda === 'propia' && data.edad >= 65) {
+        ajuts.push({
+          titulo: 'Ajuts per a l\'adaptació de l\'habitatge',
+          descripcion: 'Per millorar l\'accessibilitat del domicili',
+          organismo: 'Diputació de Barcelona',
+          tipo: 'Habitatge',
+          compatibilidad: 'Alta'
+        });
+      }
+
+      // Ajuts generals per gent gran
+      if (data.edad >= 60) {
+        ajuts.push({
+          titulo: 'Targeta rosa del transport (>60 anys)',
+          descripcion: 'Descomptes en transport públic per a majors de 60 anys',
+          organismo: 'ATM Barcelona',
+          tipo: 'Transport',
+          compatibilidad: 'Alta'
+        });
+      }
+
+      // Ajuts per municipi (exemple específic per Barcelona)
+      if (data.municipio === 'barcelona') {
+        ajuts.push({
+          titulo: 'Programa d\'activitats per a gent gran',
+          descripcion: 'Activitats recreatives i culturals gratuïtes o a baix cost',
+          organismo: 'Ajuntament de Barcelona',
+          tipo: 'Social',
+          compatibilidad: 'Alta'
+        });
+      }
+
+      return ajuts;
+    }
+
+    function mostrarResultados(ajuts) {
+      const resultadosDiv = document.getElementById('resultados');
+      const listaAjutsDiv = document.getElementById('listaAjuts');
+      const numAjutsSpan = document.getElementById('numAjuts');
+
+      // Mostrar número de ajuts
+      numAjutsSpan.textContent = ajuts.length;
+
+      // Limpiar lista previa
+      listaAjutsDiv.innerHTML = '';
+
+      // Generar lista de ajuts
+      if (ajuts.length === 0) {
+        listaAjutsDiv.innerHTML = `
+          <div class="text-center text-gray-600">
+            <p>No s'han trobat ajuts disponibles segons les teves respostes.</p>
+            <p>Prova a modificar les teves respostes o consulta amb un professional.</p>
+          </div>
+        `;
+      } else {
+        ajuts.forEach(ajut => {
+          const ajutDiv = document.createElement('div');
+          ajutDiv.className = 'bg-white rounded-lg p-6 shadow-md';
+          ajutDiv.innerHTML = `
+            <h4 class="text-xl font-bold text-gray-800">${ajut.titulo}</h4>
+            <p class="text-gray-600 mt-2">${ajut.descripcion}</p>
+            <div class="mt-4 grid grid-cols-2 gap-4">
+              <div>
+                <span class="text-gray-500 font-semibold">Organisme:</span>
+                <span class="text-gray-700">${ajut.organismo}</span>
+              </div>
+              <div>
+                <span class="text-gray-500 font-semibold">Tipus:</span>
+                <span class="text-gray-700">${ajut.tipo}</span>
+              </div>
+              <div>
+                <span class="text-gray-500 font-semibold">Compatibilitat:</span>
+                <span class="text-gray-700">${ajut.compatibilidad}</span>
+              </div>
+            </div>
+          `;
+          listaAjutsDiv.appendChild(ajutDiv);
+        });
+      }
+
+      // Mostrar sección de resultados
+      resultadosDiv.classList.remove('hidden');
+      
+      // Scroll suave a la sección de resultados
+      resultadosDiv.scrollIntoView({ behavior: 'smooth' });
+    }
+  

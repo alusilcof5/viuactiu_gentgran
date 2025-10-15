@@ -24,10 +24,208 @@
     </div>
   </header>
 
-  <section class="container mx-auto px-4 py-6 bg-white shadow rounded-xl mt-6" aria-label="Controls de cerca i filtres">
+</head>
+<body class="bg-gray-50">
+
+  <!-- Barra de navegación -->
+  <nav class="bg-gray-800 p-4">
+    <div class="container mx-auto flex justify-between">
+      <a href="#questionsContainer" class="text-white hover:text-gray-300 text-lg font-semibold">Calculadora</a>
+      <a href="#resultats" class="text-white hover:text-gray-300 text-lg font-semibold">Ajustes Generals</a>
+    </div>
+  </nav>
+
+  <div class="container mx-auto px-4 py-8 max-w-12xl">
+    <!-- Barra de progreso -->
+    <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+      <div class="flex justify-between items-center mb-2">
+        <span class="text-lg font-semibold text-gray-700">Progrés</span>
+        <span id="progressText" class="text-lg font-semibold text-green-600">0%</span>
+      </div>
+      <div class="w-full bg-gray-200 rounded-full h-4">
+        <div id="progressBar" class="bg-green-600 h-4 rounded-full" style="width: 0%"></div>
+      </div>
+    </div>
+
+    <!-- Formulario de preguntas -->
+    <div id="questionsContainer" class="space-y-6">
+      <!-- Pregunta 1: Edad -->
+      <div class="bg-white rounded-xl shadow-md p-8">
+        <div class="flex items-start gap-4 mb-6">
+          <span class="text-4xl">🧓🏽</span>
+          <div class="flex-1">
+            <h3 class="text-2xl font-bold text-gray-800 mb-2">Quina és la teva edat?</h3>
+            <p class="text-gray-600">Necessitem saber la teva edat per determinar els ajuts apropiats</p>
+          </div>
+        </div>
+        <input 
+          type="number" 
+          id="edad" 
+          min="0" 
+          max="120" 
+          placeholder="Introdueix la teva edat"
+          class="w-full px-6 py-4 text-xl border-2 border-gray-300 rounded-lg focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-200"
+        >
+      </div>
+
+      <!-- Pregunta 2: Dependencia -->
+      <div class="bg-white rounded-xl shadow-md p-8">
+        <div class="flex items-start gap-4 mb-6">
+          <span class="text-4xl">📑</span>
+          <div class="flex-1">
+            <h3 class="text-2xl font-bold text-gray-800 mb-2">Tens certificat de dependència?</h3>
+            <p class="text-gray-600">Indica si tens reconegut algun grau de dependència</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <button class="option-button border-2 border-gray-300 rounded-lg py-4 px-6 text-lg font-semibold hover:border-green-500" data-question="dependencia" data-value="no">
+            ❌ No
+          </button>
+          <button class="option-button border-2 border-gray-300 rounded-lg py-4 px-6 text-lg font-semibold hover:border-green-500" data-question="dependencia" data-value="grado1">
+            🟡 Grau I
+          </button>
+          <button class="option-button border-2 border-gray-300 rounded-lg py-4 px-6 text-lg font-semibold hover:border-green-500" data-question="dependencia" data-value="grado2-3">
+            🔴 Grau II o III
+          </button>
+        </div>
+      </div>
+
+      <!-- Pregunta 3: Municipio -->
+      <div class="bg-white rounded-xl shadow-md p-8">
+        <div class="flex items-start gap-4 mb-6">
+          <span class="text-4xl">📌</span>
+          <div class="flex-1">
+            <h3 class="text-2xl font-bold text-gray-800 mb-2">En quin municipi resideixes?</h3>
+            <p class="text-gray-600">Alguns ajuts són específics per municipis</p>
+          </div>
+        </div>
+        <select 
+          id="municipio" 
+          class="w-full px-6 py-4 text-xl border-2 border-gray-300 rounded-lg focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-200"
+        >
+          <option value="">Selecciona el teu municipi</option>
+          <option value="barcelona">Barcelona</option>
+          <option value="hospitalet">L'Hospitalet de Llobregat</option>
+          <option value="badalona">Badalona</option>
+          <option value="terrassa">Terrassa</option>
+          <option value="sabadell">Sabadell</option>
+          <option value="lleida">Lleida</option>
+          <option value="tarragona">Tarragona</option>
+          <option value="girona">Girona</option>
+          <option value="mataro">Mataró</option>
+          <option value="otro">Un altre municipi</option>
+        </select>
+      </div>
+
+      <!-- Pregunta 4: Nivel de ingresos -->
+      <div class="bg-white rounded-xl shadow-md p-8">
+        <div class="flex items-start gap-4 mb-6">
+          <span class="text-4xl">💶</span>
+          <div class="flex-1">
+            <h3 class="text-2xl font-bold text-gray-800 mb-2">Quin és el teu nivell d'ingressos anuals?</h3>
+            <p class="text-gray-600">Això ens ajuda a determinar ajuts econòmics</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <button class="option-button border-2 border-gray-300 rounded-lg py-4 px-6 text-lg font-semibold hover:border-green-500" data-question="ingresos" data-value="bajos">
+            Menys de 12.000€
+          </button>
+          <button class="option-button border-2 border-gray-300 rounded-lg py-4 px-6 text-lg font-semibold hover:border-green-500" data-question="ingresos" data-value="medios">
+            Entre 12.000€ i 25.000€
+          </button>
+          <button class="option-button border-2 border-gray-300 rounded-lg py-4 px-6 text-lg font-semibold hover:border-green-500" data-question="ingresos" data-value="altos">
+            Més de 25.000€
+          </button>
+        </div>
+      </div>
+
+      <!-- Pregunta 5: Situación de vivienda -->
+      <div class="bg-white rounded-xl shadow-md p-8">
+        <div class="flex items-start gap-4 mb-6">
+          <span class="text-4xl">🏠</span>
+          <div class="flex-1">
+            <h3 class="text-2xl font-bold text-gray-800 mb-2">Quina és la teva situació d'habitatge?</h3>
+            <p class="text-gray-600">Alguns ajuts estan relacionats amb l'habitatge</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <button class="option-button border-2 border-gray-300 rounded-lg py-4 px-6 text-lg font-semibold hover:border-green-500" data-question="vivienda" data-value="propia">
+            🏡 Habitatge propi
+          </button>
+          <button class="option-button border-2 border-gray-300 rounded-lg py-4 px-6 text-lg font-semibold hover:border-green-500" data-question="vivienda" data-value="alquiler">
+            🔑 Lloguer
+          </button>
+          <button class="option-button border-2 border-gray-300 rounded-lg py-4 px-6 text-lg font-semibold hover:border-green-500" data-question="vivienda" data-value="familiar">
+            🏘️ Amb familiars
+          </button>
+          <button class="option-button border-2 border-gray-300 rounded-lg py-4 px-6 text-lg font-semibold hover:border-green-500" data-question="vivienda" data-value="residencia">
+            🏥 Residència
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Botón calcular -->
+    <div class="mt-8 text-center">
+      <button 
+        id="calcularBtn"
+        class="bg-green-600 hover:bg-green-700 text-white text-2xl font-bold py-5 px-12 rounded-full shadow-lg transform transition hover:scale-105 focus:outline-none focus:ring-4 focus:ring-green-300"
+      >
+        Calcular ajuts disponibles
+      </button>
+    </div>
+
+    <!-- Resultados -->
+    <div id="resultados" class="mt-10 hidden">
+      <div class="bg-gradient-to-br from-green-50 to-green-50 rounded-xl shadow-xl p-8">
+        <div class="text-center mb-8">
+          <div class="text-6xl mb-4">✅</div>
+          <h2 class="text-4xl font-bold text-gray-800 mb-2">Resultats de la Calculadora</h2>
+          <p class="text-xl text-gray-600">Basats en les teves respostes</p>
+        </div>
+
+        <!-- Resumen de elegibilidad -->
+        <div class="bg-white rounded-xl p-6 mb-6 shadow-md">
+          <div class="flex items-center justify-between">
+            <div>
+              <h3 class="text-3xl font-bold text-gray-800">Ets elegible per a:</h3>
+              <p class="text-gray-600 mt-1">Ajuts potencials segons el teu perfil</p>
+            </div>
+            <div class="text-center">
+              <div id="numAjuts" class="text-6xl font-bold text-green-600">0</div>
+              <div class="text-gray-600 font-semibold">ajuts</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lista de ajuts -->
+        <div id="listaAjuts" class="space-y-4">
+          <!-- Se llenará dinámicamente -->
+        </div>
+
+        <!-- Botones de acción -->
+        <div class="mt-8 flex flex-col md:flex-row gap-4 justify-center">
+          <button 
+            onclick="window.location.href='ajuts.html'"
+            class="bg-green-600 hover:bg-green-700 text-white text-xl font-bold py-4 px-8 rounded-lg shadow-lg transform transition hover:scale-105"
+          >
+            📋 Veure tots els ajuts
+          </button>
+          <button 
+            onclick="location.reload()"
+            class="bg-gray-600 hover:bg-gray-700 text-white text-xl font-bold py-4 px-8 rounded-lg shadow-lg transform transition hover:scale-105"
+          >
+            🔄 Tornar a calcular
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <section id="resultats" class="container mx-auto px-4 py-6 bg-white shadow rounded-xl mt-6" aria-label="Controls de cerca i filtres">
     <div class="flex flex-col md:flex-row gap-4 items-center">
       <input id="searchBar" type="text" data-i18n-placeholder="ajuts_buscar_placeholder"
-        class="w-full md:flex-1 px-4 py-3 border-2 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none text-lg"
+        class="w-full md:flex-1 px-4 py-3 border-2 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none text-lg"
         aria-label="Cercar ajuts per títol">
       <select id="filterOrganisme" class="px-4 py-3 border-2 rounded-lg text-lg" aria-label="Filtrar per organisme">
         <option value="" data-i18n="ajuts_filtro_todos_organismos">Tots els organismes</option>

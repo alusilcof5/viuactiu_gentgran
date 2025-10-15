@@ -1,11 +1,15 @@
 /* ============================
    BASE TIPOGRAFÍA Y ESCALADO
    ============================ */
+
+   :root {
+  font-size: 18px; /* Era probablemente 16px o 14px */
+}
+
 body {
   font-family: system-ui, -apple-system, Arial, sans-serif;
-  font-size: 1.25rem; /* Equivalente a text-xl en Tailwind */
-  line-height: 1.5;
-  color: #1f2937; /* Gris oscuro suave, similar a text-gray-800 */
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.6; /* Mejorar legibilidad */  color: #1f2937; /* Gris oscuro suave, similar a text-gray-800 */
   background-color: #f9fafb; /* Similar a bg-gray-50 */
 }
 
@@ -53,6 +57,14 @@ body.text-size-normal th {
   font-size: 1.25rem !important;
   line-height: inherit !important;
 }
+
+ 
+    .option-button.selected {
+      background-color: rgb(21 128 61);;
+      color: white;
+      border-color: rgb(21 128 61);;
+    }
+  
 
 /* ============================
    HERO SECTIONS Y HEADERS
@@ -913,3 +925,4 @@ select:not(:focus-visible),
     gap: 2rem;
   }
 }
+

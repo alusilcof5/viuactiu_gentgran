@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "API serverless para subvenciones y espacios",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "vercel dev",
     "start": "vercel start"
@@ -17,3 +18,4 @@
     "helmet": "^8.1.0"
   }
 }
+
