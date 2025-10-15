@@ -1,31 +1,23 @@
 <!DOCTYPE html>
 <html lang="ca">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ajuts Viu - Ajuts públics per a gent gran</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../vista/css/style.css">
-
 </head>
-
 <body class="bg-gray-50 text-size-normal">
   <div id="navbar"></div>
-
 
   <header class="header-ajuts" aria-label="Capçalera de la pàgina">
     <div class="header-overlay"></div>
     <div class="container mx-auto px-4 relative z-10 text-center text-white">
       <h2 class="text-6xl font-bold mb-4">Ajuts Viu</h2>
       <h3 class="text-3xl md:text-4xl font-bold" data-i18n="ajuts_header_title">Ajuts públics per a gent gran</h3>
-      <p class="text-xl mt-2" data-i18n="ajuts_header_subtitle">Subvencions i ajuts socials de la Diputació de Barcelona
-      </p>
+      <p class="text-xl mt-2" data-i18n="ajuts_header_subtitle">Subvencions i ajuts socials de la Diputació de Barcelona</p>
     </div>
   </header>
-
-</head>
-<body class="bg-gray-50">
 
   <!-- Barra de navegación -->
   <nav class="bg-gray-800 p-4">
@@ -58,14 +50,8 @@
             <p class="text-gray-600">Necessitem saber la teva edat per determinar els ajuts apropiats</p>
           </div>
         </div>
-        <input 
-          type="number" 
-          id="edad" 
-          min="0" 
-          max="120" 
-          placeholder="Introdueix la teva edat"
-          class="w-full px-6 py-4 text-xl border-2 border-gray-300 rounded-lg focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-200"
-        >
+        <input type="number" id="edad" min="0" max="120" placeholder="Introdueix la teva edat"
+          class="w-full px-6 py-4 text-xl border-2 border-gray-300 rounded-lg focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-200">
       </div>
 
       <!-- Pregunta 2: Dependencia -->
@@ -78,13 +64,19 @@
           </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <button class="option-button border-2 border-gray-300 rounded-lg py-4 px-6 text-lg font-semibold hover:border-green-500" data-question="dependencia" data-value="no">
+          <button
+            class="option-button border-2 border-gray-300 rounded-lg py-4 px-6 text-lg font-semibold hover:border-green-500"
+            data-question="dependencia" data-value="no">
             ❌ No
           </button>
-          <button class="option-button border-2 border-gray-300 rounded-lg py-4 px-6 text-lg font-semibold hover:border-green-500" data-question="dependencia" data-value="grado1">
+          <button
+            class="option-button border-2 border-gray-300 rounded-lg py-4 px-6 text-lg font-semibold hover:border-green-500"
+            data-question="dependencia" data-value="grado1">
             🟡 Grau I
           </button>
-          <button class="option-button border-2 border-gray-300 rounded-lg py-4 px-6 text-lg font-semibold hover:border-green-500" data-question="dependencia" data-value="grado2-3">
+          <button
+            class="option-button border-2 border-gray-300 rounded-lg py-4 px-6 text-lg font-semibold hover:border-green-500"
+            data-question="dependencia" data-value="grado2-3">
             🔴 Grau II o III
           </button>
         </div>
@@ -99,10 +91,8 @@
             <p class="text-gray-600">Alguns ajuts són específics per municipis</p>
           </div>
         </div>
-        <select 
-          id="municipio" 
-          class="w-full px-6 py-4 text-xl border-2 border-gray-300 rounded-lg focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-200"
-        >
+        <select id="municipio"
+          class="w-full px-6 py-4 text-xl border-2 border-gray-300 rounded-lg focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-200">
           <option value="">Selecciona el teu municipi</option>
           <option value="barcelona">Barcelona</option>
           <option value="hospitalet">L'Hospitalet de Llobregat</option>
@@ -127,13 +117,19 @@
           </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <button class="option-button border-2 border-gray-300 rounded-lg py-4 px-6 text-lg font-semibold hover:border-green-500" data-question="ingresos" data-value="bajos">
+          <button
+            class="option-button border-2 border-gray-300 rounded-lg py-4 px-6 text-lg font-semibold hover:border-green-500"
+            data-question="ingresos" data-value="bajos">
             Menys de 12.000€
           </button>
-          <button class="option-button border-2 border-gray-300 rounded-lg py-4 px-6 text-lg font-semibold hover:border-green-500" data-question="ingresos" data-value="medios">
+          <button
+            class="option-button border-2 border-gray-300 rounded-lg py-4 px-6 text-lg font-semibold hover:border-green-500"
+            data-question="ingresos" data-value="medios">
             Entre 12.000€ i 25.000€
           </button>
-          <button class="option-button border-2 border-gray-300 rounded-lg py-4 px-6 text-lg font-semibold hover:border-green-500" data-question="ingresos" data-value="altos">
+          <button
+            class="option-button border-2 border-gray-300 rounded-lg py-4 px-6 text-lg font-semibold hover:border-green-500"
+            data-question="ingresos" data-value="altos">
             Més de 25.000€
           </button>
         </div>
@@ -149,16 +145,24 @@
           </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <button class="option-button border-2 border-gray-300 rounded-lg py-4 px-6 text-lg font-semibold hover:border-green-500" data-question="vivienda" data-value="propia">
+          <button
+            class="option-button border-2 border-gray-300 rounded-lg py-4 px-6 text-lg font-semibold hover:border-green-500"
+            data-question="vivienda" data-value="propia">
             🏡 Habitatge propi
           </button>
-          <button class="option-button border-2 border-gray-300 rounded-lg py-4 px-6 text-lg font-semibold hover:border-green-500" data-question="vivienda" data-value="alquiler">
+          <button
+            class="option-button border-2 border-gray-300 rounded-lg py-4 px-6 text-lg font-semibold hover:border-green-500"
+            data-question="vivienda" data-value="alquiler">
             🔑 Lloguer
           </button>
-          <button class="option-button border-2 border-gray-300 rounded-lg py-4 px-6 text-lg font-semibold hover:border-green-500" data-question="vivienda" data-value="familiar">
+          <button
+            class="option-button border-2 border-gray-300 rounded-lg py-4 px-6 text-lg font-semibold hover:border-green-500"
+            data-question="vivienda" data-value="familiar">
             🏘️ Amb familiars
           </button>
-          <button class="option-button border-2 border-gray-300 rounded-lg py-4 px-6 text-lg font-semibold hover:border-green-500" data-question="vivienda" data-value="residencia">
+          <button
+            class="option-button border-2 border-gray-300 rounded-lg py-4 px-6 text-lg font-semibold hover:border-green-500"
+            data-question="vivienda" data-value="residencia">
             🏥 Residència
           </button>
         </div>
@@ -167,10 +171,8 @@
 
     <!-- Botón calcular -->
     <div class="mt-8 text-center">
-      <button 
-        id="calcularBtn"
-        class="bg-green-600 hover:bg-green-700 text-white text-2xl font-bold py-5 px-12 rounded-full shadow-lg transform transition hover:scale-105 focus:outline-none focus:ring-4 focus:ring-green-300"
-      >
+      <button id="calcularBtn"
+        class="bg-green-600 hover:bg-green-700 text-white text-2xl font-bold py-5 px-12 rounded-full shadow-lg transform transition hover:scale-105 focus:outline-none focus:ring-4 focus:ring-green-300">
         Calcular ajuts disponibles
       </button>
     </div>
@@ -205,24 +207,21 @@
 
         <!-- Botones de acción -->
         <div class="mt-8 flex flex-col md:flex-row gap-4 justify-center">
-          <button 
-            onclick="window.location.href='ajuts.html'"
-            class="bg-green-600 hover:bg-green-700 text-white text-xl font-bold py-4 px-8 rounded-lg shadow-lg transform transition hover:scale-105"
-          >
+          <button onclick="window.location.href='ajuts.html'"
+            class="bg-green-600 hover:bg-green-700 text-white text-xl font-bold py-4 px-8 rounded-lg shadow-lg transform transition hover:scale-105">
             📋 Veure tots els ajuts
           </button>
-          <button 
-            onclick="location.reload()"
-            class="bg-gray-600 hover:bg-gray-700 text-white text-xl font-bold py-4 px-8 rounded-lg shadow-lg transform transition hover:scale-105"
-          >
+          <button onclick="location.reload()"
+            class="bg-gray-600 hover:bg-gray-700 text-white text-xl font-bold py-4 px-8 rounded-lg shadow-lg transform transition hover:scale-105">
             🔄 Tornar a calcular
           </button>
         </div>
       </div>
     </div>
   </div>
-  
-  <section id="resultats" class="container mx-auto px-4 py-6 bg-white shadow rounded-xl mt-6" aria-label="Controls de cerca i filtres">
+
+  <section id="resultats" class="container mx-auto px-4 py-6 bg-white shadow rounded-xl mt-6"
+    aria-label="Controls de cerca i filtres">
     <div class="flex flex-col md:flex-row gap-4 items-center">
       <input id="searchBar" type="text" data-i18n-placeholder="ajuts_buscar_placeholder"
         class="w-full md:flex-1 px-4 py-3 border-2 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none text-lg"
@@ -240,13 +239,11 @@
     </div>
   </section>
 
-
   <main class="container mx-auto px-4 py-8" aria-label="Llista d'ajuts">
     <div id="ajuts" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <p class="text-gray-600 text-xl col-span-full" data-i18n="ajuts_cargando">Carregant ajuts...</p>
     </div>
   </main>
-
 
   <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50"
     aria-modal="true" role="dialog" aria-labelledby="modalTitle">
@@ -261,12 +258,10 @@
     </div>
   </div>
 
-
   <div id="footer"></div>
 
   <script src="../controller/layout.js"></script>
+  <script defer src="./controller/load_ajuts.js"></script>
   <script src="../model/ajuts.js"></script>
-
 </body>
-
 </html>
