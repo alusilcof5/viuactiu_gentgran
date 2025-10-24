@@ -26,7 +26,30 @@ La misión de *ViuActiu Gent Gran* es empoderar a las personas mayores y sus fam
 - **Ayudas económicas:** Información detallada sobre subvenciones públicas disponibles para personas mayores y sus familias.  
 - **Participación ciudadana:** Enlaces a espacios de participación gestionados por administraciones públicas, fomentando la inclusión social.  
 - **Datos abiertos:** Uso de APIs oficiales de la Generalitat de Catalunya, Diputació de Barcelona y Ayuntamiento de Barcelona, garantizando fiabilidad y actualización.  
-- **Perspectiva de género (en desarrollo):** Próximamente, la plataforma incluirá datos desagregados por sexo (por ejemplo, uso de servicios por hombres vs. mujeres) para abordar necesidades específicas de género, utilizando datasets disponibles en las APIs oficiales.
+- **Perspectiva de género (en desarrollo):** utilizando datasets disponibles en las APIs oficiales se ha logrado exponer datos desagregados por sexo
+
+### Perspectiva de Género
+
+ViuActiu Gent Gran integra una **perspectiva de género transversal** mediante:
+
+#### Dashboard Demográfico con Análisis de Género
+- **Datos desagregados por sexo** en todos los tramos de edad (65+, 70+, 75+, 80+, 85+, 90+)
+- **Visualizaciones comparativas** entre dones i homes
+- **Cálculo de brechas de género** que aumentan con la edad
+- **Indicadores de impacto social**: viudedad (72% mujeres), soledad (38% mujeres afectadas)
+
+#### Hallazgos clave
+- Las mujeres representan el **56.2%** de la población de 65+ años
+- Brecha de género de **+5.9pp** en población 65+, que crece hasta **+8.5pp** en 85+
+- Esperanza de vida: **86.2 años** (mujeres) vs **80.3 años** (hombres)
+- Mayor riesgo de **soledad no deseada** y **viudedad** en mujeres mayores
+
+#### Visualización
+Accede al dashboard completo: [Piràmide de la Longevitat](https://viuactiu-gentgran-iota.vercel.app/perspectiva-genere.html)
+
+#### Fuentes de datos con perspectiva de género
+- **INE (Instituto Nacional de Estadística)**: Población por edad y sexo (2024)
+- **Futuros datasets** de las APIs de servicios incluirán desagregación por sexo cuando esté disponible
 
 ---
 
