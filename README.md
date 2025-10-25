@@ -1,230 +1,198 @@
-# **ViuActiu Gent Gran**
+# ViuActiu Gent Gran
 
-**Autora:** Ana Lucía Silva Córdoba  
+**Author:** Ana Lucía Silva Córdoba
 
-ViuActiu Gent Gran es una plataforma web diseñada para centralizar y facilitar el acceso a recursos y servicios para personas mayores en Cataluña, promoviendo un envejecimiento activo y saludable.  
-La aplicación utiliza datos abiertos de administraciones públicas para ofrecer información actualizada sobre servicios de dependencia, ayudas económicas y espacios de participación ciudadana, mejorando la autonomía, el bienestar y la inclusión social de las personas mayores.
+ViuActiu Gent Gran is a web platform designed to centralize and facilitate access to resources and services for older adults in Catalonia, promoting active and healthy aging.
 
-Esta plataforma es candidata al **Reto #20opendata 2025: Ranking de herramientas digitales para el envejecimiento saludable**, organizado por **Iniciativa Barcelona Open Data** y la **Diputació de Barcelona**.
+The application uses open data from public administrations to provide updated information on dependency services, financial aid, and citizen participation spaces, improving autonomy, well-being, and social inclusion for older adults.
 
----
-
-## **Objetivo**
-
-La misión de *ViuActiu Gent Gran* es empoderar a las personas mayores y sus familias mediante una plataforma accesible que:
-
-- Centraliza recursos esenciales, como mapas interactivos de centros de día y residencias.  
-- Facilita el acceso a información sobre ayudas económicas y subvenciones públicas.  
-- Promueve la participación ciudadana a través de enlaces a espacios gestionados por administraciones públicas.  
-- Reduce la brecha digital con una interfaz clara y fácil de usar.
+This platform is a candidate for the **#20opendata 2025 Challenge: Ranking of digital tools for healthy aging**, organized by Barcelona Open Data Initiative and Diputació de Barcelona.
 
 ---
 
-## **Características principales**
+## 🎯 Objective
 
-- **Servicios de dependencia:** Mapas interactivos que muestran centros de día, residencias y otros servicios para mayores en Cataluña.  
-- **Ayudas económicas:** Información detallada sobre subvenciones públicas disponibles para personas mayores y sus familias.  
-- **Participación ciudadana:** Enlaces a espacios de participación gestionados por administraciones públicas, fomentando la inclusión social.  
-- **Datos abiertos:** Uso de APIs oficiales de la Generalitat de Catalunya, Diputació de Barcelona y Ayuntamiento de Barcelona, garantizando fiabilidad y actualización.  
-- **Perspectiva de género (en desarrollo):** utilizando datasets disponibles en las APIs oficiales se ha logrado exponer datos desagregados por sexo
+The mission of ViuActiu Gent Gran is to empower older adults and their families through an accessible platform that:
 
-### Perspectiva de Género
-
-ViuActiu Gent Gran integra una **perspectiva de género transversal** mediante:
-
-#### Dashboard Demográfico con Análisis de Género
-- **Datos desagregados por sexo** en todos los tramos de edad (65+, 70+, 75+, 80+, 85+, 90+)
-- **Visualizaciones comparativas** entre dones i homes
-- **Cálculo de brechas de género** que aumentan con la edad
-- **Indicadores de impacto social**: viudedad (72% mujeres), soledad (38% mujeres afectadas)
-
-#### Hallazgos clave
-- Las mujeres representan el **56.2%** de la población de 65+ años
-- Brecha de género de **+5.9pp** en población 65+, que crece hasta **+8.5pp** en 85+
-- Esperanza de vida: **86.2 años** (mujeres) vs **80.3 años** (hombres)
-- Mayor riesgo de **soledad no deseada** y **viudedad** en mujeres mayores
-
-#### Visualización
-Accede al dashboard completo: [Piràmide de la Longevitat](https://viuactiu-gentgran-iota.vercel.app/perspectiva-genere.html)
-
-#### Fuentes de datos con perspectiva de género
-- **INE (Instituto Nacional de Estadística)**: Población por edad y sexo (2024)
-- **Futuros datasets** de las APIs de servicios incluirán desagregación por sexo cuando esté disponible
+- **Centralizes essential resources**, such as interactive maps of day centers and residences
+- **Facilitates access to information** about financial aid and public subsidies
+- **Promotes citizen participation** through links to spaces managed by public administrations
+- **Reduces the digital divide** with a clear and easy-to-use interface
 
 ---
 
-## **Tecnologías utilizadas**
+## ✨ Key Features
 
-- **Frontend:** HTML5, CSS3, JavaScript (interfaz web responsiva y accesible).  
-- **Backend:** Node.js y Python (para lógica de servidor y manejo de datos).  
-- **APIs de datos abiertos:**  
-  - Generalitat de Catalunya.  
-  - Diputació de Barcelona (Dades Obertes) – formatos JSON, XML, CSV.  
-  - Ayuntamiento de Barcelona.  
-- **Despliegue:** Alojado en **Vercel** para escalabilidad y rendimiento.
-
-
---> Nota: La aplicación está alojada en Vercel para pruebas en línea.
----
-
-## **Cumplimiento con el Reto #20opendata 2025**
-
-*ViuActiu Gent Gran* se alinea con los criterios del reto:
-
-- **Datos abiertos como núcleo:** La plataforma se basa exclusivamente en datos abiertos de fuentes oficiales, asegurando fiabilidad y actualización.  
-- **Envejecimiento saludable:** Promueve la autonomía, el bienestar y la participación social mediante recursos centralizados y mapas interactivos, cubriendo ámbitos como salud, economía, participación social y comunicación.  
-- **Perspectiva de género:** En desarrollo, con un plan para integrar datos desagregados por sexo (por ejemplo, estadísticas de uso de servicios por género) a partir de datasets de las APIs oficiales.  
-- **Calidad técnica:**  
-  - **Territorialidad:** Diseñada para Cataluña, pero adaptable a otras regiones con datos abiertos.  
-  - **Interoperabilidad:** Usa formatos estándar (JSON, XML) y tecnologías modernas.  
-  - **Actualización:** Los datos se actualizan mediante consultas periódicas a las APIs (configurable, por ejemplo, diaria).  
-  - **Aplicabilidad:** Interfaz accesible, probada en Chrome, Firefox y dispositivos móviles.  
-- **Replicabilidad:** La **Licencia MIT** y el uso de datos abiertos permiten adaptar la plataforma a otros territorios conectando nuevas APIs locales.
+- **Dependency Services**: Interactive maps showing day centers, residences, and other services for seniors in Catalonia
+- **Financial Aid**: Detailed information about public subsidies available for older adults and their families
+- **Citizen Participation**: Links to participation spaces managed by public administrations, fostering social inclusion
+- **Open Data**: Use of official APIs from Generalitat de Catalunya, Diputació de Barcelona, and Barcelona City Council, ensuring reliability and updates
+- **Gender Perspective**: Implementation of sex-disaggregated data using datasets available from official APIs
 
 ---
 
-## Replicabilidad en otros contextos
+## 👥 Gender Perspective
 
-La plataforma es altamente replicable:
+ViuActiu Gent Gran integrates a **cross-cutting gender perspective** through:
 
-- Datos abiertos: Puede conectarse a APIs de otras regiones (por ejemplo, otras comunidades autónomas con portales de datos abiertos).
+### 📊 Demographic Dashboard with Gender Analysis
 
-- Configuración: El código permite cambiar las fuentes de datos en el archivo de configuración del servidor (por ejemplo,Replicabilidad en otros contextos
+- **Sex-disaggregated data** across all age groups (65+, 70+, 75+, 80+, 85+, 90+)
+- **Comparative visualizations** between women and men
+- **Gender gap calculations** that increase with age
+- **Social impact indicators**: widowhood (72% women), loneliness (38% women affected)
 
-La plataforma es altamente replicable:
+### 🎯 Key Findings
 
-Datos abiertos: Puede conectarse a APIs de otras regiones (por ejemplo, otras comunidades autónomas con portales de datos abiertos).
-Replicabilidad en otros contextos
+- Women represent **56.2%** of the population aged 65+
+- Gender gap of **+5.9pp** in the 65+ population, growing to **+8.5pp** at 85+
+- Life expectancy: **86.2 years** (women) vs **80.3 years** (men)
+- Higher risk of **unwanted loneliness** and **widowhood** among older women
 
-La plataforma es altamente replicable:
+### 🔗 Visualization
 
-Datos abiertos: Puede conectarse a APIs de otras regiones (por ejemplo, otras comunidades autónomas con portales de datos abiertos).
+Access the complete dashboard: [Longevity Pyramid](https://viuactiu-gentgran-iota.vercel.app/piramide-longevitat.html)
 
-- Configuración: El código permite cambiar las fuentes de datos en el archivo de configuración del servidor (por ejemplo, server.js o proxy_server.py).
+### 📚 Data Sources with Gender Perspective
 
-- Licencia MIT: Permite la reutilización y adaptación del código para nuevos contextos.
-
-Para adaptar la plataforma:
-
-- Actualiza las URLs de las APIs en la configuración.
-
-- Personaliza los mapas y recursos según el nuevo territorio.
-
-- Ajusta la interfaz para reflejar las necesidades locales.
-Configuración: El código permite cambiar las fuentes de datos en el archivo de configuración del servidor (por ejemplo, config.js o proxy_server.py).
-
-Licencia MIT: Permite la reutilización y adaptación del código para nuevos contextos.
-
-### Para adaptar la plataforma:
-
-Actualiza las URLs de las APIs en la configuración.
-
-Personaliza los mapas y recursos según el nuevo territorio.
-
-Ajusta la interfaz para reflejar las necesidades locales. config.js o proxy_server.py).
-
-- Licencia MIT: Permite la reutilización y adaptación del código para nuevos contextos.
-
-Para adaptar la plataforma:
-
-Actualiza las URLs de las APIs en la configuración.
-
-Personaliza los mapas y recursos según el nuevo territorio.
-
-Ajusta la interfaz para reflejar las necesidades locales.
+- **INE (National Statistics Institute)**: Population by age and sex (2024)
+- **Future datasets** from service APIs will include sex disaggregation when available
 
 ---
 
-## **Instalación y ejecución**
+## 🛠 Technologies Used
 
-Sigue estos pasos para ejecutar el proyecto localmente:
+- **Frontend**: HTML5, CSS3, JavaScript (responsive and accessible web interface)
+- **Backend**: Node.js and Python (for server logic and data handling)
+- **Open Data APIs**:
+  - Generalitat de Catalunya
+  - Diputació de Barcelona (Open Data) – JSON, XML, CSV formats
+  - Barcelona City Council
+- **Deployment**: Hosted on Vercel for scalability and performance
 
-### 1. Clonar el repositorio:
+> **Note:** The application is hosted on Vercel for online testing.
+
+---
+
+## 🏆 Compliance with #20opendata 2025 Challenge
+
+ViuActiu Gent Gran aligns with the challenge criteria:
+
+### ✅ Open Data as Core
+The platform is based exclusively on open data from official sources, ensuring reliability and updates.
+
+### ✅ Healthy Aging
+Promotes autonomy, well-being, and social participation through centralized resources and interactive maps, covering areas such as health, economy, social participation, and communication.
+
+### ✅ Gender Perspective
+**Fully implemented** with sex-disaggregated data visualization and gender gap analysis using datasets from official APIs.
+
+### ✅ Technical Quality
+- **Territoriality**: Designed for Catalonia, but adaptable to other regions with open data
+- **Interoperability**: Uses standard formats (JSON, XML) and modern technologies
+- **Updates**: Data is updated through periodic API queries (configurable, e.g., daily)
+- **Applicability**: Accessible interface, tested on Chrome, Firefox, and mobile devices
+
+### ✅ Replicability
+MIT License and use of open data allow adapting the platform to other territories by connecting new local APIs.
+
+---
+
+## 🌍 Replicability in Other Contexts
+
+The platform is highly replicable:
+
+- **Open Data**: Can connect to APIs from other regions (e.g., other autonomous communities with open data portals)
+- **Configuration**: Code allows changing data sources in the server configuration file (e.g., `server.js` or `proxy_server.py`)
+- **MIT License**: Allows reuse and adaptation of code for new contexts
+
+### To Adapt the Platform:
+
+1. Update API URLs in the configuration
+2. Customize maps and resources according to the new territory
+3. Adjust the interface to reflect local needs
+
+---
+
+## 🚀 Installation and Execution
+
+Follow these steps to run the project locally:
+
+### 1. Clone the Repository
 ```bash
 git clone https://github.com/alusilcof5/viuactiu_gentgran.git
 cd viuactiu_gentgran
 ```
 
----
+### 2. Install Dependencies
 
-## **Instal·lació i execució**
-
-Segueix aquests passos per executar el projecte localment:
-
-1. **Clonar el repositori**
-```bash
-git clone https://github.com/alusilcof5/viuactiu_gentgran.git
-cd viuactiu_gentgran
-```
-
-2. **Instal·lar dependències**
-
-Python (si es vol utilitzar el servidor *proxy* en Python):  
+**Python** (if using the Python proxy server):
 ```bash
 pip install -r requirements.txt
 ```
 
-3. **Executar l’aplicació**
+### 3. Run the Application
 
-Python:  
+**Python:**
 ```bash
 python proxy_server.py
 ```
-Go live  
+
+**Or use Live Server** for frontend development
 
 ---
 
-## **🛠 Tecnologies utilitzades**
+## 📚 Open Data Sources Used
 
-- **HTML5, CSS3 i JavaScript:** per a la interfície web.  
-- **Node.js:** per a la lògica de servidor i *proxy*.  
-- **Python:** com a alternativa per al servidor *proxy* i el tractament de dades.  
-- **APIs de dades obertes:** de la Generalitat de Catalunya, la Diputació de Barcelona i l’Ajuntament de Barcelona.  
+- **Barcelona Open Data Portal** – https://opendata-ajuntament.barcelona.cat
+- **Generalitat de Catalunya** – Department of Social Rights (data on services and residences)
+- **Diputació de Barcelona** – Catalog of social facilities
 
----
-
-### **Fonts de dades obertes utilitzades**
-
-- **Portal Open Data Ajuntament de Barcelona** – [https://opendata-ajuntament.barcelona.cat](https://opendata-ajuntament.barcelona.cat)  
-- **Generalitat de Catalunya – Departament de Drets Socials** (dades sobre serveis i residències)  
-- **Diputació de Barcelona – Catàleg d’equipaments socials**  
-
-(*Llicència: Dades amb llicència CC BY 4.0 – ús i redistribució permesos citant la font.*)
+*(License: Data with CC BY 4.0 license – use and redistribution allowed with source citation)*
 
 ---
 
-### **APIs consumides**
+## 🔌 APIs Consumed
 
-El projecte **ViuActiu Gent Gran** integra diverses APIs de dades obertes proporcionades per administracions públiques catalanes per oferir informació actualitzada i precisa sobre serveis i recursos per a les persones grans:
+The ViuActiu Gent Gran project integrates various open data APIs provided by Catalan public administrations to offer updated and accurate information on services and resources for older adults:
 
-#### 1. Generalitat de Catalunya – Serveis per a persones amb dependència
+### 1. Generalitat de Catalunya – Services for People with Dependency
+- **Description**: API providing information on services available for people with dependency in Catalonia, including day centers and residences
+- **Documentation**: https://administraciodigital.gencat.cat/ca/dades/dades-obertes/inici/
 
-- **Descripció:** API que proporciona informació sobre els serveis disponibles per a persones amb dependència a Catalunya, incloent-hi centres de dia i residències.  
-- **Documentació:** [https://administraciodigital.gencat.cat/ca/dades/dades-obertes/inici/](https://administraciodigital.gencat.cat/ca/dades/dades-obertes/inici/)
+### 2. Diputació de Barcelona – Open Data
+- **Description**: API that allows consulting, filtering, ordering, and retrieving open data from Diputació de Barcelona in formats such as JSON, XML, or CSV
+- **Documentation**: https://do.diba.cat/
 
-#### 2. Diputació de Barcelona – Dades Obertes
-
-- **Descripció:** API que permet consultar, filtrar, ordenar i recuperar dades obertes de la Diputació de Barcelona en formats com JSON, XML o CSV.  
-- **Documentació:** [https://do.diba.cat/](https://do.diba.cat/)
-
-#### 3. Ajuntament de Barcelona – Residències per a la gent gran
-
-- **Descripció:** API que proporciona informació sobre les residències per a persones grans a la ciutat de Barcelona.  
-- **Documentació:** [https://opendata-ajuntament.barcelona.cat/data/ca/dataset/serveissocials-residenciesgentgran](https://opendata-ajuntament.barcelona.cat/data/ca/dataset/serveissocials-residenciesgentgran)
+### 3. Barcelona City Council – Residences for Older Adults
+- **Description**: API providing information on residences for older adults in Barcelona city
+- **Documentation**: https://opendata-ajuntament.barcelona.cat/data/ca/dataset/serveissocials-residenciesgentgran
 
 ---
 
-## **📄 Llicència**
+## 📄 License
 
-Aquest projecte està sota la **Llicència MIT**, que en permet l’ús, modificació i distribució lliure, sempre que s’inclogui l’avís de drets d’autor i la renúncia de responsabilitat.
+This project is under the **MIT License**, which allows free use, modification, and distribution, provided that the copyright notice and disclaimer are included.
 
 ---
 
-## **🤝 Contribucions**
+## 🤝 Contributions
 
-S’accepten contribucions mitjançant **pull requests**.  
-Per a suggeriments o millores, obre un **issue** a GitHub per debatre els canvis abans d’implementar-los.
+Contributions are accepted through pull requests.
 
+For suggestions or improvements, open an issue on GitHub to discuss changes before implementing them.
 
-_________________--
+---
+
+## 📧 Contact
+
+**Author:** Ana Lucía Silva Córdoba  
+**Linkedin:** https://www.linkedin.com/in/ana-lucia-silva-cordoba/
+**Repository:** https://github.com/alusilcof5/viuactiu_gentgran  
+**Live Demo:** https://viuactiu-gentgran-iota.vercel.app/
+
+---
+
+**#20opendata2025** | **#HealthyAging** | **#OpenData** | **#GenderPerspective**
+
 
