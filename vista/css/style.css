@@ -59,6 +59,9 @@ body p, body li, body button, body a, body input, body select, body td, body th 
   font-size: 1.5rem; /* Base, escala amb root */
 }
 
+/* ============================
+   BOTONES DE OPCIONES
+   ============================ */
 .option-button.selected {
   background-color: rgb(21 128 61); /* Verd */
   color: white;

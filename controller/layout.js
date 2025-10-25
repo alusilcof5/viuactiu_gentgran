@@ -66,18 +66,18 @@ const Layout = {
         </div>
 
         <!-- Links (mobile) -->
-        <div id="mobile-menu" class="hidden flex-col gap-4 pb-4 px-4 md:hidden">
-          <a href="#" class="nav-link block text-lg font-bold text-blue-600" data-page="index" data-i18n="nav_inicio">Inici</a>
-          <a href="#" class="nav-link block text-lg font-semibold text-gray-600 hover:text-blue-600"
+        <div id="mobile-menu" class="hidden flex-col gap-12 pb-12 px-4 md:hidden">
+          <a href="#" class="nav-link block text-xl font-bold text-blue-600" data-page="index" data-i18n="nav_inicio">Inici</a>
+          <a href="#" class="nav-link block text-xl font-semibold text-gray-600 hover:text-blue-600"
             data-page="serveis" data-i18n="nav_servicios">Serveis de dependència</a>
-          <a href="#" class="nav-link block text-lg font-semibold text-gray-600 hover:text-blue-600"
+          <a href="#" class="nav-link block text-xl font-semibold text-gray-600 hover:text-blue-600"
             data-page="ajuts" data-i18n="nav_ayudas">Ajuts públics</a>
-          <a href="#" class="nav-link block text-lg font-semibold text-gray-600 hover:text-blue-600"
+          <a href="#" class="nav-link block text-xl font-semibold text-gray-600 hover:text-blue-600"
             data-page="solitud" data-i18n="nav_soledad">Solitud</a>
           
           <!-- Dropdown móvil per Taulells -->
           <div class="relative">
-            <button id="mobile-dashboard-toggle" class="block text-lg font-semibold text-gray-600 hover:text-blue-600 flex items-center gap-1 w-full text-left focus:outline-none" aria-haspopup="true" aria-expanded="false" aria-controls="mobile-dashboard-menu" data-i18n="nav_taulells">
+            <button id="mobile-dashboard-toggle" class="block text-xl font-semibold text-gray-600 hover:text-blue-600 flex items-center gap-1 w-full text-left focus:outline-none" aria-haspopup="true" aria-expanded="false" aria-controls="mobile-dashboard-menu" data-i18n="nav_taulells">
               Projecte
               <svg class="w-5 h-5 transition-transform" id="mobile-dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
@@ -102,7 +102,7 @@ const Layout = {
     <footer class="bg-gray-800 text-white py-8 mt-12" aria-label="Peu de pàgina">
       <div class="container mx-auto px-4 pr-8">
         <div class="grid md:grid-cols-4 gap-6 text-center md:text-left">
-          <!-- Sobre ViuActiu -->
+         
           <div>
             <h3 class="text-xl font-bold mb-3"><a href="#" id="footer-home-link" class="hover:text-white" aria-label="Tornar a la pàgina principal de ViuActiu">ViuActiu</a></h3>
             <p class="text-base text-gray-300" data-i18n="footer_desc">Recursos i ajuts per a l'envelliment saludable a Catalunya</p>
@@ -119,7 +119,7 @@ const Layout = {
           </div>
           <!-- Recursos útils -->
           <div> 
-            <h3 class="text-xl font-bold mb-3" data-i18n="footer_recursos">Recursos útils</h3>
+            <h3 class="text-lg font-bold mb-3" data-i18n="footer_recursos">Recursos útils</h3>
             <ul class="space-y-2 text-base text-gray-300">
               <li><a href="https://creuroja.org" class="hover:text-white" target="_blank" rel="noopener" data-i18n="footer_creu_roja">Creu Roja</a></li>
               <li><a href="https://telefonodelaesperanza.org" class="hover:text-white" target="_blank" rel="noopener" data-i18n="footer_telefon">Telèfon de l'Esperança</a></li>

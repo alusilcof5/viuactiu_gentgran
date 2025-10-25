@@ -69,6 +69,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const itemsPerPage = 12;
   let userResponses = {};
 
+  // Funció per obtenir el número d'imatge (1-19) basat en l'índex
+  function getImageNumber(index) {
+    return ((index % 19) + 1);
+  }
+
   // Funció per actualitzar el comptador
   function updateCount(count) {
     ajutsCountElement.innerText = count.toString();
@@ -87,20 +92,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const end = start + itemsPerPage;
     const paginatedAjuts = ajuts.slice(start, end);
 
-    paginatedAjuts.forEach(ajut => {
+    paginatedAjuts.forEach((ajut, index) => {
       const attributes = ajut.attributes;
+      const globalIndex = start + index;
+      const imageNumber = getImageNumber(globalIndex);
+      
       const card = document.createElement('div');
       card.className = 'bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow';
       card.innerHTML = `
-        <img src="https://via.placeholder.com/150" alt="${attributes.titol}" class="w-full h-32 object-cover rounded-lg mb-4">
+        <img src="../vista/images/${imageNumber}.png" alt="${attributes.titol}" class="w-full h-32 object-cover rounded-lg mb-4">
         <h3 class="text-xl font-bold text-gray-800 mb-2">${attributes.titol}</h3>
         <p class="text-gray-600 mb-1"><strong>Organisme:</strong> ${attributes.institucioDesenvolupat}</p>
-        <p class="text-gray-600 mb-1"><strong>Tipus:</strong> ${attributes.tipusSubvencio}</p>
-        <p class="text-gray-600 mb-1"><strong>Estat:</strong> ${attributes.estat}</p>
-        <button class="mt-4 bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg" onclick="showModal(${ajut.id})">
+        
+        <button class="mt-4 bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg" data-ajut-id="${ajut.id}">
           Veure detalls
         </button>
       `;
+      
+      // Afegir event listener al botó
+      const detailsBtn = card.querySelector('button');
+      detailsBtn.addEventListener('click', () => showModal(ajut.id));
+      
+      ajutsContainer.appendChild(card);
+      
       ajutsContainer.appendChild(card);
     });
 
@@ -227,28 +241,126 @@ document.addEventListener('DOMContentLoaded', () => {
     return userResponses;
   }
 
-  // Funció per mostrar el modal amb detalls
-  window.showModal = function(id) {
-    const ajut = ajutsData.find(a => a.id === id);
-    if (!ajut) return;
+  // Funció per formatejar dates
+  function formatDate(dateString) {
+    if (!dateString) return 'No especificat';
+    const date = new Date(dateString);
+    return date.toLocaleDateString('ca-ES', { 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    });
+  }
 
-    const attributes = ajut.attributes;
+  // Funció per mostrar el modal amb detalls
+  function showModal(id) {
+    console.log('Obrint modal per ajut ID:', id);
+    const ajut = ajutsData.find(a => a.id === id || a.id === String(id));
+    
+    if (!ajut) {
+      console.error('No s\'ha trobat l\'ajut amb ID:', id);
+      return;
+    }
+
+    const attr = ajut.attributes;
+    const ajutIndex = ajutsData.findIndex(a => a.id === ajut.id);
+    const imageNumber = getImageNumber(ajutIndex);
+    
+    const estatColor = attr.estat === 'Procés vigent' ? 'green' : 'yellow';
+    
     modalContent.innerHTML = `
-      <h3 class="text-2xl font-bold text-gray-800 mb-4">${attributes.titol}</h3>
-      <p class="text-gray-600 mb-2"><strong>Organisme:</strong> ${attributes.institucioDesenvolupat}</p>
-      <p class="text-gray-600 mb-2"><strong>Tipus:</strong> ${attributes.tipusSubvencio}</p>
-      <p class="text-gray-600 mb-2"><strong>Estat:</strong> ${attributes.estat}</p>
-      <p class="text-gray-600 mb-2"><strong>Data de finalització:</strong> ${attributes.dataFinalitzacio || 'No especificat'}</p>
-      <p class="text-gray-600 mb-2"><strong>Descripció:</strong> ${attributes.observacions || 'Sense observacions'}</p>
-      <a href="${attributes.urlCido}" target="_blank" class="text-blue-600 hover:underline">Més informació</a>
+      <div class="flex flex-col md:flex-row gap-6">
+        <!-- Imatge -->
+        <div class="md:w-1/3">
+          <img src="../vista/images/${imageNumber}.png" alt="${attr.titol}" 
+               class="w-full rounded-lg shadow-md object-cover">
+          <div class="mt-4 p-3 bg-${estatColor}-100 rounded-lg text-center">
+            <span class="text-sm font-semibold text-${estatColor}-800">
+              ${attr.estat || 'Estat desconegut'}
+            </span>
+          </div>
+        </div>
+
+        <!-- Contingut -->
+        <div class="md:w-2/3">
+          <h3 class="text-3xl font-bold text-gray-800 mt-12 mb-4">${attr.titol}</h3>
+          
+          <!-- Informació bàsica -->
+          <div class="bg-gray-50 rounded-lg p-4 mb-4">
+            <h4 class="text-lg font-semibold text-gray-700 mb-3">Informació general</h4>
+            <div class="space-y-2">
+              <p class="text-gray-600"><strong>Organisme:</strong> ${attr.institucioDesenvolupat || 'No especificat'}</p>
+              <p class="text-gray-600"><strong>Tipus:</strong> ${attr.tipusSubvencio || 'No especificat'}</p>
+              ${attr.ambitTerritorial ? `<p class="text-gray-600"><strong>Àmbit territorial:</strong> ${attr.ambitTerritorial}</p>` : ''}
+              ${attr.numeroExpedient ? `<p class="text-gray-600"><strong>Núm. expedient:</strong> ${attr.numeroExpedient}</p>` : ''}
+            </div>
+          </div>
+
+          <!-- Dates -->
+          <div class="bg-blue-50 rounded-lg p-4 mb-4">
+            <h4 class="text-lg font-semibold text-gray-700 mb-3">Terminis</h4>
+            <div class="space-y-2">
+              ${attr.dataPublicacio ? `<p class="text-gray-600"><strong>Data publicació:</strong> ${formatDate(attr.dataPublicacio)}</p>` : ''}
+              ${attr.dataInici ? `<p class="text-gray-600"><strong>Data inici:</strong> ${formatDate(attr.dataInici)}</p>` : ''}
+              ${attr.dataFinalitzacio ? `<p class="text-gray-600"><strong>Data finalització:</strong> ${formatDate(attr.dataFinalitzacio)}</p>` : ''}
+            </div>
+          </div>
+
+          <!-- Descripció i observacions -->
+          ${attr.observacions ? `
+          <div class="bg-green-50 rounded-lg p-4 mb-4">
+            <h4 class="text-lg font-semibold text-gray-700 mb-3">Descripció</h4>
+            <p class="text-gray-600 text-sm leading-relaxed">${attr.observacions}</p>
+          </div>
+          ` : ''}
+
+          <!-- Beneficiaris -->
+          ${attr.beneficiaris ? `
+          <div class="bg-purple-50 rounded-lg p-4 mb-4">
+            <h4 class="text-lg font-semibold text-gray-700 mb-3">Beneficiaris</h4>
+            <p class="text-gray-600 text-sm">${attr.beneficiaris}</p>
+          </div>
+          ` : ''}
+
+          <!-- Enllaços -->
+          <div class="flex gap-3 mt-6">
+            ${attr.urlCido ? `
+            <a href="${attr.urlCido}" target="_blank" 
+               class="flex-1 bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-4 rounded-lg text-center transition-colors">
+              Més informació CIDO
+            </a>
+            ` : ''}
+            ${attr.urlBop ? `
+            <a href="${attr.urlBop}" target="_blank" 
+               class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg text-center transition-colors">
+              Veure BOP
+            </a>
+            ` : ''}
+          </div>
+        </div>
+      </div>
+
+      <!-- Botó tancar -->
+      <button class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl font-bold close-modal-btn"></button>
     `;
+    
+    // Event listener per tancar el modal
+    const closeBtn = modalContent.querySelector('.close-modal-btn');
+    closeBtn.addEventListener('click', tancarModal);
+    
     modal.classList.remove('hidden');
-  };
+    console.log('Modal obert correctament');
+  }
 
   // Funció per tancar el modal
-  window.tancarModal = function() {
+  function tancarModal() {
     modal.classList.add('hidden');
-  };
+    console.log('Modal tancat');
+  }
+
+  // Exportar funcions al window per si es necessiten
+  window.showModal = showModal;
+  window.tancarModal = tancarModal;
 
   // Afegir esdeveniments per als filtres i la cerca
   searchBar.addEventListener('input', applyFilters);
