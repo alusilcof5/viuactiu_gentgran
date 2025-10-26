@@ -128,7 +128,7 @@ Data is processed using JavaScript scripts that:
 **Regulatory compliance**:
 - Law 37/2007 on Reuse of Public Sector Information  
 - EU Directive 2019/1024 on Open Data  
-- Creative Commons Attribution 4.0 International  
+- Creative Commons Attribution 4.0 International Promoviendo el envejecimiento saludable a través de datos abiertos 
 
 ---
 

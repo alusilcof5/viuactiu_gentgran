@@ -1,14 +1,17 @@
 <div style="text-align: center;">
   <img src="vista/images/logo_trans.png" alt="logo" width="60">
+  <p style="font-size: 34px;">ViuActiu Gent Gran</p>
+
 </div>
 
-# ViuActiu Gent Gran
+**A digital tool based on open data to promote healthy aging and longevity**
+
 
 [![#20opendata 2025](https://img.shields.io/badge/%2320opendata-2025-blue?style=for-the-badge&logo=databricks)](https://www.diba.cat/es/web/opendata)
 [![Barcelona Open Data](https://img.shields.io/badge/Barcelona-Open%20Data-red?style=for-the-badge)](https://opendata-ajuntament.barcelona.cat)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-> **A digital tool based on open data to promote healthy aging and longevity**
+
 
 **Project submitted to the #20opendata 2025 challenge**  
 *Diputació de Barcelona – Barcelona Open Data Initiative*
@@ -92,7 +95,8 @@ Facilitate access to information on residences, day centers, and social particip
 | **Idescat** | Population and demographics | Demographic context |
 | **BCN Open Data** | Territorial divisions | District filtering |
 
-**Full documentation**: See [DATASOURCES.md](./DATASOURCES.md)  
+**Full documentation**: See [DATASOURCES.md](./DATASOURCES.md) and [REPLICABILITY.md](./REPLICABILITY.md)
+
 **Licenses**: CC BY 4.0 and Law 37/2007 on public information reuse  
 
 ---
