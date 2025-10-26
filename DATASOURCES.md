@@ -1,156 +1,156 @@
-# Fuentes de Datos Abiertos
+# Open Data Sources
 
-## Proyecto: ViuActiu Gent Gran
-### **Reto**: #20opendata 2025 - Envejecimiento Saludable y Longevidad
+## Project: ViuActiu Gent Gran
+### **Challenge**: #20opendata 2025 – Healthy Ageing and Longevity
 [![#20opendata 2025](https://img.shields.io/badge/%2320opendata-2025-blue?style=for-the-badge&logo=databricks)](https://www.diba.cat/es/web/opendata)
 [![Barcelona Open Data](https://img.shields.io/badge/Barcelona-Open%20Data-red?style=for-the-badge)](https://opendata-ajuntament.barcelona.cat)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
+---
 
-## Datasets Utilizados
+## Datasets Used
 
-### 1. Barcelona Open Data - Equipamientos Municipales
+### 1. Barcelona Open Data – Municipal Facilities
 
-**Fuente**: Ayuntamiento de Barcelona - Open Data BCN  
-**Dataset**: Equipamientos municipales (Residencias y Centros)  
+**Source**: Barcelona City Council – Open Data BCN  
+**Dataset**: Municipal facilities (Residences and Centers)  
 **URL**: https://opendata-ajuntament.barcelona.cat/data/es/dataset/equipaments  
-**Formato**: CSV / GeoJSON  
-**Licencia**: Creative Commons Atribución 4.0 (CC BY 4.0)  
-**Última actualización**: Octubre 2024  
+**Format**: CSV / GeoJSON  
+**License**: Creative Commons Attribution 4.0 (CC BY 4.0)  
+**Last update**: October 2024  
 
-**Datos extraídos**:
-- Nombre del equipamiento
-- Dirección postal
-- Coordenadas geográficas (latitud/longitud)
-- Distrito y barrio
-- Tipo de servicio (residencia, centro de día, centro cívico)
-- Teléfono de contacto
-- Información de accesibilidad
+**Extracted data**:
+- Facility name  
+- Postal address  
+- Geographic coordinates (latitude/longitude)  
+- District and neighborhood  
+- Type of service (residence, day center, civic center)  
+- Contact phone  
+- Accessibility information  
 
-**Uso en el proyecto**: Mapa interactivo de localización de servicios para personas mayores
+**Use in the project**: Interactive map showing services for older adults
 
 ---
 
-### 2. Instituto Nacional de Estadística (INE) - Esperanza de Vida
+### 2. National Statistics Institute (INE) – Life Expectancy
 
-**Fuente**: Instituto Nacional de Estadística  
-**Dataset**: Indicadores de Mortalidad - Esperanza de vida al nacer por comunidades autónomas  
+**Source**: Instituto Nacional de Estadística (INE)  
+**Dataset**: Mortality Indicators – Life expectancy at birth by autonomous communities  
 **URL**: https://www.ine.es/jaxiT3/Tabla.htm?t=1414  
-**Formato**: JSON / CSV  
-**Licencia**: Reutilización de información pública (Ley 37/2007)  
-**Última actualización**: Datos 2022-2023  
+**Format**: JSON / CSV  
+**License**: Public Information Reuse Act (Law 37/2007)  
+**Last update**: Data 2022–2023  
 
-**Datos extraídos**:
-- Esperanza de vida total por comunidad autónoma
-- Esperanza de vida por género (hombres/mujeres)
-- Series temporales de evolución
+**Extracted data**:
+- Total life expectancy by region  
+- Life expectancy by gender (male/female)  
+- Time series evolution  
 
-**Uso en el proyecto**: Gráficos comparativos de longevidad por género y territorio
+**Use in the project**: Comparative charts of longevity by gender and region
 
 ---
 
-### 3. Idescat - Estadísticas de Catalunya
+### 3. Idescat – Statistics of Catalonia
 
-**Fuente**: Institut d'Estadística de Catalunya (Idescat)  
-**Dataset**: Población por edad y sexo - Proyecciones demográficas  
+**Source**: Statistical Institute of Catalonia (Idescat)  
+**Dataset**: Population by age and sex – Demographic projections  
 **URL**: https://www.idescat.cat/pub/?id=aec&n=253  
-**Formato**: JSON / API REST  
-**Licencia**: Creative Commons Atribución 4.0 (CC BY 4.0)  
-**Última actualización**: 2024  
+**Format**: JSON / REST API  
+**License**: Creative Commons Attribution 4.0 (CC BY 4.0)  
+**Last update**: 2024  
 
-**Datos extraídos**:
-- Distribución poblacional por grupos de edad
-- Pirámide poblacional desagregada por sexo
-- Índice de envejecimiento
-- Proyecciones futuras de envejecimiento
+**Extracted data**:
+- Population distribution by age groups  
+- Population pyramid by gender  
+- Ageing index  
+- Future ageing projections  
 
-**Uso en el proyecto**: Contexto demográfico y análisis de tendencias
+**Use in the project**: Demographic context and trend analysis
 
 ---
 
-### 4. Barcelona Open Data - Divisiones Territoriales
+### 4. Barcelona Open Data – Territorial Divisions
 
-**Fuente**: Ayuntamiento de Barcelona  
-**Dataset**: Barrios y distritos de Barcelona  
+**Source**: Barcelona City Council  
+**Dataset**: Neighborhoods and districts of Barcelona  
 **URL**: https://opendata-ajuntament.barcelona.cat/data/es/dataset/20170706-districtes-barris  
-**Formato**: GeoJSON  
-**Licencia**: CC BY 4.0  
-**Última actualización**: 2024  
+**Format**: GeoJSON  
+**License**: CC BY 4.0  
+**Last update**: 2024  
 
-**Datos extraídos**:
-- Geometrías de distritos
-- Códigos de barrios
-- Límites territoriales
+**Extracted data**:
+- District geometries  
+- Neighborhood codes  
+- Territorial boundaries  
 
-**Uso en el proyecto**: Filtrado geográfico y visualización por distritos
-
----
-
-## Procesamiento de Datos
-
-### Metodología:
-1. **Extracción**: Descarga manual/automática desde portales oficiales
-2. **Limpieza**: Normalización de nombres, formatos y coordenadas
-3. **Transformación**: Conversión a formato JSON para consumo web
-4. **Validación**: Verificación de integridad y completitud de datos
-5. **Actualización**: Proceso manual trimestral (próxima: enero 2025)
-
-### Scripts de procesamiento:
-Los datos son procesados mediante scripts JavaScript que:
-- Validan coordenadas GPS
-- Normalizan formatos de teléfono
-- Categorizan tipos de servicios
-- Generan índices para búsqueda rápida
+**Use in the project**: Geographic filtering and district-based visualization
 
 ---
 
-## Frecuencia de Actualización
+## Data Processing
 
-| Dataset | Frecuencia oficial | Actualización en el proyecto |
-|---------|-------------------|------------------------------|
-| Equipamientos BCN | Mensual | Trimestral |
-| INE Esperanza de vida | Anual | Anual |
-| Idescat Población | Anual | Anual |
-| Divisiones territoriales | Ocasional | Según cambios oficiales |
+### Methodology:
+1. **Extraction**: Manual/automated download from official portals  
+2. **Cleaning**: Normalization of names, formats, and coordinates  
+3. **Transformation**: Conversion to JSON format for web consumption  
+4. **Validation**: Integrity and completeness check  
+5. **Update**: Manual quarterly process (next: January 2025)
 
----
-
-##  Política de Datos Abiertos
-
-**Todos los datos utilizados en este proyecto**:
-- Son de acceso público y gratuito
-- Están publicados bajo licencias abiertas
-- Provienen de fuentes oficiales verificadas
-- Se citan correctamente en la aplicación
-- Permiten redistribución con atribución
-
-**Cumplimiento normativo**:
-- Ley 37/2007 de reutilización de información del sector público
-- Directiva 2019/1024 de la UE sobre datos abiertos
-- Creative Commons Attribution 4.0 International
+### Processing scripts:
+Data is processed using JavaScript scripts that:
+- Validate GPS coordinates  
+- Normalize phone number formats  
+- Categorize service types  
+- Generate indexes for fast search  
 
 ---
 
-## Contacto para Datos
+## Update Frequency
 
-Para consultas sobre los datasets originales:
+| Dataset | Official frequency | Project update frequency |
+|----------|-------------------|---------------------------|
+| BCN Facilities | Monthly | Quarterly |
+| INE Life Expectancy | Annual | Annual |
+| Idescat Population | Annual | Annual |
+| Territorial Divisions | Occasional | Based on official updates |
+
+---
+
+## Open Data Policy
+
+**All data used in this project**:
+- Are publicly accessible and free of charge  
+- Are published under open licenses  
+- Come from verified official sources  
+- Are properly cited within the application  
+- Allow redistribution with attribution  
+
+**Regulatory compliance**:
+- Law 37/2007 on Reuse of Public Sector Information  
+- EU Directive 2019/1024 on Open Data  
+- Creative Commons Attribution 4.0 International  
+
+---
+
+## Data Contact Information
+
+For inquiries about the original datasets:
 
 **Barcelona Open Data**  
 Email: opendata@ajuntament.barcelona.cat  
-Portal: https://opendata-ajuntament.barcelona.cat
+Portal: https://opendata-ajuntament.barcelona.cat  
 
-**INE - Instituto Nacional de Estadística**  
-Consultas: www.ine.es/infoine  
-Portal: https://www.ine.es
+**INE – National Statistics Institute**  
+Inquiries: www.ine.es/infoine  
+Portal: https://www.ine.es  
 
 **Idescat**  
 Email: comunica@idescat.cat  
-Portal: https://www.idescat.cat
+Portal: https://www.idescat.cat  
 
----
 
-## Enlaces Directos a Datasets
 
+## Direct Dataset Links
 ```
 # Equipamientos BCN (CSV)
 https://opendata-ajuntament.barcelona.cat/data/dataset/8d59a8ea-fe93-4a77-8e17-03aad3b58042/resource/7f3497ba-b5c8-4d1e-8c77-b41c1dc69717/download
@@ -164,17 +164,20 @@ https://api.idescat.cat/emex/v1/dades.json?id=pop&lang=es
 
 ---
 
-##  Relevancia para el Reto #20opendata
-
-Este proyecto demuestra:
-- **Uso central de datos abiertos**: El 100% de la información proviene de fuentes públicas
-- **Interoperabilidad**: Combina datasets de múltiples instituciones
-- **Perspectiva de género**: Datos desagregados por sexo (INE, Idescat)
-- **Transparencia**: Documentación completa de fuentes y licencias
-- **Replicabilidad**: Metodología clara para aplicar en otros territorios
 
 ---
 
-**Última revisión**: 26 de octubre de 2025  
-**Proyecto**: ViuActiu Gent Gran  
-**Candidatura**: #20opendata 2025 - Diputación de Barcelona
+## Relevance to the #20opendata Challenge
+
+This project demonstrates:
+- **Central use of open data**: 100% of the information comes from public sources  
+- **Interoperability**: Combines datasets from multiple institutions  
+- **Gender perspective**: Data disaggregated by sex (INE, Idescat)  
+- **Transparency**: Complete documentation of sources and licenses  
+- **Replicability**: Clear methodology applicable to other regions  
+
+---
+
+**Last review**: October 26, 2025  
+**Project**: ViuActiu Gent Gran  
+**Submission**: #20opendata 2025 – Diputació de Barcelona

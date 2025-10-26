@@ -1,139 +1,135 @@
 <div style="text-align: center;">
   <img src="vista/images/logo_trans.png" alt="logo" width="60">
 </div>
+
 # ViuActiu Gent Gran
 
 [![#20opendata 2025](https://img.shields.io/badge/%2320opendata-2025-blue?style=for-the-badge&logo=databricks)](https://www.diba.cat/es/web/opendata)
 [![Barcelona Open Data](https://img.shields.io/badge/Barcelona-Open%20Data-red?style=for-the-badge)](https://opendata-ajuntament.barcelona.cat)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-> **Herramienta digital basada en datos abiertos para promover el envejecimiento saludable y la longevidad**
+> **A digital tool based on open data to promote healthy aging and longevity**
 
-**Proyecto presentado al reto #20opendata 2025**  
-*Diputación de Barcelona - Iniciativa Barcelona Open Data*
+**Project submitted to the #20opendata 2025 challenge**  
+*Diputació de Barcelona – Barcelona Open Data Initiative*
 
-# Índex
+---
 
+# Index
 
-- [Demo en Vivo](#demo-en-vivo)
-- [Sobre el Proyecto](#sobre-el-proyecto)
-  - [Objetivo](#objetivo)
-- [Funcionalidades Principales](#funcionalidades-principales)
-  - [Mapa Interactivo](#mapa-interactivo)
-  - [Visualización de Datos](#visualización-de-datos)
-  - [Búsqueda y Filtros](#búsqueda-y-filtros)
-- [Datos Abiertos Utilizados](#datos-abiertos-utilizados)
-- [Tecnologías](#tecnologías)
+- [Live Demo](#live-demo)
+- [About the Project](#about-the-project)
+  - [Objective](#objective)
+- [Main Features](#main-features)
+  - [Interactive Map](#interactive-map)
+  - [Data Visualization](#data-visualization)
+  - [Search and Filters](#search-and-filters)
+- [Open Data Used](#open-data-used)
+- [Technologies](#technologies)
   - [Frontend](#frontend)
-  - [Datos](#datos)
-  - [Despliegue](#despliegue)
-- [Instalación y Uso Local](#instalación-y-uso-local)
-  - [Requisitos previos](#requisitos-previos)
-  - [Opción 1: Abrir directamente](#opción-1-abrir-directamente)
-  - [Opción 2: Con servidor local](#opción-2-con-servidor-local)
-- [Estructura del Proyecto](#estructura-del-proyecto)
-- [Ámbitos de Interés Abordados](#ámbitos-de-interés-abordados)
-- [Casos de Uso](#casos-de-uso)
-  - [Para Familias](#para-familias)
-  - [Para Trabajadores Sociales](#para-trabajadores-sociales)
-  - [Para Investigadores](#para-investigadores)
-  - [Para Políticas Públicas](#para-políticas-públicas)
-- [Replicabilidad en Otros Territorios](#replicabilidad-en-otros-territorios)
-- [Métricas de Impacto](#métricas-de-impacto)
-- [Contribuciones](#contribuciones)
-- [Licencia](#licencia)
-- [Contacto](#contacto)
----
-
-## Demo en Vivo
-
-**Aplicación**: [https://viuactiu-gentgran.vercel.app](https://viuactiu-gentgran-ok10okx12-anas-projects-7a7f6fb5.vercel.app/)
+  - [Data](#data)
+  - [Deployment](#deployment)
+- [Installation and Local Use](#installation-and-local-use)
+  - [Prerequisites](#prerequisites)
+  - [Option 1: Open Directly](#option-1-open-directly)
+  - [Option 2: Local Server](#option-2-local-server)
+- [Project Structure](#project-structure)
+- [Areas of Interest Addressed](#areas-of-interest-addressed)
+- [Use Cases](#use-cases)
+  - [For Families](#for-families)
+  - [For Social Workers](#for-social-workers)
+  - [For Researchers](#for-researchers)
+  - [For Public Policy](#for-public-policy)
+- [Replicability in Other Territories](#replicability-in-other-territories)
+- [Impact Metrics](#impact-metrics)
+- [Contributions](#contributions)
+- [License](#license)
+- [Contact](#contact)
 
 ---
 
-## Sobre el Proyecto
-
-**ViuActiu Gent Gran** es una plataforma web interactiva que ayuda a familias, profesionales y personas mayores a encontrar y visualizar servicios de atención y participación para la tercera edad en Barcelona, utilizando **exclusivamente datos abiertos** de instituciones públicas.
-
-### Objetivo
-
-Facilitar el acceso a información sobre residencias, centros de día y espacios de participación social, mientras se contextualiza con datos de longevidad y envejecimiento demográfico, promoviendo decisiones informadas sobre el envejecimiento activo y saludable.
+## Live Demo
+**Application**: [https://viuactiu-gentgran.vercel.app](https://viuactiu-gentgran-ok10okx12-anas-projects-7a7f6fb5.vercel.app/)
 
 ---
 
-## Funcionalidades Principales
+## About the Project
+**ViuActiu Gent Gran** is an interactive web platform that helps families, professionals, and older adults find and visualize elderly care and participation services in Barcelona, using **exclusively open data** from public institutions.
 
-###  Mapa Interactivo
-- Localización de residencias y centros de día en Barcelona
-- Filtrado por distrito y tipo de servicio
-- Información detallada: dirección, teléfono, accesibilidad
-- Visualización geográfica en tiempo real
-
-###  Visualización de Datos
-- **Perspectiva de género**: Esperanza de vida hombres vs mujeres
-- Comparativa longevidad Catalunya vs España
-- Evolución histórica de la esperanza de vida
-- Análisis de feminización del envejecimiento
-
-###  Búsqueda y Filtros
-- Por nombre de centro
-- Por distrito o barrio
-- Por tipo de servicio (residencia, centro de día, centro cívico)
-- Por capacidad y servicios específicos
+### Objective
+Facilitate access to information on residences, day centers, and social participation spaces, while contextualizing with longevity and demographic aging data, promoting informed decisions about active and healthy aging.
 
 ---
 
-##  Datos Abiertos Utilizados
+## Main Features
+### Interactive Map
+- Location of residences and day centers in Barcelona  
+- Filter by district and type of service  
+- Detailed information: address, phone, accessibility  
+- Real-time geographic visualization  
 
-**Fuentes principales**:
+### Data Visualization
+- **Gender perspective**: Life expectancy men vs. women  
+- Longevity comparison Catalonia vs. Spain  
+- Historical evolution of life expectancy  
+- Analysis of aging feminization  
 
-| Fuente | Dataset | Uso |
-|--------|---------|-----|
-| **Barcelona Open Data** | Equipamientos municipales | Mapa de residencias y centros |
-| **INE** | Esperanza de vida por CCAA | Gráficos de longevidad |
-| **Idescat** | Población y demografía | Contexto demográfico |
-| **BCN Open Data** | Divisiones territoriales | Filtrado por distritos |
-
-**Documentación completa**: Ver [DATASOURCES.md](./DATASOURCES.md)
-
-**Licencias**: CC BY 4.0 y Ley 37/2007 de reutilización de información pública
+### Search and Filters
+- By center name  
+- By district or neighborhood  
+- By type of service (residence, day center, civic center)  
+- By capacity and specific services  
 
 ---
 
-## Tecnologías
+## Open Data Used
+**Main sources**:
 
+| Source | Dataset | Use |
+|--------|----------|-----|
+| **Barcelona Open Data** | Municipal facilities | Map of residences and centers |
+| **INE** | Life expectancy by region | Longevity graphs |
+| **Idescat** | Population and demographics | Demographic context |
+| **BCN Open Data** | Territorial divisions | District filtering |
+
+**Full documentation**: See [DATASOURCES.md](./DATASOURCES.md)  
+**Licenses**: CC BY 4.0 and Law 37/2007 on public information reuse  
+
+---
+
+## Technologies
 ### Frontend
-- HTML5, CSS3, JavaScript (Vanilla)
-- Chart.js - Visualización de gráficos
-- Leaflet API - Mapas interactivos
-- Responsive Design (Mobile-first)
+- HTML5, CSS3, Vanilla JavaScript  
+- Chart.js – Data visualization  
+- Leaflet API – Interactive maps  
+- Responsive Design (Mobile-first)  
 
-### Datos
-- Formato: JSON estático
-- Sin backend ni base de datos
-- Procesamiento en cliente
+### Data
+- Format: Static JSON  
+- No backend or database  
+- Client-side data processing  
 
-### Despliegue
-- **Hosting**: Vercel
-- **CI/CD**: Automático con Git push
-- **HTTPS**: Certificado gratuito incluido
+### Deployment
+- **Hosting**: Vercel  
+- **CI/CD**: Automatic with Git push  
+- **HTTPS**: Free SSL included  
 
 ---
 
-## Instalación y Uso Local
+## Installation and Local Use
+### Prerequisites
+- Modern web browser  
+- (Optional) Local server for development  
 
-### Requisitos previos
-- Navegador web moderno
-- (Opcional) Servidor local para desarrollo
-
-### Opción 1: Abrir directamente
+### Option 1: Open Directly
 ```bash
-# Clonar repositorio
+# Clone repository
 git clone https://github.com/alusilcof5/viuactiu_gentgran.git
 cd viuactiu_gentgran
 
-# Abrir en navegador
+# Open in browser
 open index.html
+
 ```
 
 ### Opción 2: Con servidor local
@@ -180,90 +176,92 @@ viuactiu_gentgran/
 ---
 
 
-## 🌍 Ámbitos de Interés Abordados
+##  Areas of Interest Addressed
 
--  **Vivienda**: Localización de residencias
--  **Servicios sociales**: Centros de día y atención
--  **Salud y bienestar**: Datos de longevidad
--  **Espacios públicos**: Centros cívicos y comunitarios
--  **Inclusión social**: Información de accesibilidad
--  **Participación social**: Centros de actividades
+-  Housing: Location of residences
 
----
+- Social Services: Day and care centers
 
-##  Casos de Uso
+- Health and Well-being: Longevity data
 
-### Para Familias
-> *"Mi padre necesita una residencia en el distrito de Gràcia con accesibilidad adaptada"*
+- Public Spaces: Civic and community centers
 
-**Solución**: Filtrar mapa por distrito + ver información de contacto y servicios
+- Social Inclusion: Accessibility information
 
-### Para Trabajadores Sociales
-> *"Necesito un listado actualizado de centros de día en Horta-Guinardó"*
-
-**Solución**: Mapa interactivo con datos oficiales del Ayuntamiento
-
-### Para Investigadores
-> *"Quiero analizar la distribución territorial de servicios para mayores"*
-
-**Solución**: Visualización geoespacial + datos de longevidad por género
-
-### Para Políticas Públicas
-> *"¿Qué distritos tienen déficit de residencias?"*
-
-**Solución**: Análisis visual de densidad de servicios
+- Social Participation: Activity centers
 
 ---
 
-##  Replicabilidad en Otros Territorios
+## 🧭 Use Cases
 
-Esta herramienta puede adaptarse a cualquier ciudad con portal de datos abiertos:
+### 👨‍👩‍👧 For Families
+> “My father needs a residence in the Gràcia district with accessibility.”  
+**Solution:** Filter the map by district and view contact information and available services.
 
-### Pasos para replicar:
-1. **Identificar portal open data** de tu municipio
-2. **Descargar datasets** de equipamientos/servicios sociales
-3. **Actualizar JSON** en carpeta `/data/`
-4. **Ajustar coordenadas** del mapa en `js/map.js`
-5. **Desplegar** en Vercel/Netlify/GitHub Pages
+### 🧑‍💼 For Social Workers
+> “I need an updated list of day centers in Horta-Guinardó.”  
+**Solution:** Interactive map with official City Council data.
 
-### Requisitos mínimos:
-- Dataset de residencias/centros con coordenadas GPS
-- (Opcional) Datos demográficos locales
+### 🧑‍🔬 For Researchers
+> “I want to analyze the territorial distribution of elderly services.”  
+**Solution:** Geospatial visualization combined with gender-based longevity data.
 
----
-
-##  Métricas de Impacto
-
-### Datos técnicos:
-- **Carga inicial**: < 2 segundos
-- **Peso total**: < 5 MB
-- **Dispositivos soportados**: Desktop, tablet, móvil
-- **Accesibilidad**: Nivel AA (WCAG 2.1)
-
-### Alcance esperado:
-- **Usuarios objetivo**: Familias con personas mayores dependientes
-- **Profesionales**: Trabajadores sociales, gerontólogos
-- **Territorios replicables**: +200 municipios en Catalunya
+### 🏛️ For Public Policy
+> “Which districts have a shortage of residences?”  
+**Solution:** Visual analysis of service density and geographic availability.
 
 ---
 
-##  Contribuciones
+## 🌍 Replicability in Other Territories
 
-¡Las contribuciones son bienvenidas!
+This tool can be adapted to any city with an open data portal.
 
-### Cómo contribuir:
-1. Fork el repositorio
-2. Crea una rama: `git checkout -b feature/nueva-funcionalidad`
-3. Commit cambios: `git commit -m "Añadir nueva funcionalidad"`
-4. Push: `git push origin feature/nueva-funcionalidad`
-5. Abre un Pull Request
+### 🔁 Steps to Replicate
+1. **Identify** the open data portal of your municipality.  
+2. **Download** datasets of facilities or social services.  
+3. **Update** JSON files in the `/data/` folder.  
+4. **Adjust** coordinates in `js/map.js`.  
+5. **Deploy** on Vercel, Netlify, or GitHub Pages.
+
+### ⚙️ Minimum Requirements
+- Dataset of residences or centers **with GPS coordinates**.  
+- *(Optional)* Local demographic and aging data.
 
 ---
 
-##  Licencia
+## 📊 Impact Metrics
 
-**Código**: MIT License - Ver [LICENSE](./LICENSE)  
-**Datos**: CC BY 4.0 y Ley 37/2007 de reutilización
+### 🔧 Technical Data
+- **Initial load:** < 2 seconds  
+- **Total size:** < 5 MB  
+- **Supported devices:** Desktop, tablet, mobile  
+- **Accessibility:** Level AA (WCAG 2.1)
+
+### 🎯 Expected Reach
+- **Target users:** Families with dependent older adults  
+- **Professionals:** Social workers, gerontologists  
+- **Replicable territories:** +200 municipalities in Catalonia  
+
+---
+
+## 🤝 Contributions
+
+Contributions are welcome! Help us improve and expand the project.
+
+### 🛠️ How to Contribute
+1. **Fork** the repository  
+2. **Create** a new branch:  
+   ```bash
+   git checkout -b feature/new-feature
+   git commit -m "Add new feature"
+   git push origin feature/new-feature
+3. Open a Pull Requestt
+
+---
+
+##  License
+
+Code: MIT License – see LICENSE
 
 ---
 
@@ -283,11 +281,9 @@ Esta herramienta puede adaptarse a cualquier ciudad con portal de datos abiertos
 
 <div align="center">
 
-** Proyecto presentado al reto #20opendata 2025**
-
 [![Barcelona Open Data](https://img.shields.io/badge/Barcelona-Open%20Data-red)](https://opendata-ajuntament.barcelona.cat)
 [![Diputación Barcelona](https://img.shields.io/badge/Diputaci%C3%B3n-Barcelona-orange)](https://www.diba.cat)
 
-*Promoviendo el envejecimiento saludable a través de datos abiertos*
+*Promoting healthy aging through open data*
 
 </div>
