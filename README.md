@@ -192,31 +192,31 @@ viuactiu_gentgran/
 
 ---
 
-## 🧭 Use Cases
+##  Use Cases
 
-### 👨‍👩‍👧 For Families
+### For Families
 > “My father needs a residence in the Gràcia district with accessibility.”  
 **Solution:** Filter the map by district and view contact information and available services.
 
-### 🧑‍💼 For Social Workers
+### For Social Workers
 > “I need an updated list of day centers in Horta-Guinardó.”  
 **Solution:** Interactive map with official City Council data.
 
-### 🧑‍🔬 For Researchers
+### For Researchers
 > “I want to analyze the territorial distribution of elderly services.”  
 **Solution:** Geospatial visualization combined with gender-based longevity data.
 
-### 🏛️ For Public Policy
+###  For Public Policy
 > “Which districts have a shortage of residences?”  
 **Solution:** Visual analysis of service density and geographic availability.
 
 ---
 
-## 🌍 Replicability in Other Territories
+##  Replicability in Other Territories
 
 This tool can be adapted to any city with an open data portal.
 
-### 🔁 Steps to Replicate
+###  Steps to Replicate
 1. **Identify** the open data portal of your municipality.  
 2. **Download** datasets of facilities or social services.  
 3. **Update** JSON files in the `/data/` folder.  
@@ -229,26 +229,26 @@ This tool can be adapted to any city with an open data portal.
 
 ---
 
-## 📊 Impact Metrics
+##  Impact Metrics
 
-### 🔧 Technical Data
+###  Technical Data
 - **Initial load:** < 2 seconds  
 - **Total size:** < 5 MB  
 - **Supported devices:** Desktop, tablet, mobile  
 - **Accessibility:** Level AA (WCAG 2.1)
 
-### 🎯 Expected Reach
+###  Expected Reach
 - **Target users:** Families with dependent older adults  
 - **Professionals:** Social workers, gerontologists  
 - **Replicable territories:** +200 municipalities in Catalonia  
 
 ---
 
-## 🤝 Contributions
+##  Contributions
 
 Contributions are welcome! Help us improve and expand the project.
 
-### 🛠️ How to Contribute
+###  How to Contribute
 1. **Fork** the repository  
 2. **Create** a new branch:  
    ```bash
