@@ -276,7 +276,7 @@ Code: MIT License – see LICENSE
 
 **GitHub**: [@alusilcof5](https://github.com/alusilcof5)  
 **Repositorio**: [viuactiu_gentgran](https://github.com/alusilcof5/viuactiu_gentgran)
-
+**Link**: https://viuactiu-gentgran-anas-projects-7a7f6fb5.vercel.app/
 **Reto**: #20opendata 2025  
 **Organizador**: Diputación de Barcelona - Barcelona Open Data  
 **Web del reto**: https://www.diba.cat/es/web/opendata

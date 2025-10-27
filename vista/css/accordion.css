@@ -1,0 +1,26 @@
+ .accordion-button {
+            transition: all 0.3s ease;
+        }
+        
+        .accordion-button:hover {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+        }
+        
+        .accordion-content.active {
+            max-height: 2500px;
+            transition: max-height 0.6s ease-in;
+        }
+        
+        .rotate-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .rotate-icon.active {
+            transform: rotate(180deg);
+        }

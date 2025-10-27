@@ -1,8 +1,8 @@
-const API_BASE = 'https://viuactiu-gentgran.vercel.api'; // Aquí pones tu URL de Vercel
+const API_BASE = 'https://viuactiu-gentgran.vercel.api'; 
 
 async function cargarAjuts() {
   try {
-    const response = await fetch(`${API_BASE}/api/ajuts`); // apunta al endpoint correcto
+    const response = await fetch(`${API_BASE}/api/ajuts`); 
     const data = await response.json();
 
     const list = document.getElementById('ajuts-list');

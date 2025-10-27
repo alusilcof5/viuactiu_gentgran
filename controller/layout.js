@@ -115,6 +115,7 @@ const Layout = {
               <li><a href="#" class="nav-link hover:text-white" data-page="serveis" data-i18n="nav_serveis">Serveis de dependència</a></li>
               <li><a href="#" class="nav-link hover:text-white" data-page="ajuts" data-i18n="nav_ajuts">Ajuts públics</a></li>
               <li><a href="#" class="nav-link hover:text-white" data-page="solitud" data-i18n="nav_solitud">Solitud</a></li>
+              <li><a href="#" class="nav-link hover:text-white" data-page="presentation" data-i18n="nav_presentation">Projecte</a></li>
             </ul>
           </div>
           <!-- Recursos útils -->
